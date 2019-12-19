@@ -1,20 +1,7 @@
-<!--
+<?php
 
-=========================================================
-* Now UI Kit - v1.3.0
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/now-ui-kit
-* Copyright 2019 Creative Tim (http://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md)
-
-* Designed by www.invisionapp.com Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
--->
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +11,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Now UI Kit by Creative Tim
+    Admin Log-In
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -118,7 +105,7 @@
                       <i class="now-ui-icons users_circle-08"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="First Name...">
+                  <input type="text" class="form-control" placeholder="Username..">
                 </div>
                 <div class="input-group no-border input-lg">
                   <div class="input-group-prepend">
@@ -126,14 +113,14 @@
                       <i class="now-ui-icons text_caps-small"></i>
                     </span>
                   </div>
-                  <input type="text" placeholder="Last Name..." class="form-control" />
+                  <input type="text" placeholder="Password.." class="form-control" />
                 </div>
               </div>
               <div class="card-footer text-center">
-                <a href="#pablo" class="btn btn-primary btn-round btn-lg btn-block">Get Started</a>
+                <input type="submit" name="submit" value="submit" class="btn btn-primary btn-round btn-lg btn-block">
                 <div class="pull-left">
                   <h6>
-                    <a href="#pablo" class="link">Create Account</a>
+                    <a href="#" class="link">Forget Password</a>
                   </h6>
                 </div>
                 <div class="pull-right">
@@ -153,7 +140,7 @@
           <ul>
             <li>
               <a href="https://www.creative-tim.com">
-                Creative Tim
+                National Institute of Technology, Jalandhar
               </a>
             </li>
             <li>
@@ -161,21 +148,21 @@
                 About Us
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a href="http://blog.creative-tim.com">
                 Blog
               </a>
-            </li>
+            </li> -->
           </ul>
         </nav>
-        <div class="copyright" id="copyright">
+        <!-- <div class="copyright" id="copyright">
           &copy;
           <script>
             document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
           </script>, Designed by
           <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
           <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
-        </div>
+        </div> -->
       </div>
     </footer>
   </div>
