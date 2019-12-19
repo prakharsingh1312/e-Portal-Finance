@@ -1,17 +1,17 @@
 <?php
 // include('config.php');
-// $errors = array("u" => " " , "p" => " ");
+$errors = array("u" => "Username.." , "p" => "Password..");
 if(isset($_POST['submit'])){
      if(empty($_POST['username'])){
-        $errors['username']='Username required <br />';
+        $errors['u']='Username required <br />';
      }
 
       if(empty($_POST['password'])){
-        $errors['password']='Password required <br />';
+        $errors['p']='Password required <br />';
       }
      }
 
-   }
+
 
 
  ?>
@@ -118,8 +118,8 @@ if(isset($_POST['submit'])){
                       <i class="now-ui-icons users_circle-08"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" name="username" placeholder="Username..">
-                  <div class="red-text"><?php echo $errors['username']; ?></div>
+                  <input type="text" class="form-control" name="username" placeholder="<?php echo $errors['u']; ?>">
+
                 </div>
                 <div class="input-group no-border input-lg">
                   <div class="input-group-prepend">
@@ -127,12 +127,12 @@ if(isset($_POST['submit'])){
                       <i class="now-ui-icons text_caps-small"></i>
                     </span>
                   </div>
-                  <input type="text" placeholder="Password.." name="password" class="form-control" />
-                  <div class="red-text"><?php echo $errors['password']; ?></div>
+                  <input type="text" placeholder="<?php echo $errors['p']; ?>" name="password" class="form-control" />
+                  <!-- <div class="red-text"></div> -->
                 </div>
               </div>
               <div class="card-footer text-center">
-                <input type="submit" name="submit" value="submit" class="btn btn-primary btn-round btn-lg btn-block">
+                <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-round btn-lg btn-block">
                 <div class="pull-left">
                   <h6>
                     <a href="#" class="link">Forget Password</a>
