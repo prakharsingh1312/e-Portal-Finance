@@ -1,6 +1,6 @@
 <?php
-include('config.php');
-$errors=array('username'=>'','password'=>'');
+// include('config.php');
+$errors = array('username'=>'','password'=>'');
 if(isset($_POST['submit'])){
      if(empty($_POST['username'])){
         $errors['username']='Username required <br />';
