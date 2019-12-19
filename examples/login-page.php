@@ -1,4 +1,17 @@
 <?php
+include('config.php');
+$errors=array('username'='','password'='');
+if(isset($_POST['submit'])){
+     if(empty($_POST['username'])){
+        $errors['username']='Username required <br />';
+     }
+
+      if(empty($_POST['password'])){
+        $errors['password']='Password required <br />';
+      }
+     }
+
+   }
 
 
  ?>
@@ -105,7 +118,8 @@
                       <i class="now-ui-icons users_circle-08"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Username..">
+                  <input type="text" class="form-control" name="username" placeholder="Username..">
+                  <div class="red-text"><?php echo $errors['username']; ?></div>
                 </div>
                 <div class="input-group no-border input-lg">
                   <div class="input-group-prepend">
@@ -113,7 +127,8 @@
                       <i class="now-ui-icons text_caps-small"></i>
                     </span>
                   </div>
-                  <input type="text" placeholder="Password.." class="form-control" />
+                  <input type="text" placeholder="Password.." name="password" class="form-control" />
+                  <div class="red-text"><?php echo $errors['password']; ?></div>
                 </div>
               </div>
               <div class="card-footer text-center">
@@ -139,15 +154,15 @@
         <nav>
           <ul>
             <li>
-              <a href="https://www.creative-tim.com">
+              <a href="#" class="center">
                 National Institute of Technology, Jalandhar
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a href="http://presentation.creative-tim.com">
                 About Us
               </a>
-            </li>
+            </li> -->
             <!-- <li>
               <a href="http://blog.creative-tim.com">
                 Blog
