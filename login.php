@@ -1,4 +1,6 @@
-<?php if(isset($_GET['login']))
+<?php 
+$errors=['u' => "Username" , 'p' => "Password"];
+if(isset($_GET['login']))
 {
 	
 }
@@ -10,7 +12,7 @@ else
             <form class="form" method="" action="">
               <div class="card-header text-center">
                 <div class="logo-container">
-                  <img src="../assets/img/now-logo.png" alt="">
+                  <img src="./assets/img/now-logo.png" alt="">
                 </div>
               </div>
               <div class="card-body">
