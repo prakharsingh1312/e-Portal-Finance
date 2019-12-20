@@ -89,15 +89,14 @@ function dologin(){
 	var password=$('#password').val();
 	$.post('login.php?login',{username:username,password:password},function(data){
 		if(data==1){
-			notify('Logging In',4);
+			notify('Logging In',4,'success');
 			showAdmin()
 		}
 		else
-			notify('Incorrect Username/Password',4);
+			notify('Incorrect Username/Password',4,'danger');
 	})}
 
-
-function notify(text, time)
+function notify(text, time,type)
 {
 	if(typeof text != 'undefined')
 	{
@@ -105,6 +104,14 @@ function notify(text, time)
 		{
 			clearTimeout(notify_timeout);
 		}
+		if(type=='success')
+			{
+				text =  '<div class="alert alert-success" role="alert"><div class="container"><div class="alert-icon"><i class="now-ui-icons ui-2_like"></i></div><strong>'+text+'</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="now-ui-icons ui-1_simple-remove"></i></span>            </button>          </div>        </div>';
+			}
+		else if(type== 'danger')
+			{
+				text =  '<div class="alert alert-danger" role="alert"><div class="container"><div class="alert-icon"><i class="now-ui-icons objects_support-17"></i></div><strong>'+text+'</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="now-ui-icons ui-1_simple-remove"></i></span>            </button>          </div>        </div>';
+			}
 
 		$('#notification_inner_cell_div').css('opacity', '1');
 
@@ -120,6 +127,14 @@ function notify(text, time)
 
 		notify_timeout = setTimeout(function() { $('#notification_inner_cell_div').animate({ opacity: 0 }, 250, function() { $('#notification_div').slideUp('fast'); }); }, 1000 * time);
 	}
+	else
+	{
+		if($('#notification_div').is(':visible'))
+		{
+			$('#notification_inner_cell_div').animate({ opacity: 0 }, 250, function() { $('#notification_div').slideUp('fast'); });
+		}
+	}
+}
 	else
 	{
 		if($('#notification_div').is(':visible'))

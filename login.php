@@ -1,6 +1,7 @@
 <?php 
 include('assets/php/functions.php');
 $errors=['u' => "Username" , 'p' => "Password"];
+echo encrypt_password('1234');
 if(isset($_GET['login']))
 {
 	$username=mysqli_real_escape_string($dbconfig,$_POST['username']);
