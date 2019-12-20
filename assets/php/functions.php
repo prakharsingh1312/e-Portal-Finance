@@ -11,8 +11,9 @@ include('config.php');
 
 
     function login($username,$password){
+			global $dbconfig;
 			$password=encrypt_password($password);
-            $stmt = $con->prepare("SELECT user_id, user_username, user_password FROM ".global_mysqli_users_table." WHERE username='?' AND password='?' LIMIT 1");
+            $stmt = $dbconfig->prepare("SELECT user_id, user_username, user_password FROM ".global_mysqli_users_table." WHERE username='?' AND password='?' LIMIT 1");
             $stmt->bind_param('ss',$username,$password);
             $stmt->execute();
             $result=$stmt->get_result();
