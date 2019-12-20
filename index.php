@@ -29,7 +29,17 @@ include('assets/php/functions.php');
 		<div class="page-header clear-filter" filter-color="orange">
       <div class="page-header-image" data-parallax="true" style="background-image:url('./assets/img/header.jpg');">
       </div>
-		
+			<div class="wrapper"></div>
+		</div>
+		<footer class="footer">
+      <div class=" container ">
+        <nav>
+          <ul>
+            <li>
+              <a href="#" class="center">
+                National Institute of Technology, Jalandhar
+              </a>
+            </li>
 		<script src="./assets/js/core/jquery.min.js" type="text/javascript"></script>
   <script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
   <script src="./assets/js/core/bootstrap.min.js" type="text/javascript"></script>
@@ -43,6 +53,7 @@ include('assets/php/functions.php');
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
   <script src="./assets/js/now-ui-kit.js?v=1.3.0" type="text/javascript"></script>
+  <script src="./assets/js/main.js" type="text/javascript"></script>
   <script>
     $(document).ready(function() {
       // the body of this function is in assets/js/now-ui-kit.js
