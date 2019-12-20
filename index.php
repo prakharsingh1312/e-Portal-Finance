@@ -26,6 +26,10 @@ include('assets/php/functions.php');
 	<?php include('header.php');
 	
 	?>
+		<div class="page-header clear-filter" filter-color="orange">
+      <div class="page-header-image" data-parallax="true" style="background-image:url('./assets/img/header.jpg');">
+      </div>
+		
 		<script src="./assets/js/core/jquery.min.js" type="text/javascript"></script>
   <script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
   <script src="./assets/js/core/bootstrap.min.js" type="text/javascript"></script>
