@@ -92,8 +92,10 @@ function dologin(){
 			notify('Logging In',4,'success');
 			showAdmin()
 		}
-		else
+		else if (data==0)
 			notify('Incorrect Username/Password',4,'danger');
+		else 
+			notify(data,4,'danger')
 	})}
 
 function notify(text, time,type)
