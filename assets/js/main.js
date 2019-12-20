@@ -133,7 +133,7 @@ function notify(text, time,type)
 		{
 			$('#notification_inner_cell_div').animate({ opacity: 0 }, 250, function() { $('#notification_div').slideUp('fast'); });
 		}
-	)
+	
 }}
-}
+
 	
