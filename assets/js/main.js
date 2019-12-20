@@ -115,10 +115,10 @@ function notify(text, time,type)
 
 		$('#notification_inner_cell_div').css('opacity', '1');
 
-		if($('#notification_div').is(':hidden'))
+		if($('#notification_div').is(':visible'))
 		{
 			$('#notification_inner_cell_div').html(text);
-			//$('#notification_div').slideDown('fast');
+			$('#notification_div').slideDown('fast');
 		}
 		else
 		{
@@ -131,7 +131,7 @@ function notify(text, time,type)
 	{
 		if($('#notification_div').is(':visible'))
 		{
-			$('#notification_inner_cell_div').animate({ opacity: 0 }, 250, function() { //$('#notification_div').slideUp('fast'); });
+			$('#notification_inner_cell_div').animate({ opacity: 0 }, 250, function() { $('#notification_div').slideUp('fast'); });
 		}
 	)
 }}
