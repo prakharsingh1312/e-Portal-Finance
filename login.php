@@ -13,7 +13,7 @@ else
 		<div class="content-center brand">
         <div class="col-md-4 ml-auto mr-auto">
           <div class="card card-login card-plain">
-            <form class="form" method="" action="">
+            <form class="form" method="POST" action="">
               <div class="card-header text-center">
                 <div class="logo-container">
                   <img src="./assets/img/now-logo.png" alt="">
@@ -40,7 +40,7 @@ else
                 </div>
               </div>
               <div class="card-footer text-center">
-                <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-round btn-lg btn-block login_button">
+                <input type="button" name="submit" value="Submit" class="btn btn-primary btn-round btn-lg btn-block login_button">
                 <div class="pull-left">
                   <h6>
                     <a href="#" class="link">Forget Password</a>
