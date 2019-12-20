@@ -2,7 +2,7 @@
 include('config.php');
     
 
-	
+	$dbconfig = new mysqli(global_mysqli_server,global_mysqli_user,global_mysqli_password,global_mysqli_database);
 	function encrypt_password($password)
 	{
 		$password = crypt($password, '$1$' . global_salt);
