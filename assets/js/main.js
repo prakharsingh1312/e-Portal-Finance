@@ -98,6 +98,7 @@ function dologin(){
 
 function notify(text, time,type)
 {
+	$('#notification_div').attr('display','block');
 	if(typeof text != 'undefined')
 	{
 		if(typeof notify_timeout != 'undefined')
