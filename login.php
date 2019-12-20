@@ -12,6 +12,7 @@ else
 {
 	echo '<div class="container">
 		<div class="content-center brand">
+		<div id="notification_div"><div id="notification_inner_div"><div id="notification_inner_cell_div"></div></div></div>
         <div class="col-md-4 ml-auto mr-auto">
           <div class="card card-login card-plain">
             <form class="form" method="POST" action="">
