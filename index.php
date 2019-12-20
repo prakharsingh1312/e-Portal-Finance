@@ -1,5 +1,5 @@
 <?php
-include('/assets/php/functions.php');
+include('assets/php/functions.php');
 ?>
 <html lang="en">
 
