@@ -7,6 +7,7 @@ if(isset($_GET['login']))
 else
 {
 	echo '<div class="container">
+		<div class="content-center brand">
         <div class="col-md-4 ml-auto mr-auto">
           <div class="card card-login card-plain">
             <form class="form" method="" action="">
@@ -50,7 +51,7 @@ else
             </form>
             </div>
           </div>
-        </div>
+        </div><div>
       </div>';
 }
 ?>

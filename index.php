@@ -22,7 +22,7 @@ include('assets/php/functions.php');
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="./assets/demo/demo.css" rel="stylesheet" />
 </head>
-	<body class="index-page sidebar-collapse">
+	<body class="login-page sidebar-collapse">
 	<?php include('header.php');
 	
 	?>
