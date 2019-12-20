@@ -7,6 +7,12 @@ function showlogin(){
 		
 	});
 }
+function showAdmin(){
+	$.get('admin.php',function(data){
+		$('.wrapper').html(data);
+		
+	});
+}
 function showformlist(){
 	$.get('forms.php?list',function(data){
 		$('.wrapper').html(data);
@@ -35,7 +41,9 @@ $(document).ready( function()
 		onclick_event = 'mousedown';
 		offclick_event = 'mouseup';
 	}
-	//$(document).on('click','#')
+	$(document).on('click','.login_button',function(){
+		dologin();
+	})
 });
 
 $(window).load(function()
@@ -73,4 +81,50 @@ function hash()
 		showformlist();
 	else if (hash == 'track')
 		showtrack();
+}
+
+
+function dologin(){
+	var username=$('#username').val();
+	var password=$('#password').val();
+	$.post('login.php?login',{username:username,password:password},function(data){
+		if(data==1){
+			notify('Logging In',4);
+			showAdmin()
+		}
+		else
+			notify('Incorrect Username/Password',4);
+	})}
+
+
+function notify(text, time)
+{
+	if(typeof text != 'undefined')
+	{
+		if(typeof notify_timeout != 'undefined')
+		{
+			clearTimeout(notify_timeout);
+		}
+
+		$('#notification_inner_cell_div').css('opacity', '1');
+
+		if($('#notification_div').is(':hidden'))
+		{
+			$('#notification_inner_cell_div').html(text);
+			$('#notification_div').slideDown('fast');
+		}
+		else
+		{
+			$('#notification_inner_cell_div').animate({ opacity: 0 }, 250, function() { $('#notification_inner_cell_div').html(text); $('#notification_inner_cell_div').animate({ opacity: 1 }, 250); });
+		}
+
+		notify_timeout = setTimeout(function() { $('#notification_inner_cell_div').animate({ opacity: 0 }, 250, function() { $('#notification_div').slideUp('fast'); }); }, 1000 * time);
+	}
+	else
+	{
+		if($('#notification_div').is(':visible'))
+		{
+			$('#notification_inner_cell_div').animate({ opacity: 0 }, 250, function() { $('#notification_div').slideUp('fast'); });
+		}
+	}
 }

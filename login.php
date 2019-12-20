@@ -1,8 +1,11 @@
 <?php 
+include('assets/php/functions.php');
 $errors=['u' => "Username" , 'p' => "Password"];
 if(isset($_GET['login']))
 {
-	
+	$username=mysqli_real_escape_string($dbconfig,$_POST['username']);
+	$password=mysqli_real_escape_string($dbconfig,$_POST['password']);
+	echo login($username,$password);
 }
 else
 {
@@ -23,7 +26,7 @@ else
                       <i class="now-ui-icons users_circle-08"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" name="username" placeholder="'. $errors[ 'u'].'">
+                  <input type="text" class="form-control" id="username" name="username" placeholder="'. $errors[ 'u'].'">
 
                 </div>
                 <div class="input-group no-border input-lg">
@@ -32,12 +35,12 @@ else
                       <i class="now-ui-icons text_caps-small"></i>
                     </span>
                   </div>
-                  <input type="text" placeholder="'. $errors['p'].'" name="password" class="form-control" />
+                  <input type="text" id="password" placeholder="'. $errors['p'].'" name="password" class="form-control" />
                   <!-- <div class="red-text"></div> -->
                 </div>
               </div>
               <div class="card-footer text-center">
-                <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-round btn-lg btn-block">
+                <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-round btn-lg btn-block login_button">
                 <div class="pull-left">
                   <h6>
                     <a href="#" class="link">Forget Password</a>

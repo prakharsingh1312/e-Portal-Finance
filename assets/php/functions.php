@@ -1,16 +1,26 @@
 <?php
 include('config.php');
     
-    function login1($username,$password){
-            $stmt = $con->prepare("SELECT user_id, user_username, user_password FROM user_accounts WHERE username=? AND password=? LIMIT 1");
+
+	
+	function encrypt_password($password)
+	{
+		$password = crypt($password, '$1$' . global_salt);
+		return($password);
+	}
+
+
+    function login($username,$password){
+			$password=encrypt_password($password);
+            $stmt = $con->prepare("SELECT user_id, user_username, user_password FROM ".global_mysqli_users_table." WHERE username=? AND password=? LIMIT 1");
             $stmt->bind_param('ss',$username,$password);
             $stmt->execute();
-            $stmt->bind_result($username,$password);
-            $stmt->store_result();
+            
             if($stmt->num_rows == 1){
-                $stmt->fetch();
-                $_SESSION['logged']=1;
-                $_SESSION['username']=$username;
+				$result=$stmt->get_result();
+                $result=$result->fetch_assoc();
+                $_SESSION['user_id']=$result['user_id'];
+                $_SESSION['username']=$result['user_username'];
                 return 1;
                 
             }

@@ -18,4 +18,5 @@ define('global_mysqli_forms_table','form_details');
 
 //other settings
 define('global_website_title','NIT From Portal');
+define('global_salt','A4il0O12Desf');
 ?>
