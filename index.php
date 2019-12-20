@@ -45,7 +45,10 @@ include('assets/php/functions.php');
 			</div>
 		</footer>
 		
-		<script src="./assets/js/core/jquery.min.js" type="text/javascript"></script>
+		
+		<script src="./assets/js/jquery.js" type="text/javascript"></script>
+<script src="./assets/js/jquery-cookies.js" type="text/javascript"></script>
+<script src="./assets/js/jquery-base64.js" type="text/javascript"></script>
   <script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
   <script src="./assets/js/core/bootstrap.min.js" type="text/javascript"></script>
   <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
