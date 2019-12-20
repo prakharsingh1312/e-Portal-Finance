@@ -135,11 +135,4 @@ function notify(text, time,type)
 		}
 	}
 }
-	else
-	{
-		if($('#notification_div').is(':visible'))
-		{
-			$('#notification_inner_cell_div').animate({ opacity: 0 }, 250, function() { $('#notification_div').slideUp('fast'); });
-		}
-	}
-}
+	
