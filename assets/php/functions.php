@@ -14,7 +14,7 @@ include('config.php');
 			global $dbconfig;
 			$password=encrypt_password($password);
             $stmt = $dbconfig->prepare("SELECT user_id, user_username, user_password FROM user_accounts WHERE username= ? AND password= ? LIMIT 1");
-            $stmt->bind_param('ss',$username,$password);
+            $stmt->bind_param("ss",$username,$password);
             $stmt->execute();
             $result=$stmt->get_result();
             if($result->num_rows == 1){
