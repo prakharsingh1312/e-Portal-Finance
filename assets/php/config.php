@@ -17,5 +17,5 @@ define('global_mysqli_departments_table','departments');
 define('global_mysqli_departments_table','departments');
 
 //other settings
-
+define('global_website_title','NIT From Portal');
 ?>
