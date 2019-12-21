@@ -10,7 +10,8 @@ if(isset($_GET['login']))
 }
 else
 {
-	echo '<div class="container">
+	echo '<div class="page-header-image" data-parallax="true" style="background-image:url(\'./assets/img/header.jpg\');">
+      </div><div class="container">
 		<div class="content-center brand">
 		<div id="notification_div"><div id="notification_inner_div"><div id="notification_inner_cell_div"></div></div></div>
         <div class="col-md-4 ml-auto mr-auto">
