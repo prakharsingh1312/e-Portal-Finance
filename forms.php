@@ -13,7 +13,7 @@ echo '<div class="page-header-image" data-parallax="true" style="background-imag
 		<div class="content-center brand">
 		<div id="notification_div"><div id="notification_inner_div"><div id="notification_inner_cell_div"></div></div></div>
 			<h1>Forms Available</h1>
-	        <div class="col-md-4 ml-auto mr-auto">
+	        <div class="col-md-6 ml-auto mr-auto">
 	          <div class="card card-login card-plain">
 							<div class="card" style="width: 18rem; background-color:#212529;">
 	  						<img src="assets/img/form1.png" class="card-img-top" alt="form-1" style="display:inline-block;">
