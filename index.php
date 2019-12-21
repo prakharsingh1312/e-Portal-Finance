@@ -32,7 +32,7 @@
 
 <div class="wrapper"></div>
 </div>
-//<footer class="footer">
+<!--//<footer class="footer">
 //<div class=" container ">
 //<nav>
 //<ul>
@@ -44,7 +44,7 @@
 //</ul>
 //</nav>
 //</div>
-//</footer>
+//</footer>-->
 
 
 <script src="./assets/js/jquery.js" type="text/javascript"></script>
