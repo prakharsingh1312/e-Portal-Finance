@@ -1,3 +1,5 @@
+<?php
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +19,7 @@
 <body>
 
   <div class="main">
+    <h3 class="center" style="text-align:center; text-color:white; padding-top:30px;">DR. B. R. AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY, JALANDHAR-144011</h3>
     <div class="container">
       <h2 class="center" style="text-align:center; padding-top:30px;">TEQIP-III (Annexure-A)</h2>
       <div class="signup-content">
