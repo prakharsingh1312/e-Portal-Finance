@@ -28,8 +28,7 @@ include('assets/php/functions.php');
 	?>
 		
 		<div class="page-header clear-filter" filter-color="orange">
-      <div class="page-header-image" data-parallax="true" style="background-image:url('./assets/img/header.jpg');">
-      </div>
+      
 			
 			<div class="wrapper"></div>
 		</div>
