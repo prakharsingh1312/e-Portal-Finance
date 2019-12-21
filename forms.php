@@ -1,4 +1,13 @@
-<div class="page-header-image" data-parallax="true" style="background-image:url('./assets/img/header.jpg');">
+<?php
+include('assets/php/functions.php');
+if(isset($_GET['from']))
+{
+	$formid=mysqli_real_escape_string($dbconfig,$_POST['formid']);
+	echo get_form($formid);
+}
+else
+{
+echo '<div class="page-header-image" data-parallax="true" style="background-image:url(\'./assets/img/header.jpg\');">
       </div>
 <div class="container">
 		<div class="content-center brand">
@@ -18,3 +27,7 @@
           </div>
         </div>
       </div>
+	  
+';
+}
+?>
