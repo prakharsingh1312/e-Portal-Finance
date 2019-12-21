@@ -9,7 +9,7 @@
 	  						<div class="card-body">
 	    						<h5 class="card-title" style="textcolor:black;">National Visit Form</h5>
 	    						<p class="card-text">Proposal for attending national conference/training course/others under TEQIP-III (Annexure "A")</p>
-	    						<a href="./forms/form1.php" class="btn btn-primary">Fill Up the Form</a>
+	    						<a href="./forms/forms.html" class="btn btn-primary">Fill Up the Form</a>
 	  						</div>
 							</div>
             </div>
