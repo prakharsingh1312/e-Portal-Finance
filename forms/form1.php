@@ -46,7 +46,7 @@
       <div class="signup-content"  >
         <form method="POST" class="register-form"  id="register-form">
           <h2 class="display-6" style="color:#dc5a00;">FORM </h2>
-          <div class="form-row" style="font-size:1.4rem">
+          <div class="form-row" >
             <div class="form-group">
               <label for="name">1. Name of the student :</label>
               <input type="text" name="name" id="name" required />
@@ -55,7 +55,7 @@
               <label for="course">1.1 Course</label>
               <div class="form-select">
                 <select name="course" id="course">
-                  <option value=""></option>
+                  <option value =""></option>
                   <option value="ug">Under Graduate</option>
                   <option value="pg">Post Graduate</option>
                   <option value="phd">PhD</option>

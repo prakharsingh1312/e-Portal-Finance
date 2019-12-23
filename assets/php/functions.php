@@ -31,6 +31,15 @@ include('config.php');
             $stmt->free_result();
             $stmt->close();
         }
+    function form_1($data_fields){
+        global $dbconfig;
+        $stmt = $dbconfig->prepare("INSERT INTO `form_type1_responses`(`response_id`,`form_id`,`response_code`,`name_of_code`,`name_of_student`,`course`,`roll_no`,`department`,`nature_of_event`,`name_of_event`,`place_of_event`,`duration_from`,`duration_to`,`duration_days`,`organizer_of_event`,`relevance_of_visit`,`objective_of_visit`,`attached_cv`,`attached_certificate_hod`,`date_and_time_departure`,`date_and_time_arrival`,`research_paper`,`title_of_paper`,`accepted_paper_acceptance_letter`,`total_cost`,`total_cost_words`,`cost_details`,`registration_fees`,`transportation_allowance`,`other_costs`,`cgpa`,`sci_journal`,`signature_student`,`signature_supervisor`,`recommendation_hod`,`signature_hod`,`STATUS`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $stmt->bind_param(); //pending
+        $stmt->execute();
+        $stmt->free_result();
+        $stmt->close();
+        
+    }
         
 
 ?>
