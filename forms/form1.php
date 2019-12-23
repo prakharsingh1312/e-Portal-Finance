@@ -1,4 +1,9 @@
 <?php
+    include('assets/php/functions.php');
+    $sql="SELECT * FROM form_details WHERE form_id = 1"
+    $result = mysqli_query($dbconfig,$sql);
+    $details=mysqli_fetch_all($result, MYSQLI_ASSOC);
+    mysqli_free_result($result);
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +30,7 @@
       <div class="signup-content">
         <form method="POST" class="register-form" id="register-form">
           <h2 class="display-6" style="color:#dc5a00;">Important Guidelines</h2>
-          <p style="font-size:1.2rem;"> js Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p style="font-size:1.2rem;"> <?php echo htmlspecialchars($details['form_guidelines']); ?>
         </form>
 
 
