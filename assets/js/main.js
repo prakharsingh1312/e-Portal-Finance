@@ -41,9 +41,14 @@ $(document).ready( function()
 		onclick_event = 'mousedown';
 		offclick_event = 'mouseup';
 	}
-	$(document).on('click','.login_button',function(){
-		dologin();
-	})
+	
+	$('#reset').on('click', function(){
+      $('#register-form').reset();
+		});
+	//Forms
+		$(document).on('submit','login_from',function(){ dologin(); return false; });
+		$(document).on('submit','form1_from',function(){ form1_submit(); return false; });
+  
 });
 
 $(window).load(function()
@@ -138,5 +143,18 @@ function notify(text, time,type)
 		}
 	
 }}
+
+
+function input_focus(id)
+{
+	if(offclick_event == 'touchend')
+	{
+		$('input').blur();
+	}
+	if(typeof id != 'undefined')
+	{
+		$(id).focus();
+	}
+}
 
 	

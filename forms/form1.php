@@ -48,13 +48,13 @@
           <h2 class="display-6" style="color:#dc5a00;">FORM </h2>
           <div class="form-row" >
             <div class="form-group">
-              <label for="name">1. Name of the student :</label>
-              <input type="text" name="name" id="name" required />
+              <label for="form1_form1_name">1. Name of the student :</label>
+              <input type="text" name="name" id="form1_name" required />
             </div>
             <div class="form-group">
-              <label for="course">1.1 Course</label>
+              <label for="form1_course">1.1 Course</label>
               <div class="form-select">
-                <select name="course" id="course">
+                <select name="course" id="form1_course">
                   <option value =""></option>
                   <option value="ug">Under Graduate</option>
                   <option value="pg">Post Graduate</option>
@@ -66,96 +66,96 @@
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="roll">2. Roll No.</label>
-              <input type="text" name="roll" id="address" required />
+              <label for="form1_roll">2. Roll No.</label>
+              <input type="text" name="roll" id="form1_roll" required />
             </div>
             <div class="form-group">
-              <label for="department">3. Department</label>
-              <input type="text" name="department" id="department" required />
+              <label for="form1_department">3. Department</label>
+              <input type="text" name="department" id="form1_department" required />
             </div>
 
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="nature_of_event">4. Nature of Event</label>
-              <input type="text" name="nature_of_event" id="address" required />
+              <label for="form1_nature_of_event">4. Nature of Event</label>
+              <input type="text" name="nature_of_event" id="form1_nature_of_event" required />
             </div>
             <div class="form-group">
-              <label for="name_of_the_event">5. Name of the Event</label>
-              <input type="text" name="name_of_the_event" id="address" required />
+              <label for="form1_name_of_the_event">5. Name of the Event</label>
+              <input type="text" name="name_of_the_event" id="form1_name_of_event" required />
             </div>
           </div>
           <div class="form-group">
-            <label for="place">6. Place(S) of the event (Visit) Conference / Training Course / Workshop Seminar / Symposium / Others (Complete Address):</label>
-            <input type="text" name="place" id="birth_date">
+            <label for="form1_place">6. Place(S) of the event (Visit) Conference / Training Course / Workshop Seminar / Symposium / Others (Complete Address):</label>
+            <input type="text" name="place" id="form1_place">
           </div>
           <div class="form-group">
-            <label for="">7. Duration required for the event with date(S) :</label>
+            <label for="form1_">7. Duration required for the event with date(S) :</label>
             <div class="form-row">
 
               <div class="form-group">
-                <label for="from_date">From (DD/MM/YY) :</label>
-                <input type="text" name="from_date" id="from_date">
+                <label for="form1_from_date">From (DD/MM/YY) :</label>
+                <input type="text" name="from_date" id="form1_from_date">
               </div>
               <div class="form-group">
-                <label for="to_date">To (DD/MM/YY) :</label>
-                <input type="text" name="to_date" id="to_date">
+                <label for="form1_to_date">To (DD/MM/YY) :</label>
+                <input type="text" name="to_date" id="form1_to_date">
               </div>
               <div class="form-group">
-                <label for="no_of_days">No. of days :</label>
-                <input type="text" name="no_of_days" id="no_of_days">
+                <label for="form1_no_of_days">No. of days :</label>
+                <input type="text" name="no_of_days" id="form1_no_of_days">
               </div>
             </div>
           </div>
           <div class="form-group">
-            <label for="organizer">8. Organizer of the event :</label>
-            <input type="text" name="organizer" id="organizer" required />
+            <label for="form1_organizer">8. Organizer of the event :</label>
+            <input type="text" name="organizer" id="form1_organizer" required />
           </div>
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-prepend">
-                <label class="custom-file-label" for="relevance">9. Relevance of the visit / training: (Attach Separate Sheet, if required)</label>
+                <label class="custom-file-label" for="form1_relevance">9. Relevance of the visit / training: (Attach Separate Sheet, if required)</label>
               </div>
               <div class="custom-file">
-                <input type="file" class="custom-file-input" name="relevance" id="relevance" aria-describedby="inputGroupFileAddon01">
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <label class="custom-file-label" for="objective">10. Clear objective and outcome of the visit: (Attach Separate Sheet, if required)</label>
-              </div>
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" id="objective" name="objective" aria-describedby="inputGroupFileAddon01">
+                <input type="file" class="custom-file-input" name="relevance" id="form1_relevance" aria-describedby="inputGroupFileAddon01">
               </div>
             </div>
           </div>
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-prepend">
-                <label class="custom-file-label" for="cv">11. Attach (i) brief CV / biography. </label>
+                <label class="custom-file-label" for="form1_objective">10. Clear objective and outcome of the visit: (Attach Separate Sheet, if required)</label>
               </div>
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="cv" name="cv" aria-describedby="inputGroupFileAddon01">
+                <input type="file" class="custom-file-input" id="form1_objective" name="objective" aria-describedby="inputGroupFileAddon01">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <label class="custom-file-label" for="form1_cv">11. Attach (i) brief CV / biography. </label>
+              </div>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="form1_cv" name="cv" aria-describedby="inputGroupFileAddon01">
               </div>
             </div>
             <div class="form-group">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <label class="custom-file-label" for="certificate">12. Attach certificate from HoD regarding relevance of the event for the applicant and by stating that the event will benefit for the applicant.</label>
+                  <label class="custom-file-label" for="form1_certificate">12. Attach certificate from HoD regarding relevance of the event for the applicant and by stating that the event will benefit for the applicant.</label>
                 </div>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="certificate" aria-describedby="inputGroupFileAddon01">
+                  <input type="file" class="custom-file-input" id="form1_certificate" aria-describedby="inputGroupFileAddon01">
                 </div>
                 <div class="form-row">
                   <div class="form-group">
-                    <label for="date_time_d">13. Date and time of departure from the Institute:</label>
-                    <input type="text" name="date_time_d" id="date_time_d" required />
+                    <label for="form1_date_time_d">13. Date and time of departure from the Institute:</label>
+                    <input type="text" name="date_time_d" id="form1_date_time_d" required />
                   </div>
                   <div class="form-group">
-                    <label for="date_time_a">14. Date and time of arrival from the Institute:</label>
-                    <input type="text" name="date_time_a" id="date_time_a" required />
+                    <label for="form1_date_time_a">14. Date and time of arrival from the Institute:</label>
+                    <input type="text" name="date_time_a" id="form1_date_time_a" required />
                   </div>
                 </div>
 
@@ -166,9 +166,9 @@
 
 
           <div class="form-group">
-            <label for="research">15. Whether going to present research paper :</label>
+            <label for="form1_research">15. Whether going to present research paper :</label>
             <div class="form-select">
-              <select name="research" id="research">
+              <select name="research" id="form1_research">
                 <option value=""></option>
                 <option value="ug">Yes</option>
                 <option value="pg">No</option>
@@ -177,65 +177,65 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="title">16. Title of Paper :</label>
-            <input type="text" name="title" id="title" required />
+            <label for="form1_title">16. Title of Paper :</label>
+            <input type="text" name="title" id="form1_title" required />
           </div>
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-prepend">
-                <label class="custom-file-label" for="accepted_paper">17. Attach the accepted paper, acceptance letter, NOC from co-authors:</label>
+                <label class="custom-file-label" for="form1_accepted_paper">17. Attach the accepted paper, acceptance letter, NOC from co-authors:</label>
               </div>
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="accepted_paper" aria-describedby="inputGroupFileAddon01">
+                <input type="file" class="custom-file-input" id="form1_accepted_paper" aria-describedby="inputGroupFileAddon01">
               </div>
             </div>
           </div>
           <div class="form-group">
-            <label for="total_cost">18. Total cost involved :</label>
+            <label for="form1_total_cost">18. Total cost involved :</label>
             <div class="form-row">
               <div class="form-group">
-                <label for="rs">Rupees (Rs.):</label>
-                <input type="text" name="from_date" id="rs">
+                <label for="form1_rs">Rupees (Rs.):</label>
+                <input type="text" name="from_date" id="form1_rs">
               </div>
               <div class="form-group">
-                <label for="trs">Rupees (In Words) :</label>
-                <input type="text" name="trs" id="trs">
+                <label for="form1_trs">Rupees (In Words) :</label>
+                <input type="text" name="trs" id="form1_trs">
               </div>
             </div>
             <div class="form-group">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <label class="custom-file-label" for="cost_details">Cost details :</label>
+                  <label class="custom-file-label" for="form1_cost_details">Cost details :</label>
                 </div>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="cost_details" aria-describedby="inputGroupFileAddon01">
+                  <input type="file" class="custom-file-input" id="form1_cost_details" aria-describedby="inputGroupFileAddon01">
                 </div>
               </div>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="regestration">Registration fee:</label>
-              <input type="text" name="regestration" id="regestration">
+              <label for="form1_registration">Registration fee:</label>
+              <input type="text" name="registration" id="form1_registration">
             </div>
             <div class="form-group">
-              <label for="ta">TA :</label>
-              <input type="text" name="ta" id="ta">
+              <label for="form1_ta">TA :</label>
+              <input type="text" name="ta" id="form1_ta">
             </div>
             <div class="form-group">
-              <label for="others">Others, if any :</label>
-              <input type="text" name="others" id="others">
+              <label for="form1_others">Others, if any :</label>
+              <input type="text" name="others" id="form1_others">
             </div>
           </div>
           <div class="form-group">
-            <label for="cgpa">19. CGPA of the candidate (Only for UG / M.Tech and M.Sc students) : </label>
-            <input type="text" name="cgpa" id="cgpa" required />
+            <label for="form1_cgpa">19. CGPA of the candidate (Only for UG / M.Tech and M.Sc students) : </label>
+            <input type="text" name="cgpa" id="form1_cgpa" required />
           </div>
 
           <div class="form-group">
-            <label for="mtech">20. For M.Tech, M.Sc and PhD candidates : Whether one paper has been accepted for publication in SCI Journal in Last two years : </label>
+            <label for="form1_mtech">20. For M.Tech, M.Sc and PhD candidates : Whether one paper has been accepted for publication in SCI Journal in Last two years : </label>
             <div class="form-select">
-              <select name="mtech" id="mtech">
+              <select name="mtech" id="form1_mtech">
                 <option value=""></option>
                 <option value="yy">Yes</option>
                 <option value="nn">No</option>
@@ -247,29 +247,29 @@
             <div class="form-group">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <label class="custom-file-label" for="signstudent">21. Signature of the Student</label>
+                  <label class="custom-file-label" for="form1_signstudent">21. Signature of the Student</label>
                 </div>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="signstudent" aria-describedby="inputGroupFileAddon01">
+                  <input type="file" class="custom-file-input" id="form1_signstudent" aria-describedby="inputGroupFileAddon01">
                 </div>
               </div>
             </div>
             <div class="form-group">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <label class="custom-file-label" for="signsupervisor">22. Signature of the Supervisor</label>
+                  <label class="custom-file-label" for="form1_signsupervisor">22. Signature of the Supervisor</label>
                 </div>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="signsupervisor" aria-describedby="inputGroupFileAddon01">
+                  <input type="file" class="custom-file-input" id="form1_signsupervisor" aria-describedby="inputGroupFileAddon01">
                 </div>
               </div>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="recommended">23. Recommended / not Recommended by HoD : </label>
+              <label for="form1_recommended">23. Recommended / not Recommended by HoD : </label>
               <div class="form-select">
-                <select name="recommended" id="recommended">
+                <select name="recommended" id="form1_recommended">
                   <option value=""></option>
                   <option value="r">Recommended</option>
                   <option value="nr">Not Recommended</option>
@@ -280,10 +280,10 @@
             <div class="form-group">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <label class="custom-file-label" for="signhod">22. Signature of the Hod (with seal) :</label>
+                  <label class="custom-file-label" for="form1_signhod">22. Signature of the Hod (with seal) :</label>
                 </div>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="signhod" aria-describedby="inputGroupFileAddon01">
+                  <input type="file" class="custom-file-input" id="form1_signhod" aria-describedby="inputGroupFileAddon01">
                 </div>
               </div>
             </div>
@@ -303,8 +303,8 @@
   </div>
 
   <!-- JS -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="../assets/js/jquery.js"></script>
+  <script src="../assets/js/main.js"></script>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
