@@ -15,13 +15,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>National Visit Form</title>
+<title><?php echo $result['form_title']; ?></title>
 
   <!-- Font Icon -->
   <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
   <!-- Main css -->
   <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body style="padding:0px 0px;">
@@ -29,7 +30,7 @@
     <h3 class="center" style="text-align:center;  color:white; padding-top:0px;">DR. B. R. AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY, JALANDHAR-144011</h3>
 
     <div class="container">
-      <h2 class="center" style="text-align:center; padding-top:30px;">TEQIP-III (Annexure-A)</h2>
+      <h2 class="center" style="text-align:center; padding-top:30px;"><?php echo $result['form_subtitle']; ?>
       <div class="signup-content">
         <form method="POST" class="register-form" id="register-form">
           <h2 class="display-6" style="color:#dc5a00;">Important Guidelines</h2>
@@ -42,7 +43,7 @@
 
 
       </div>
-      <div class="signup-content">
+      <div class="signup-content" style="font-size:1.2rem;">
         <form method="POST" class="register-form" id="register-form">
           <h2 class="display-6" style="color:#dc5a00;">FORM </h2>
           <div class="form-row">
