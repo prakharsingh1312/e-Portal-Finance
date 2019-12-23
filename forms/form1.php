@@ -1,9 +1,12 @@
 <?php
     include('../assets/php/functions.php');
     $sql="SELECT * FROM form_details WHERE form_id = 1";
-    $result = mysqli_query($dbconfig,$sql);
-    $details=mysqli_fetch_all($result, MYSQLI_ASSOC);
-    mysqli_free_result($result);
+    
+    $result = $dbconfig->prepare($sql);
+    $result->execute();
+    $result=$result->get_result();
+    $result = $result->fetch_assoc();
+   
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +33,7 @@
       <div class="signup-content">
         <form method="POST" class="register-form" id="register-form">
           <h2 class="display-6" style="color:#dc5a00;">Important Guidelines</h2>
-            <p style="font-size:1.2rem;"> <?php echo htmlspecialchars($details['form_guidelines']); ?>
+            <p style="font-size:1.2rem;"> <?php echo htmlspecialchars($result['form_guidelines']); ?>
         </form>
 
 
