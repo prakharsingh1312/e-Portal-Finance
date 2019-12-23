@@ -45,6 +45,8 @@ $(document).ready( function()
 	$('#reset').on('click', function(){
       $('#register-form').reset();
 		});
+	//Form1 Reponsiveness
+		
 	//Forms
 		$(document).on('submit','login_from',function(){ dologin(); return false; });
 		$(document).on('submit','form1_from',function(){ form1_submit(); return false; });
@@ -156,5 +158,18 @@ function input_focus(id)
 		$(id).focus();
 	}
 }
-
+function form1_submit(){
+	var name=$('#form1_name').val();
+	var course=$('#form1_course').val();
+	var roll=$('#form1_roll').val();
+	var department=$('#form1_department').val();
+	var nature_of_event=$('#form1_nature_of_event').val();
+	var name_of_event=$('#form1_name_of_event').val();
+	var place=$('#form1_place').val();
+	var from_date=$('#form1_from_date').val();
+	var to_date=$('#form1_to_date').val();
+	var no_of_days=$('#form1_no_of_days').val();
+	var organizer=$('#form1_name').val();
+	
+}
 	
