@@ -43,7 +43,7 @@
 
 
       </div>
-      <div class="signup-content" style="font-size:1.2rem;">
+      <div class="signup-content" >
         <form method="POST" class="register-form" id="register-form">
           <h2 class="display-6" style="color:#dc5a00;">FORM </h2>
           <div class="form-row">
