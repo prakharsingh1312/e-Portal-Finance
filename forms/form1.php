@@ -33,7 +33,7 @@
       <div class="signup-content">
         <form method="POST" class="register-form" id="register-form">
           <h2 class="display-6" style="color:#dc5a00;">Important Guidelines</h2>
-            <p style="font-size:1.2rem;"> <?php echo htmlspecialchars($result['form_guidelines']); ?>
+            <p style="font-size:1.2rem;"> <?php echo $result['form_guidelines']; ?>
         </form>
 
 
