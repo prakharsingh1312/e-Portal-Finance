@@ -43,10 +43,10 @@
 
 
       </div>
-      <div class="signup-content" style="font-size:1.4rem" >
-        <form method="POST" class="register-form" id="register-form">
+      <div class="signup-content"  >
+        <form method="POST" class="register-form"  id="register-form">
           <h2 class="display-6" style="color:#dc5a00;">FORM </h2>
-          <div class="form-row">
+          <div class="form-row" style="font-size:1.4rem">
             <div class="form-group">
               <label for="name">1. Name of the student :</label>
               <input type="text" name="name" id="name" required />
