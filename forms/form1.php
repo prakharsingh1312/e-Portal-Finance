@@ -1,5 +1,5 @@
 <?php
-    include('assets/php/functions.php');
+    include('../assets/php/functions.php');
     $sql="SELECT * FROM form_details WHERE form_id = 1";
     $result = mysqli_query($dbconfig,$sql);
     $details=mysqli_fetch_all($result, MYSQLI_ASSOC);
