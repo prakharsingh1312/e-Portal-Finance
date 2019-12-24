@@ -23,11 +23,10 @@
 <link href="./assets/demo/demo.css" rel="stylesheet" />
 </head>
 <body class="login-page sidebar-collapse">
+<div class="page-header clear-filter" filter-color="orange">
 <?php include('header.php');
     
     ?>
-
-<div class="page-header clear-filter" filter-color="orange">
 
 
 <div class="wrapper"></div>
