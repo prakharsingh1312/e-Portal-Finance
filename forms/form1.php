@@ -156,7 +156,7 @@
                 <input type="file" class="custom-file-input" id="form1_cv" name="cv" aria-describedby="inputGroupFileAddon01">
               </div>
             </div>
-
+<br>
             <div class="form-group">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -165,7 +165,7 @@
                 <div class="custom-file">
                   <input type="file" class="custom-file-input" id="form1_certificate" aria-describedby="inputGroupFileAddon01">
                 </div>
-
+<br>
                 <div class="form-row">
                   <div class="form-group">
                     <label for="form1_date_time_d">13. Date and time of departure from the Institute:</label>
