@@ -110,24 +110,42 @@
             <input type="text" name="organizer" id="form1_organizer" required />
           </div>
           <div class="form-group">
+                <label class="custom-file-label" for="form1_relevance">9. Relevance of the visit / training: (Attach Separate Sheet, if required)</label>
+          </div>
+<div class="form-row">
+<div class="form-group">
+  <!-- <label for="organizer">8. Organizer of the event :</label> -->
+  <input type="text" name="organizer" id="organizer" placeholder="Leave blank if file attached" required />
+</div>
+          <div class="form-group">
             <div class="input-group">
               <div class="input-group-prepend">
-                <label class="custom-file-label" for="form1_relevance">9. Relevance of the visit / training: (Attach Separate Sheet, if required)</label>
               </div>
               <div class="custom-file">
                 <input type="file" class="custom-file-input" name="relevance" id="form1_relevance" aria-describedby="inputGroupFileAddon01">
               </div>
             </div>
           </div>
+
+</div>
+
           <div class="form-group">
+            <<label class="custom-file-label" for="form1_objective">10. Clear objective and outcome of the visit: (Attach Separate Sheet, if required)</label>
+          <div class="form-row">
+            <div class="form-group">
+              <!-- <label for="organizer">8. Organizer of the event :</label> -->
+              <input type="text" name="organizer" id="organizer" placeholder="Leave blank if file attached" required />
+            </div>
+<div class="form-group">
             <div class="input-group">
               <div class="input-group-prepend">
-                <label class="custom-file-label" for="form1_objective">10. Clear objective and outcome of the visit: (Attach Separate Sheet, if required)</label>
+                
               </div>
               <div class="custom-file">
                 <input type="file" class="custom-file-input" id="form1_objective" name="objective" aria-describedby="inputGroupFileAddon01">
               </div>
             </div>
+</div>
           </div>
           <div class="form-group">
             <div class="input-group">
@@ -201,9 +219,17 @@
               </div>
             </div>
             <div class="form-group">
+                <label class="custom-file-label" for="form1_cost_details">Cost details :</label>
+            </div>
+            <div class="form-row">
+<div class="form-group">
+  <!-- <label for="organizer">8. Organizer of the event :</label> -->
+  <input type="text" name="organizer" id="organizer" placeholder="Leave blank if file attached" required />
+</div>
+            <div class="form-group">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <label class="custom-file-label" for="form1_cost_details">Cost details :</label>
+                  
                 </div>
                 <div class="custom-file">
                   <input type="file" class="custom-file-input" id="form1_cost_details" aria-describedby="inputGroupFileAddon01">
@@ -211,6 +237,7 @@
               </div>
             </div>
           </div>
+</div>
           <div class="form-row">
             <div class="form-group">
               <label for="form1_registration">Registration fee:</label>
