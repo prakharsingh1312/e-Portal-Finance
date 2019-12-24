@@ -130,7 +130,7 @@
 </div>
 
           <div class="form-group">
-            <<label class="custom-file-label" for="form1_objective">10. Clear objective and outcome of the visit: (Attach Separate Sheet, if required)</label>
+            <label class="custom-file-label" for="form1_objective">10. Clear objective and outcome of the visit: (Attach Separate Sheet, if required)</label>
           <div class="form-row">
             <div class="form-group">
               <!-- <label for="organizer">8. Organizer of the event :</label> -->
