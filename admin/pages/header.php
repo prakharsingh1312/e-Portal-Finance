@@ -1,6 +1,5 @@
 <?php 
-if (!logged_in)
-	header("location:./#admin");
+session_start();
 ?>
 
 <div class="wrapper ">
