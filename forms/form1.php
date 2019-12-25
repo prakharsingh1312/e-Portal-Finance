@@ -93,7 +93,7 @@
               <div class="form-group">
                 <label for="form1_from_date">From (DD/MM/YY) :</label>
 
-                <input type="text" name="from_date" id="form1_from_date">
+                <input type="text" name="from_date" id="form1_from_date"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
               </div>
               <div class="form-group">
                 <label for="form1_to_date">To (DD/MM/YY) :</label>
