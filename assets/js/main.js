@@ -8,11 +8,10 @@ function showlogin(){
 	});
 }
 function showAdmin(){
-	$.get('admin.php',function(data){
-		$('.wrapper').html(data);
+	window.location.href="./admin";
 		
-	});
-}
+	}
+
 function showformlist(){
 	$.get('forms.php?list',function(data){
 		$('.wrapper').html(data);
