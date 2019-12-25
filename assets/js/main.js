@@ -47,7 +47,7 @@ $(document).ready( function()
 		});
 	//Form1 Reponsiveness
 		$(document).on('change','#form1_course',function(){ 
-			if(this.val()=='ug')
+			if($('#form1_course').val()=='ug')
 			{hide_input('#form1_20');}
 			else
 			{show_input('#form1_20');}
