@@ -11,31 +11,31 @@
     <div class="sidebar-wrapper" id="sidebar-wrapper">
       <ul class="nav">
         <li class="active ">
-          <a href="../examples/dashboard.html">
+          <a href="#">
             <i class="now-ui-icons design_app"></i>
             <p>User's Dashboard</p>
           </a>
         </li>
         <li>
-          <a href="../examples/icons.html">
+          <a href="#dept">
             <i class="now-ui-icons education_atom"></i>
             <p>Departments</p>
           </a>
         </li>
         <li>
-          <a href="../examples/map.html">
+          <a href="#formC">
             <i class="now-ui-icons location_map-big"></i>
             <p>Form Contol</p>
           </a>
         </li>
         <li>
-          <a href="../examples/notifications.html">
+          <a href="#users">
             <i class="fa fa-users" aria-hidden="true"></i>
             <p>Manage Users</p>
           </a>
         </li>
         <li>
-          <a href="../examples/user.html">
+          <a href="#userP">
             <i class="now-ui-icons users_single-02"></i>
             <p>Your Profile</p>
           </a>

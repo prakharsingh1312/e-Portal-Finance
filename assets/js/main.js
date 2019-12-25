@@ -28,31 +28,31 @@ function showtrack(){
 	});
 }
 function showDash(){
-	$.get('/pages/dash.php',function(data){
+	$.get('./pages/dash.php',function(data){
 		$('.wrapper').html(data);
 		
 	});
 }
 function showDept(){
-	$.get('./admin/pages/dept.php',function(data){
+	$.get('./pages/dept.php',function(data){
 		$('.wrapper').html(data);
 		
 	});
 }
 function showFormC(){
-	$.get('./admin/pages/form_control.php',function(data){
+	$.get('./pages/form_control.php',function(data){
 		$('.wrapper').html(data);
 		
 	});
 }
 function showUsers(){
-	$.get('./admin/pages/users.php',function(data){
+	$.get('./pages/users.php',function(data){
 		$('.wrapper').html(data);
 		
 	});
 }
 function showUserP(){
-	$.get('./admin/pages/user_profile.php',function(data){
+	$.get('./pages/user_profile.php',function(data){
 		$('.wrapper').html(data);
 		
 	});
