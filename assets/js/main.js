@@ -166,6 +166,7 @@ function notify(text, time,type)
 }}
 
 function hide_input(id){
+	$(id).attr("value","");
 	$(id).attr('style','pointer-events:none;opacity:.5;')
 }
 function show_input(id){
