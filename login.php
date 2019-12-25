@@ -10,7 +10,7 @@ if(isset($_GET['login']))
 	echo login($username,$password);
 }
 else if(logged_in())
-{return 1;}
+{echo 1;}
 else
 {
 	echo '<div class="page-header-image" data-parallax="true" style="background-image:url(\'./assets/img/header.jpg\');">
