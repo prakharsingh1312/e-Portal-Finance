@@ -26,7 +26,7 @@ include('../assets/php/functions.php');
  <body class="">
 <?php include('examples/header.php'); ?>
 <div id="wrapper">
-	 <? include('examples/dash.php'); ?></div>
+	 <?php include('examples/dash.php'); ?></div>
 <!-- <footer class="footer">
   <div class=" container-fluid ">
     <nav>
