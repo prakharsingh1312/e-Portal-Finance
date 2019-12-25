@@ -1,4 +1,4 @@
-<?php 
+<?php
 include('assets/php/functions.php');
 $errors=['u' => "Username" , 'p' => "Password"];
 
@@ -35,10 +35,10 @@ else
                 <div class="input-group no-border input-lg">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
-                      <i class="now-ui-icons text_caps-small"></i>
+                      <i class="fa fa-key" aria-hidden="true"></i>
                     </span>
                   </div>
-                  <input type="text" id="password" placeholder="'. $errors['p'].'" name="password" class="form-control" />
+                  <input type="password" id="password" placeholder="'. $errors['p'].'" name="password" class="form-control" />
                   <!-- <div class="red-text"></div> -->
                 </div>
               </div>
