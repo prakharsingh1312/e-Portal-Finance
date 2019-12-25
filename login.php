@@ -1,5 +1,7 @@
 <?php 
 include('assets/php/functions.php');
+if(logged_in())
+	header("location:admin/");
 $errors=['u' => "Username" , 'p' => "Password"];
 
 if(isset($_GET['login']))

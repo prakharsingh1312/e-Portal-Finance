@@ -1,3 +1,8 @@
+<?php include('../../assets/php/functions.php');
+if (!logged_in)
+	header("location:./#admin");
+?>
+
 <div class="wrapper ">
   <div class="sidebar" data-color="red">
     <!--
@@ -55,7 +60,7 @@
               <span class="navbar-toggler-bar bar3"></span>
             </button>
           </div>
-          <a class="navbar-brand" href="#pablo">Hey _firstname_</a>
+          <a class="navbar-brand" href="#pablo">Hey <?php echo $_SESSION['user_name']; ?> </a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar navbar-kebab"></span>

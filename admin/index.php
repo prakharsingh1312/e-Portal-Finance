@@ -1,5 +1,8 @@
 <?php
 include('../assets/php/functions.php');
+if (!logged_in()){
+	header("location:../#admin");
+}
  ?>
  <!DOCTYPE html>
  <html lang="en">

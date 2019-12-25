@@ -13,7 +13,7 @@ include('config.php');
     function login($username,$password){
 			global $dbconfig;
 			$password=encrypt_password($password);
-            $stmt = $dbconfig->prepare("SELECT user_id, user_username, user_password FROM ".global_mysqli_users_table." WHERE user_username= ? AND user_password= ? LIMIT 1");
+            $stmt = $dbconfig->prepare("SELECT * FROM ".global_mysqli_users_table." WHERE user_username= ? AND user_password= ? LIMIT 1");
             $stmt->bind_param("ss",$username,$password);
             $stmt->execute();
             $result=$stmt->get_result();
@@ -22,6 +22,9 @@ include('config.php');
                 $result=$result->fetch_assoc();
                 $_SESSION['user_id']=$result['user_id'];
                 $_SESSION['username']=$result['user_username'];
+				$_SESSION['user_role']=$result['user_role'];
+				$_SESSION['user_dept']=$result['user_dept'];
+				
                 return 1;
                 
             }
@@ -41,5 +44,14 @@ include('config.php');
         
     }
         
-
+	function logged_in(){
+		if(isset($_SESSION['user_id']))
+			return 1;
+		else
+			return 0;
+	}
+function logout(){
+	session_destroy();
+	return 1;
+}
 ?>
