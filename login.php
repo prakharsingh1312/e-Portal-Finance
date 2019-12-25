@@ -16,7 +16,7 @@ else
 		<div id="notification_div"><div id="notification_inner_div"><div id="notification_inner_cell_div"></div></div></div>
         <div class="col-md-4 ml-auto mr-auto">
           <div class="card card-login card-plain">
-            <form class="form" method="POST" action="" id="login_form">
+            <form class="form" method="POST" action="." id="login_form">
               <div class="card-header text-center">
                 <div class="logo-container">
                   <img src="./assets/img/now-logo.png" alt="">
