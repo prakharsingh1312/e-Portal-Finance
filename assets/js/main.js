@@ -50,7 +50,7 @@ $(document).ready( function()
 			if($('#form1_course').val()=='ug')
 			{hide_input('#form1_20');$('#form1_mtech').removeAttr('required');}
 			else
-			{show_input('#form1_20');$('#form1_mtech').attr('required');}
+			{show_input('#form1_20');$('#form1_mtech').attr('required','1');}
 		 });
 	$(document).on('change','#form1_research',function(){ 
 			if($('#form1_research').val()=='no')
@@ -58,7 +58,7 @@ $(document).ready( function()
 			hide_input('#form1_17');$('#form1_accepted_paper').removeAttr('required');}
 			else
 			{show_input('#form1_16');$('#form1_title').attr('required');
-			show_input('#form1_17');$('#form1_accepted_paper').attr('required');}
+			show_input('#form1_17');$('#form1_accepted_paper').attr('required','1');}
 		 });
 	//Forms
 		$(document).on('click','.login_button',function(){ dologin(); });
