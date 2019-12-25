@@ -89,7 +89,7 @@
               <a class="nav-link" href="#pablo">
                 <i class="now-ui-icons users_single-02"></i>
                 <p>
-                  <span class=" d-md-block">Log out</span>
+                  <span class=" d-md-block logout_button">Log out</span>
                 </p>
               </a>
             </li>

@@ -9,6 +9,10 @@ if(isset($_GET['login']))
 	$password=mysqli_real_escape_string($dbconfig,$_POST['password']);
 	echo login($username,$password);
 }
+else if(isset($_GET['logout'])){
+	echo logout();
+	
+}
 else if(logged_in())
 {echo 1;}
 else
