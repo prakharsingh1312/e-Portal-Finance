@@ -8,7 +8,7 @@ function showlogin(){
 	});
 }
 function showAdmin(){
-	window.location.href="/admin";
+	window.location.href="./admin";
 		
 	}
 
