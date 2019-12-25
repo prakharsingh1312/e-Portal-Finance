@@ -97,6 +97,4 @@
         </div>
       </div>
     </nav>
-    <div class="panel-header panel-header-lg">
-      <h2 align="center" class="d-sm-block" style="color:white;">WELCOME TO YOUR DASHBOARD</h2>
-    </div>
+    
