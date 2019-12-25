@@ -97,7 +97,7 @@ $(document).ready( function()
 		if($('#form1_course').val()=='phd')
 			{
 				hide_input('#form1_19');$('#form1_cgpa').removeAttr('required');}
-			else {show_input('#form1_19');$('#form1_cgpa').attr('required')}
+			else {show_input('#form1_19');$('#form1_cgpa').attr('required','1')}
 		});
 	$(document).on('change','#form1_recommended',function(){ 
 			if($('#form1_recommended').val()=='N')
