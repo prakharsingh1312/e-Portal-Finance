@@ -73,7 +73,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title" style="margin-left:1%;"> Applications</h4>
+          <h4 class="card-title col-" style="margin-left:1%;"> Applications</h4>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -111,11 +111,17 @@
             </table>
           </div>
         </div>
+        <button class="btn btn-primary push-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Add Department
+        </button>
       </div>
     </div>
   </div>
+
+
+
 </div>
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <button class="btn btn-primary push-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     Add Department
@@ -137,4 +143,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
