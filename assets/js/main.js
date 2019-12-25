@@ -46,10 +46,10 @@ $(document).ready( function()
       $('#register-form').reset();
 		});
 	//Form1 Reponsiveness
-		
+		$(document).on('change','#form1_course',function(){ dologin(); return false; });
 	//Forms
-		$(document).on('submit','login_from',function(){ dologin(); return false; });
-		$(document).on('submit','form1_from',function(){ form1_submit(); return false; });
+		$(document).on('submit','#login_from',function(){ dologin(); return false; });
+		$(document).on('submit','#form1_from',function(){ form1_submit(); return false; });
   
 });
 
@@ -146,7 +146,12 @@ function notify(text, time,type)
 	
 }}
 
-
+function hide_input(id){
+	$(id).attr('style','pointer-events:none;opacity:.5;')
+}
+function show_input(id){
+	$(id).removeAttr('style');
+}
 function input_focus(id)
 {
 	if(offclick_event == 'touchend')
