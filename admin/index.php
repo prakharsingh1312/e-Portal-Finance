@@ -87,6 +87,7 @@ demo.initDashboardPageCharts();
 		{
 			hash();
 		});
+	hash();
 </script>
 </body>
 
