@@ -1,6 +1,8 @@
 <div class="panel-header panel-header-lg">
   <h2 align="center" class="d-sm-block" style="color:white;">WELCOME TO YOUR DASHBOARD</h2>
   <div class="container">
+    <div class="row">
+
     <div id="carouselExampleIndicators" class="carousel slide d-block d-lg-none col-md-12" data-ride="carousel">
       <ol style ="margin-bottom:0.1rem;" class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -63,5 +65,6 @@
         <span class="count-name">Applications Rejected</span>
       </div>
     </div>
+  </div>
 </div>
 </div>
