@@ -46,23 +46,23 @@
     <div class="col-lg-4 d-none d-lg-block">
       <div class="card-counter success">
         <!-- <i class="fa fa-database"></i> -->
-        <span class="count-numbers">6875</span>
-        <span class="count-name">Applications Approved </span>
+        <span class="count-numbers">0</span>
+        <span class="count-name">Number of Departments</span>
       </div>
     </div>
 
     <div class="col-lg-4 d-none d-lg-block">
       <div class="card-counter info">
         <!-- <i class="fa fa-users"></i> -->
-        <span class="count-numbers">35</span>
-        <span class="count-name">Application Pending</span>
+        <span class="count-numbers">0</span>
+        <span class="count-name">Number of Users</span>
       </div>
     </div>
     <div class="col-lg-4 d-none d-lg-block">
       <div class="card-counter danger">
         <i class="fa fa-ticket"></i>
-        <span class="count-numbers">599</span>
-        <span class="count-name">Applications Rejected</span>
+        <span class="count-numbers">0</span>
+        <span class="count-name">Number of active forms</span>
       </div>
     </div>
   </div>
