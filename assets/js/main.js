@@ -3,7 +3,10 @@ var global_cookie_prefix = 'NIT';
 
 function showlogin(){
 	$.get('login.php',function(data){
+		if(data!=1)
 		$('.wrapper').html(data);
+		else
+			showAdmin();
 		
 	});
 }

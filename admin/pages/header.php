@@ -1,4 +1,4 @@
-<?php include('../../assets/php/functions.php');
+<?php include('./assets/php/functions.php');
 if (!logged_in)
 	header("location:./#admin");
 ?>

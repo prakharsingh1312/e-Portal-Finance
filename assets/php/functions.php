@@ -24,6 +24,7 @@ include('config.php');
                 $_SESSION['username']=$result['user_username'];
 				$_SESSION['user_role']=$result['user_role'];
 				$_SESSION['user_dept']=$result['user_dept'];
+				$_SESSION['user_name']=$result['user_name'];
 				
                 return 1;
                 

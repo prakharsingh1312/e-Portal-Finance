@@ -1,7 +1,6 @@
 <?php
 include('assets/php/functions.php');
-if(logged_in())
-	header("location:admin/");
+
 $errors=['u' => "Username" , 'p' => "Password"];
 
 if(isset($_GET['login']))
@@ -10,6 +9,8 @@ if(isset($_GET['login']))
 	$password=mysqli_real_escape_string($dbconfig,$_POST['password']);
 	echo login($username,$password);
 }
+else if(logged_in())
+{return 1;}
 else
 {
 	echo '<div class="page-header-image" data-parallax="true" style="background-image:url(\'./assets/img/header.jpg\');">
