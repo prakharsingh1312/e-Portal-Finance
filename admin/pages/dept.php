@@ -104,7 +104,7 @@
                     Oud-Turnhout
                   </td>
                   <td class="text-right">
-                    <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                     <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
                   </td>
                 </tr>
               </tbody>
