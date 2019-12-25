@@ -1,7 +1,7 @@
 <?php
 include('../assets/php/functions.php');
 if (!logged_in()){
-	header("location:../#admin");
+	header("location:../#login");
 }
  ?>
  <!DOCTYPE html>

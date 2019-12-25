@@ -1,7 +1,3 @@
-<?php 
-session_start();
-?>
-
 <div class="wrapper ">
   <div class="sidebar" data-color="red">
     <!--
