@@ -34,31 +34,34 @@ function showtrack(){
 function showDash(){
 	$.get('./pages/dash.php',function(data){
 		$('#wrapper').html(data);
+		linkChange('#users_dash');
 		
 	});
 }
 function showDept(){
 	$.get('./pages/dept.php',function(data){
 		$('#wrapper').html(data);
+		linkChange('#departments');
 		
 	});
 }
 function showFormC(){
 	$.get('./pages/form_control.php',function(data){
 		$('#wrapper').html(data);
-		
+		linkChange('#form_control');
 	});
 }
 function showUsers(){
 	$.get('./pages/users.php',function(data){
 		$('#wrapper').html(data);
+		linkChange('#manage_users');
 		
 	});
 }
 function showUserP(){
 	$.get('./pages/user_profile.php',function(data){
 		$('#wrapper').html(data);
-		
+		linkChange('#user_profile');
 	});
 }
 
@@ -251,7 +254,7 @@ function form1_submit(){
 	
 }
 function logout(){
-	$.get('login.php?logout',function(data){
+	$.get('../login.php?logout',function(data){
 		if (data==1)
 			window.location.href="../";
 		$(window).bind('hashchange', function ()
@@ -259,4 +262,14 @@ function logout(){
 			hash();
 		});
 	})
-}	
+}
+function linkChange(id){
+	var ids=['#users_dash','#user_profile','#departments','#manage_users','#form_control'];
+	$.each(ids,function(index,value){
+		if(id==value){
+			$(value).addClass('active');
+		}
+		else
+			$(value).removeClass('active');
+	});
+}
