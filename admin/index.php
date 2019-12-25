@@ -27,9 +27,9 @@ if (!logged_in()){
  </head>
 
  <body class="">
-<?php include('examples/header.php'); ?>
+<?php include('pages/header.php'); ?>
 <div id="wrapper">
-	 <?php include('examples/dash.php'); ?></div>
+	 <?php include('pages/dash.php'); ?></div>
 <!-- <footer class="footer">
   <div class=" container-fluid ">
     <nav>
