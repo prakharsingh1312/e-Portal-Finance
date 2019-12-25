@@ -187,8 +187,8 @@
             <div class="form-select">
               <select name="research" id="form1_research">
                 <option value=""></option>
-                <option value="ug">Yes</option>
-                <option value="pg">No</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
               </select>
               <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
             </div>

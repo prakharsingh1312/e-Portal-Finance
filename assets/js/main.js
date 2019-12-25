@@ -48,9 +48,17 @@ $(document).ready( function()
 	//Form1 Reponsiveness
 		$(document).on('change','#form1_course',function(){ 
 			if($('#form1_course').val()=='ug')
-			{hide_input('#form1_20');}
+			{hide_input('#form1_20');$('#form1_mtech').removeAttr('required');}
 			else
-			{show_input('#form1_20');}
+			{show_input('#form1_20');$('#form1_mtech').attr('required');}
+		 });
+	$(document).on('change','#form1_research',function(){ 
+			if($('#form1_research').val()=='no')
+			{hide_input('#form1_16');$('#form1_title').removeAttr('required');
+			hide_input('#form1_17');$('#form1_accepted_paper').removeAttr('required');}
+			else
+			{show_input('#form1_16');$('#form1_title').attr('required');
+			show_input('#form1_17');$('#form1_accepted_paper').attr('required');}
 		 });
 	//Forms
 		$(document).on('click','.login_button',function(){ dologin(); });
