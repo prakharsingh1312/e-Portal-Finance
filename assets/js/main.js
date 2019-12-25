@@ -94,7 +94,11 @@ $(document).ready( function()
 			{hide_input('#form1_20');$('#form1_mtech').removeAttr('required');}
 			else
 			{show_input('#form1_20');$('#form1_mtech').attr('required','1');}
-		 });
+		if($('#form1_course').val()=='phd')
+			{
+				hide_input('#form1_19');$('#form1_cgpa').removeAttr('required');}
+			else {show_input('#form1_19');$('#form1_cgpa').attr('required')}
+		});
 	$(document).on('change','#form1_recommended',function(){ 
 			if($('#form1_recommended').val()=='N')
 			{hide_input('#form1_24');$('#form1_signhod').removeAttr('required');}
