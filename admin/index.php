@@ -58,7 +58,10 @@ if (!logged_in()){
     </div>
   </div>
 </footer> -->
+	 </div>
+	 </div>
 <!--   Core JS Files   -->
+	 
 <script src="../assets/js/jquery.js"></script>
 <script src="assets/js/core/popper.min.js"></script>
 <script src="assets/js/core/bootstrap.min.js"></script>
