@@ -29,7 +29,7 @@ if (!logged_in()){
  <body class="">
 <?php include('pages/header.php'); ?>
 <div id="wrapper">
-	 <script>showDash();</script></div>
+	 </div>
 <!-- <footer class="footer">
   <div class=" container-fluid ">
     <nav>
@@ -79,6 +79,7 @@ $(document).ready(function() {
 demo.initDashboardPageCharts();
 
 });
+	showDash();
 </script>
 </body>
 
