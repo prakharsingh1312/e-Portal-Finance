@@ -12,6 +12,10 @@ function showlogin(){
 }
 function showAdmin(){
 	window.location.href="./admin";
+	$(window).bind('hashchange', function ()
+		{
+			hash();
+		});
 		
 	}
 
@@ -249,6 +253,10 @@ function form1_submit(){
 function logout(){
 	$.get('login.php?logout',function(data){
 		if (data==1)
-			window.location.href="./#login";
+			window.location.href="../";
+		$(window).bind('hashchange', function ()
+		{
+			hash();
+		});
 	})
 }	
