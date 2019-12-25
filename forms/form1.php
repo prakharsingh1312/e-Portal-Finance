@@ -340,7 +340,13 @@
 	  // INCLUDE JQUERY & JQUERY UI 1.12.1
 $( function() {
 	$( "#form1_from_date" ).datepicker({
-		dateFormat: "dd-mm-yy"
+		dateFormat: "dd/mm/yy"
+		,	duration: "fast"
+	});
+} );
+		 $( function() {
+	$( "#form1_to_date" ).datepicker({
+		dateFormat: "dd/mm/yy"
 		,	duration: "fast"
 	});
 } );</script> 
