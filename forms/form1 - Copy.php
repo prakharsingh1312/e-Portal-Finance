@@ -33,7 +33,7 @@
         <form method="POST" class="register-form" id="register-form" action=".">
           <h2 class="display-6" style="color:#dc5a00;">Important Guidelines</h2>
             <p style="font-size:1.2rem;"> <?php echo $result['form_guidelines']; ?></p>
-        
+        </form>
 
 
 
@@ -41,7 +41,7 @@
 
       </div>
       <div class="signup-content"  >
-        
+        <form method="POST" class="register-form" id="register-form" action=".">
           <h2 class="display-6" style="color:#dc5a00;">FORM </h2>
           <div class="form-row" >
             <div class="form-group" id="form1_1">
