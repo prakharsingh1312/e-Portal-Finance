@@ -30,14 +30,14 @@
         </li>
         <li>
           <a href="../examples/notifications.html">
-            <i class="now-ui-icons ui-1_bell-53"></i>
-            <p>Form Responses</p>
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <p>Manage Users</p>
           </a>
         </li>
         <li>
           <a href="../examples/user.html">
             <i class="now-ui-icons users_single-02"></i>
-            <p>User Profile</p>
+            <p>Your Profile</p>
           </a>
         </li>
       </ul>
