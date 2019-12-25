@@ -143,7 +143,7 @@ function hash()
 		showformlist();
 	else if (hash == 'track')
 		showtrack();
-	else if(window.localtion.href.indexOf('/admin')>0)
+	else if(window.location.href.indexOf('/admin')>0)
 		{
 			if(hash == '')
 				showDash();
