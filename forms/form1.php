@@ -44,11 +44,11 @@
         
           <h2 class="display-6" style="color:#dc5a00;">FORM </h2>
           <div class="form-row" >
-            <div class="form-group">
+            <div class="form-group" id="form1_1">
               <label for="form1_form1_name">1. Name of the student :</label>
               <input type="text" name="name" id="form1_name" required />
             </div>
-            <div class="form-group">
+            <div class="form-group" id="form1_1.1">
               <label for="form1_course">1.1 Course</label>
               <div class="form-select">
                 <select name="course" id="form1_course">
@@ -62,31 +62,31 @@
             </div>
           </div>
           <div class="form-row">
-            <div class="form-group">
+            <div class="form-group" id="form1_2">
               <label for="form1_roll">2. Roll No.</label>
               <input type="text" name="roll" id="form1_roll" required />
             </div>
-            <div class="form-group">
+            <div class="form-group"id="form1_3">
               <label for="form1_department">3. Department</label>
               <input type="text" name="department" id="form1_department" required />
             </div>
 
           </div>
           <div class="form-row">
-            <div class="form-group">
+            <div class="form-group" id="form1_4">
               <label for="form1_nature_of_event">4. Nature of Event</label>
               <input type="text" name="nature_of_event" id="form1_nature_of_event" required />
             </div>
-            <div class="form-group">
+            <div class="form-group" id="form1_5">
               <label for="form1_name_of_the_event">5. Name of the Event</label>
               <input type="text" name="name_of_the_event" id="form1_name_of_event" required />
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" id="form1_6">
             <label for="form1_place">6. Place(S) of the event (Visit) Conference / Training Course / Workshop Seminar / Symposium / Others (Complete Address):</label>
             <input type="text" name="place" id="form1_place">
           </div>
-          <div class="form-group">
+          <div class="form-group" id="form1_7">
             <label for="form1_">7. Duration required for the event with date(S) :</label>
             <div class="form-row">
 
@@ -104,15 +104,15 @@
               </div>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" id="form1_8">
             <label for="form1_organizer">8. Organizer of the event :</label>
             <input type="text" name="organizer" id="form1_organizer" required />
           </div>
-          <div class="form-group">
+          <div class="form-group" id="form1_9">
                 <label class="custom-file-label" for="form1_relevance">9. Relevance of the visit / training: (Attach Separate Sheet, if required)</label>
           </div>
 <div class="form-row">
-<div class="form-group">
+<div class="form-group" >
   <!-- <label for="organizer">8. Organizer of the event :</label> -->
   <input type="text" name="organizer" id="organizer" placeholder="Leave blank if file attached" required />
 </div>
@@ -128,7 +128,7 @@
 
 </div>
 
-          <div class="form-group">
+          <div class="form-group" id="form1_10">
             <label class="custom-file-label" for="form1_objective">10. Clear objective and outcome of the visit: (Attach Separate Sheet, if required)</label>
           <div class="form-row">
             <div class="form-group">
@@ -146,7 +146,7 @@
             </div>
 </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" id="form1_11">
             <div class="input-group">
               <div class="input-group-prepend">
                 <label class="custom-file-label" for="form1_cv">11. Attach (i) brief CV / biography. </label>
@@ -156,7 +156,7 @@
               </div>
             </div>
 <br>
-            <div class="form-group">
+            <div class="form-group" id="form1_12">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <label class="custom-file-label" for="form1_certificate">12. Attach certificate from HoD regarding relevance of the event for the applicant and by stating that the event will benefit for the applicant.</label>
@@ -166,11 +166,11 @@
                 </div>
 <br>
                 <div class="form-row">
-                  <div class="form-group">
+                  <div class="form-group" id="form1_13">
                     <label for="form1_date_time_d">13. Date and time of departure from the Institute:</label>
                     <input type="text" name="date_time_d" id="form1_date_time_d" required />
                   </div>
-                  <div class="form-group">
+                  <div class="form-group" id="form1_14">
                     <label for="form1_date_time_a">14. Date and time of arrival from the Institute:</label>
                     <input type="text" name="date_time_a" id="form1_date_time_a" required />
                   </div>
@@ -182,7 +182,7 @@
 
 
 
-          <div class="form-group">
+          <div class="form-group" id="form1_15">
             <label for="form1_research">15. Whether going to present research paper :</label>
             <div class="form-select">
               <select name="research" id="form1_research">
@@ -193,11 +193,11 @@
               <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" id="form1_16">
             <label for="form1_title">16. Title of Paper :</label>
             <input type="text" name="title" id="form1_title" required />
           </div>
-          <div class="form-group">
+          <div class="form-group" id="form1_17">
             <div class="input-group">
               <div class="input-group-prepend">
                 <label class="custom-file-label" for="form1_accepted_paper">17. Attach the accepted paper, acceptance letter, NOC from co-authors:</label>
@@ -207,7 +207,7 @@
               </div>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" id="form1_18">
             <label for="form1_total_cost">18. Total cost involved :</label>
             <div class="form-row">
               <div class="form-group">
@@ -253,12 +253,12 @@
               <input type="text" name="others" id="form1_others">
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" id="form1_19">
             <label for="form1_cgpa">19. CGPA of the candidate (Only for UG / M.Tech and M.Sc students) : </label>
             <input type="text" name="cgpa" id="form1_cgpa" required />
           </div>
 
-          <div class="form-group">
+          <div class="form-group" id="form1_20">
             <label for="form1_mtech">20. For M.Tech, M.Sc and PhD candidates : Whether one paper has been accepted for publication in SCI Journal in Last two years : </label>
             <div class="form-select">
               <select name="mtech" id="form1_mtech">
@@ -270,7 +270,7 @@
             </div>
           </div>
           <div class="form-row">
-            <div class="form-group">
+            <div class="form-group" id="form1_21">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <label class="custom-file-label" for="form1_signstudent">21. Signature of the Student</label>
@@ -280,7 +280,7 @@
                 </div>
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="form1_22">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <label class="custom-file-label" for="form1_signsupervisor">22. Signature of the Supervisor</label>
@@ -292,7 +292,7 @@
             </div>
           </div>
           <div class="form-row">
-            <div class="form-group">
+            <div class="form-group" id="form1_23">
               <label for="form1_recommended">23. Recommended / not Recommended by HoD : </label>
               <div class="form-select">
                 <select name="recommended" id="form1_recommended">
@@ -303,10 +303,10 @@
                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="form1_24">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <label class="custom-file-label" for="form1_signhod">22. Signature of the Hod (with seal) :</label>
+                  <label class="custom-file-label" for="form1_signhod">24. Signature of the Hod (with seal) :</label>
                 </div>
                 <div class="custom-file">
                   <input type="file" class="custom-file-input" id="form1_signhod" aria-describedby="inputGroupFileAddon01">
