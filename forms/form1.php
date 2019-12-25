@@ -186,7 +186,7 @@
             <label for="form1_research">15. Whether going to present research paper :</label>
             <div class="form-select">
               <select name="research" id="form1_research">
-                <option value=""></option>
+                <option value="" disabled></option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
               </select>
@@ -262,7 +262,7 @@
             <label for="form1_mtech">20. For M.Tech, M.Sc and PhD candidates : Whether one paper has been accepted for publication in SCI Journal in Last two years : </label>
             <div class="form-select">
               <select name="mtech" id="form1_mtech">
-                <option value=""></option>
+                <option value="" disabled></option>
                 <option value="yy">Yes</option>
                 <option value="nn">No</option>
               </select>
@@ -296,9 +296,9 @@
               <label for="form1_recommended">23. Recommended / not Recommended by HoD : </label>
               <div class="form-select">
                 <select name="recommended" id="form1_recommended">
-                  <option value=""></option>
-                  <option value="r">Recommended</option>
-                  <option value="nr">Not Recommended</option>
+                  <option value="" disabled></option>
+                  <option value="Y">Recommended</option>
+                  <option value="N">Not Recommended</option>
                 </select>
                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
               </div>

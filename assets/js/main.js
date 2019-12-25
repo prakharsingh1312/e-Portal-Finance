@@ -52,6 +52,12 @@ $(document).ready( function()
 			else
 			{show_input('#form1_20');$('#form1_mtech').attr('required','1');}
 		 });
+	$(document).on('change','#form1_recommended',function(){ 
+			if($('#form1_recommended').val()=='N')
+			{hide_input('#form1_24');$('#form1_signhod').removeAttr('required');}
+			else
+			{show_input('#form1_24');$('#form1_signhod').attr('required','1');}
+		 });
 	$(document).on('change','#form1_research',function(){ 
 			if($('#form1_research').val()=='no')
 			{hide_input('#form1_16');$('#form1_title').removeAttr('required');
