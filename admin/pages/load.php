@@ -24,7 +24,7 @@ include('../../assets/php/functions.php');
  </head>
 
  <body class="">
-<?php include('header.php'); ?>
+<?php include('../examples/header.php'); ?>
 
 <!-- <footer class="footer">
   <div class=" container-fluid ">
