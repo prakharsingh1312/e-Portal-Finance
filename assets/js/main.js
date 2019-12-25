@@ -27,6 +27,36 @@ function showtrack(){
 		
 	});
 }
+function showDash(){
+	$.get('admin/pages/dash.php',function(data){
+		$('.wrapper').html(data);
+		
+	});
+}
+function showDept(){
+	$.get('admin/pages/dept.php',function(data){
+		$('.wrapper').html(data);
+		
+	});
+}
+function showFormC(){
+	$.get('admin/pages/form_control.php',function(data){
+		$('.wrapper').html(data);
+		
+	});
+}
+function showFormR(){
+	$.get('admin/pages/form_responses.php',function(data){
+		$('.wrapper').html(data);
+		
+	});
+}
+function showUserP(){
+	$.get('admin/pages/user_profile.php',function(data){
+		$('.wrapper').html(data);
+		
+	});
+}
 
 
 //document ready functions
@@ -44,10 +74,14 @@ $(document).ready( function()
 		offclick_event = 'mouseup';
 	}
 	
-	$('#reset').on('click', function(){
+	$(document).on('click','.logout_button',function(){
+		logout();
+	})
+	
+	//Form1 Reponsiveness
+		$('#reset').on('click', function(){
       $('#register-form').reset();
 		});
-	//Form1 Reponsiveness
 		$(document).on('change','#form1_course',function(){ 
 			if($('#form1_course').val()=='ug')
 			{hide_input('#form1_20');$('#form1_mtech').removeAttr('required');}
@@ -109,6 +143,19 @@ function hash()
 		showformlist();
 	else if (hash == 'track')
 		showtrack();
+	else if(window.localtion.href.indexOf('/admin')>0)
+		{
+			if(hash == '')
+				showDash();
+			else if(hash == 'dept')
+				showDept();
+			else if(hash == 'formC')
+				showFormC();
+			else if(hash == 'formR')
+				showFormR();
+			else if(hash == 'userP')
+				showUserP();
+		}
 }
 
 
@@ -199,4 +246,9 @@ function form1_submit(){
 	var organizer=$('#form1_name').val();
 	
 }
-	
+function logout(){
+	$.get('login.php?logout',function(data){
+		if (data==1)
+			window.location.href="./#login";
+	})
+}	
