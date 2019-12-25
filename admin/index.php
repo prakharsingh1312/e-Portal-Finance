@@ -83,6 +83,10 @@ demo.initDashboardPageCharts();
 
 });
 	showDash();
+	$(window).bind('hashchange', function ()
+		{
+			hash();
+		});
 </script>
 </body>
 
