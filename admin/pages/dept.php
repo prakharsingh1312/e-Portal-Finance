@@ -111,14 +111,15 @@
             </table>
           </div>
         </div>
+        <button class="btn btn-primary push-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Add Department
+        </button>
       </div>
     </div>
   </div>
-  <div class="row">
-    <button class="btn btn-primary push-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Add Department
-    </button>
-  </div>
+
+
+
 </div>
 <!-- <div class="container">
   <div class="row">
