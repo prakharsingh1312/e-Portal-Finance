@@ -136,7 +136,7 @@
   </div>
 
 </div>
-<div class="content">
+<div class="content" style="padding:0 30px 30px; min-height:calc(100vh - 123px); margin-top:-30px;">
   <div class="row">
     <div class="col-md-12">
       <div class="card">
