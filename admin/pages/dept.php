@@ -110,7 +110,8 @@
               </tbody>
             </table>
           </div>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+
+          <button type="button" class="btn btn-primary push-right" data-toggle="modal" data-target="#exampleModal">
           Add Department
         </button>
         </div>
@@ -125,6 +126,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add a New Department</h5>
+        <!-- <h5 class="modal-title" id="exampleModalLabel">Edit an Existing Department</h5> -->
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -133,12 +135,15 @@
         <form>
           <div class="form-group">
             <label for="exampleInputEmail1">Department Name :</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+            <!-- <label for="exampleInputEmail1">Department Name :</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> -->
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Department Abbriviation :</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+            <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
           </div>
 
 
@@ -148,6 +153,8 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
         <button type="button" class="btn btn-primary">Add Department</button>
+        <!-- <button type="button" class="btn btn-primary">Save Department</button> -->
+
       </div>
     </div>
   </div>
