@@ -88,13 +88,13 @@
               <div class="col-md-3 px-1">
                 <div class="form-group">
                   <label>Username</label>
-                  <input type="text" class="form-control" disabled="" placeholder="Username" value="<?php echo result['user_username'] ?>">
+                  <input type="text" class="form-control" disabled="" placeholder="Username" value="<?php echo $_SESSION['user_username'] ?>">
                 </div>
               </div>
               <div class="col-md-4 pl-1">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" placeholder="<?php echo result['user_email'] ?>">
+                  <input type="email" class="form-control" placeholder="<?php echo $_SESSION['user_email'] ?>">
                 </div>
               </div>
             </div>
@@ -102,7 +102,7 @@
               <div class="col-md-12 pr-1">
                 <div class="form-group">
                   <label>First Name</label>
-                  <input type="text" class="form-control" placeholder="Company" value="<?php echo result['user_name'] ?>">
+                  <input type="text" class="form-control" placeholder="Company" value="<?php echo $_SESSION['user_name'] ?>">
                 </div>
               </div>
             </div>
@@ -110,7 +110,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label>Department</label>
-                  <input type="text" class="form-control" disabled="" placeholder="Home Address" value="<?php echo result['user_dept'] ?>">
+                  <input type="text" class="form-control" disabled="" placeholder="Home Address" value="<?php echo $_SESSION['user_dept'] ?>">
                 </div>
               </div>
             </div>
