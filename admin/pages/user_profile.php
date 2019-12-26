@@ -1,13 +1,4 @@
-<?php
-    include('../../assets/php/functions.php');
-    $sql="SELECT * FROM user_accounts WHERE user_id = 1";
 
-    $result = $dbconfig->prepare($sql);
-    $result->execute();
-    $result=$result->get_result();
-    $result = $result->fetch_assoc();
-
- ?>
 <div class="panel-header panel-header-lg">
   <h2 align="center" class="d-sm-block" style="color:white;">WELCOME TO YOUR DASHBOARD</h2>
   <div class="container">
@@ -91,7 +82,7 @@
               <div class="col-md-5 pr-1">
                 <div class="form-group">
                   <label>User ID</label>
-                  <input type="text" class="form-control" disabled="" placeholder="Company" value="<?php echo result['user_id'] ?>">
+                  <input type="text" class="form-control" disabled="" placeholder="Company" value="<?php echo $_SESSION['user_id'] ?>">
                 </div>
               </div>
               <div class="col-md-3 px-1">
