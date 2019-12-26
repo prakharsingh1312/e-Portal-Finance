@@ -70,7 +70,7 @@
   </div>
 </div>
 </div>
-<div class="content">
+<div class="content" style="padding:0 30px 30px; min-height:calc(100vh - 123px); margin-top:-30px;">
   <div class="row">
     <div class="col-md-8">
       <div class="card">
@@ -149,6 +149,9 @@
                 </div>
               </div>
             </div> -->
+            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
+            Save Changes
+          </button>
           </form>
         </div>
       </div>
@@ -189,4 +192,41 @@
       </div>
     </div>
   </div>
+</div>
+
+
+
+<!-- MODAL -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Authentication Required</h5>
+        <!-- <h5 class="modal-title" id="exampleModalLabel">Edit an Existing Department</h5> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Pls Enter your password</label>
+            <input type="Password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Password">
+            <!-- <label for="exampleInputEmail1">Department Name :</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> -->
+          </div>
+
+
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
+        <button type="button" class="btn btn-primary">Update Changes</button>
+        <!-- <button type="button" class="btn btn-primary">Save Department</button> -->
+
+      </div>
+    </div>
+  </div>
+</div>
 </div>
