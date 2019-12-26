@@ -88,7 +88,7 @@
               <div class="col-md-3 px-1">
                 <div class="form-group">
                   <label>Username</label>
-                  <input type="text" class="form-control" disabled="" placeholder="Username" value="<?php echo $_SESSION['user_username'] ?>">
+                  <input type="text" class="form-control" disabled="" placeholder="Username" value="<?php echo $_SESSION['username'] ?>">
                 </div>
               </div>
               <div class="col-md-4 pl-1">

@@ -1,6 +1,6 @@
 <?php
 include('config.php');
-    
+
 
 	$dbconfig = new mysqli(global_mysqli_server,global_mysqli_user,global_mysqli_password,global_mysqli_database);
 	function encrypt_password($password)
@@ -18,16 +18,17 @@ include('config.php');
             $stmt->execute();
             $result=$stmt->get_result();
             if($result->num_rows == 1){
-				
+
                 $result=$result->fetch_assoc();
                 $_SESSION['user_id']=$result['user_id'];
                 $_SESSION['username']=$result['user_username'];
 				$_SESSION['user_role']=$result['user_role'];
 				$_SESSION['user_dept']=$result['user_dept'];
 				$_SESSION['user_name']=$result['user_name'];
-				
+        $_SESSION['user_email']=$result['user_email'];
+
                 return 1;
-                
+
             }
             else{
                 return 0;
@@ -42,9 +43,9 @@ include('config.php');
         $stmt->execute();
         $stmt->free_result();
         $stmt->close();
-        
+
     }
-        
+
 	function logged_in(){
 		if(isset($_SESSION['user_id']))
 			return 1;
