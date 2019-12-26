@@ -82,14 +82,14 @@
             <div class="row">
               <div class="col-md-5 pr-1">
                 <div class="form-group">
-                  <label>Company (disabled)</label>
-                  <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+                  <label>User ID</label>
+                  <input type="text" class="form-control" disabled="" placeholder="Company" value="INSERT">
                 </div>
               </div>
               <div class="col-md-3 px-1">
                 <div class="form-group">
                   <label>Username</label>
-                  <input type="text" class="form-control" placeholder="Username" value="michael23">
+                  <input type="text" class="form-control" disabled="" placeholder="Username" value="INSERT">
                 </div>
               </div>
               <div class="col-md-4 pl-1">
@@ -116,12 +116,12 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label>Address</label>
-                  <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                  <label>Department</label>
+                  <input type="text" class="form-control" disabled="" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
                 </div>
               </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-md-4 pr-1">
                 <div class="form-group">
                   <label>City</label>
@@ -148,7 +148,7 @@
                   <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
                 </div>
               </div>
-            </div>
+            </div> -->
           </form>
         </div>
       </div>
