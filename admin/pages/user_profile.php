@@ -157,37 +157,40 @@
       </div>
     </div>
     <div class="col-md-4">
-      <div class="card card-user">
-        <div class="image">
-          <img src="../assets/img/bg5.jpg" alt="...">
+      <div class="card ">
+        <div class="card-header">
+          <h5 class="title">Change password</h5>
         </div>
         <div class="card-body">
-          <div class="author">
-            <a href="#">
-              <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
-              <h5 class="title">Mike Andrew</h5>
-            </a>
-            <p class="description">
-              michael24
-            </p>
-          </div>
-          <p class="description text-center">
-            "Lamborghini Mercy <br>
-            Your chick she so thirsty <br>
-            I'm in that two seat Lambo"
-          </p>
-        </div>
-        <hr>
-        <div class="button-container">
-          <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
-            <i class="fab fa-facebook-f"></i>
+          <form >
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Previous Password</label>
+                  <input type="password" class="form-control" disabled="" placeholder="Home Address" value="Previous Password">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>New Password</label>
+                  <input type="password" class="form-control" disabled="" placeholder="Home Address" value="New Password">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Confirm Password</label>
+                  <input type="password" class="form-control" disabled="" placeholder="Home Address" value="Confirm Password">
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn btn-primary float-right" data-toggle="modal">
+            Save Changes
           </button>
-          <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
-            <i class="fab fa-twitter"></i>
-          </button>
-          <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
-            <i class="fab fa-google-plus-g"></i>
-          </button>
+          </form>
         </div>
       </div>
     </div>
@@ -210,7 +213,7 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="exampleInputEmail1">Pls Enter your password</label>
+            <label for="exampleInputEmail1">Enter your password</label>
             <input type="Password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Password">
             <!-- <label for="exampleInputEmail1">Department Name :</label>
             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> -->
