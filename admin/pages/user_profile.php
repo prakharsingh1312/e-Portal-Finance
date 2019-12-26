@@ -1,5 +1,13 @@
+<?php
+    include('../assets/php/functions.php');
+    $sql="SELECT * FROM user_accounts WHERE user_id = 1";
 
-<!-- End Navbar -->
+    $result = $dbconfig->prepare($sql);
+    $result->execute();
+    $result=$result->get_result();
+    $result = $result->fetch_assoc();
+
+ ?>
 <div class="panel-header panel-header-lg">
   <h2 align="center" class="d-sm-block" style="color:white;">WELCOME TO YOUR DASHBOARD</h2>
   <div class="container">
@@ -83,33 +91,27 @@
               <div class="col-md-5 pr-1">
                 <div class="form-group">
                   <label>User ID</label>
-                  <input type="text" class="form-control" disabled="" placeholder="Company" value="INSERT">
+                  <input type="text" class="form-control" disabled="" placeholder="Company" value="<?php echo result['user_id'] ?>">
                 </div>
               </div>
               <div class="col-md-3 px-1">
                 <div class="form-group">
                   <label>Username</label>
-                  <input type="text" class="form-control" disabled="" placeholder="Username" value="INSERT">
+                  <input type="text" class="form-control" disabled="" placeholder="Username" value="<?php echo result['user_username'] ?>">
                 </div>
               </div>
               <div class="col-md-4 pl-1">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" placeholder="Email">
+                  <input type="email" class="form-control" placeholder="<?php echo result['user_email'] ?>">
                 </div>
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 pr-1">
+              <div class="col-md-12 pr-1">
                 <div class="form-group">
                   <label>First Name</label>
-                  <input type="text" class="form-control" placeholder="Company" value="Mike">
-                </div>
-              </div>
-              <div class="col-md-6 pl-1">
-                <div class="form-group">
-                  <label>Last Name</label>
-                  <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
+                  <input type="text" class="form-control" placeholder="Company" value="<?php echo result['user_name'] ?>">
                 </div>
               </div>
             </div>
@@ -117,7 +119,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label>Department</label>
-                  <input type="text" class="form-control" disabled="" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                  <input type="text" class="form-control" disabled="" placeholder="Home Address" value="<?php echo result['user_dept'] ?>">
                 </div>
               </div>
             </div>
@@ -167,7 +169,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label>Previous Password</label>
-                  <input type="password" class="form-control" disabled="" placeholder="Home Address" value="Previous Password">
+                  <input type="password" class="form-control" placeholder="Home Address" value="">
                 </div>
               </div>
             </div>
@@ -175,7 +177,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label>New Password</label>
-                  <input type="password" class="form-control" disabled="" placeholder="Home Address" value="New Password">
+                  <input type="password" class="form-control" placeholder="Home Address" value="">
                 </div>
               </div>
             </div>
@@ -183,7 +185,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label>Confirm Password</label>
-                  <input type="password" class="form-control" disabled="" placeholder="Home Address" value="Confirm Password">
+                  <input type="password" class="form-control" placeholder="Home Address" value="">
                 </div>
               </div>
             </div>
