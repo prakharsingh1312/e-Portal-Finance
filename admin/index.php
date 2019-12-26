@@ -62,7 +62,7 @@ if (!logged_in()){
 	 </div>
 
 	 <!-- modal -->
-	 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	 <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	 <script>
 	 dialog = $( "#dialog-form" ).dialog({
@@ -91,7 +91,7 @@ if (!logged_in()){
       dialog.dialog( "open" );
     });
   } );
-  </script>
+  </script> -->
 
 
 

@@ -114,25 +114,30 @@
       </div>
     </div>
   </div>
-  <button id="create-user">Create new user</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
 
-  <div id="dialog-form" title="Create new user">
-    <p class="validateTips">All form fields are required.</p>
-
-    <form>
-      <fieldset>
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
-        <label for="email">Email</label>
-        <input type="text" name="email" id="email" value="jane@smith.com" class="text ui-widget-content ui-corner-all">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" value="xxxxxxx" class="text ui-widget-content ui-corner-all">
-
-        <!-- Allow form submission with keyboard without duplicating the dialog button -->
-        <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
-      </fieldset>
-    </form>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
   </div>
+</div>
 
 </div>
 <!-- <div class="container">
