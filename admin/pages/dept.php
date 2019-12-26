@@ -131,14 +131,16 @@
       </div>
       <div class="modal-body">
         <form class="" action="index.html" method="post">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Department Name</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Department Name</label>
+            <div class="col-sm-10">
+              <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
             </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Department Abbriviation</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Department Abbriviation</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputPassword" placeholder="Password">
             </div>
           </div>
         </form>
