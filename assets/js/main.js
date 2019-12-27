@@ -109,6 +109,30 @@ $(document).ready( function()
 			else
 			{show_input('#form1_24');$('#form1_signhod').attr('required','1');}
 		 });
+	$(document).on('change','#form1_relevance_text',function(){ 
+			if($('#form1_relevance_text').val()!='')
+			{hide_input('#form1_relevance');$('#form1_relevance').removeAttr('required');}
+			else
+			{show_input('#form1_relevance');$('#form1_relevance').attr('required','1');}
+		 });
+	$(document).on('change','#form1_relevance',function(){ 
+			if($('#form1_relevance_text').val()!='')
+			{hide_input('#form1_relevance_text');$('#form1_relevance_text').removeAttr('required');}
+			else
+			{show_input('#form1_relevance_text');$('#form1_relevance_text').attr('required','1');}
+		 });
+	$(document).on('change','#form1_objective_text',function(){ 
+			if($('#form1_objective_text').val()!='')
+			{hide_input('#form1_objective');$('#form1_objective').removeAttr('required');}
+			else
+			{show_input('#form1_objective');$('#form1_objective').attr('required','1');}
+		 });
+	$(document).on('change','#form1_objective',function(){ 
+			if($('#form1_objective').val()!='')
+			{hide_input('#form1_objective_text');$('#form1_objective_text').removeAttr('required');}
+			else
+			{show_input('#form1_objective_text');$('#form1_objective_text').attr('required','1');}
+		 });
 	$(document).on('change','#form1_research',function(){ 
 			if($('#form1_research').val()=='no')
 			{hide_input('#form1_16');$('#form1_title').removeAttr('required');
@@ -251,7 +275,18 @@ function input_focus(id)
 function form1_submit(){
 	var form=$('#form1')[0];
 	var formdata=new FormData(form);
-	
+	if(validate_name(formdata.get('name'))){
+		if(validate_roll(formdata.get('roll'))){
+			
+		}
+		else{
+			form_error('Roll no. format incorrect.')
+		}
+	}
+	else
+		{
+			form_error('Name cannot contain letters or symbols.');
+		}
 }
 function logout(){
 	$.get('../login.php?logout',function(data){
@@ -272,4 +307,12 @@ function linkChange(id){
 		else
 			$(value).removeClass('active');
 	});
+}
+function validate_name(name){
+	var regex = new RegExp("^[a-zA-Z]+$");
+	if(regex.test(name))
+		return 1;
+	else
+		return 0;
+	
 }

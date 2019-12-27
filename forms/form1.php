@@ -117,7 +117,7 @@
 <div class="form-row">
 <div class="form-group" >
   <!-- <label for="organizer">8. Organizer of the event :</label> -->
-  <input type="text" name="organizer" id="organizer" placeholder="Leave blank if file attached" required />
+  <input type="text" name="relevalce_text" id="form1_relevance_text" placeholder="Leave blank if file attached" required />
 </div>
           <div class="form-group">
             <div class="input-group">
@@ -136,7 +136,7 @@
           <div class="form-row">
             <div class="form-group">
               <!-- <label for="organizer">8. Organizer of the event :</label> -->
-              <input type="text" name="organizer" id="organizer" placeholder="Leave blank if file attached" required />
+              <input type="text" name="objective_text" id="form1_objective_text" placeholder="Leave blank if file attached" required />
             </div>
 <div class="form-group">
             <div class="input-group">
