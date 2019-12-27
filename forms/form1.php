@@ -2,15 +2,20 @@
     include('../assets/php/functions.php');
     if(isset($_POST['form_id']))
 		$_SESSION['form_id']=mysqli_real_escape_string($dbconfig,$_POST['form_id']);
+	if(isset($_GET['submit_form']) && isset($_POST['name'])){
+		echo submit_form1($_POST,$_FILES);
+	}
+	else{
     $result = get_form_details($_SESSION['form_id']);
+		echo'
    
- ?>
+ 
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title><?php echo $result['form_title']; ?></title>
+<title>'. $result['form_title'].'</title>
 
   <!-- Font Icon -->
   <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -27,11 +32,11 @@
     <h3 class="center" style="text-align:center;  color:white; padding-top:0px;">DR. B. R. AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY, JALANDHAR-144011</h3>
 
     <div class="container" id="container">
-      <h2 class="center" style="text-align:center; padding-top:30px;"><?php echo $result['form_subtitle']; ?></h2>
+      <h2 class="center" style="text-align:center; padding-top:30px;">'. $result['form_subtitle'].'</h2>
       <div class="signup-content">
         <form method="POST" class="register-form" id="register-form" action=".">
           <h2 class="display-6" style="color:#dc5a00;">Important Guidelines</h2>
-            <p style="font-size:1.2rem;"> <?php echo $result['form_guidelines']; ?></p>
+            <p style="font-size:1.2rem;">'. $result['form_guidelines'].'</p>
         </form>
 
 
@@ -225,7 +230,7 @@
             <div class="form-row">
 <div class="form-group">
   <!-- <label for="organizer">8. Organizer of the event :</label> -->
-  <input type="text" name="organizer" id="organizer" placeholder="Leave blank if file attached" required />
+  <input type="text" name="cost_details_text" id="form1_cost_details_text" placeholder="Leave blank if file attached" required />
 </div>
             <div class="form-group">
               <div class="input-group">
@@ -335,21 +340,23 @@
 	 <script>
 		
 	   $("#form1_from_date" ).datetimepicker({
-        format: 'd/m/y',
+        format: \'d/m/y\',
         timepicker: false,});
 		 
 		 $("#form1_to_date" ).datetimepicker({
-        format: 'd/m/y',
+        format: \'d/m/y\',
         timepicker: false,});
 		 
 		 $("#form1_date_time_a" ).datetimepicker({
-        dateFormat: 'dd/mm/yy',
-        timeFormat: 'HH:mm:ss',});
+        dateFormat: \'dd/mm/yy\',
+        timeFormat: \'HH:mm:ss\',});
 		 
 		 $("#form1_date_time_d" ).datetimepicker({
-        dateFormat: 'dd/mm/yy',
-        timeFormat: 'HH:mm:ss',});</script> 
+        dateFormat: \'dd/mm/yy\',
+        timeFormat: \'HH:mm:ss\',});</script> 
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
-</html>
+</html>';
+	}
+		?>

@@ -36,15 +36,7 @@ include('config.php');
             $stmt->free_result();
             $stmt->close();
         }
-    function form_1($data_fields){
-        global $dbconfig;
-        $stmt = $dbconfig->prepare("INSERT INTO `form_type1_responses`(`response_id`,`form_id`,`response_code`,`name_of_code`,`name_of_student`,`course`,`roll_no`,`department`,`nature_of_event`,`name_of_event`,`place_of_event`,`duration_from`,`duration_to`,`duration_days`,`organizer_of_event`,`relevance_of_visit`,`objective_of_visit`,`attached_cv`,`attached_certificate_hod`,`date_and_time_departure`,`date_and_time_arrival`,`research_paper`,`title_of_paper`,`accepted_paper_acceptance_letter`,`total_cost`,`total_cost_words`,`cost_details`,`registration_fees`,`transportation_allowance`,`other_costs`,`cgpa`,`sci_journal`,`signature_student`,`signature_supervisor`,`recommendation_hod`,`signature_hod`,`STATUS`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-        $stmt->bind_param(); //pending
-        $stmt->execute();
-        $stmt->free_result();
-        $stmt->close();
-
-    }
+   
 
 	function logged_in(){
 		if(isset($_SESSION['user_id']))
@@ -100,5 +92,41 @@ function get_forms(){
 	$return.='</div>
       </div>';
 	return $return;
+}
+function submit_form1($post,$files){
+	$response_code=generate_response_code();
+	$relevance_file='N';
+	$objective_file='N';
+	$cost_detail_file='N';
+	if($post['relevance_text']==''){
+		$relevance_file='Y';
+		$post['relevance_text']=upload_file($files['relevance']);
+		
+	}
+	if($post['objective_text']==''){
+		$objective_file='Y';
+		$post['objective_text']=upload_file($files['objective']);
+	}
+	if($post[''])
+	global $dbconfig;
+        $stmt = $dbconfig->prepare("INSERT INTO `form_type1_responses`(`response_id`,`form_id`,`response_code`,`name_of_code`,`name_of_student`,`course`,`roll_no`,`department`,`nature_of_event`,`name_of_event`,`place_of_event`,`duration_from`,`duration_to`,`duration_days`,`organizer_of_event`,`relevance_of_visit`,`objective_of_visit`,`attached_cv`,`attached_certificate_hod`,`date_and_time_departure`,`date_and_time_arrival`,`research_paper`,`title_of_paper`,`accepted_paper_acceptance_letter`,`total_cost`,`total_cost_words`,`cost_details`,`registration_fees`,`transportation_allowance`,`other_costs`,`cgpa`,`sci_journal`,`signature_student`,`signature_supervisor`,`recommendation_hod`,`signature_hod`,`STATUS`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $stmt->bind_param(); //pending
+        $stmt->execute();
+        $stmt->free_result();
+        $stmt->close();
+
+}
+function generate_response_code(){
+	global $dbconfig;
+	$result=get_form_details($_SESSION['form_id']);
+	$number="";
+	$number.=$result['form_code'];
+	$query=$dbconfig->prepare('SELECT MAX(response_id) FROM form_type1_responses');
+	$query->execute();
+	$query=$query->get_result();
+	$query=$query->fetch_assoc();
+	$hex=dechex($query['MAX(response_id)']==NULL?1:$query['MAX(response_id)']+1);
+	$number.=str_pad($hex, 10, '0', STR_PAD_LEFT);
+	return $number;
 }
 ?>

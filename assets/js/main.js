@@ -133,6 +133,18 @@ $(document).ready( function()
 			else
 			{show_input('#form1_objective_text');$('#form1_objective_text').attr('required','1');}
 		 });
+	$(document).on('input','#form1_cost_details_text',function(){ 
+			if($('#form1_cost_details_text').val()!='')
+			{hide_input('#form1_cost_details');$('#form1_cost_details').removeAttr('required');}
+			else
+			{show_input('#form1_cost_details');$('#form1_cost_details').attr('required','1');}
+		 });
+	$(document).on('input','#form1_cost_details',function(){ 
+			if($('#form1_cost_details').val()!='')
+			{hide_input('#form1_cost_details_text');$('#form1_cost_details_text').removeAttr('required');}
+			else
+			{show_input('#form1_cost_details_text');$('#form1_cost_details_text').attr('required','1');}
+		 });
 	$(document).on('change','#form1_research',function(){ 
 			if($('#form1_research').val()=='no')
 			{hide_input('#form1_16');$('#form1_title').removeAttr('required');
