@@ -1,11 +1,8 @@
 <?php
     include('../assets/php/functions.php');
-    $sql="SELECT * FROM form_details WHERE form_id = 1";
-    
-    $result = $dbconfig->prepare($sql);
-    $result->execute();
-    $result=$result->get_result();
-    $result = $result->fetch_assoc();
+    if(isset($_POST['form_id']))
+		$_SESSION['form_id']=mysqli_real_escape_string($_POST['form_id']);
+    $result = get_form_details($_SESSION['form_id']);
    
  ?>
 <!DOCTYPE html>
@@ -29,7 +26,7 @@
   <div class="main">
     <h3 class="center" style="text-align:center;  color:white; padding-top:0px;">DR. B. R. AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY, JALANDHAR-144011</h3>
 
-    <div class="container">
+    <div class="container" id="container">
       <h2 class="center" style="text-align:center; padding-top:30px;"><?php echo $result['form_subtititle']; ?></h2>
       <div class="signup-content">
         <form method="POST" class="register-form" id="register-form" action=".">
@@ -319,10 +316,10 @@
           </div>
           <br>
 
-
+<span id="error_span" style="color:red"></span>
           <div class="form-submit">
-            <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
-            <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />
+            <input type="button" value="Reset All" class="submit" name="reset" id="reset" />
+            <input type="submit" value="Submit Form" class="submit" name="submit" id="submitForm" />
           </div>
         </form>
       </div>

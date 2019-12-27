@@ -277,15 +277,38 @@ function form1_submit(){
 	var formdata=new FormData(form);
 	if(validate_name(formdata.get('name'))){
 		if(validate_number(formdata.get('roll'),8)){
-		
+		$("#submitForm").prop("disabled", true);
+
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "./forms/form1.php?submit_form",
+            data: formdata,
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 600000,
+            success: function (data) {
+				$('#container').html(data);
+				$("#btnSubmit").prop("disabled", false);
+
+            },
+            error: function (e) {
+
+                form_error('Error submitting form please try again.','#submitForm')
+                console.log("ERROR : ", e);
+                $("#btnSubmit").prop("disabled", false);
+
+            }
+		});
 		}
 		else{
-			form_error('Roll no. format incorrect.')
+			form_error('Roll no. format incorrect.','#form1_roll')
 		}
 	}
 	else
 		{
-			form_error('Name cannot contain letters or symbols.');
+			form_error('Name cannot contain letters or symbols.','#form1_name');
 		}
 }
 function logout(){
@@ -315,4 +338,16 @@ function validate_name(name){
 	else
 		return 0;
 	
+}
+function validate_number(number,len){
+	var regexPattern=new RegExp(/^[0-9-+]+$/);
+	if(regex.test(number)&& number.length()==len)
+		return 1;
+	else
+		return 0;
+	
+}
+function form_error(text,input){
+	$.('#error_span').html(text);
+	input_focus(input);
 }

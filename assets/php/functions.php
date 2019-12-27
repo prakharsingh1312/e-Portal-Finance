@@ -2,7 +2,7 @@
 include('config.php');
 
 
-	$dbconfig = new mysqli(global_mysqli_server,global_mysqli_user,global_mysqli_password,global_mysqli_database);
+	
 	function encrypt_password($password)
 	{
 		$password = crypt($password, '$1$' . global_salt);
@@ -55,5 +55,48 @@ include('config.php');
 function logout(){
 	session_destroy();
 	return 1;
+}
+function get_form_details($formid){
+	global $dbconfig;
+	$sql="SELECT * FROM form_details WHERE form_id = ?";
+    
+    $result = $dbconfig->prepare($sql);
+	$result = $result->bind_param('i',$formid);
+    $result->execute();
+    $result=$result->get_result();
+	$result=$result->fetch_assoc();
+	return $result;
+	
+}
+function get_forms(){
+	$return='<div class="page-header-image" data-parallax="true" style="background-image:url(\'./assets/img/header.jpg\');">
+      </div>
+<div class="container">
+		<div class="content-center brand">
+		<div id="notification_div"><div id="notification_inner_div"><div id="notification_inner_cell_div"></div></div></div>
+		<h1>Forms Available</h1>';
+	global $dbconfig;
+	$sql="SELECT * FROM form_details ";
+    $result = $dbconfig->prepare($sql);
+    $result->execute();
+    $result=$result->get_result();
+	while($form=$result->fetch_assoc()){
+		$return.= '<div class="col-md-6 ml-auto mr-auto">
+	          <div class="card card-login card-plain">
+							<div class="card" style="width: 18rem; background-color:#212529;">
+	  						<img src="'.$form['form_image'].'" class="card-img-top" alt="form-1" style="display:inline-block;">
+	  						<div class="card-body">
+	    						<h5 class="card-title" style="textcolor:black;">'.$form['form_title'].'</h5>
+	    						<p class="card-text">'.$form['form_subtitle'].'</p>
+	    						<form method="POST" action="./forms/form'.$form['form_format'].'.php"><input type="submit" class="btn btn-primary" value="Fill Up the Form"></form>
+	  						</div>
+							</div>
+            </div>
+          </div>';
+		
+	}
+	$return.='</div>
+      </div>';
+	return $return;
 }
 ?>
