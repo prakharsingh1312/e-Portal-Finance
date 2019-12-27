@@ -117,14 +117,14 @@
 <div class="form-row">
 <div class="form-group" >
   <!-- <label for="organizer">8. Organizer of the event :</label> -->
-  <input type="text" name="relevalce_text" id="form1_relevance_text" placeholder="Leave blank if file attached" required />
+  <input type="text" name="relevance_text" id="form1_relevance_text" placeholder="Leave blank if file attached" required />
 </div>
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-prepend">
               </div>
               <div class="custom-file">
-                <input type="file" class="custom-file-input" name="relevance" id="form1_relevance" aria-describedby="inputGroupFileAddon01">
+                <input type="file" class="custom-file-input" name="relevance" id="form1_relevance" aria-describedby="inputGroupFileAddon01" accept="application/pdf">
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@
                 
               </div>
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="form1_objective" name="objective" aria-describedby="inputGroupFileAddon01">
+                <input type="file" class="custom-file-input" id="form1_objective" name="objective" aria-describedby="inputGroupFileAddon01" accept="application/pdf">
               </div>
             </div>
 </div>
@@ -279,7 +279,7 @@
                   <label class="custom-file-label" for="form1_signstudent">21. Signature of the Student</label>
                 </div>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="form1_signstudent" aria-describedby="inputGroupFileAddon01">
+                  <input type="file" class="custom-file-input" id="form1_signstudent" aria-describedby="inputGroupFileAddon01" accept="image/jpeg">
                 </div>
               </div>
             </div>
@@ -289,7 +289,7 @@
                   <label class="custom-file-label" for="form1_signsupervisor">22. Signature of the Supervisor</label>
                 </div>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="form1_signsupervisor" aria-describedby="inputGroupFileAddon01">
+                  <input type="file" class="custom-file-input" id="form1_signsupervisor" aria-describedby="inputGroupFileAddon01" accept="image/jpeg">
                 </div>
               </div>
             </div>
@@ -312,7 +312,7 @@
                   <label class="custom-file-label" for="form1_signhod">24. Signature of the Hod (with seal) :</label>
                 </div>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="form1_signhod" aria-describedby="inputGroupFileAddon01">
+                  <input type="file" class="custom-file-input" id="form1_signhod" aria-describedby="inputGroupFileAddon01" accept="image/jpeg">
                 </div>
               </div>
             </div>
