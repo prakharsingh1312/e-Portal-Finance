@@ -348,6 +348,6 @@ function validate_number(number,len){
 	
 }
 function form_error(text,input){
-	$.('#error_span').html(text);
+	$('#error_span').html(text);
 	input_focus(input);
 }
