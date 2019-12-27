@@ -338,11 +338,11 @@
 	 <script>
 		
 	   $("#form1_from_date" ).datetimepicker({
-        dateFormat: 'dd/mm/yy',
+        format: 'dd/mm/yy',
         timepicker: false,});
 		 
 		 $("#form1_to_date" ).datetimepicker({
-        dateFormat: 'dd/mm/yy',
+        format: 'dd/mm/yy',
         timepicker: false,});
 		 
 		 $("#form1_date_time_a" ).datetimepicker({
