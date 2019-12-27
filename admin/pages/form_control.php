@@ -121,7 +121,9 @@
                     </div>
                   </td>
                   <td class="text-right">
-                     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#examplemodal">Edit</button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
+                    Edit
+                  </button>
                   </td>
                 </tr>
                 <?php } ?>
