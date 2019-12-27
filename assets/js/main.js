@@ -109,23 +109,25 @@ $(document).ready( function()
 			else
 			{show_input('#form1_24');$('#form1_signhod').attr('required','1');}
 		 });
-	$(document).on('click keyup','#form1_relevance_text',function(){ 
+	$(document).on('input','#form1_relevance_text',function(){ 
 			if($('#form1_relevance_text').val()!='')
 			{hide_input('#form1_relevance');$('#form1_relevance').removeAttr('required');}
 			else
 			{show_input('#form1_relevance');$('#form1_relevance').attr('required','1');}
-		  
+		 });
+	$(document).on('input','#form1_relevance',function(){ 
 			if($('#form1_relevance_text').val()!='')
 			{hide_input('#form1_relevance_text');$('#form1_relevance_text').removeAttr('required');}
 			else
 			{show_input('#form1_relevance_text');$('#form1_relevance_text').attr('required','1');}
 		 });
-	$(document).on('click keyup','#form1_objective_text',function(){ 
+	$(document).on('input','#form1_objective_text',function(){ 
 			if($('#form1_objective_text').val()!='')
 			{hide_input('#form1_objective');$('#form1_objective').removeAttr('required');}
 			else
 			{show_input('#form1_objective');$('#form1_objective').attr('required','1');}
-	
+		 });
+	$(document).on('input','#form1_objective',function(){ 
 			if($('#form1_objective').val()!='')
 			{hide_input('#form1_objective_text');$('#form1_objective_text').removeAttr('required');}
 			else
