@@ -141,7 +141,19 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title" style="margin-left:1%;"> Applications</h4>
+          <div class="row">
+            <h4 class="card-title col-md-6" style="margin-left:1%;"> Applications</h4>
+            <div class="dropdown col-md-6">
+              <button class="btn btn-secondary dropdown-toggle float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Select form
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -154,7 +166,7 @@
                   Roll Number
                 </th>
                 <th>
-                  Department
+                  Form Category
                 </th>
                 <th class="text-right">
                   Options

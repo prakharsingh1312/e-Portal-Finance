@@ -1,3 +1,11 @@
+<?php
+    include('../../assets/php/functions.php');
+    $sql="SELECT * FROM departments ";
+
+    $result = $dbconfig->prepare($sql);
+    $result->execute();
+    $result=$result->get_result();
+ ?>
 <div class="panel-header panel-header-lg">
   <h2 align="center" class="d-sm-block" style="color:white;">WELCOME TO YOUR DASHBOARD</h2>
   <div class="container">
@@ -73,7 +81,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title col-" style="margin-left:1%;"> Applications</h4>
+          <h4 class="card-title col-" style="margin-left:1%;"> List of Departments</h4>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -93,20 +101,22 @@
                 </th>
               </thead>
               <tbody>
+                <?php while($result1 = $result->fetch_assoc()){ ?>
                 <tr>
                   <td>
-                    Dakota Rice
+                    <?php echo htmlspecialchars($result1['department_id']); ?>
                   </td>
                   <td>
-                    Niger
+                    <?php echo htmlspecialchars($result1['department_abbriviation']); ?>
                   </td>
                   <td>
-                    Oud-Turnhout
+                    <?php echo htmlspecialchars($result1['department_name']); ?>
                   </td>
                   <td class="text-right">
                      <a href="#" >Edit</a> or <a href="#">Delete</a>
                   </td>
                 </tr>
+                <?php } ?>
               </tbody>
             </table>
           </div>
