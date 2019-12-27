@@ -1,5 +1,5 @@
 <?php
-    include('../assets/php/functions.php');
+    include('../../assets/php/functions.php');
     $sql="SELECT * FROM user_accounts ";
 
     $result = $dbconfig->prepare($sql);
