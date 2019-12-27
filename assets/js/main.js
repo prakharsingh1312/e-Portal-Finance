@@ -116,7 +116,7 @@ $(document).ready( function()
 			{show_input('#form1_relevance');$('#form1_relevance').attr('required','1');}
 		 });
 	$(document).on('input','#form1_relevance',function(){ 
-			if($('#form1_relevance_text').val()!='')
+			if($('#form1_relevance').val()!='')
 			{hide_input('#form1_relevance_text');$('#form1_relevance_text').removeAttr('required');}
 			else
 			{show_input('#form1_relevance_text');$('#form1_relevance_text').attr('required','1');}
