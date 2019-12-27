@@ -61,8 +61,8 @@ function get_form_details($formid){
 	$sql="SELECT * FROM form_details WHERE form_id = ?";
     
     $result = $dbconfig->prepare($sql);
-	$result = $result->bind_param("i",$formid);
-    $result=$result->execute();
+	$result->bind_param("i",$formid);
+    $result->execute();
     $result=$result->get_result();
 	$result=$result->fetch_assoc();
 	return $result;
