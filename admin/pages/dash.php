@@ -147,7 +147,7 @@
 
           </div>
           <div class="card-header col-md-6 ">
-            <div class="dropdown float-right">
+            <div class="dropdown float-right" style="margin-right:5%;">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown button
               </button>
