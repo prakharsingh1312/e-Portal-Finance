@@ -1,7 +1,7 @@
 <?php
     include('../assets/php/functions.php');
     if(isset($_POST['form_id']))
-		$_SESSION['form_id']=mysqli_real_escape_string($_POST['form_id']);
+		$_SESSION['form_id']=mysqli_real_escape_string($dbconfig,$_POST['form_id']);
     $result = get_form_details($_SESSION['form_id']);
    
  ?>
