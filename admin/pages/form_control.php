@@ -110,7 +110,7 @@
                   <td>
                     <?php echo htmlspecialchars($result1['form_title']); ?>
                   </td>
-                  <td>
+                  <td class="text-right">
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                       <label class="btn btn-secondary active">
                         <input type="radio" name="options" id="option1" autocomplete="off" checked> Activated
