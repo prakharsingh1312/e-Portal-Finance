@@ -66,7 +66,7 @@
           <div class="form-row">
             <div class="form-group" id="form1_2">
               <label for="form1_roll">2. Roll No.</label>
-              <input type="text" name="roll" id="form1_roll" required />
+              <input type="number" name="roll" id="form1_roll" required />
             </div>
             <div class="form-group"id="form1_3">
               <label for="form1_department">3. Department</label>
@@ -103,7 +103,7 @@
               </div>
               <div class="form-group">
                 <label for="form1_no_of_days">No. of days :</label>
-                <input type="text" name="no_of_days" id="form1_no_of_days">
+                <input type="number" name="no_of_days" id="form1_no_of_days">
               </div>
             </div>
           </div>
@@ -258,7 +258,7 @@
           </div>
           <div class="form-group" id="form1_19">
             <label for="form1_cgpa">19. CGPA of the candidate (Only for UG / M.Tech and M.Sc students) : </label>
-            <input type="text" name="cgpa" id="form1_cgpa" required />
+            <input type="number" name="cgpa" id="form1_cgpa" step="0.01" min="0" max="10" required />
           </div>
 
           <div class="form-group" id="form1_20">

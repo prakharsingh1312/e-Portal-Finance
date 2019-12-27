@@ -276,8 +276,8 @@ function form1_submit(){
 	var form=$('#form1')[0];
 	var formdata=new FormData(form);
 	if(validate_name(formdata.get('name'))){
-		if(validate_roll(formdata.get('roll'))){
-			
+		if(validate_number(formdata.get('roll'),8)){
+		
 		}
 		else{
 			form_error('Roll no. format incorrect.')
