@@ -142,15 +142,15 @@
       <div class="card">
         <div class="row">
 
-        <div class="card-header col-md-6">
-            <h4 class="card-title " style="margin-left:1%;"> Applications</h4>
+          <div class="card-header col-md-6">
+              <h4 class="card-title " style="margin-left:5%;"> Applications</h4>
 
-        </div>
-        <div class="card-header col-md-6">
-            <h4 class="card-title " style="margin-left:1%;"> Applications</h4>
+          </div>
+          <div class="card-header col-md-6">
+              <h4 class="card-title " style="margin-left:1%;"> Applications</h4>
 
+          </div>
         </div>
-      </div>
 
         <div class="card-body">
           <div class="table-responsive">
