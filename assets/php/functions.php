@@ -88,7 +88,9 @@ function get_forms(){
 	  						<div class="card-body">
 	    						<h5 class="card-title" style="textcolor:black;">'.$form['form_title'].'</h5>
 	    						<p class="card-text">'.$form['form_subtitle'].'</p>
-	    						<form method="POST" action="./forms/form'.$form['form_format'].'.php"><input type="submit" class="btn btn-primary" value="Fill Up the Form"></form>
+	    						<form method="POST" action="./forms/form'.$form['form_format'].'.php">
+								<input type="hidden" value="'.$form['form_id'].'" name="form_id">
+								<input type="submit" class="btn btn-primary" value="Fill Up the Form"></form>
 	  						</div>
 							</div>
             </div>
