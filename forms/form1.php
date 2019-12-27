@@ -42,7 +42,7 @@
 
       </div>
       <div class="signup-content"  >
-        <form method="POST" class="register-form" id="register-form" action=".">
+        <form  class="register-form" id="form1" action="">
           <h2 class="display-6" style="color:#dc5a00;">FORM </h2>
           <div class="form-row" >
             <div class="form-group" id="form1_1">
