@@ -82,7 +82,7 @@
               <div class="col-md-5 pr-1">
                 <div class="form-group">
                   <label>User ID</label>
-                  <input type="text" class="form-control" disabled="" placeholder="Company" value="<?php echo $_SESSION['user_id'] ?>">
+                  <input type="text" class="form-control" disabled="" placeholder="User_ID" value="<?php echo $_SESSION['user_id'] ?>">
                 </div>
               </div>
               <div class="col-md-3 px-1">
@@ -94,7 +94,7 @@
               <div class="col-md-4 pl-1">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" placeholder="<?php echo $_SESSION['user_email'] ?>">
+                  <input type="email" class="form-control" placeholder="Email" value="<?php echo $_SESSION['user_email'] ?>">
                 </div>
               </div>
             </div>
@@ -102,7 +102,7 @@
               <div class="col-md-12 pr-1">
                 <div class="form-group">
                   <label>First Name</label>
-                  <input type="text" class="form-control" placeholder="Company" value="<?php echo $_SESSION['user_name'] ?>">
+                  <input type="text" class="form-control" placeholder="First Name" value="<?php echo $_SESSION['user_name'] ?>">
                 </div>
               </div>
             </div>
@@ -160,7 +160,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label>Previous Password</label>
-                  <input type="password" class="form-control" placeholder="Home Address" value="">
+                  <input type="password" class="form-control" placeholder="Previous Password" value="">
                 </div>
               </div>
             </div>
@@ -168,7 +168,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label>New Password</label>
-                  <input type="password" class="form-control" placeholder="Home Address" value="">
+                  <input type="password" class="form-control" placeholder="New password" value="">
                 </div>
               </div>
             </div>
@@ -176,7 +176,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label>Confirm Password</label>
-                  <input type="password" class="form-control" placeholder="Home Address" value="">
+                  <input type="password" class="form-control" placeholder="Confirm Password" value="">
                 </div>
               </div>
             </div>

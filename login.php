@@ -11,7 +11,7 @@ if(isset($_GET['login']))
 }
 else if(isset($_GET['logout'])){
 	echo logout();
-	
+
 }
 else if(logged_in())
 {echo 1;}

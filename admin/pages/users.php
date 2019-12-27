@@ -68,3 +68,136 @@
   </div>
 </div>
 </div>
+<div class="content" style="padding:0 30px 30px; min-height:calc(100vh - 123px); margin-top:-30px;">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title col-" style="margin-left:1%;"> Applications</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>
+                  User ID
+                </th>
+                <th>
+                  Username
+                </th>
+                <th>
+                  Name
+                </th>
+                <th class="text-right">
+                  Actions
+                </th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Dakota Rice
+                  </td>
+                  <td>
+                    Niger
+                  </td>
+                  <td>
+                    Oud-Turnhout
+                  </td>
+                  <td class="text-right">
+                     <a href="#" >Edit</a> or <a href="#">Delete</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Add Department
+        </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add a New User</h5>
+          <!-- <h5 class="modal-title" id="exampleModalLabel">Edit an Existing Department</h5> -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">username :</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+              <!-- <label for="exampleInputEmail1">Department Name :</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> -->
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">First Name :</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Last Name :</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Department :</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Role :</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+            </div>
+
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
+          <button type="button" class="btn btn-primary">Add User</button>
+          <!-- <button type="button" class="btn btn-primary">Save Department</button> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="container">
+  <div class="row">
+    <button class="btn btn-primary push-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Add Department
+    </button>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
