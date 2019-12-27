@@ -146,8 +146,8 @@
               <h4 class="card-title " style="margin-left:5%;"> Applications</h4>
 
           </div>
-          <div class="card-header col-md-6 float-right">
-            <div class="dropdown">
+          <div class="card-header col-md-6 ">
+            <div class="dropdown float-right">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown button
               </button>
