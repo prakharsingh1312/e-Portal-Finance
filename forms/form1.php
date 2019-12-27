@@ -20,7 +20,7 @@
 
   <!-- Main css -->
   <link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="../assets/jquery.datetimepicker.min.css">
+	<link rel="stylesheet" href="../assets/jquery.datetimepicker.full.min.js">
 	
 
 </head>
