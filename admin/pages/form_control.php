@@ -94,7 +94,7 @@
                 <th>
                   Form Name
                 </th>
-                <th>
+                <th class="text-right">
                   Actions
                 </th>
                 <th class="text-right">
@@ -111,24 +111,23 @@
                     <?php echo htmlspecialchars($result1['form_title']); ?>
                   </td>
                   <td>
-                    <div class="btn-group-toggle btn-sm" data-toggle="buttons">
-                      <label class="btn btn-secondary btn-sm active">
-                        <input type="checkbox" checked autocomplete="off"> Checked
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-secondary active">
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Activated
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option2" autocomplete="off"> Deactivated
                       </label>
                     </div>
                   </td>
                   <td class="text-right">
-                     <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#examplemodal">Edit</button>
                   </td>
                 </tr>
                 <?php } ?>
               </tbody>
             </table>
           </div>
-
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-          Add Department
-        </button>
         </div>
       </div>
     </div>
@@ -140,7 +139,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add a New Department</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Edit Form</h5>
           <!-- <h5 class="modal-title" id="exampleModalLabel">Edit an Existing Department</h5> -->
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
