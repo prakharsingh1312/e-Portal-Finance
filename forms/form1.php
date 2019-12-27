@@ -173,7 +173,7 @@
                     <input type="text" name="date_time_d" id="form1_date_time_d" required />
                   </div>
                   <div class="form-group" id="form1_14">
-                    <label for="form1_date_time_a">14. Date and time of arrival from the Institute:</label>
+                    <label for="form1_date_time_a">14. Date and time of arrival to the Institute:</label>
                     <input type="text" name="date_time_a" id="form1_date_time_a" required />
                   </div>
                 </div>
@@ -369,7 +369,14 @@
  
       return date;
     }
-  } );</script> 
+  } );
+	   $("#date_time_a" ).datetimepicker({
+        dateFormat: 'yy-mm-dd',
+        timeFormat: 'HH:mm:ss',});
+		 
+		 $("#date_time_d" ).datetimepicker({
+        dateFormat: 'yy-mm-dd',
+        timeFormat: 'HH:mm:ss',});</script> 
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
