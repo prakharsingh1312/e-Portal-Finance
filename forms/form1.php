@@ -20,7 +20,7 @@
 
   <!-- Main css -->
   <link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="../assets/jquery.datetimepicker.full.min.js">
+	<link rel="stylesheet" href="../assets/jquery.datetimepicker.min.css">
 	
 
 </head>
@@ -334,7 +334,7 @@
   <!-- JS -->
   <script src="../assets/js/jquery.js"></script>
   <script src="../assets/js/main.js"></script>
-		  <script src="../assets/jquery.datetimepicker.min.js"></script>
+		  <script src="../assets/jquery.datetimepicker.full.min.js"></script>
 	 <script>
 		
 	   $("#form1_from_date" ).datetimepicker({
