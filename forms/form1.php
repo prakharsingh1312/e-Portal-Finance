@@ -337,19 +337,37 @@
   integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
   crossorigin="anonymous"></script>
 	 <script>
-	  // INCLUDE JQUERY & JQUERY UI 1.12.1
-$( function() {
-	$( "#form1_from_date" ).datepicker({
-		dateFormat: "dd/mm/yy"
-		,	duration: "fast"
-	});
-} );
-		 $( function() {
-	$( "#form1_to_date" ).datepicker({
-		dateFormat: "dd/mm/yy"
-		,	duration: "fast"
-	});
-} );</script> 
+	$( function() {
+    var dateFormat = "mm/dd/yy",
+      from = $( "#form1_from_date" )
+        .datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 2
+        })
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );
+        }),
+      to = $( "#form1_to_date" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 2
+      })
+      .on( "change", function() {
+        from.datepicker( "option", "maxDate", getDate( this ) );
+      });
+ 
+    function getDate( element ) {
+      var date;
+      try {
+        date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) {
+        date = null;
+      }
+ 
+      return date;
+    }
+  } );</script> 
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
