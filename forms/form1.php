@@ -20,6 +20,7 @@
 
   <!-- Main css -->
   <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../assets/jquery.datetimepicker.min.css">
 	
 
 </head>
@@ -333,49 +334,23 @@
   <!-- JS -->
   <script src="../assets/js/jquery.js"></script>
   <script src="../assets/js/main.js"></script>
-		  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-  crossorigin="anonymous"></script>
+		  <script src="../assets/jquery.datetimepicker.min.js"></script>
 	 <script>
-	$( function() {
-    var dateFormat = "mm/dd/yy",
-      from = $( "#form1_from_date" )
-        .datepicker({
-          defaultDate: "+1w",
-          changeMonth: true,
-			changeYear: true,
-          numberOfMonths: 1
-        })
-        .on( "change", function() {
-          to.datepicker( "option", "minDate", getDate( this ) );
-        }),
-      to = $( "#form1_to_date" ).datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-		  changeYear:true,
-        numberOfMonths: 1
-      })
-      .on( "change", function() {
-        from.datepicker( "option", "maxDate", getDate( this ) );
-      });
- 
-    function getDate( element ) {
-      var date;
-      try {
-        date = $.datepicker.parseDate( dateFormat, element.value );
-      } catch( error ) {
-        date = null;
-      }
- 
-      return date;
-    }
-  } );
-	   $("#date_time_a" ).datetimepicker({
-        dateFormat: 'yy-mm-dd',
+		
+	   $("#form1_from_date" ).datetimepicker({
+        dateFormat: 'dd/mm/yy',
+        timepicker: false,});
+		 
+		 $("#form1_to_date" ).datetimepicker({
+        dateFormat: 'dd/mm/yy',
+        timepicker: false,});
+		 
+		 $("#form1_date_time_a" ).datetimepicker({
+        dateFormat: 'dd/mm/yy',
         timeFormat: 'HH:mm:ss',});
 		 
-		 $("#date_time_d" ).datetimepicker({
-        dateFormat: 'yy-mm-dd',
+		 $("#form1_date_time_d" ).datetimepicker({
+        dateFormat: 'dd/mm/yy',
         timeFormat: 'HH:mm:ss',});</script> 
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
