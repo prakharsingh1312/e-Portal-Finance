@@ -107,7 +107,7 @@
                     <?php echo htmlspecialchars($result1['department_id']); ?>
                   </td>
                   <td>
-                    <?php echo htmlspecialchars($result1['department_abbriviation']); ?>
+                    <?php echo htmlspecialchars($result1['department_abbreviation']); ?>
                   </td>
                   <td>
                     <?php echo htmlspecialchars($result1['department_name']); ?>
