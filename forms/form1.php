@@ -42,7 +42,7 @@
 
       </div>
       <div class="signup-content"  >
-        <form  class="register-form" id="form1" action="">
+        <form  class="register-form" id="form1" enctype="multipart/form-data">
           <h2 class="display-6" style="color:#dc5a00;">FORM </h2>
           <div class="form-row" >
             <div class="form-group" id="form1_1">
