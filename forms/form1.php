@@ -343,6 +343,7 @@
         .datepicker({
           defaultDate: "+1w",
           changeMonth: true,
+			changeYear: true,
           numberOfMonths: 1
         })
         .on( "change", function() {
@@ -351,6 +352,7 @@
       to = $( "#form1_to_date" ).datepicker({
         defaultDate: "+1w",
         changeMonth: true,
+		  changeYear:true,
         numberOfMonths: 1
       })
       .on( "change", function() {
