@@ -1,3 +1,13 @@
+<?php
+    include('../assets/php/functions.php');
+    $sql="SELECT * FROM user_accounts ";
+
+    $result = $dbconfig->prepare($sql);
+    $result->execute();
+    $result=$result->get_result();
+
+
+ ?>
 <div class="panel-header panel-header-lg">
   <h2 align="center" class="d-sm-block" style="color:white;">WELCOME TO YOUR DASHBOARD</h2>
   <div class="container">
@@ -93,26 +103,28 @@
                 </th>
               </thead>
               <tbody>
+                <?php while($result1 = $result->fetch_assoc()){ ?>
                 <tr>
                   <td>
-                    Dakota Rice
+                    <?php echo htmlspecialchars($result1['user_id']); ?>
                   </td>
                   <td>
-                    Niger
+                    <?php echo htmlspecialchars($result1['user_username']); ?>
                   </td>
                   <td>
-                    Oud-Turnhout
+                    <?php echo htmlspecialchars($result1['user_name']); ?>
                   </td>
                   <td class="text-right">
                      <a href="#" >Edit</a> or <a href="#">Delete</a>
                   </td>
                 </tr>
+                <?php } ?>
               </tbody>
             </table>
           </div>
 
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-          Add Department
+          New User
         </button>
         </div>
       </div>
