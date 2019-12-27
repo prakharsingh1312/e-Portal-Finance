@@ -155,7 +155,7 @@
                 <label class="custom-file-label" for="form1_cv">11. Attach (i) brief CV / biography. </label>
               </div>
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="form1_cv" name="cv" aria-describedby="inputGroupFileAddon01">
+                <input type="file" class="custom-file-input" id="form1_cv" name="cv" aria-describedby="inputGroupFileAddon01" accept="application/pdf">
               </div>
             </div>
 <br>
@@ -165,7 +165,7 @@
                   <label class="custom-file-label" for="form1_certificate">12. Attach certificate from HoD regarding relevance of the event for the applicant and by stating that the event will benefit for the applicant.</label>
                 </div>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="form1_certificate" aria-describedby="inputGroupFileAddon01">
+                  <input type="file" class="custom-file-input" id="form1_certificate" aria-describedby="inputGroupFileAddon01" accept="application/pdf">
                 </div>
 <br>
                 <div class="form-row">
@@ -206,7 +206,7 @@
                 <label class="custom-file-label" for="form1_accepted_paper">17. Attach the accepted paper, acceptance letter, NOC from co-authors:</label>
               </div>
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="form1_accepted_paper" aria-describedby="inputGroupFileAddon01">
+                <input type="file" class="custom-file-input" id="form1_accepted_paper" aria-describedby="inputGroupFileAddon01" accept="application/pdf">
               </div>
             </div>
           </div>
@@ -236,7 +236,7 @@
                   
                 </div>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="form1_cost_details" aria-describedby="inputGroupFileAddon01">
+                  <input type="file" class="custom-file-input" id="form1_cost_details" aria-describedby="inputGroupFileAddon01" accept="application/pdf">
                 </div>
               </div>
             </div>
