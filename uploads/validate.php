@@ -14,7 +14,7 @@ if (!isset($_SESSION['user_id'])) {
     
     // Set headers
 	$ext = end((explode(".", $name)));
-	if($ext="pdf"){
+	if($ext=="pdf"){
     header('Content-type: application/pdf');
     
 	}
