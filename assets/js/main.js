@@ -344,7 +344,7 @@ function linkChange(id){
 	});
 }
 function validate_name(name){
-	var regex = new RegExp("^[a-zA-Z\s]+$");
+	var regex = new RegExp("/^[a-zA-Z\s]+$/");
 	if(regex.test(name))
 		return 1;
 	else
