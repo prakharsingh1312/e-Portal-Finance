@@ -100,17 +100,31 @@ function submit_form1($post,$files){
 	$cost_detail_file='N';
 	if($post['relevance_text']==''){
 		$relevance_file='Y';
-		$post['relevance_text']=upload_file($files['relevance']);
+		$post['relevance_text']=upload_file($files['relevance'],'relevance',$response_code);
 		
 	}
 	if($post['objective_text']==''){
 		$objective_file='Y';
-		$post['objective_text']=upload_file($files['objective']);
+		$post['objective_text']=upload_file($files['objective'],'objective',$response_code);
 	}
-	if($post[''])
+	if($post['cost_details_text']==''){
+		$cost_detail_file='Y';
+		$post['cost_details_text']=upload_file($files['cost_details'],'cost_details',$response_code);
+	}
+	if($post['recommended']=="Recommended"){
+		$recommended=upload_file($files['signhod'],'signhod',$response_code);
+	}
+	$cv=upload_file($files['cv'],'cv',$response_code);
+	$hod=upload_file($files['hod_certificate'],'hod_certificate',$response_code);
+	$paper=upload_file($files['accepted_paper'],'accepted_paper',$response_code);
+	$signstudent=upload_file($files['signstudent'],'signstudent',$response_code);
+	$signsupervisor=upload_file($files['signsupervisor'],'signsupervisor',$response_code);
+	$status=1;
+	
 	global $dbconfig;
-        $stmt = $dbconfig->prepare("INSERT INTO `form_type1_responses`(`response_id`,`form_id`,`response_code`,`name_of_code`,`name_of_student`,`course`,`roll_no`,`department`,`nature_of_event`,`name_of_event`,`place_of_event`,`duration_from`,`duration_to`,`duration_days`,`organizer_of_event`,`relevance_of_visit`,`objective_of_visit`,`attached_cv`,`attached_certificate_hod`,`date_and_time_departure`,`date_and_time_arrival`,`research_paper`,`title_of_paper`,`accepted_paper_acceptance_letter`,`total_cost`,`total_cost_words`,`cost_details`,`registration_fees`,`transportation_allowance`,`other_costs`,`cgpa`,`sci_journal`,`signature_student`,`signature_supervisor`,`recommendation_hod`,`signature_hod`,`STATUS`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-        $stmt->bind_param(); //pending
+	$sql="INSERT INTO `form_type1_responses` ( `form_id`, `reponse_code`, `name_of_student`, `course`, `roll_no`, `department`, `nature_of event`, `name_of_event`, `place_of_event`, `duration_from`, `duration_to`, `duration_days`, `organizer_of_event`, `relevance_file`, `relevance_of_visit`, `objective_of_visit`, `objective_file`, `attached_cv`, `attached_certificate_hod`, `date_and_time_departure`, `date_and _time_arrival`, `research_paper`, `title_of_paper`, `accepted_paper_acceptance_letter`, `total_cost`, `total_cost_words`, `cost_details_file`, `cost_details`, `registration_fees`, `transportation_allowance`, `other_costs`, `cgpa`, `sci_journal`, `signature_student`, `signature_supervisor`, `recommendation_hod`, `signature_hod`, `STATUS`) VALUES ( ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $stmt = $dbconfig->prepare($sql);
+        $stmt->bind_param("issssssssssisississsssssssissssssssssi",$_SESSION['form_id'],$response_code,$post['name'],$post['course'],$post['roll'],$post['department'],$post['nature_of_event'],$post['name_of_event'],$post['place'],$post['from_date'],$post['to_date'],$post['no_of_days'],$post['organizer'],$relevance_file,$post['relevance_text'],$post['objective_text'],$objective_file,$cv,$hod,$post['date_time_d'],$post['date_time_a'],$post['research'],$post['title'],$paper,$post['total_cost'],$post['trs'],$cost_detail_file,$post['cost_details_text'],$post['registration'],$post['ta'],$post['others'],$post['cgpa'],$post['mtech'],$signstudent,$signsupervisor,$post['recommended'],$hod,$status); //pending
         $stmt->execute();
         $stmt->free_result();
         $stmt->close();
@@ -128,5 +142,13 @@ function generate_response_code(){
 	$hex=dechex($query['MAX(response_id)']==NULL?1:$query['MAX(response_id)']+1);
 	$number.=str_pad($hex, 10, '0', STR_PAD_LEFT);
 	return $number;
+}
+function upload_file($file,$subpath,$response_code){
+	$name = $file["name"];
+	$ext = end((explode(".", $name)));
+	$path='./uploads/'.$subpath.'/'.$response_code.'.'.$ext;
+	$file=$file['tmp_name'];
+	move_uploaded_file($file,$path);
+	return $path;
 }
 ?>

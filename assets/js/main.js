@@ -91,20 +91,20 @@ $(document).ready( function()
 		});
 		$(document).on('change','#form1_course',function(){ 
 			{
-			if($('#form1_course').val()=='ug')
+			if($('#form1_course').val()=='Under Graduate')
 			{hide_input('#form1_20');$('#form1_mtech').removeAttr('required');}
 			else
 			{show_input('#form1_20');$('#form1_mtech').attr('required','1');}
 			}
 			{
-		if($('#form1_course').val()=='phd')
+		if($('#form1_course').val()=='PhD')
 			{
 				hide_input('#form1_19');$('#form1_cgpa').removeAttr('required');}
 			else {show_input('#form1_19');$('#form1_cgpa').attr('required','1')}
 		}
 		});
 	$(document).on('change','#form1_recommended',function(){ 
-			if($('#form1_recommended').val()=='N')
+			if($('#form1_recommended').val()=='No')
 			{hide_input('#form1_24');$('#form1_signhod').removeAttr('required');}
 			else
 			{show_input('#form1_24');$('#form1_signhod').attr('required','1');}
@@ -146,7 +146,7 @@ $(document).ready( function()
 			{show_input('#form1_cost_details_text');$('#form1_cost_details_text').attr('required','1');}
 		 });
 	$(document).on('change','#form1_research',function(){ 
-			if($('#form1_research').val()=='no')
+			if($('#form1_research').val()=='No')
 			{hide_input('#form1_16');$('#form1_title').removeAttr('required');
 			hide_input('#form1_17');$('#form1_accepted_paper').removeAttr('required');}
 			else
@@ -156,7 +156,7 @@ $(document).ready( function()
 	$(document).on('change','#form1_')
 	//Forms
 		$(document).on('click','.login_button',function(){ dologin(); });
-		$(document).on('submit','#form1_from',function(){ form1_submit(); return false; });
+		$(document).on('submit','#form1',function(){ form1_submit(); return false; });
   
 });
 

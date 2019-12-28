@@ -57,9 +57,9 @@
               <div class="form-select">
                 <select name="course" id="form1_course">
                   <option value ="" disabled selected></option>
-                  <option value="ug">Under Graduate</option>
-                  <option value="pg">Post Graduate</option>
-                  <option value="phd">PhD</option>
+                  <option value="Under Graduate">Under Graduate</option>
+                  <option value="Post Graduate">Post Graduate</option>
+                  <option value="PhD">PhD</option>
                 </select>
                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
               </div>
@@ -167,7 +167,7 @@
                   <label class="custom-file-label" for="form1_certificate">12. Attach certificate from HoD regarding relevance of the event for the applicant and by stating that the event will benefit for the applicant.</label>
                 </div>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="form1_certificate" aria-describedby="inputGroupFileAddon01" accept="application/pdf">
+                  <input type="file" class="custom-file-input" name="hod_certificate" id="form1_certificate" aria-describedby="inputGroupFileAddon01" accept="application/pdf">
                 </div>
 <br>
                 <div class="form-row">
@@ -192,8 +192,8 @@
             <div class="form-select">
               <select name="research" id="form1_research">
                 <option value="" disabled selected></option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
               </select>
               <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
             </div>
@@ -208,7 +208,7 @@
                 <label class="custom-file-label" for="form1_accepted_paper">17. Attach the accepted paper, acceptance letter, NOC from co-authors:</label>
               </div>
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="form1_accepted_paper" aria-describedby="inputGroupFileAddon01" accept="application/pdf">
+                <input type="file" class="custom-file-input" name="accepted_paper" id="form1_accepted_paper" aria-describedby="inputGroupFileAddon01" accept="application/pdf">
               </div>
             </div>
           </div>
@@ -217,7 +217,7 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="form1_rs">Rupees (Rs.):</label>
-                <input type="text" name="from_date" id="form1_rs">
+                <input type="text" name="total_cost" id="form1_rs">
               </div>
               <div class="form-group">
                 <label for="form1_trs">Rupees (In Words) :</label>
@@ -230,7 +230,7 @@
             <div class="form-row">
 <div class="form-group">
   <!-- <label for="organizer">8. Organizer of the event :</label> -->
-  <input type="text" name="cost_details_text" id="form1_cost_details_text" placeholder="Leave blank if file attached" required />
+  <input type="text" name="cost_details_text" name="cost_details" id="form1_cost_details_text" placeholder="Leave blank if file attached" required />
 </div>
             <div class="form-group">
               <div class="input-group">
@@ -268,8 +268,8 @@
             <div class="form-select">
               <select name="mtech" id="form1_mtech">
                 <option value="" disabled selected></option>
-                <option value="yy">Yes</option>
-                <option value="nn">No</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
               </select>
               <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
             </div>
@@ -281,7 +281,7 @@
                   <label class="custom-file-label" for="form1_signstudent">21. Signature of the Student</label>
                 </div>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="form1_signstudent" aria-describedby="inputGroupFileAddon01" accept="image/jpeg">
+                  <input type="file" class="custom-file-input" name="signstudent" id="form1_signstudent" aria-describedby="inputGroupFileAddon01" accept="image/jpeg">
                 </div>
               </div>
             </div>
@@ -291,7 +291,7 @@
                   <label class="custom-file-label" for="form1_signsupervisor">22. Signature of the Supervisor</label>
                 </div>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="form1_signsupervisor" aria-describedby="inputGroupFileAddon01" accept="image/jpeg">
+                  <input type="file" class="custom-file-input" name="signsupervisor" id="form1_signsupervisor" aria-describedby="inputGroupFileAddon01" accept="image/jpeg">
                 </div>
               </div>
             </div>
@@ -302,8 +302,8 @@
               <div class="form-select">
                 <select name="recommended" id="form1_recommended">
                   <option value="" disabled selected></option>
-                  <option value="Y">Recommended</option>
-                  <option value="N">Not Recommended</option>
+                  <option value="Recommended">Recommended</option>
+                  <option value="Not Recommended">Not Recommended</option>
                 </select>
                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
               </div>
@@ -314,7 +314,7 @@
                   <label class="custom-file-label" for="form1_signhod">24. Signature of the Hod (with seal) :</label>
                 </div>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="form1_signhod" aria-describedby="inputGroupFileAddon01" accept="image/jpeg">
+                  <input type="file" class="custom-file-input" name="signhod" id="form1_signhod" aria-describedby="inputGroupFileAddon01" accept="image/jpeg">
                 </div>
               </div>
             </div>
