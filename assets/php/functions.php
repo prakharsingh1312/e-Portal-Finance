@@ -129,7 +129,8 @@ function submit_form1($post,$files){
 	test($stmt);
         $stmt->execute();
 	test($stmt);
-        
+        $result=$stmt->get_result();
+		$result=$result->fetch_assoc();
         $stmt->close();
 
 }
@@ -155,7 +156,7 @@ function upload_file($file,$subpath,$response_code){
 	return $path;
 }
 function test($stmt){
-	if(false == $stmt){
+	if(false === $stmt){
 		die('failed: ' . htmlspecialchars($mysqli->error));
 	}
 }
