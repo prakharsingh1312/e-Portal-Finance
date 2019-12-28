@@ -344,7 +344,7 @@ function linkChange(id){
 	});
 }
 function validate_name(name){
-	var regex = new RegExp("^[a-zA-Z]+$");
+	var regex = new RegExp("^[a-zA-Z\s]+$");
 	if(regex.test(name))
 		return 1;
 	else
@@ -352,7 +352,7 @@ function validate_name(name){
 	
 }
 function validate_number(number,len){
-	var regexPattern=new RegExp(/^[0-9-+]+$/);
+	var regex =new RegExp(/^[0-9-+]+$/);
 	if(regex.test(number)&& number.length()==len)
 		return 1;
 	else
