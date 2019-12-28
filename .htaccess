@@ -1,5 +1,6 @@
 RewriteEngine On
-RewriteCond $0 ^uploads/
-RewriteRule ^ validate.php?request_url=%{REQUEST_URI} [L]
+RewriteCond $0 ^uploads/ [OR]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .* validate.php?request_url=%{REQUEST_URI} [L]
 # To disable or prevent the directory access/listing
 Options -Indexes
