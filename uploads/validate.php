@@ -19,10 +19,6 @@ if (!isset($_SESSION['user_id'])) {
 		header('Content-Disposition: inline; filename='.$filename);
     
 	}
-	else
-	{
-		header('Content-type: image/jpeg');
-	}
 	
     
     // Output file content
