@@ -16,13 +16,14 @@ if (!isset($_SESSION['user_id'])) {
 	$ext = end((explode(".", $name)));
 	if($ext=="pdf"){
     header('Content-type: application/pdf');
+		header('Content-Disposition: inline; filename='.$filename);
     
 	}
 	else
 	{
 		header('Content-type: image/jpeg');
 	}
-	header('Content-Disposition: inline; filename='.$filename);
+	
     
     // Output file content
     @readfile($document_root.$request_url);
