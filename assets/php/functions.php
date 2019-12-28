@@ -130,6 +130,7 @@ function submit_form1($post,$files){
         $stmt->execute();
 	test($stmt);
         $result=$stmt->get_result();
+		test($stmt);
 		$result=$result->fetch_assoc();
         $stmt->close();
 
