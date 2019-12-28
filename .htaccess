@@ -1,5 +1,6 @@
 Options +FollowSymLinks
 RewriteEngine On
-RewriteRule   ^/uploads/(.*)  ^validate.php?request_url=%{REQUEST_URI}  [R,L]
+RewriteCond %{REQUEST_URI} ^/uploads/(.*)$ [NC]
+RewriteRule ^ validate.php?request_url=%{REQUEST_URI} [L]
 # To disable or prevent the directory access/listing
 Options -Indexes
