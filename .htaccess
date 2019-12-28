@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteCond $0 ^priv/
+RewriteRule ^ validate.php?request_url=%{REQUEST_URI} [L]
+# To disable or prevent the directory access/listing
+Options -Indexes
