@@ -349,11 +349,14 @@
 		 
 		 $("#form1_date_time_a" ).datetimepicker({
         dateFormat: \'YY-mm-dd\',
-        timeFormat: \'HH:mm:ss\',});
+        timeFormat: \'HH:mm:ss\',
+		format: \'Y-m-d H:i:s\',});
+		
 		 
 		 $("#form1_date_time_d" ).datetimepicker({
         dateFormat: \'YY-mm-dd\',
-        timeFormat: \'HH:mm:ss\',});</script> 
+        timeFormat: \'HH:mm:ss\',
+		format: \'Y-m-d H:i:s\',});</script> 
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
