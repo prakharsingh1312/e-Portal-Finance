@@ -104,7 +104,7 @@ $(document).ready( function()
 		}
 		});
 	$(document).on('change','#form1_recommended',function(){ 
-			if($('#form1_recommended').val()=='No')
+			if($('#form1_recommended').val()=='Not Recommended')
 			{hide_input('#form1_24');$('#form1_signhod').removeAttr('required');}
 			else
 			{show_input('#form1_24');$('#form1_signhod').attr('required','1');}
@@ -353,7 +353,7 @@ function validate_name(name){
 }
 function validate_number(number,len){
 	var regex =new RegExp(/^[0-9-+]+$/);
-	if(regex.test(number)&& number.length()==len)
+	if(regex.test(number)&& number.length==len)
 		return 1;
 	else
 		return 0;
