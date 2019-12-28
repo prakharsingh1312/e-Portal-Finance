@@ -124,9 +124,12 @@ function submit_form1($post,$files){
 	global $dbconfig;
 	$sql="INSERT INTO `form_type1_responses` ( `form_id`, `reponse_code`, `name_of_student`, `course`, `roll_no`, `department`, `nature_of event`, `name_of_event`, `place_of_event`, `duration_from`, `duration_to`, `duration_days`, `organizer_of_event`, `relevance_file`, `relevance_of_visit`, `objective_of_visit`, `objective_file`, `attached_cv`, `attached_certificate_hod`, `date_and_time_departure`, `date_and _time_arrival`, `research_paper`, `title_of_paper`, `accepted_paper_acceptance_letter`, `total_cost`, `total_cost_words`, `cost_details_file`, `cost_details`, `registration_fees`, `transportation_allowance`, `other_costs`, `cgpa`, `sci_journal`, `signature_student`, `signature_supervisor`, `recommendation_hod`, `signature_hod`, `STATUS`) VALUES ( ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $dbconfig->prepare($sql);
+		test($stmt);
         $stmt->bind_param("issssssssssisississsssssssissssssssssi",$_SESSION['form_id'],$response_code,$post['name'],$post['course'],$post['roll'],$post['department'],$post['nature_of_event'],$post['name_of_event'],$post['place'],$post['from_date'],$post['to_date'],$post['no_of_days'],$post['organizer'],$relevance_file,$post['relevance_text'],$post['objective_text'],$objective_file,$cv,$hod,$post['date_time_d'],$post['date_time_a'],$post['research'],$post['title'],$paper,$post['total_cost'],$post['trs'],$cost_detail_file,$post['cost_details_text'],$post['registration'],$post['ta'],$post['others'],$post['cgpa'],$post['mtech'],$signstudent,$signsupervisor,$post['recommended'],$hod,$status); //pending
+	test($stmt);
         $stmt->execute();
-        $stmt->free_result();
+	test($stmt);
+        
         $stmt->close();
 
 }
@@ -150,5 +153,10 @@ function upload_file($file,$subpath,$response_code){
 	$file=$file['tmp_name'];
 	move_uploaded_file($file,$path);
 	return $path;
+}
+function test($stmt){
+	if(false == $stmt){
+		die('failed: ' . htmlspecialchars($mysqli->error));
+	}
 }
 ?>

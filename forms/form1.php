@@ -238,7 +238,7 @@
                   
                 </div>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="form1_cost_details" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required />
+                  <input type="file" class="custom-file-input" nmae="cost_details" id="form1_cost_details" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required />
                 </div>
               </div>
             </div>
