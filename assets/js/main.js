@@ -294,7 +294,7 @@ function form1_submit(){
         $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',
-            url: "./forms/form1.php?submit_form",
+            url: "form1.php?submit_form",
             data: formdata,
             processData: false,
             contentType: false,
