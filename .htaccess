@@ -1,6 +1,6 @@
 Options +FollowSymLinks
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} -s
-RewriteRule ^/uploads/(.*)$ validate.php?file=$1 [QSA,L]
+RewriteCond %{REQUEST_URI} \uploads\.(*)$ [NC]
+RewriteRule ^ validate.php?request_url=%{REQUEST_URI} [L]
 # To disable or prevent the directory access/listing
 Options -Indexes
