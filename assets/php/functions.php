@@ -146,7 +146,7 @@ function generate_response_code(){
 function upload_file($file,$subpath,$response_code){
 	$name = $file["name"];
 	$ext = end((explode(".", $name)));
-	$path='./uploads/'.$subpath.'/'.$response_code.'.'.$ext;
+	$path='uploads/'.$subpath.'/'.$response_code.'.'.$ext;
 	$file=$file['tmp_name'];
 	move_uploaded_file($file,$path);
 	return $path;
