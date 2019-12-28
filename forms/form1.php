@@ -95,12 +95,12 @@
             <div class="form-row">
 
               <div class="form-group">
-                <label for="form1_from_date">From (DD/MM/YY) :</label>
+                <label for="form1_from_date">From (YYYY-MM-DD) :</label>
 
                 <input type="text" name="from_date" id="form1_from_date" required />
               </div>
               <div class="form-group">
-                <label for="form1_to_date">To (DD/MM/YY) :</label>
+                <label for="form1_to_date">To (YYYY-MM-DD) :</label>
                 <input type="text" name="to_date" id="form1_to_date" required />
               </div>
               <div class="form-group">
@@ -340,19 +340,19 @@
 	 <script>
 		
 	   $("#form1_from_date" ).datetimepicker({
-        format: \'d/m/y\',
+        format: \'Y-m-d\',
         timepicker: false,});
 		 
 		 $("#form1_to_date" ).datetimepicker({
-        format: \'d/m/y\',
+        format: \'Y-m-d\',
         timepicker: false,});
 		 
 		 $("#form1_date_time_a" ).datetimepicker({
-        dateFormat: \'dd/mm/yy\',
+        dateFormat: \'YY-mm-dd\',
         timeFormat: \'HH:mm:ss\',});
 		 
 		 $("#form1_date_time_d" ).datetimepicker({
-        dateFormat: \'dd/mm/yy\',
+        dateFormat: \'YY-mm-dd\',
         timeFormat: \'HH:mm:ss\',});</script> 
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
