@@ -156,7 +156,7 @@ $(document).ready( function()
 	$(document).on('change','#form1_')
 	//Forms
 		$(document).on('click','.login_button',function(){ dologin(); });
-		$(document).on('submit','#form1',function(){ form1_submit(); return false; });
+		$(document).on('click','#submitForm',function(){ form1_submit(); });
   
 });
 
