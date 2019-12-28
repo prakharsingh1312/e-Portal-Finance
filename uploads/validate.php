@@ -13,11 +13,15 @@ if (!isset($_SESSION['user_id'])) {
     $filename = basename($request_url);
     
     // Set headers
-	$ext = end((explode(".", $name)));
+	$ext = end((explode(".", $request_url)));
 	if($ext=="pdf"){
     header('Content-type: application/pdf');
 		header('Content-Disposition: inline; filename='.$filename);
     
+	}
+	else
+	{
+		header("Content-Type: image/jpeg");
 	}
 	
     
