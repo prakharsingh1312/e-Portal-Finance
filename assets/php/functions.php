@@ -131,6 +131,13 @@ function submit_form1($post,$files){
 	
         $stmt->execute();
         $stmt->close();
+	$return= '<h2 class="center" style="text-align:center; padding-top:30px;">Form Submitted Successfully.</h2>
+				<div class="signup-content">
+        <form method="POST" class="register-form" id="register-form" action=".">
+          <h2 class="display-6" style="color:#dc5a00;">Form Number :'.$response_code.'</h2>
+            <p style="font-size:1.2rem;">Use this code to track your form. Click here to download a copy of your form.</p>
+        </form>';
+	return $return;
 
 }
 function generate_response_code(){
