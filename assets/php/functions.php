@@ -483,7 +483,12 @@ function show_forms(){
 			 $return.='0';
 		 else
 			 $return.='1';
-			 $return.=':'.$result1['form_id'].'">
+			 $return.=':'.$result1['form_id'].'">';
+		 if($result1['form_activation']==1)
+			 $return.='Activated';
+		 else
+			 $return.='Dectivated';
+		 $return.='</button>
                         
                   </td>
                   <td class="text-right">
