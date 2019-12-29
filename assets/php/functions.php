@@ -305,7 +305,7 @@ function show_edit_dept($dept_id){
 	return $return;
 }
 function add_dept($name,$abbr){
-	if(!isset($_SESSION['role'])){
+	if(!isset($_SESSION['user_role'])){
 		return 'You are not logged in.';
 	}
 	else{
