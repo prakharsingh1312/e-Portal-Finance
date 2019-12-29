@@ -431,7 +431,7 @@ function showDeptTable(){
 		$('#department_table').loadingView({'state':false});
 	});
 }
-function showDeptTable(){
+function showFormTable(){
 	$('#forms_table').loadingView({'state':true});
 	$.get('pages/form_control.php?show_forms',function(data){
 		$('#forms_table').html(data);
