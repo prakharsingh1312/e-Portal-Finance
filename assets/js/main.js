@@ -194,7 +194,7 @@ $(document).ready( function()
   
 });
 //Form Control
-$(document).on('change','.form_toggle',function(){ var array = $('.form_toggle:checked').id.split(':');
+$(document).on('click','.form_toggle',function(){ var array = this.id.split(':');
 			formToggle(array[1],array[2]); });
 
 

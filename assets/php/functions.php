@@ -472,26 +472,19 @@ function show_forms(){
                     $result1['form_title'].'
                   </td>
                   <td class="text-right">
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                      <label class="btn btn-primary ';
+                    
+                       <button type="button" class="btn btn-';
 		 if($result1['form_activation']==1)
-			 $return.='active';
-		 $return.=' ">
-                        <input type="radio" name="options" id="form_toggle:1:'.$result1['form_id'].'" class="form_toggle" autocomplete="off" ';
+			 $return.='primary';
+		 else
+			 $return.='seconday';
+		 $return.=' btn-sm form_toggle" id="form_toggle:';
 		 if($result1['form_activation']==1)
-			 $return.='checked';
-		 $return.='> Activated
-                      </label>
-                      <label class="btn btn-primary ';
-		 if($result1['form_activation']==0)
-			 $return.='active';
-		 $return.=' ">
-                        <input type="radio" name="options" id="form_toggle:0:'.$result1['form_id'].'" autocomplete="off" class="form_toggle ';
-		 if($result1['form_activation']==0)
-			 $return.='checked';
-		 $return.='"> Deactivated
-                      </label>
-                    </div>
+			 $return.='0';
+		 else
+			 $return.='1';
+			 $return.=':'.$result1['form_id'].'">
+                        
                   </td>
                   <td class="text-right">
                     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
