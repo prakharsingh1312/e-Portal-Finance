@@ -187,8 +187,10 @@ $(document).ready( function()
 	$(document).on('click','.dept_edit_button',function(){ 
 			var array = this.id.split(':');
 			editDept(array[1]); });
-		$(document).on('click','.dept_delete_button',function(){ var array = this.id.split(':');
-			showDeleteDept(array[1]); });
+		$(document).on('click','.dept_show_delete_button',function(){ var array = this.id.split(':');
+			showDeleteDept(array[1],array[2]); });
+	$(document).on('click','.dept_delete_button',function(){ var array = this.id.split(':');
+			deleteDept(array[1],array[2]); });
   
 });
 
@@ -411,12 +413,12 @@ function showEditDept(dept_id){
 		$('#modal-content').loadingView({'state':false});
 	});
 }
-function showDeleteDept(dept_id){
+function showDeleteDept(name,id){
 	$('#modal-content').loadingView({'state':true});
-	$.get('pages/dept.php?show_add_dept',function(data){
+	var data='<div class="modal-header">          <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>          <button type="button" class="close" data-dismiss="modal" aria-label="Close">            <span aria-hidden="true">&times;</span>          </button>        </div>        <div class="modal-body">          <p>Are you sure you want to delete department "'+name+'".</p><span id="error_span"></span>        </div>        <div class="modal-footer">          <button type="button" class="btn btn-primary dept_delete_button" id="delete:'+name+':'+id+'" data-dismiss="modal">Delete</button>                        </div>';
 		$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
-	});
+	
 }
 function showDeptTable(){
 	$('#department_table').loadingView({'state':true});
@@ -461,9 +463,9 @@ function editDept(id){
 		
 	}
 }
-function deleteDept(id){
+function deleteDept(name,id){
 		$('#modal-content').loadingView({'state':true});
-		$.post('pages/dept.php?delete_dept',{id:id},function(data){
+		$.post('pages/dept.php?delete_dept',{name:name,id:id},function(data){
 		$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
 			showDeptTable();
