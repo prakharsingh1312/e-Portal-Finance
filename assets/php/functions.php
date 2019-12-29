@@ -483,11 +483,11 @@ function show_forms(){
 			 $return.='0';
 		 else
 			 $return.='1';
-			 $return.=':'.$result1['form_id'].'">';
+			 $return.=':'.$result1['form_id'].'" data-toggle="modal" data-target="#exampleModal">';
 		 if($result1['form_activation']==1)
 			 $return.='Activated';
 		 else
-			 $return.='Dectivated';
+			 $return.='Deactivated';
 		 $return.='</button>
                         
                   </td>
