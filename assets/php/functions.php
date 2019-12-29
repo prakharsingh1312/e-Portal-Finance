@@ -264,6 +264,6 @@ function show_departments(){
                   </td>
                 </tr>';
                  } 
-	return $result;
+	return $return;
 }
 ?>
