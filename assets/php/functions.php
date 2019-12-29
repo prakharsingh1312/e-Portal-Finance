@@ -162,6 +162,7 @@ function upload_file($file,$subpath,$response_code){
 	return $path;
 }
 function show_applications($form_id){
+	global $dbconfig;
 	$return='';
 	$n=1;
 	if($form_id==0){
