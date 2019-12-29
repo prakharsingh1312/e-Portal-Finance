@@ -157,6 +157,8 @@ $(document).ready( function()
 	//Forms
 		$(document).on('click','.login_button',function(){ dologin(); });
 		$(document).on('submit','#form1',function(){ form1_submit(); });
+	//Admin panel buttons
+		$(document).on('click','#show_add_dept_button',function(){ showAddDept(); });
   
 });
 
@@ -362,4 +364,11 @@ function validate_number(number,len){
 function form_error(text,input){
 	$('#error_span').html(text);
 	input_focus(input);
+}
+function showAddDept(){
+	$('#modal_content').loadingView({'state':true})
+	$.get('pages/dash.php?show_add_dept',function(data){
+		$('#modal_content').html();
+		$('#modal_content').loadingView({'state':false});
+	})
 }
