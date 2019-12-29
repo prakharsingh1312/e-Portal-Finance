@@ -3,10 +3,14 @@
    if(isset($_GET['edit_dept'])){
 	   
    }
-	else if(isset($_GET['show_add_dept'])){
+elseif(isset($_GET['show_edit_dept'])){
+	$dept_id=mysqli_real_escape_string($dbconfig,$_POST['dept_id']);
+	echo show_edit_dept($dept_id);
+	
+}
+	elseif(isset($_GET['show_add_dept'])){
 		echo '<div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Add a New Department</h5>
-          <!-- <h5 class="modal-title" id="exampleModalLabel">Edit an Existing Department</h5> -->
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -14,16 +18,12 @@
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="exampleInputEmail1">Department Name :</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-              <!-- <label for="exampleInputEmail1">Department Name :</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> -->
+              <label for="department_name">Department Name :</label>
+              <input type="text" class="form-control" id="department_name" aria-describedby="emailHelp" placeholder="">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Department Abbriviation :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
-              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+              <label for="department_abbr">Department Abbriviation :</label>
+              <input type="text" class="form-control" id="department_abbr" placeholder="">
             </div>
 
 
@@ -32,8 +32,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
-          <button type="button" class="btn btn-primary">Add Department</button>
-          <!-- <button type="button" class="btn btn-primary">Save Department</button> -->
+          <button type="button" class="btn btn-primary add_dept_button">Add Department</button>
 
         </div>';
 	}
@@ -153,7 +152,7 @@ echo'
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content" id="modal-content">
-        
+        <br><br><br><br><br><br>
       </div>
     </div>
   </div>

@@ -164,6 +164,11 @@ $(document).ready( function()
 		$(document).on('submit','#form1',function(){ form1_submit(); });
 	//Admin panel buttons
 		$(document).on('click','#show_add_dept_button',function(){ showAddDept(); });
+		$(document).on('click','.dept_show_edit_button',function(){ 
+			var array = this.id.split(':');
+			showEditDept(array[1]); });
+		$(document).on('click','.dept_delete_button',function(){ var array = this.id.split(':');
+			showDeleteDept(array[1]); });
   
 });
 
@@ -371,6 +376,20 @@ function form_error(text,input){
 	input_focus(input);
 }
 function showAddDept(){
+	$('#modal-content').loadingView({'state':true})
+	$.get('pages/dept.php?show_add_dept',function(data){
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+	});
+}
+function showEditDept(dept_id){
+	$('#modal-content').loadingView({'state':true})
+	$.post('pages/dept.php?show_edit_dept',{dept_id:dept_id},function(data){
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+	});
+}
+function showDeleteDept(dept_id){
 	$('#modal-content').loadingView({'state':true})
 	$.get('pages/dept.php?show_add_dept',function(data){
 		$('#modal-content').html(data);

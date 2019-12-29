@@ -260,10 +260,48 @@ function show_departments(){
                   <td>'.$result1['department_abbreviation'].'</td>
                   <td>'.$result1['department_name'].'</td>
 				  <td class="text-right">
-                     <a href="" data-toggle="modal" data-target="#exampleModal" >Edit</a> or <a href="" data-toggle="modal" data-target="#exampleModal">Delete</a>
+                     <a href="" class="dept_show_edit_button" data-toggle="modal" data-target="#exampleModal" id="edit:'.$result1['department_id'].'">Edit</a> or <a href="" class="dept_delete_button" id="delete:'.$result1['department_id'].'" data-toggle="modal" data-target="#exampleModal">Delete</a>
                   </td>
                 </tr>';
                  } 
+	return $return;
+}
+function show_edit_dept($dept_id){
+	global $dbconfig;
+	 $sql="SELECT * FROM departments WHERE department_id=? ";
+	$return='';
+    $result = $dbconfig->prepare($sql);
+	$result->bind_param("i",$dept_id);
+    $result->execute();
+    $result=$result->get_result();
+	$result=$result->fetch_assoc();
+	$return.='<div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit an Existing Department</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="department_name">Department Name :</label>
+              <input type="text" class="form-control" id="department_name" aria-describedby="emailHelp" placeholder="" value="'.$result['department_name'].'">
+            </div>
+            <div class="form-group">
+              <label for="department_abbr">Department Abbriviation :</label>
+              <input type="text" class="form-control" id="department_abbr" placeholder="" value="'.$result['department_abbreviation'].'">
+            </div>
+
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
+          <button type="button" class="btn btn-primary edit_dept_button" id="editF:'.$result['department_id'].'">Save Department</button>
+      
+
+        </div>';
 	return $return;
 }
 ?>
