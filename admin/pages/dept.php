@@ -1,11 +1,11 @@
 <?php
     include('../../assets/php/functions.php');
-    $sql="SELECT * FROM departments ";
-
-    $result = $dbconfig->prepare($sql);
-    $result->execute();
-    $result=$result->get_result();
- ?>
+   if(isset($_GET['edit_dept'])){
+	   
+   }
+else{
+	
+echo'
 <div class="panel-header panel-header-lg">
   <h2 align="center" class="d-sm-block" style="color:white;">WELCOME TO YOUR DASHBOARD</h2>
   <div class="container">
@@ -101,22 +101,7 @@
                 </th>
               </thead>
               <tbody>
-                <?php while($result1 = $result->fetch_assoc()){ ?>
-                <tr>
-                  <td>
-                    <?php echo htmlspecialchars($result1['department_id']); ?>
-                  </td>
-                  <td>
-                    <?php echo htmlspecialchars($result1['department_abbreviation']); ?>
-                  </td>
-                  <td>
-                    <?php echo htmlspecialchars($result1['department_name']); ?>
-                  </td>
-                  <td class="text-right">
-                     <a href="#" >Edit</a> or <a href="#">Delete</a>
-                  </td>
-                </tr>
-                <?php } ?>
+               '.show_departments().'
               </tbody>
             </table>
           </div>
@@ -181,7 +166,7 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <small id="emailHelp" class="form-text text-muted">We\'ll never share your email with anyone else.</small>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
@@ -192,4 +177,6 @@
       </div>
     </div>
   </div>
-</div> -->
+</div> -->';
+}
+?>
