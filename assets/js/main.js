@@ -371,9 +371,9 @@ function form_error(text,input){
 	input_focus(input);
 }
 function showAddDept(){
-	$('#modal_content').loadingView({'state':true})
+	$('#modal-content').loadingView({'state':true})
 	$.get('pages/dash.php?show_add_dept',function(data){
-		$('#modal_content').html(data);
-		$('#modal_content').loadingView({'state':false});
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
 	});
 }
