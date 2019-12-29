@@ -1,3 +1,10 @@
+<?php
+include('../../assets/php/functions.php');
+if(isset($_GET['application_filter'])){
+	
+}
+else{
+	echo '
 <div class="panel-header panel-header-lg">
   <h2 align="center" class="d-sm-block" style="color:white;">WELCOME TO YOUR DASHBOARD</h2>
   <div class="container">
@@ -164,6 +171,9 @@
           <div class="table-responsive">
             <table class="table">
               <thead class=" text-primary">
+				  <th>
+				  Form Number
+				  </th>
                 <th>
                   Name
                 </th>
@@ -177,21 +187,9 @@
                   Options
                 </th>
               </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    Dakota Rice
-                  </td>
-                  <td>
-                    Niger
-                  </td>
-                  <td>
-                    Oud-Turnhout
-                  </td>
-                  <td class="text-right">
-                    <a href="#">View Form</a>
-                  </td>
-                </tr>
+              <tbody id="forms_table">
+                '. show_applications(0).'
+                
               </tbody>
             </table>
           </div>
@@ -459,4 +457,6 @@
       </div>
     </div>
   </div> -->
-</div>
+</div>';
+}
+?>

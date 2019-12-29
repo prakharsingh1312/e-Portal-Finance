@@ -161,5 +161,47 @@ function upload_file($file,$subpath,$response_code){
 	move_uploaded_file($file,'../uploads/'.$path);
 	return $path;
 }
+function show_applications($form_id){
+	$return='';
+	$n=1;
+	if($form_id==0){
+	for($i=1;$i<=$n;$i++){
+	
+		$sql="SELECT * FROM form_type".$i."_responses";
+		$stmt=$dbconfig->prepare($sql);
+		$stmt->execute();
+		$stmt=$stmt->get_result();
+		while($result=$stmt->fetch_assoc()){
+			$return.='<tr><td>'.$result['response_code'].'</td>
+                  <td>'.$result['name_of_student'].'</td>
+                  <td>'.$result['roll_no'].'</td>
+                  <td>'.$i.'</td>
+                  <td class="text-right">
+                    <a href="#">View Form</a>
+                  </td>
+				  </tr>';
+		}
+		
+	}
+}
+	else{
+		$sql="SELECT * FROM form_type".$form_id."_responses";
+		$stmt=$dbconfig->prepare($sql);
+		$stmt->execute();
+		$stmt=$stmt->get_result();
+		while($result=$stmt->fetch_assoc()){
+			$return.='<tr><td>'.$result['response_code'].'</td>
+                  <td>'.$result['name_of_student'].'</td>
+                  <td>'.$result['roll_no'].'</td>
+                  <td>'.$i.'</td>
+                  <td class="text-right">
+                    <a href="#">View Form</a>
+                  </td>
+				  </tr>';
+		
+	}
+}
+	return($return);
+}
 
 ?>
