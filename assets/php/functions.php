@@ -228,7 +228,7 @@ function get_application_data(){
 		
 		$sql="SELECT count(*) FROM form_type".$i."_responses WHERE STATUS=? and form_id=?";
 		$stmt2=$dbconfig->prepare($sql);
-			$stmt2->bind_param("ii",$result['MAX(path_level)']+1,$result['form_id']);
+			$stmt2->bind_param("ii",$lev=$result['MAX(path_level)']+1,$result['form_id']);
 		$stmt2->execute();
 		$stmt2=$stmt2->get_result();
 		$result2=$stmt2->fetch_assoc();
