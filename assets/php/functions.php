@@ -247,5 +247,22 @@ function get_application_data(){
 }
 	
 
-
+function show_departments(){
+	global $dbconfig;
+	 $sql="SELECT * FROM departments ";
+	$return='';
+    $result = $dbconfig->prepare($sql);
+    $result->execute();
+    $result=$result->get_result();
+	  while($result1 = $result->fetch_assoc()){ 
+                $return.='<tr>
+                  <td>'.$result1['department_id'].'</td>
+                  <td>'.$result1['department_abbreviation'].'</td>
+                  <td>'.$result1['department_name'].'</td>
+				  <td class="text-right">
+                     <a href="" data-toggle="modal" data-target="#exampleModal" >Edit</a> or <a href="" data-toggle="modal" data-target="#exampleModal">Delete</a>
+                  </td>
+                </tr>';
+                 } 
+}
 ?>
