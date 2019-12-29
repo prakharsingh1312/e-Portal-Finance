@@ -343,7 +343,7 @@ function edit_dept($name,$abbr,$id){
 			return verify_login();
 		}
 			else{
-				$sql="UPDATE departments SET department_name=? , department_abbreviation=? where department_id= ? ";
+				$sql="UPDATE departments SET department_name=? , department_abbreviation=? WHERE department_id=? ";
     $result = $dbconfig->prepare($sql);
 	$result->bind_param("ssi",$name,$abbr,$id);
     $result->execute();
