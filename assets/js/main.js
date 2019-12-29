@@ -7,12 +7,14 @@ var global_cookie_prefix = 'NIT';
 //pageload functions
 
 function showlogin(){
+	$('.wrapper').loadingView({'state':true});
 	$.get('login.php',function(data){
+		
 		if(data!=1)
 		$('.wrapper').html(data);
 		else
 			showAdmin();
-		
+		$('.wrapper').loadingView({'state':false});
 	});
 }
 function showAdmin(){
@@ -25,48 +27,61 @@ function showAdmin(){
 	}
 
 function showformlist(){
+	$('.wrapper').loadingView({'state':true});
 	$.get('forms.php?list',function(data){
-		$('.wrapper').html(data);
 		
+		$('.wrapper').html(data);
+		$('.wrapper').loadingView({'state':false});
 	});
 }
 function showtrack(){
+	$('.wrapper').loadingView({'state':true});
 	$.get('track.php',function(data){
+		
 		$('.wrapper').html(data);
+		$('.wrapper').loadingView({'state':false});
 		
 	});
 }
 function showDash(){
+	$('#wrapper').loadingView({'state':true});
 	$.get('./pages/dash.php',function(data){
+		
 		$('#wrapper').html(data);
 		linkChange('#users_dash');
-		
+		$('#wrapper').loadingView({'state':false});
 	});
 }
 function showDept(){
+	$('#wrapper').loadingView({'state':true});
 	$.get('./pages/dept.php',function(data){
+		
 		$('#wrapper').html(data);
 		linkChange('#departments');
-		
+		$('#wrapper').loadingView({'state':false});
 	});
 }
 function showFormC(){
+	$('#wrapper').loadingView({'state':true});
 	$.get('./pages/form_control.php',function(data){
 		$('#wrapper').html(data);
 		linkChange('#form_control');
+		$('#wrapper').loadingView({'state':false});
 	});
 }
 function showUsers(){
+	$('#wrapper').loadingView({'state':true});
 	$.get('./pages/users.php',function(data){
 		$('#wrapper').html(data);
 		linkChange('#manage_users');
-		
+		$('#wrapper').loadingView({'state':false});
 	});
 }
 function showUserP(){
 	$.get('./pages/user_profile.php',function(data){
 		$('#wrapper').html(data);
 		linkChange('#user_profile');
+		$('#wrapper').loadingView({'state':false});
 	});
 }
 
@@ -163,7 +178,9 @@ $(document).ready( function()
 		$(document).on('click','.login_button',function(){ dologin(); });
 		$(document).on('submit','#form1',function(){ form1_submit(); });
 	//Admin panel buttons
+	//Department
 		$(document).on('click','#show_add_dept_button',function(){ showAddDept(); });
+		$(document).on('click','.add_dept_button',function(){ addDept(); });
 		$(document).on('click','.dept_show_edit_button',function(){ 
 			var array = this.id.split(':');
 			showEditDept(array[1]); });
@@ -302,7 +319,7 @@ function form1_submit(){
 	if(validate_name(formdata.get('name'))){
 		if(validate_number(formdata.get('roll'),8)){
 		$("#submitForm").prop("disabled", true);
-
+			$('#form1').loadingView({'state':true});
         $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',
@@ -315,6 +332,7 @@ function form1_submit(){
             success: function (data) {
 				$('#container').html(data);
 				$("#btnSubmit").prop("disabled", false);
+				$('#form1').loadingView({'state':false});
 
             },
             error: function (e) {
@@ -322,6 +340,7 @@ function form1_submit(){
                 form_error('Error submitting form please try again.','#submitForm')
                 console.log("ERROR : ", e);
                 $("#btnSubmit").prop("disabled", false);
+				$('#form1').loadingView({'state':false});
 
             }
 		});
@@ -376,23 +395,48 @@ function form_error(text,input){
 	input_focus(input);
 }
 function showAddDept(){
-	$('#modal-content').loadingView({'state':true})
+	$('#modal-content').loadingView({'state':true});
 	$.get('pages/dept.php?show_add_dept',function(data){
 		$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
 	});
 }
 function showEditDept(dept_id){
-	$('#modal-content').loadingView({'state':true})
+	$('#modal-content').loadingView({'state':true});
 	$.post('pages/dept.php?show_edit_dept',{dept_id:dept_id},function(data){
 		$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
 	});
 }
 function showDeleteDept(dept_id){
-	$('#modal-content').loadingView({'state':true})
+	$('#modal-content').loadingView({'state':true});
 	$.get('pages/dept.php?show_add_dept',function(data){
 		$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
 	});
+}
+function showDeptTable(){
+	$('#department_table').loadingView({'state':true});
+	$.get('pages/dept.php?show_dept',function(data){
+		$('#department_table').html(data);
+		$('#department_table').loadingView({'state':false});
+	});
+}
+function addDept(){
+	var name=$('#department_name').val();
+	var abbr=$('#department_abbr').val();
+	if(name.length==0)
+		form_error('Department Name cannot be blank.','#department_name');
+	else if(abbr.length==0)
+		form_error('Department Abbreviation cannot be blank.','#department_abbr');
+	else{
+		$('#modal-content').loadingView({'state':true});
+		$.post('pages/dept.php?add_dept',{name:name,abbr:abbr},function(data){
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+			showDeptTable();
+		
+	});
+		
+	}
 }

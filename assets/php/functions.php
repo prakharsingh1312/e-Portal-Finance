@@ -288,13 +288,13 @@ function show_edit_dept($dept_id){
               <input type="text" class="form-control" id="department_name" aria-describedby="emailHelp" placeholder="" value="'.$result['department_name'].'">
             </div>
             <div class="form-group">
-              <label for="department_abbr">Department Abbriviation :</label>
+              <label for="department_abbr">Department Abbreviation :</label>
               <input type="text" class="form-control" id="department_abbr" placeholder="" value="'.$result['department_abbreviation'].'">
             </div>
 
 
           </form>
-
+<span id="error_span"></span>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
@@ -303,5 +303,54 @@ function show_edit_dept($dept_id){
 
         </div>';
 	return $return;
+}
+function add_dept($name,$abbr){
+	if(!isset($_SESSION['role'])){
+		return 'You are not logged in.';
+	}
+	else{
+		if($_SESSION['role']!=1){
+			return '<div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>You are not authorised to do this.</p>
+<span id="error_span"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          
+      
+
+        </div>';}
+			else{
+				$sql="INSERT INTO departments (`department_name`,`department_abbreviation`) VALUES (?,?) ";
+    $result = $dbconfig->prepare($sql);
+	$result->bind_param("ss",$name,$abbr);
+    $result->execute();
+    $return='<div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Department "'.$name.'" has been added successfully.</p>
+<span id="error_span"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          
+      
+
+        </div>';
+				return $return;
+			}
+		
+		
+	}
 }
 ?>

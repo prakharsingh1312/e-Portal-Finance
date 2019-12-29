@@ -8,6 +8,9 @@ elseif(isset($_GET['show_edit_dept'])){
 	echo show_edit_dept($dept_id);
 	
 }
+elseif(isset($_GET['show_dept'])){
+	echo show_departments();
+}
 	elseif(isset($_GET['show_add_dept'])){
 		echo '<div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Add a New Department</h5>
@@ -22,13 +25,13 @@ elseif(isset($_GET['show_edit_dept'])){
               <input type="text" class="form-control" id="department_name" aria-describedby="emailHelp" placeholder="">
             </div>
             <div class="form-group">
-              <label for="department_abbr">Department Abbriviation :</label>
+              <label for="department_abbr">Department Abbreviation :</label>
               <input type="text" class="form-control" id="department_abbr" placeholder="">
             </div>
 
 
           </form>
-
+<span id="error_span"></span>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
@@ -36,6 +39,11 @@ elseif(isset($_GET['show_edit_dept'])){
 
         </div>';
 	}
+elseif(isse($_GET['add_dept'])){
+	$name=mysqli_real_escape_string($dbconfig,$_POST['name']);
+	$abbr=mysqli_real_escape_string($dbconfig,$_POST['abbr']);
+	echo add_dept($name,$abbr);
+}
 else{
 	
 echo'
@@ -124,7 +132,7 @@ echo'
                   Department ID
                 </th>
                 <th>
-                  Department Code
+                  Department Abbreviation
                 </th>
                 <th>
                   Department Name
@@ -133,7 +141,7 @@ echo'
                   Actions
                 </th>
               </thead>
-              <tbody>
+              <tbody id="department_table">
                '.show_departments().'
               </tbody>
             </table>
@@ -152,7 +160,7 @@ echo'
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content" id="modal-content">
-        <br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
       </div>
     </div>
   </div>
