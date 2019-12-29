@@ -372,7 +372,7 @@ function form_error(text,input){
 }
 function showAddDept(){
 	$('#modal-content').loadingView({'state':true})
-	$.get('pages/dash.php?show_add_dept',function(data){
+	$.get('pages/dept.php?show_add_dept',function(data){
 		$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
 	});
