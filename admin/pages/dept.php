@@ -39,7 +39,7 @@ elseif(isset($_GET['show_dept'])){
 
         </div>';
 	}
-elseif(isse($_GET['add_dept'])){
+elseif(isset($_GET['add_dept'])){
 	$name=mysqli_real_escape_string($dbconfig,$_POST['name']);
 	$abbr=mysqli_real_escape_string($dbconfig,$_POST['abbr']);
 	echo add_dept($name,$abbr);
