@@ -12,7 +12,8 @@
  * @returns
  */
 
-var LoadingView = (typeof LoadingView === 'undefined') ? {} : LoadingView;
+function loadingView(){
+	var LoadingView = (typeof LoadingView === 'undefined') ? {} : LoadingView;
 
 LoadingView = function(options) {
 	var defaultOption = {};
@@ -82,6 +83,7 @@ LoadingView = function(options) {
 			}
 	 }
 
+}
 }
 
 /**
