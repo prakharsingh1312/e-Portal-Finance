@@ -362,7 +362,7 @@ function form1_submit(){
 function logout(){
 	$.get('../login.php?logout',function(data){
 		if (data==1)
-			window.location.href="../";
+			window.location.href="../#login";
 		$(window).bind('hashchange', function ()
 		{
 			hash();
