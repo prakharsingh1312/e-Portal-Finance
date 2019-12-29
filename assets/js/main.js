@@ -375,5 +375,5 @@ function showAddDept(){
 	$.get('pages/dash.php?show_add_dept',function(data){
 		$('.modal_content').html(data);
 		$('.modal_content').loadingView({'state':false});
-	})
+	});
 }
