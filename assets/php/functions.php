@@ -401,4 +401,34 @@ function verify_login(){
 	}
 	
 }
+function delete_dept($id){
+	global $dbconfig;
+	if(verify_login()!=1){
+		return verify_login();
+	}
+	else
+	{
+	$sql='DELETE FROM departments where department_id=?';
+		$stmt=$dbconfig->prepare($sql);
+		$stmt->bind_param("i",$id);
+		$stmt->execute();
+	$return='<div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Department "'.$name.'" has been deleted.</p>
+<span id="error_span"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          
+      
+
+        </div>';
+				return $return;
+	}
+}
 ?>

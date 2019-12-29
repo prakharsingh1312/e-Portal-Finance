@@ -11,46 +11,24 @@ elseif(isset($_GET['show_edit_dept'])){
 elseif(isset($_GET['show_dept'])){
 	echo show_departments();
 }
-	elseif(isset($_GET['show_add_dept'])){
-		echo '<div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add a New Department</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="department_name">Department Name :</label>
-              <input type="text" class="form-control" id="department_name" aria-describedby="emailHelp" placeholder="">
-            </div>
-            <div class="form-group">
-              <label for="department_abbr">Department Abbreviation :</label>
-              <input type="text" class="form-control" id="department_abbr" placeholder="">
-            </div>
-
-
-          </form>
-<span id="error_span"></span>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
-          <button type="button" class="btn btn-primary add_dept_button">Add Department</button>
-
-        </div>';
-	}
+	
 elseif(isset($_GET['add_dept'])){
 	$name=mysqli_real_escape_string($dbconfig,$_POST['name']);
 	$abbr=mysqli_real_escape_string($dbconfig,$_POST['abbr']);
 	echo add_dept($name,$abbr);
 }
 elseif(isset($_GET['update_dept'])){
-	echo 'here';
+	
 	$name=mysqli_real_escape_string($dbconfig,$_POST['name']);
 	$abbr=mysqli_real_escape_string($dbconfig,$_POST['abbr']);
 	$id=mysqli_real_escape_string($dbconfig,$_POST['id']);
 	
 	echo edit_dept($name,$abbr,$id);
+}
+elseif(isset($_GET['delete_dept'])){
+	$id=mysqli_real_escape_string($dbconfig,$_POST['id']);
+	
+	echo edit_dept($id);
 }
 else{
 	
