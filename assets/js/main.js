@@ -373,7 +373,7 @@ function form_error(text,input){
 function showAddDept(){
 	$('.modal_content').loadingView({'state':true})
 	$.get('pages/dash.php?show_add_dept',function(data){
-		$('.modal_content').html();
+		$('.modal_content').html(data);
 		$('.modal_content').loadingView({'state':false});
 	})
 }
