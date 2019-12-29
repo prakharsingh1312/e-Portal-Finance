@@ -45,10 +45,11 @@ elseif(isset($_GET['add_dept'])){
 	echo add_dept($name,$abbr);
 }
 elseif(isset($_GET['edit_dept'])){
+	echo 'here';
 	$name=mysqli_real_escape_string($dbconfig,$_POST['name']);
 	$abbr=mysqli_real_escape_string($dbconfig,$_POST['abbr']);
 	$id=mysqli_real_escape_string($dbconfig,$_POST['id']);
-	echo 'here';
+	
 	echo edit_dept($name,$abbr,$id);
 }
 else{
