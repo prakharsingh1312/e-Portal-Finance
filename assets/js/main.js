@@ -158,7 +158,7 @@ $(document).ready( function()
 			{show_input('#form1_16');$('#form1_title').attr('required');
 			show_input('#form1_17');$('#form1_accepted_paper').attr('required','1');}
 		 });
-	$(document).on('change','#form1_')
+	
 	//Forms
 		$(document).on('click','.login_button',function(){ dologin(); });
 		$(document).on('submit','#form1',function(){ form1_submit(); });
