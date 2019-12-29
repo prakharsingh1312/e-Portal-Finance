@@ -193,6 +193,10 @@ $(document).ready( function()
 			deleteDept(array[1],array[2]); });
   
 });
+//Form Control
+$(document).on('change','.form_toggle',function(){ var array = $('.form_toggle:checked').id.split(':');
+			formToggle(array[1],array[2]); });
+
 
 $(window).load(function()
 {
@@ -427,6 +431,13 @@ function showDeptTable(){
 		$('#department_table').loadingView({'state':false});
 	});
 }
+function showDeptTable(){
+	$('#forms_table').loadingView({'state':true});
+	$.get('pages/form_control.php?show_forms',function(data){
+		$('#forms_table').html(data);
+		$('#forms_table').loadingView({'state':false});
+	});
+}
 function addDept(){
 	var name=$('#department_name').val();
 	var abbr=$('#department_abbr').val();
@@ -473,3 +484,12 @@ function deleteDept(name,id){
 	});
 		
 	}
+function formToggle(state,id){
+	$('#modal-content').loadingView({'state':true});
+		$.post('pages/form_control.php?form_toggle',{state:state,id:id},function(data){
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+			showFormTable();
+		
+	});
+}

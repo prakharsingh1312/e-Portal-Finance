@@ -477,7 +477,7 @@ function show_forms(){
 		 if($result1['form_activation']==1)
 			 $return.='active';
 		 $return.=' ">
-                        <input type="radio" name="options" id="form_toggle:1:'.$result1['form_id'].'" autocomplete="off" ';
+                        <input type="radio" name="options" id="form_toggle:1:'.$result1['form_id'].'" class="form_toggle" autocomplete="off" ';
 		 if($result1['form_activation']==1)
 			 $return.='checked';
 		 $return.='> Activated
@@ -502,5 +502,41 @@ function show_forms(){
 		 
                  }
 	return $return;
+}
+function form_toggle($state,$id){
+	global $dbconfig;
+	if(verify_login()!=1){
+		return verify_login();
+	}
+	else
+	{
+	$sql='UPDATE form_details SET form_activation=? where form_id=?';
+		$stmt=$dbconfig->prepare($sql);
+		$stmt->bind_param("ii",$state,$id);
+		$stmt->execute();
+	$return='<div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+		
+          <p>';
+		if($state==1)
+			$return.='Form has been ACTIVATED.';
+		else
+			$return.='Form has been DE-ACTIVATED.';
+		$return.='</p>
+<span id="error_span"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          
+      
+
+        </div>';
+				return $return;
+	}
 }
 ?>
