@@ -48,6 +48,7 @@ elseif(isset($_GET['edit_dept'])){
 	$name=mysqli_real_escape_string($dbconfig,$_POST['name']);
 	$abbr=mysqli_real_escape_string($dbconfig,$_POST['abbr']);
 	$id=mysqli_real_escape_string($dbconfig,$_POST['id']);
+	echo 'here';
 	echo edit_dept($name,$abbr,$id);
 }
 else{
