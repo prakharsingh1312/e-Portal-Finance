@@ -4,6 +4,7 @@ if(isset($_GET['application_filter'])){
 	
 }
 else{
+	$result=get_application_data();
 	echo '
 <div class="panel-header panel-header-lg">
   <h2 align="center" class="d-sm-block" style="color:white;">WELCOME TO YOUR DASHBOARD</h2>
@@ -19,21 +20,21 @@ else{
           <div class="carousel-item active w-100">
             <div class="card-counter success">
               <!-- <i class="fa fa-database"></i> -->
-              <span class="count-numbers">0</span>
+              <span class="count-numbers">'.$result['accepted'].'</span>
               <span class="count-name">Applications Approved </span>
             </div>
           </div>
           <div class="carousel-item">
             <div class="card-counter info w-100">
               <!-- <i class="fa fa-users"></i> -->
-              <span class="count-numbers">0</span>
+              <span class="count-numbers">'.$result['pending'].'</span>
               <span class="count-name">Application Pending</span>
             </div>
           </div>
           <div class="carousel-item">
             <div class="card-counter danger">
               <!-- <i class="fa fa-ticket"></i> -->
-              <span class="count-numbers">0</span>
+              <span class="count-numbers">'.$result['rejected'].'</span>
               <span class="count-name">Applications Rejected</span>
             </div>
           </div>
@@ -52,7 +53,7 @@ else{
       <div class="col-lg-4 d-none d-lg-block">
         <div class="card-counter success">
           <!-- <i class="fa fa-database"></i> -->
-          <span class="count-numbers">0</span>
+          <span class="count-numbers">'.$result['accepted'].'</span>
           <span class="count-name">Applications Approved </span>
         </div>
       </div>
@@ -60,14 +61,14 @@ else{
       <div class="col-lg-4 d-none d-lg-block">
         <div class="card-counter info">
           <!-- <i class="fa fa-users"></i> -->
-          <span class="count-numbers">0</span>
+          <span class="count-numbers">'.$result['pending'].'</span>
           <span class="count-name">Application Pending</span>
         </div>
       </div>
       <div class="col-lg-4 d-none d-lg-block">
         <div class="card-counter danger">
           <i class="fa fa-ticket"></i>
-          <span class="count-numbers">0</span>
+          <span class="count-numbers">'.$result['rejected'].'</span>
           <span class="count-name">Applications Rejected</span>
         </div>
       </div>
