@@ -32,7 +32,7 @@ elseif(isset($_GET['delete_dept'])){
 	echo delete_dept($name,$id);
 }
 else{
-	
+	$result=get_department_data();
 echo'
 <div class="panel-header panel-header-lg">
   <h2 align="center" class="d-sm-block" style="color:white;">WELCOME TO YOUR DASHBOARD</h2>
@@ -48,21 +48,21 @@ echo'
           <div class="carousel-item active w-100">
             <div class="card-counter success">
               <!-- <i class="fa fa-database"></i> -->
-              <span class="count-numbers">0</span>
+              <span class="count-numbers">'.$result['dept'].'</span>
               <span class="count-name">Number of Departments</span>
             </div>
           </div>
           <div class="carousel-item">
             <div class="card-counter info w-100">
               <!-- <i class="fa fa-users"></i> -->
-              <span class="count-numbers">0</span>
+              <span class="count-numbers">'.$result['users'].'</span>
               <span class="count-name">Number of Users</span>
             </div>
           </div>
           <div class="carousel-item">
             <div class="card-counter danger">
               <!-- <i class="fa fa-ticket"></i> -->
-              <span class="count-numbers">0</span>
+              <span class="count-numbers">'.$result['forms'].'</span>
               <span class="count-name">Number of active forms</span>
             </div>
           </div>
@@ -81,7 +81,7 @@ echo'
       <div class="col-lg-4 d-none d-lg-block">
         <div class="card-counter success">
           <!-- <i class="fa fa-database"></i> -->
-          <span class="count-numbers">0</span>
+          <span class="count-numbers">'.$result['dept'].'</span>
           <span class="count-name">Number of Departments</span>
         </div>
       </div>
@@ -89,14 +89,14 @@ echo'
       <div class="col-lg-4 d-none d-lg-block">
         <div class="card-counter info">
           <!-- <i class="fa fa-users"></i> -->
-          <span class="count-numbers">0</span>
+          <span class="count-numbers">'.$result['users'].'</span>
           <span class="count-name">Number of Users</span>
         </div>
       </div>
       <div class="col-lg-4 d-none d-lg-block">
         <div class="card-counter danger">
           <i class="fa fa-ticket"></i>
-          <span class="count-numbers">0</span>
+          <span class="count-numbers">'.$result['forms'].'</span>
           <span class="count-name">Number of active forms</span>
         </div>
       </div>

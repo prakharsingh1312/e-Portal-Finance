@@ -431,4 +431,29 @@ function delete_dept($name,$id){
 				return $return;
 	}
 }
+function get_department_data(){
+	global $dbconfig;
+	//Number of depts
+	$sql= 'SELECT COUNT(*) FROM departments';
+	$stmt=$dbconfig->prepare($sql);
+	$stmt->execute();
+	$stmt=$stmt->get_result();
+	$result=$stmt->fetch_assoc();
+	$return['dept']=$result['COUNT(*)'];
+	//Number of users
+	$sql= 'SELECT COUNT(*) FROM user_accounts';
+	$stmt=$dbconfig->prepare($sql);
+	$stmt->execute();
+	$stmt=$stmt->get_result();
+	$result=$stmt->fetch_assoc();
+	$return['users']=$result['COUNT(*)'];
+	//Number of active forms
+	$sql= 'SELECT COUNT(*) FROM form_details WHERE form_activation=1';
+	$stmt=$dbconfig->prepare($sql);
+	$stmt->execute();
+	$stmt=$stmt->get_result();
+	$result=$stmt->fetch_assoc();
+	$return['forms']=$result['COUNT(*)'];
+	return $return;
+}
 ?>
