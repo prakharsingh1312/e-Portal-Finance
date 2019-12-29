@@ -343,10 +343,13 @@ function edit_dept($name,$abbr,$id){
 			return verify_login();
 		}
 			else{
+				echo $name,$abbr,$id;
 				$sql="UPDATE departments SET department_name=? , department_abbreviation=? WHERE department_id=? ";
     $result = $dbconfig->prepare($sql);
 	$result->bind_param("ssi",$name,$abbr,$id);
+			
     $result->execute();
+				
     $return='<div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Success</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
