@@ -29,7 +29,7 @@ elseif(isset($_GET['delete_dept'])){
 	$id=mysqli_real_escape_string($dbconfig,$_POST['id']);
 	$name=mysqli_real_escape_string($dbconfig,$_POST['name']);
 	
-	echo edit_dept($name,$id);
+	echo delete_dept($name,$id);
 }
 else{
 	

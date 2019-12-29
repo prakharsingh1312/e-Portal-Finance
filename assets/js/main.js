@@ -415,7 +415,7 @@ function showEditDept(dept_id){
 }
 function showDeleteDept(name,id){
 	$('#modal-content').loadingView({'state':true});
-	var data='<div class="modal-header">          <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>          <button type="button" class="close" data-dismiss="modal" aria-label="Close">            <span aria-hidden="true">&times;</span>          </button>        </div>        <div class="modal-body">          <p>Are you sure you want to delete department "'+name+'".</p><span id="error_span"></span>        </div>        <div class="modal-footer">          <button type="button" class="btn btn-primary dept_delete_button" id="delete:'+name+':'+id+'" data-dismiss="modal">Delete</button>                        </div>';
+	var data='<div class="modal-header">          <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>          <button type="button" class="close" data-dismiss="modal" aria-label="Close">            <span aria-hidden="true">&times;</span>          </button>        </div>        <div class="modal-body">          <p>Are you sure you want to delete department "'+name+'".</p><span id="error_span"></span>        </div>        <div class="modal-footer">          <button type="button" class="btn btn-primary dept_delete_button" id="delete:'+name+':'+id+'" >Delete</button>                        </div>';
 		$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
 	
