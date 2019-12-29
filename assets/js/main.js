@@ -184,6 +184,9 @@ $(document).ready( function()
 		$(document).on('click','.dept_show_edit_button',function(){ 
 			var array = this.id.split(':');
 			showEditDept(array[1]); });
+	$(document).on('click','.dept_edit_button',function(){ 
+			var array = this.id.split(':');
+			editDept(array[1]); });
 		$(document).on('click','.dept_delete_button',function(){ var array = this.id.split(':');
 			showDeleteDept(array[1]); });
   
@@ -432,6 +435,24 @@ function addDept(){
 	else{
 		$('#modal-content').loadingView({'state':true});
 		$.post('pages/dept.php?add_dept',{name:name,abbr:abbr},function(data){
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+			showDeptTable();
+		
+	});
+		
+	}
+}
+function editDept(id){
+	var name=$('#department_name').val();
+	var abbr=$('#department_abbr').val();
+	if(name.length==0)
+		form_error('Department Name cannot be blank.','#department_name');
+	else if(abbr.length==0)
+		form_error('Department Abbreviation cannot be blank.','#department_abbr');
+	else{
+		$('#modal-content').loadingView({'state':true});
+		$.post('pages/dept.php?edit_dept',{name:name,abbr:abbr,id:id},function(data){
 		$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
 			showDeptTable();

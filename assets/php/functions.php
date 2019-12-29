@@ -298,7 +298,7 @@ function show_edit_dept($dept_id){
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
-          <button type="button" class="btn btn-primary edit_dept_button" id="editF:'.$result['department_id'].'">Save Department</button>
+          <button type="button" class="btn btn-primary dept_edit_button" id="editF:'.$result['department_id'].'">Save Department</button>
       
 
         </div>';
@@ -306,27 +306,9 @@ function show_edit_dept($dept_id){
 }
 function add_dept($name,$abbr){
 	global $dbconfig;
-	if(!isset($_SESSION['user_role'])){
-		return 'You are not logged in.';
+	if(verify_login()!=1){
+		return verify_login();
 	}
-	else{
-		if($_SESSION['user_role']!=1){
-			return '<div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Error</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>You are not authorised to do this.</p>
-<span id="error_span"></span>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          
-      
-
-        </div>';}
 			else{
 				$sql="INSERT INTO departments (`department_name`,`department_abbreviation`) VALUES (?,?) ";
     $result = $dbconfig->prepare($sql);
@@ -352,6 +334,68 @@ function add_dept($name,$abbr){
 			}
 		
 		
+	
+}
+function edit_dept($name,$abbr,$id){
+	global $dbconfig;
+	
+		if(verify_login()!=1){
+			return verify_login();
+		}
+			else{
+				$sql="UPDATE departments SET `department_name`=? AND `department_abbreviation`=? where `department_id`=? ";
+    $result = $dbconfig->prepare($sql);
+	$result->bind_param("ssi",$name,$abbr,$id);
+    $result->execute();
+    $return='<div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Department "'.$name.'" has been updated successfully.</p>
+<span id="error_span"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          
+      
+
+        </div>';
+				return $return;
+			}
+		
+		
+	
+
+}
+function verify_login(){
+	if(!isset($_SESSION['user_role'])){
+		return 'You are not logged in.';
 	}
+	else{
+		if($_SESSION['user_role']!=1){
+			return '<div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>You are not authorised to do this.</p>
+<span id="error_span"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          
+      
+
+        </div>';}
+		else{
+		return 1;
+	}
+	}
+	
 }
 ?>
