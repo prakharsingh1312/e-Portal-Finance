@@ -452,7 +452,7 @@ function editDept(id){
 		form_error('Department Abbreviation cannot be blank.','#department_abbr');
 	else{
 		$('#modal-content').loadingView({'state':true});
-		$.post('pages/dept.php?edit_dept',{name:name,abbr:abbr,id:id},function(data){
+		$.post('pages/dept.php?update_dept',{name:name,abbr:abbr,id:id},function(data){
 		$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
 			showDeptTable();
