@@ -1,13 +1,20 @@
+
+
+
+
+//Loading view
 var global_cookie_prefix = 'NIT';
 //pageload functions
 
 function showlogin(){
+	$('.wrapper').loadingView({'state':true});
 	$.get('login.php',function(data){
+		
 		if(data!=1)
 		$('.wrapper').html(data);
 		else
 			showAdmin();
-		
+		$('.wrapper').loadingView({'state':false});
 	});
 }
 function showAdmin(){
@@ -20,48 +27,61 @@ function showAdmin(){
 	}
 
 function showformlist(){
+	$('.wrapper').loadingView({'state':true});
 	$.get('forms.php?list',function(data){
-		$('.wrapper').html(data);
 		
+		$('.wrapper').html(data);
+		$('.wrapper').loadingView({'state':false});
 	});
 }
 function showtrack(){
+	$('.wrapper').loadingView({'state':true});
 	$.get('track.php',function(data){
+		
 		$('.wrapper').html(data);
+		$('.wrapper').loadingView({'state':false});
 		
 	});
 }
 function showDash(){
+	$('#wrapper').loadingView({'state':true});
 	$.get('./pages/dash.php',function(data){
+		
 		$('#wrapper').html(data);
 		linkChange('#users_dash');
-		
+		$('#wrapper').loadingView({'state':false});
 	});
 }
 function showDept(){
+	$('#wrapper').loadingView({'state':true});
 	$.get('./pages/dept.php',function(data){
+		
 		$('#wrapper').html(data);
 		linkChange('#departments');
-		
+		$('#wrapper').loadingView({'state':false});
 	});
 }
 function showFormC(){
+	$('#wrapper').loadingView({'state':true});
 	$.get('./pages/form_control.php',function(data){
 		$('#wrapper').html(data);
 		linkChange('#form_control');
+		$('#wrapper').loadingView({'state':false});
 	});
 }
 function showUsers(){
+	$('#wrapper').loadingView({'state':true});
 	$.get('./pages/users.php',function(data){
 		$('#wrapper').html(data);
 		linkChange('#manage_users');
-		
+		$('#wrapper').loadingView({'state':false});
 	});
 }
 function showUserP(){
 	$.get('./pages/user_profile.php',function(data){
 		$('#wrapper').html(data);
 		linkChange('#user_profile');
+		$('#wrapper').loadingView({'state':false});
 	});
 }
 
@@ -91,38 +111,92 @@ $(document).ready( function()
 		});
 		$(document).on('change','#form1_course',function(){ 
 			{
-			if($('#form1_course').val()=='ug')
+			if($('#form1_course').val()=='Under Graduate')
 			{hide_input('#form1_20');$('#form1_mtech').removeAttr('required');}
 			else
 			{show_input('#form1_20');$('#form1_mtech').attr('required','1');}
 			}
 			{
-		if($('#form1_course').val()=='phd')
+		if($('#form1_course').val()=='PhD')
 			{
 				hide_input('#form1_19');$('#form1_cgpa').removeAttr('required');}
 			else {show_input('#form1_19');$('#form1_cgpa').attr('required','1')}
 		}
 		});
 	$(document).on('change','#form1_recommended',function(){ 
-			if($('#form1_recommended').val()=='N')
+			if($('#form1_recommended').val()=='Not Recommended')
 			{hide_input('#form1_24');$('#form1_signhod').removeAttr('required');}
 			else
 			{show_input('#form1_24');$('#form1_signhod').attr('required','1');}
 		 });
+	$(document).on('input','#form1_relevance_text',function(){ 
+			if($('#form1_relevance_text').val()!='')
+			{hide_input('#form1_relevance');$('#form1_relevance').removeAttr('required');}
+			else
+			{show_input('#form1_relevance');$('#form1_relevance').attr('required','1');}
+		 });
+	$(document).on('input','#form1_relevance',function(){ 
+			if($('#form1_relevance').val()!='')
+			{hide_input('#form1_relevance_text');$('#form1_relevance_text').removeAttr('required');}
+			else
+			{show_input('#form1_relevance_text');$('#form1_relevance_text').attr('required','1');}
+		 });
+	$(document).on('input','#form1_objective_text',function(){ 
+			if($('#form1_objective_text').val()!='')
+			{hide_input('#form1_objective');$('#form1_objective').removeAttr('required');}
+			else
+			{show_input('#form1_objective');$('#form1_objective').attr('required','1');}
+		 });
+	$(document).on('input','#form1_objective',function(){ 
+			if($('#form1_objective').val()!='')
+			{hide_input('#form1_objective_text');$('#form1_objective_text').removeAttr('required');}
+			else
+			{show_input('#form1_objective_text');$('#form1_objective_text').attr('required','1');}
+		 });
+	$(document).on('input','#form1_cost_details_text',function(){ 
+			if($('#form1_cost_details_text').val()!='')
+			{hide_input('#form1_cost_details');$('#form1_cost_details').removeAttr('required');}
+			else
+			{show_input('#form1_cost_details');$('#form1_cost_details').attr('required','1');}
+		 });
+	$(document).on('input','#form1_cost_details',function(){ 
+			if($('#form1_cost_details').val()!='')
+			{hide_input('#form1_cost_details_text');$('#form1_cost_details_text').removeAttr('required');}
+			else
+			{show_input('#form1_cost_details_text');$('#form1_cost_details_text').attr('required','1');}
+		 });
 	$(document).on('change','#form1_research',function(){ 
-			if($('#form1_research').val()=='no')
+			if($('#form1_research').val()=='No')
 			{hide_input('#form1_16');$('#form1_title').removeAttr('required');
 			hide_input('#form1_17');$('#form1_accepted_paper').removeAttr('required');}
 			else
 			{show_input('#form1_16');$('#form1_title').attr('required');
 			show_input('#form1_17');$('#form1_accepted_paper').attr('required','1');}
 		 });
-	$(document).on('change','#form1_')
+	
 	//Forms
 		$(document).on('click','.login_button',function(){ dologin(); });
-		$(document).on('submit','#form1_from',function(){ form1_submit(); return false; });
+		$(document).on('submit','#form1',function(){ form1_submit(); });
+	//Admin panel buttons
+	//Department
+		$(document).on('click','#show_add_dept_button',function(){ showAddDept(); });
+		$(document).on('click','.add_dept_button',function(){ addDept(); });
+		$(document).on('click','.dept_show_edit_button',function(){ 
+			var array = this.id.split(':');
+			showEditDept(array[1]); });
+	$(document).on('click','.dept_edit_button',function(){ 
+			var array = this.id.split(':');
+			editDept(array[1]); });
+		$(document).on('click','.dept_show_delete_button',function(){ var array = this.id.split(':');
+			showDeleteDept(array[1],array[2]); });
+	$(document).on('click','.dept_delete_button',function(){ var array = this.id.split(':');
+			deleteDept(array[1],array[2]); });
   
 });
+//Form Control
+$(document).on('click','.form_toggle',function(){ var array = this.id.split(':');
+			formToggle(array[1],array[2]); });
+
 
 $(window).load(function()
 {
@@ -249,23 +323,50 @@ function input_focus(id)
 	}
 }
 function form1_submit(){
-	var name=$('#form1_name').val();
-	var course=$('#form1_course').val();
-	var roll=$('#form1_roll').val();
-	var department=$('#form1_department').val();
-	var nature_of_event=$('#form1_nature_of_event').val();
-	var name_of_event=$('#form1_name_of_event').val();
-	var place=$('#form1_place').val();
-	var from_date=$('#form1_from_date').val();
-	var to_date=$('#form1_to_date').val();
-	var no_of_days=$('#form1_no_of_days').val();
-	var organizer=$('#form1_name').val();
-	
+	var form=$('#form1')[0];
+	var formdata=new FormData(form);
+	if(validate_name(formdata.get('name'))){
+		if(validate_number(formdata.get('roll'),8)){
+		$("#submitForm").prop("disabled", true);
+			$('#form1').loadingView({'state':true});
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "form1.php?submit_form",
+            data: formdata,
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 600000,
+            success: function (data) {
+				$('#container').html(data);
+				$("#btnSubmit").prop("disabled", false);
+				$('#form1').loadingView({'state':false});
+
+            },
+            error: function (e) {
+
+                form_error('Error submitting form please try again.','#submitForm')
+                console.log("ERROR : ", e);
+                $("#btnSubmit").prop("disabled", false);
+				$('#form1').loadingView({'state':false});
+
+            }
+		});
+		}
+		else{
+			form_error('Roll no. format incorrect.','#form1_roll')
+		}
+	}
+	else
+		{
+			form_error('Name cannot contain letters or symbols.','#form1_name');
+		}
 }
 function logout(){
 	$.get('../login.php?logout',function(data){
 		if (data==1)
-			window.location.href="../";
+			window.location.href="../#login";
 		$(window).bind('hashchange', function ()
 		{
 			hash();
@@ -280,5 +381,115 @@ function linkChange(id){
 		}
 		else
 			$(value).removeClass('active');
+	});
+}
+function validate_name(name){
+	var regex = new RegExp("/^[a-zA-Z\s]+$/");
+	if(regex.test(name))
+		return 1;
+	else
+		return 0;
+	
+}
+function validate_number(number,len){
+	var regex =new RegExp(/^[0-9-+]+$/);
+	if(regex.test(number)&& number.length==len)
+		return 1;
+	else
+		return 0;
+	
+}
+function form_error(text,input){
+	$('#error_span').html(text);
+	input_focus(input);
+}
+function showAddDept(){
+	$('#modal-content').loadingView({'state':true});
+	var data='<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Add a New Department</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close">            <span aria-hidden="true">&times;</span>          </button>        </div>        <div class="modal-body">          <form>            <div class="form-group">              <label for="department_name">Department Name :</label>              <input type="text" class="form-control" id="department_name" aria-describedby="emailHelp" placeholder="">            </div>            <div class="form-group">              <label for="department_abbr">Department Abbreviation :</label>              <input type="text" class="form-control" id="department_abbr" placeholder="">            </div>          </form><span id="error_span"></span>        </div>        <div class="modal-footer">          <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>          <button type="button" class="btn btn-primary add_dept_button">Add Department</button>        </div>';		
+	$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+	}
+
+function showEditDept(dept_id){
+	$('#modal-content').loadingView({'state':true});
+	$.post('pages/dept.php?show_edit_dept',{dept_id:dept_id},function(data){
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+	});
+}
+function showDeleteDept(name,id){
+	$('#modal-content').loadingView({'state':true});
+	var data='<div class="modal-header">          <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>          <button type="button" class="close" data-dismiss="modal" aria-label="Close">            <span aria-hidden="true">&times;</span>          </button>        </div>        <div class="modal-body">          <p>Are you sure you want to delete department "'+name+'".</p><span id="error_span"></span>        </div>        <div class="modal-footer">          <button type="button" class="btn btn-primary dept_delete_button" id="delete:'+name+':'+id+'" >Delete</button>                        </div>';
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+	
+}
+function showDeptTable(){
+	$('#department_table').loadingView({'state':true});
+	$.get('pages/dept.php?show_dept',function(data){
+		$('#department_table').html(data);
+		$('#department_table').loadingView({'state':false});
+	});
+}
+function showFormTable(){
+	$('#forms_table').loadingView({'state':true});
+	$.get('pages/form_control.php?show_forms',function(data){
+		$('#forms_table').html(data);
+		$('#forms_table').loadingView({'state':false});
+	});
+}
+function addDept(){
+	var name=$('#department_name').val();
+	var abbr=$('#department_abbr').val();
+	if(name.length==0)
+		form_error('Department Name cannot be blank.','#department_name');
+	else if(abbr.length==0)
+		form_error('Department Abbreviation cannot be blank.','#department_abbr');
+	else{
+		$('#modal-content').loadingView({'state':true});
+		$.post('pages/dept.php?add_dept',{name:name,abbr:abbr},function(data){
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+			showDeptTable();
+		
+	});
+		
+	}
+}
+function editDept(id){
+	var name=$('#department_name').val();
+	var abbr=$('#department_abbr').val();
+	if(name.length==0)
+		form_error('Department Name cannot be blank.','#department_name');
+	else if(abbr.length==0)
+		form_error('Department Abbreviation cannot be blank.','#department_abbr');
+	else{
+		$('#modal-content').loadingView({'state':true});
+		$.post('pages/dept.php?update_dept',{name:name,abbr:abbr,id:id},function(data){
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+			showDeptTable();
+		
+	});
+		
+	}
+}
+function deleteDept(name,id){
+		$('#modal-content').loadingView({'state':true});
+		$.post('pages/dept.php?delete_dept',{name:name,id:id},function(data){
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+			showDeptTable();
+		
+	});
+		
+	}
+function formToggle(state,id){
+	$('#modal-content').loadingView({'state':true});
+		$.post('pages/form_control.php?form_toggle',{state:state,id:id},function(data){
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+			showFormTable();
+		
 	});
 }

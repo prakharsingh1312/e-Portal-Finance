@@ -1,11 +1,39 @@
 <?php
     include('../../assets/php/functions.php');
-    $sql="SELECT * FROM departments ";
-
-    $result = $dbconfig->prepare($sql);
-    $result->execute();
-    $result=$result->get_result();
- ?>
+   if(isset($_GET['edit_dept'])){
+	   
+   }
+elseif(isset($_GET['show_edit_dept'])){
+	$dept_id=mysqli_real_escape_string($dbconfig,$_POST['dept_id']);
+	echo show_edit_dept($dept_id);
+	
+}
+elseif(isset($_GET['show_dept'])){
+	echo show_departments();
+}
+	
+elseif(isset($_GET['add_dept'])){
+	$name=mysqli_real_escape_string($dbconfig,$_POST['name']);
+	$abbr=mysqli_real_escape_string($dbconfig,$_POST['abbr']);
+	echo add_dept($name,$abbr);
+}
+elseif(isset($_GET['update_dept'])){
+	
+	$name=mysqli_real_escape_string($dbconfig,$_POST['name']);
+	$abbr=mysqli_real_escape_string($dbconfig,$_POST['abbr']);
+	$id=mysqli_real_escape_string($dbconfig,$_POST['id']);
+	
+	echo edit_dept($name,$abbr,$id);
+}
+elseif(isset($_GET['delete_dept'])){
+	$id=mysqli_real_escape_string($dbconfig,$_POST['id']);
+	$name=mysqli_real_escape_string($dbconfig,$_POST['name']);
+	
+	echo delete_dept($name,$id);
+}
+else{
+	$result=get_department_data();
+echo'
 <div class="panel-header panel-header-lg">
   <h2 align="center" class="d-sm-block" style="color:white;">WELCOME TO YOUR DASHBOARD</h2>
   <div class="container">
@@ -20,21 +48,21 @@
           <div class="carousel-item active w-100">
             <div class="card-counter success">
               <!-- <i class="fa fa-database"></i> -->
-              <span class="count-numbers">0</span>
+              <span class="count-numbers">'.$result['dept'].'</span>
               <span class="count-name">Number of Departments</span>
             </div>
           </div>
           <div class="carousel-item">
             <div class="card-counter info w-100">
               <!-- <i class="fa fa-users"></i> -->
-              <span class="count-numbers">0</span>
+              <span class="count-numbers">'.$result['users'].'</span>
               <span class="count-name">Number of Users</span>
             </div>
           </div>
           <div class="carousel-item">
             <div class="card-counter danger">
               <!-- <i class="fa fa-ticket"></i> -->
-              <span class="count-numbers">0</span>
+              <span class="count-numbers">'.$result['forms'].'</span>
               <span class="count-name">Number of active forms</span>
             </div>
           </div>
@@ -53,7 +81,7 @@
       <div class="col-lg-4 d-none d-lg-block">
         <div class="card-counter success">
           <!-- <i class="fa fa-database"></i> -->
-          <span class="count-numbers">0</span>
+          <span class="count-numbers">'.$result['dept'].'</span>
           <span class="count-name">Number of Departments</span>
         </div>
       </div>
@@ -61,14 +89,14 @@
       <div class="col-lg-4 d-none d-lg-block">
         <div class="card-counter info">
           <!-- <i class="fa fa-users"></i> -->
-          <span class="count-numbers">0</span>
+          <span class="count-numbers">'.$result['users'].'</span>
           <span class="count-name">Number of Users</span>
         </div>
       </div>
       <div class="col-lg-4 d-none d-lg-block">
         <div class="card-counter danger">
           <i class="fa fa-ticket"></i>
-          <span class="count-numbers">0</span>
+          <span class="count-numbers">'.$result['forms'].'</span>
           <span class="count-name">Number of active forms</span>
         </div>
       </div>
@@ -91,7 +119,7 @@
                   Department ID
                 </th>
                 <th>
-                  Department Code
+                  Department Abbreviation
                 </th>
                 <th>
                   Department Name
@@ -100,28 +128,13 @@
                   Actions
                 </th>
               </thead>
-              <tbody>
-                <?php while($result1 = $result->fetch_assoc()){ ?>
-                <tr>
-                  <td>
-                    <?php echo htmlspecialchars($result1['department_id']); ?>
-                  </td>
-                  <td>
-                    <?php echo htmlspecialchars($result1['department_abbreviation']); ?>
-                  </td>
-                  <td>
-                    <?php echo htmlspecialchars($result1['department_name']); ?>
-                  </td>
-                  <td class="text-right">
-                     <a href="#" >Edit</a> or <a href="#">Delete</a>
-                  </td>
-                </tr>
-                <?php } ?>
+              <tbody id="department_table">
+               '.show_departments().'
               </tbody>
             </table>
           </div>
 
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="show_add_dept_button">
           Add Department
         </button>
         </div>
@@ -133,39 +146,8 @@
 <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add a New Department</h5>
-          <!-- <h5 class="modal-title" id="exampleModalLabel">Edit an Existing Department</h5> -->
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Department Name :</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-              <!-- <label for="exampleInputEmail1">Department Name :</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> -->
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Department Abbriviation :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
-              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
-            </div>
-
-
-          </form>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
-          <button type="button" class="btn btn-primary">Add Department</button>
-          <!-- <button type="button" class="btn btn-primary">Save Department</button> -->
-
-        </div>
+      <div class="modal-content" id="modal-content">
+        <br><br><br><br><br><br><br><br><br><br><br><br>
       </div>
     </div>
   </div>
@@ -181,7 +163,7 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <small id="emailHelp" class="form-text text-muted">We\'ll never share your email with anyone else.</small>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
@@ -192,4 +174,6 @@
       </div>
     </div>
   </div>
-</div> -->
+</div> -->';
+}
+?>

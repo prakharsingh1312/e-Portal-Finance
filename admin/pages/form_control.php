@@ -1,11 +1,16 @@
 <?php
     include('../../assets/php/functions.php');
-    $sql="SELECT * FROM form_details ";
-
-    $result = $dbconfig->prepare($sql);
-    $result->execute();
-    $result=$result->get_result();
- ?>
+    if(isset($_GET['show_forms'])){
+		echo show_forms();
+	}
+elseif(isset($_GET['form_toggle'])){
+	$state=mysqli_real_escape_string($dbconfig,$_POST['state']);
+	$id=mysqli_real_escape_string($dbconfig,$_POST['id']);
+	echo form_toggle($state,$id);
+}
+ else{
+	 $result=get_department_data();
+	 echo '
 <div class="panel-header panel-header-lg">
   <h2 align="center" class="d-sm-block" style="color:white;">WELCOME TO YOUR DASHBOARD</h2>
   <div class="container">
@@ -20,21 +25,21 @@
           <div class="carousel-item active w-100">
             <div class="card-counter success">
               <!-- <i class="fa fa-database"></i> -->
-              <span class="count-numbers">0</span>
+              <span class="count-numbers">'.$result['dept'].'</span>
               <span class="count-name">Number of Departments</span>
             </div>
           </div>
           <div class="carousel-item">
             <div class="card-counter info w-100">
               <!-- <i class="fa fa-users"></i> -->
-              <span class="count-numbers">0</span>
+              <span class="count-numbers">'.$result['users'].'</span>
               <span class="count-name">Number of Users</span>
             </div>
           </div>
           <div class="carousel-item">
             <div class="card-counter danger">
               <!-- <i class="fa fa-ticket"></i> -->
-              <span class="count-numbers">0</span>
+              <span class="count-numbers">'.$result['forms'].'</span>
               <span class="count-name">Number of active forms</span>
             </div>
           </div>
@@ -53,7 +58,7 @@
       <div class="col-lg-4 d-none d-lg-block">
         <div class="card-counter success">
           <!-- <i class="fa fa-database"></i> -->
-          <span class="count-numbers">0</span>
+          <span class="count-numbers">'.$result['dept'].'</span>
           <span class="count-name">Number of Departments</span>
         </div>
       </div>
@@ -61,14 +66,14 @@
       <div class="col-lg-4 d-none d-lg-block">
         <div class="card-counter info">
           <!-- <i class="fa fa-users"></i> -->
-          <span class="count-numbers">0</span>
+          <span class="count-numbers">'.$result['users'].'</span>
           <span class="count-name">Number of Users</span>
         </div>
       </div>
       <div class="col-lg-4 d-none d-lg-block">
         <div class="card-counter danger">
           <i class="fa fa-ticket"></i>
-          <span class="count-numbers">0</span>
+          <span class="count-numbers">'.$result['forms'].'</span>
           <span class="count-name">Number of active forms</span>
         </div>
       </div>
@@ -95,38 +100,14 @@
                   Form Name
                 </th>
                 <th class="text-right">
-                  Actions
-                </th>
-                <th class="text-right">
                   Activate/Deactivate
                 </th>
+                <th class="text-right">
+                 Actions
+                </th>
               </thead>
-              <tbody>
-                <?php while($result1 = $result->fetch_assoc()){ ?>
-                <tr>
-                  <td>
-                    <?php echo htmlspecialchars($result1['form_id']); ?>
-                  </td>
-                  <td>
-                    <?php echo htmlspecialchars($result1['form_title']); ?>
-                  </td>
-                  <td class="text-right">
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                      <label class="btn btn-primary active">
-                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Activated
-                      </label>
-                      <label class="btn btn-primary">
-                        <input type="radio" name="options" id="option2" autocomplete="off"> Deactivated
-                      </label>
-                    </div>
-                  </td>
-                  <td class="text-right">
-                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
-                    Edit
-                  </button>
-                  </td>
-                </tr>
-                <?php } ?>
+              <tbody id="forms_table">
+                '.show_forms().'
               </tbody>
             </table>
           </div>
@@ -139,6 +120,7 @@
 <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
+<<<<<<< HEAD
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Edit Form</h5>
@@ -173,6 +155,12 @@
 
         </div>
       </div>
+=======
+      <div class="modal-content" id="modal-content">
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+>>>>>>> 97a00ba3b5e83fa5b4afeac0cd576dbddd307f6d
     </div>
   </div>
-</div>
+</div>';
+ }
+?>

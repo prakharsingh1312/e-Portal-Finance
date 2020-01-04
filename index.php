@@ -62,6 +62,7 @@
 <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
 <script src="./assets/js/now-ui-kit.js?v=1.3.0" type="text/javascript"></script>
 <script src="./assets/js/main.js" type="text/javascript"></script>
+<script src="./assets/js/loadingView.js" type="text/javascript"></script>
 <script>
 $(document).ready(function() {
                   // the body of this function is in assets/js/now-ui-kit.js
