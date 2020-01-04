@@ -168,7 +168,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
-          <button type="button" class="btn btn-primary">Add Department</button>
+          <button type="button" class="btn btn-primary">Update Form</button>
           <!-- <button type="button" class="btn btn-primary">Save Department</button> -->
 
         </div>
