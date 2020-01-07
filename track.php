@@ -22,7 +22,7 @@ include('assets/php/functions.php');
                 <input type="text" class="form-control" id="username" name="username" placeholder="Roll Number">
 
               </div>
-              <div class="input-group no-border input-lg">
+              <div class="input-group no-border input-lg" style="margin-bottom:0px">
                 <div class="input-group-prepend">
                   <span class="input-group-text">
                     <i class="fa fa-key" aria-hidden="true"></i>
