@@ -24,13 +24,13 @@
               <p>Track submitted Form</p>
             </a>
           </li>
-			<li class="nav-item">
+			<!-- <li class="nav-item">
             <a class="nav-link btn btn-neutral" href="#login" target="">
               <i class="now-ui-icons arrows-1_share-66"></i>
               <p>Admin Login</p>
             </a>
-          </li>
-          
+          </li> -->
+
         </ul>
       </div>
     </div>
