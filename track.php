@@ -32,9 +32,9 @@ include('assets/php/functions.php');
                 <!-- <div class="red-text"></div> -->
               </div>
             </div>
-            <!-- <div class="card-footer text-center">
+            <div class="card-footer text-center">
               <input type="button" name="submit" value="Submit" class="btn btn-primary btn-round btn-lg btn-block login_button">
-              <div class="pull-left">
+              <!--   <div class="pull-left">
                 <h6>
                   <a href="#" class="link">Forget Password</a>
                 </h6>
@@ -43,8 +43,8 @@ include('assets/php/functions.php');
                 <h6>
                   <a href="#pablo" class="link">Need Help?</a>
                 </h6>
-              </div>
-            </div> -->
+              </div>-->
+            </div>
           </form>
         </div>
       </div><div>
