@@ -49,5 +49,5 @@ include('assets/php/functions.php');
         </div>
       </div><div>
     </div>';
-}
+
 ?>
