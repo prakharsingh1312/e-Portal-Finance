@@ -1,4 +1,6 @@
-<div class="page-header-image" data-parallax="true" style="background-image:url(\'./assets/img/header.jpg\');">
+<?php
+include('assets/php/functions.php');
+	echo '<div class="page-header-image" data-parallax="true" style="background-image:url(\'./assets/img/header.jpg\');">
     </div><div class="container">
   <div class="content-center brand">
   <div id="notification_div"><div id="notification_inner_div"><div id="notification_inner_cell_div"></div></div></div>
@@ -46,4 +48,6 @@
           </form>
         </div>
       </div><div>
-    </div>
+    </div>';
+}
+?>
