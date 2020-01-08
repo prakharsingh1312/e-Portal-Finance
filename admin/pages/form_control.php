@@ -176,10 +176,10 @@ elseif(isset($_GET['form_toggle'])){
 
         </div>
 
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
         <div class="card-body">
 
-  <label for="exampleFormControlTextarea2">Small textarea</label>
+  <label for="exampleFormControlTextarea2">Enter Guidelines</label>
   <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
 
 
