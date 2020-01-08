@@ -149,7 +149,7 @@ elseif(isset($_GET['form_toggle'])){
                       <label class="control-label" for="field1">Add Path of Form</label>
                       <div class="controls">
                           <form role="form" autocomplete="off">
-                              <div class="entry input-group col-xs-3" style="margin-top:10px" >
+                              <div class="entry form-group col-xs-3" style="margin-top:10px" >
                                   <input class="form-control" name="fields[]" type="text" placeholder="Enter department ID" />
                                 <span class="input-group-btn">
                                       <button class="btn btn-success btn-add" type="button">
@@ -160,7 +160,7 @@ elseif(isset($_GET['form_toggle'])){
                           </form>
                       </div>
                   </div>
-        
+
 
 
 
