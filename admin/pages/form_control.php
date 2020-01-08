@@ -144,7 +144,7 @@ elseif(isset($_GET['form_toggle'])){
               <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
               <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
             </div>
-            <div class="row">
+
                   <div class="control-group" id="fields">
                       <label class="control-label" for="field1">Add Path of Form</label>
                       <div class="controls">
@@ -160,7 +160,7 @@ elseif(isset($_GET['form_toggle'])){
                           </form>
                       </div>
                   </div>
-            </div>
+        
 
 
 
