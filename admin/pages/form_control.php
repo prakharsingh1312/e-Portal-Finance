@@ -133,39 +133,33 @@ elseif(isset($_GET['form_toggle'])){
         <div class="modal-body">
 
             <div class="form-group">
-              <label for="exampleInputEmail1">Department Name :</label>
+              <label for="exampleInputEmail1">Form Name</label>
               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
               <!-- <label for="exampleInputEmail1">Department Name :</label>
               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> -->
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Department Abbriviation :</label>
+              <label for="exampleInputPassword1">Form Title</label>
               <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
               <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
               <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
             </div>
-            <div class="container">
-            	<div class="row">
-                    <div class="control-group" id="fields">
-                        <label class="control-label" for="field1">Nice Multiple Form Fields</label>
-                        <div class="controls">
-                            <form role="form" autocomplete="off">
-                              <div class="row">
-                                <div class="entry form-group col-xs-3" style="margin-top:10px" >
-                                    <input class="form-control" name="fields[]" type="text" placeholder="Type something" />
-                                	<span class="input-group-btn">
-                                        <button class="btn btn-success btn-add" type="button">
-                                            <span class="glyphicon glyphicon-plus" style="font-size:12px"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                        </button>
-                                    </span>
-                                </div>
-                                </div>
-                            </form>
-                        <br>
-                        <small>Press <span class="glyphicon glyphicon-plus gs" style="font-size:12px"></span> to add another form field :)</small>
-                        </div>
-                    </div>
-            	</div>
+            <div class="row">
+                  <div class="control-group" id="fields">
+                      <label class="control-label" for="field1">Add Path of Form</label>
+                      <div class="controls">
+                          <form role="form" autocomplete="off">
+                              <div class="entry input-group col-xs-3" style="margin-top:10px" >
+                                  <input class="form-control" name="fields[]" type="text" placeholder="Enter department ID" />
+                                <span class="input-group-btn">
+                                      <button class="btn btn-success btn-add" type="button">
+                                          <span class="glyphicon glyphicon-plus" style="font-size:12px"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                      </button>
+                                  </span>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
             </div>
 
 
