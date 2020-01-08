@@ -150,13 +150,15 @@ elseif(isset($_GET['form_toggle'])){
                         <label class="control-label" for="field1">Nice Multiple Form Fields</label>
                         <div class="controls">
                             <form role="form" autocomplete="off">
-                                <div class="entry input-group col-xs-3" style="margin-top:10px" >
+                              <div class="row">
+                                <div class="entry form-group col-xs-3" style="margin-top:10px" >
                                     <input class="form-control" name="fields[]" type="text" placeholder="Type something" />
                                 	<span class="input-group-btn">
                                         <button class="btn btn-success btn-add" type="button">
                                             <span class="glyphicon glyphicon-plus" style="font-size:12px"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                         </button>
                                     </span>
+                                </div>
                                 </div>
                             </form>
                         <br>
