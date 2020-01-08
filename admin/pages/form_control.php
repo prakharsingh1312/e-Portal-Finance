@@ -152,7 +152,7 @@ elseif(isset($_GET['form_toggle'])){
                               <div class="entry form-group col-xs-3" style="margin-top:10px" >
                                   <input class="form-control" name="fields[]" type="text" placeholder="Enter department ID" />
                                 <span class="input-group-btn">
-                                      <button class="btn btn-success btn-add" type="button">
+                                      <button class="btn btn-success btn-add" type="button" style="margin-left:90%">
                                           <span class="glyphicon glyphicon-plus" style="font-size:12px"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                       </button>
                                   </span>
