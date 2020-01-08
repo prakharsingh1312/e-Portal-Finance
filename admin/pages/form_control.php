@@ -121,7 +121,7 @@ elseif(isset($_GET['form_toggle'])){
 <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-<<<<<<< HEAD
+
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Edit Form</h5>
@@ -131,7 +131,7 @@ elseif(isset($_GET['form_toggle'])){
           </button>
         </div>
         <div class="modal-body">
-          
+
             <div class="form-group">
               <label for="exampleInputEmail1">Department Name :</label>
               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
@@ -154,7 +154,7 @@ elseif(isset($_GET['form_toggle'])){
                                     <input class="form-control" name="fields[]" type="text" placeholder="Type something" />
                                 	<span class="input-group-btn">
                                         <button class="btn btn-success btn-add" type="button">
-                                            <span class="glyphicon glyphicon-plus" style="font-size:12px"></span>
+                                            <span class="glyphicon glyphicon-plus" style="font-size:12px"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                         </button>
                                     </span>
                                 </div>
@@ -177,10 +177,9 @@ elseif(isset($_GET['form_toggle'])){
 
         </div>
       </div>
-=======
+
       <div class="modal-content" id="modal-content">
         <br><br><br><br><br><br><br><br><br><br><br><br>
->>>>>>> 97a00ba3b5e83fa5b4afeac0cd576dbddd307f6d
     </div>
   </div>
 </div>
