@@ -99,9 +99,6 @@ elseif(isset($_GET['form_toggle'])){
                 <th>
                   Form Name
                 </th>
-                <th>
-                  Form Path
-                </th>
                 <th class="text-right">
                   Activate/Deactivate
                 </th>
@@ -186,6 +183,31 @@ elseif(isset($_GET['form_toggle'])){
 >>>>>>> 97a00ba3b5e83fa5b4afeac0cd576dbddd307f6d
     </div>
   </div>
-</div>';
+</div>
+<script>
+$(function()
+{
+    $(document).on('click', '.btn-add', function(e)
+    {
+        e.preventDefault();
+
+        var controlForm = $('.controls form:first'),
+            currentEntry = $(this).parents('.entry:first'),
+            newEntry = $(currentEntry.clone()).appendTo(controlForm);
+
+        newEntry.find('input').val('');
+        controlForm.find('.entry:not(:last) .btn-add')
+            .removeClass('btn-add').addClass('btn-remove')
+            .removeClass('btn-success').addClass('btn-danger')
+            .html('<span class="glyphicon glyphicon-minus"></span>');
+    }).on('click', '.btn-remove', function(e)
+    {
+		$(this).parents('.entry:first').remove();
+
+		e.preventDefault();
+		return false;
+	});
+});
+</script>';
  }
 ?>
