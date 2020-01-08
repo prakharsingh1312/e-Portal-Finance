@@ -166,25 +166,25 @@ elseif(isset($_GET['form_toggle'])){
 
 
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-info btn-lg btn-block" style="float:left">Edit Guidelines</button>
-          <div id="accordion">
-  <div class="card">
-    <div class="card-header" id="headingOne">
+        <div id="accordion">
+        <div class="card">
+        <div class="card-header" id="headingOne">
 
 
         <button type="button" class="btn btn-outline-info btn-lg btn-block" style="float:left"data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Edit Guidelines</button>
 
 
-    </div>
+        </div>
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-      <div class="card-body">
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably havent heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-  </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="modal-footer">
+
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
           <button type="button" class="btn btn-primary">Update Form</button>
           <!-- <button type="button" class="btn btn-primary">Save Department</button> -->
