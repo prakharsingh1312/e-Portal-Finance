@@ -131,7 +131,7 @@ elseif(isset($_GET['form_toggle'])){
           </button>
         </div>
         <div class="modal-body">
-          <form>
+          
             <div class="form-group">
               <label for="exampleInputEmail1">Department Name :</label>
               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
@@ -167,7 +167,7 @@ elseif(isset($_GET['form_toggle'])){
             </div>
 
 
-          </form>
+
 
         </div>
         <div class="modal-footer">
