@@ -99,6 +99,9 @@ elseif(isset($_GET['form_toggle'])){
                 <th>
                   Form Name
                 </th>
+                <th>
+                  Form Path
+                </th>
                 <th class="text-right">
                   Activate/Deactivate
                 </th>
@@ -142,6 +145,27 @@ elseif(isset($_GET['form_toggle'])){
               <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
               <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
               <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+            </div>
+            <div class="container">
+            	<div class="row">
+                    <div class="control-group" id="fields">
+                        <label class="control-label" for="field1">Nice Multiple Form Fields</label>
+                        <div class="controls">
+                            <form role="form" autocomplete="off">
+                                <div class="entry input-group col-xs-3" style="margin-top:10px" >
+                                    <input class="form-control" name="fields[]" type="text" placeholder="Type something" />
+                                	<span class="input-group-btn">
+                                        <button class="btn btn-success btn-add" type="button">
+                                            <span class="glyphicon glyphicon-plus" style="font-size:12px"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
+                        <br>
+                        <small>Press <span class="glyphicon glyphicon-plus gs" style="font-size:12px"></span> to add another form field :)</small>
+                        </div>
+                    </div>
+            	</div>
             </div>
 
 

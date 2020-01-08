@@ -25,7 +25,7 @@
 <body class="login-page sidebar-collapse">
 <div class="page-header clear-filter" filter-color="orange">
 <?php include('header.php');
-    
+
     ?>
 
 
@@ -70,12 +70,37 @@ $(document).ready(function() {
                   });
 
 function scrollToDownload() {
-    
+
     if ($('.section-download').length != 0) {
         $("html, body").animate({
                                 scrollTop: $('.section-download').offset().top
                                 }, 1000);
     }
 }
+</script>
+<script>
+$(function()
+{
+    $(document).on('click', '.btn-add', function(e)
+    {
+        e.preventDefault();
+
+        var controlForm = $('.controls form:first'),
+            currentEntry = $(this).parents('.entry:first'),
+            newEntry = $(currentEntry.clone()).appendTo(controlForm);
+
+        newEntry.find('input').val('');
+        controlForm.find('.entry:not(:last) .btn-add')
+            .removeClass('btn-add').addClass('btn-remove')
+            .removeClass('btn-success').addClass('btn-danger')
+            .html('<span class="glyphicon glyphicon-minus"></span>');
+    }).on('click', '.btn-remove', function(e)
+    {
+		$(this).parents('.entry:first').remove();
+
+		e.preventDefault();
+		return false;
+	});
+});
 </script>
 </body>
