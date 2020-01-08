@@ -9,7 +9,7 @@ var global_cookie_prefix = 'NIT';
 function showlogin(){
 	$('.wrapper').loadingView({'state':true});
 	$.get('login.php',function(data){
-		
+
 		if(data!=1)
 		$('.wrapper').html(data);
 		else
@@ -23,13 +23,13 @@ function showAdmin(){
 		{
 			hash();
 		});
-		
+
 	}
 
 function showformlist(){
 	$('.wrapper').loadingView({'state':true});
 	$.get('forms.php?list',function(data){
-		
+
 		$('.wrapper').html(data);
 		$('.wrapper').loadingView({'state':false});
 	});
@@ -37,16 +37,16 @@ function showformlist(){
 function showtrack(){
 	$('.wrapper').loadingView({'state':true});
 	$.get('track.php',function(data){
-		
+
 		$('.wrapper').html(data);
 		$('.wrapper').loadingView({'state':false});
-		
+
 	});
 }
 function showDash(){
 	$('#wrapper').loadingView({'state':true});
 	$.get('./pages/dash.php',function(data){
-		
+
 		$('#wrapper').html(data);
 		linkChange('#users_dash');
 		$('#wrapper').loadingView({'state':false});
@@ -55,7 +55,7 @@ function showDash(){
 function showDept(){
 	$('#wrapper').loadingView({'state':true});
 	$.get('./pages/dept.php',function(data){
-		
+
 		$('#wrapper').html(data);
 		linkChange('#departments');
 		$('#wrapper').loadingView({'state':false});
@@ -100,16 +100,16 @@ $(document).ready( function()
 		onclick_event = 'mousedown';
 		offclick_event = 'mouseup';
 	}
-	
+
 	$(document).on('click','.logout_button',function(){
 		logout();
 	})
-	
+
 	//Form1 Reponsiveness
 		$('#reset').on('click', function(){
       $('#register-form').reset();
 		});
-		$(document).on('change','#form1_course',function(){ 
+		$(document).on('change','#form1_course',function(){
 			{
 			if($('#form1_course').val()=='Under Graduate')
 			{hide_input('#form1_20');$('#form1_mtech').removeAttr('required');}
@@ -123,49 +123,69 @@ $(document).ready( function()
 			else {show_input('#form1_19');$('#form1_cgpa').attr('required','1')}
 		}
 		});
-	$(document).on('change','#form1_recommended',function(){ 
+		$(document).on('click', '.btn-add', function(e)
+    {
+        e.preventDefault();
+
+        var controlForm = $('.controls form:first'),
+            currentEntry = $(this).parents('.entry:first'),
+            newEntry = $(currentEntry.clone()).appendTo(controlForm);
+
+        newEntry.find('input').val('');
+        controlForm.find('.entry:not(:last) .btn-add')
+            .removeClass('btn-add').addClass('btn-remove')
+            .removeClass('btn-success').addClass('btn-danger')
+            .html('<span class="glyphicon glyphicon-minus"></span>');
+    }).on('click', '.btn-remove', function(e)
+    {
+		$(this).parents('.entry:first').remove();
+
+		e.preventDefault();
+		return false;
+	});
+	$(document).on('change','#form1_recommended',function(){
 			if($('#form1_recommended').val()=='Not Recommended')
 			{hide_input('#form1_24');$('#form1_signhod').removeAttr('required');}
 			else
 			{show_input('#form1_24');$('#form1_signhod').attr('required','1');}
 		 });
-	$(document).on('input','#form1_relevance_text',function(){ 
+	$(document).on('input','#form1_relevance_text',function(){
 			if($('#form1_relevance_text').val()!='')
 			{hide_input('#form1_relevance');$('#form1_relevance').removeAttr('required');}
 			else
 			{show_input('#form1_relevance');$('#form1_relevance').attr('required','1');}
 		 });
-	$(document).on('input','#form1_relevance',function(){ 
+	$(document).on('input','#form1_relevance',function(){
 			if($('#form1_relevance').val()!='')
 			{hide_input('#form1_relevance_text');$('#form1_relevance_text').removeAttr('required');}
 			else
 			{show_input('#form1_relevance_text');$('#form1_relevance_text').attr('required','1');}
 		 });
-	$(document).on('input','#form1_objective_text',function(){ 
+	$(document).on('input','#form1_objective_text',function(){
 			if($('#form1_objective_text').val()!='')
 			{hide_input('#form1_objective');$('#form1_objective').removeAttr('required');}
 			else
 			{show_input('#form1_objective');$('#form1_objective').attr('required','1');}
 		 });
-	$(document).on('input','#form1_objective',function(){ 
+	$(document).on('input','#form1_objective',function(){
 			if($('#form1_objective').val()!='')
 			{hide_input('#form1_objective_text');$('#form1_objective_text').removeAttr('required');}
 			else
 			{show_input('#form1_objective_text');$('#form1_objective_text').attr('required','1');}
 		 });
-	$(document).on('input','#form1_cost_details_text',function(){ 
+	$(document).on('input','#form1_cost_details_text',function(){
 			if($('#form1_cost_details_text').val()!='')
 			{hide_input('#form1_cost_details');$('#form1_cost_details').removeAttr('required');}
 			else
 			{show_input('#form1_cost_details');$('#form1_cost_details').attr('required','1');}
 		 });
-	$(document).on('input','#form1_cost_details',function(){ 
+	$(document).on('input','#form1_cost_details',function(){
 			if($('#form1_cost_details').val()!='')
 			{hide_input('#form1_cost_details_text');$('#form1_cost_details_text').removeAttr('required');}
 			else
 			{show_input('#form1_cost_details_text');$('#form1_cost_details_text').attr('required','1');}
 		 });
-	$(document).on('change','#form1_research',function(){ 
+	$(document).on('change','#form1_research',function(){
 			if($('#form1_research').val()=='No')
 			{hide_input('#form1_16');$('#form1_title').removeAttr('required');
 			hide_input('#form1_17');$('#form1_accepted_paper').removeAttr('required');}
@@ -173,7 +193,7 @@ $(document).ready( function()
 			{show_input('#form1_16');$('#form1_title').attr('required');
 			show_input('#form1_17');$('#form1_accepted_paper').attr('required','1');}
 		 });
-	
+
 	//Forms
 		$(document).on('click','.login_button',function(){ dologin(); });
 		$(document).on('submit','#form1',function(){ form1_submit(); });
@@ -181,17 +201,17 @@ $(document).ready( function()
 	//Department
 		$(document).on('click','#show_add_dept_button',function(){ showAddDept(); });
 		$(document).on('click','.add_dept_button',function(){ addDept(); });
-		$(document).on('click','.dept_show_edit_button',function(){ 
+		$(document).on('click','.dept_show_edit_button',function(){
 			var array = this.id.split(':');
 			showEditDept(array[1]); });
-	$(document).on('click','.dept_edit_button',function(){ 
+	$(document).on('click','.dept_edit_button',function(){
 			var array = this.id.split(':');
 			editDept(array[1]); });
 		$(document).on('click','.dept_show_delete_button',function(){ var array = this.id.split(':');
 			showDeleteDept(array[1],array[2]); });
 	$(document).on('click','.dept_delete_button',function(){ var array = this.id.split(':');
 			deleteDept(array[1],array[2]); });
-  
+
 });
 //Form Control
 $(document).on('click','.form_toggle',function(){ var array = this.id.split(':');
@@ -259,7 +279,7 @@ function dologin(){
 		}
 		else if (data==0)
 			notify('Incorrect Username/Password',4,'danger');
-		else 
+		else
 			notify(data,4,'danger')
 	})}
 
@@ -301,7 +321,7 @@ function notify(text, time,type)
 		{
 			$('#notification_inner_cell_div').animate({ opacity: 0 }, 250, function() { $('#notification_div').slideUp('fast'); });
 		}
-	
+
 }}
 
 function hide_input(id){
@@ -389,7 +409,7 @@ function validate_name(name){
 		return 1;
 	else
 		return 0;
-	
+
 }
 function validate_number(number,len){
 	var regex =new RegExp(/^[0-9-+]+$/);
@@ -397,7 +417,7 @@ function validate_number(number,len){
 		return 1;
 	else
 		return 0;
-	
+
 }
 function form_error(text,input){
 	$('#error_span').html(text);
@@ -405,7 +425,7 @@ function form_error(text,input){
 }
 function showAddDept(){
 	$('#modal-content').loadingView({'state':true});
-	var data='<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Add a New Department</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close">            <span aria-hidden="true">&times;</span>          </button>        </div>        <div class="modal-body">          <form>            <div class="form-group">              <label for="department_name">Department Name :</label>              <input type="text" class="form-control" id="department_name" aria-describedby="emailHelp" placeholder="">            </div>            <div class="form-group">              <label for="department_abbr">Department Abbreviation :</label>              <input type="text" class="form-control" id="department_abbr" placeholder="">            </div>          </form><span id="error_span"></span>        </div>        <div class="modal-footer">          <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>          <button type="button" class="btn btn-primary add_dept_button">Add Department</button>        </div>';		
+	var data='<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Add a New Department</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close">            <span aria-hidden="true">&times;</span>          </button>        </div>        <div class="modal-body">          <form>            <div class="form-group">              <label for="department_name">Department Name :</label>              <input type="text" class="form-control" id="department_name" aria-describedby="emailHelp" placeholder="">            </div>            <div class="form-group">              <label for="department_abbr">Department Abbreviation :</label>              <input type="text" class="form-control" id="department_abbr" placeholder="">            </div>          </form><span id="error_span"></span>        </div>        <div class="modal-footer">          <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>          <button type="button" class="btn btn-primary add_dept_button">Add Department</button>        </div>';
 	$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
 	}
@@ -422,7 +442,7 @@ function showDeleteDept(name,id){
 	var data='<div class="modal-header">          <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>          <button type="button" class="close" data-dismiss="modal" aria-label="Close">            <span aria-hidden="true">&times;</span>          </button>        </div>        <div class="modal-body">          <p>Are you sure you want to delete department "'+name+'".</p><span id="error_span"></span>        </div>        <div class="modal-footer">          <button type="button" class="btn btn-primary dept_delete_button" id="delete:'+name+':'+id+'" >Delete</button>                        </div>';
 		$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
-	
+
 }
 function showDeptTable(){
 	$('#department_table').loadingView({'state':true});
@@ -451,9 +471,9 @@ function addDept(){
 		$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
 			showDeptTable();
-		
+
 	});
-		
+
 	}
 }
 function editDept(id){
@@ -469,9 +489,9 @@ function editDept(id){
 		$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
 			showDeptTable();
-		
+
 	});
-		
+
 	}
 }
 function deleteDept(name,id){
@@ -480,9 +500,9 @@ function deleteDept(name,id){
 		$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
 			showDeptTable();
-		
+
 	});
-		
+
 	}
 function formToggle(state,id){
 	$('#modal-content').loadingView({'state':true});
@@ -490,6 +510,6 @@ function formToggle(state,id){
 		$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
 			showFormTable();
-		
+
 	});
 }
