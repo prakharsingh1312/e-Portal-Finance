@@ -119,6 +119,32 @@ elseif(isset($_GET['form_toggle'])){
     </div>
   </div>
 
+  <script>
+  $(function()
+  {
+      $(document).on('click', '.btn-add', function(e)
+      {
+          e.preventDefault();
+
+          var controlForm = $('.controls form:first'),
+              currentEntry = $(this).parents('.entry:first'),
+              newEntry = $(currentEntry.clone()).appendTo(controlForm);
+
+          newEntry.find('input').val('');
+          controlForm.find('.entry:not(:last) .btn-add')
+              .removeClass('btn-add').addClass('btn-remove')
+              .removeClass('btn-success').addClass('btn-danger')
+              .html('<span class="glyphicon glyphicon-minus"></span>');
+      }).on('click', '.btn-remove', function(e)
+      {
+  		$(this).parents('.entry:first').remove();
+
+  		e.preventDefault();
+  		return false;
+  	});
+  });
+  </script>
+
 
 <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
