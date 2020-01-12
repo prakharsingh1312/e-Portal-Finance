@@ -216,6 +216,8 @@ $(document).ready( function()
 //Form Control
 $(document).on('click','.form_toggle',function(){ var array = this.id.split(':');
 			formToggle(array[1],array[2]); });
+$(document).on('click','.form_show_edit_button',function(){ var array = this.id.split(':');
+			formShowEdit(array[1]); });
 
 
 $(window).load(function()
@@ -507,5 +509,12 @@ function formToggle(state,id){
 		$('#modal-content').loadingView({'state':false});
 			showFormTable();
 
+	});
+}
+function formShowEdit(id){
+	$('#modal-content').loadingView({'state':true});
+	$.post('pages/form_control.php?show_edit',{id:id},function(data){
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
 	});
 }
