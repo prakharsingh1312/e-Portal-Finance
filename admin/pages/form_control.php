@@ -20,7 +20,7 @@ elseif(isset($_GET['edit_form'])){
 	$intro=mysqli_real_escape_string($dbconfig,$_POST['intro']);
 	$docs=mysqli_real_escape_string($dbconfig,$_POST['docs']);
 
-	echo edit_form_control($id,$title,$subtitle,$guidelines,$info,$docs);
+	echo edit_form_control($id,$title,$subtitle,$guidelines,$intro,$docs);
 }
  else{
 	 $result=get_department_data();
