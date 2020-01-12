@@ -1,8 +1,6 @@
 <?php
 //Based on HTML2PDF by Clément Lavoillotte
 
-require('../../fpdf.php');
-
 //function hex2dec
 //returns an associative array (keys: R,G,B) from a hex html code (e.g. #3FE5AA)
 function hex2dec($couleur = "#000000"){
