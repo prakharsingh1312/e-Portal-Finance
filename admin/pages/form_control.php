@@ -12,7 +12,7 @@ elseif(isset($_GET['show_edit'])){
 	$id=mysqli_real_escape_string($dbconfig,$_POST['id']);
 	echo show_edit_form_control($id);
 }
-elseif(isset($_GET['show_edit'])){
+elseif(isset($_GET['edit_form'])){
 	$id=mysqli_real_escape_string($dbconfig,$_POST['id']);
 	$title=mysqli_real_escape_string($dbconfig,$_POST['title']);
 	$subtitle=mysqli_real_escape_string($dbconfig,$_POST['subtitle']);
