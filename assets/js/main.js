@@ -345,7 +345,7 @@ function input_focus(id)
 function form1_submit(){
 	var form=$('#form1')[0];
 	var formdata=new FormData(form);
-	if(validate_name(formdata.get('name'))){
+	
 		if(validate_number(formdata.get('roll'),8)){
 		$("#submitForm").prop("disabled", true);
 			$('#form1').loadingView({'state':true});
@@ -378,11 +378,7 @@ function form1_submit(){
 			form_error('Roll no. format incorrect.','#form1_roll')
 		}
 	}
-	else
-		{
-			form_error('Name cannot contain letters or symbols.','#form1_name');
-		}
-}
+	
 function logout(){
 	$.get('../login.php?logout',function(data){
 		if (data==1)
