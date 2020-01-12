@@ -669,7 +669,7 @@ function edit_form_control($id,$title,$subtitle,$guidelines,$intro,$docs){
 		return verify_login();
 	}
 	else{
-		$sql=$dbconfig->prepare('UPDATE form_details SET form_title=? , form_subtitle=? , form_guidelines=? , form_info=? , form_docs=? WHERE form_id=?');
+		$sql=$dbconfig->prepare('UPDATE form_details SET form_title=? , form_subtitle=? , form_guidelines=? , form_intro=? , form_docs=? WHERE form_id=?');
 		$sql->bind_param("sssssi",$title,$subtitle,$guidelines,$intro,$docs,$id);
 		$sql->execute();
 		return '<div class="modal-header">
