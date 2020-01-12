@@ -34,7 +34,8 @@ $pdf->ln(15);
 
 //start table
 $pdf->cell(10,7,'',1,0);
-$pdf->cell(80,7,'1. Name of the Student(Full time):',1,1);
+$pdf->cell(90,7,'1. Name of the Student(Full time):',1,0);
+$pdf->cell(80,7,'1.1 Course:',1,1);
 
 $pdf->cell(10,7,'',1,0);
 $pdf->cell(40,7,'1.1 Course:',1,0);
