@@ -38,7 +38,7 @@ function Footer()
 }
 }
 
-	$pdf->WriteHTML($html);
+
 // Instanciation of inherited class
 $pdf = new PDFS();
 $pdf->AliasNbPages();
