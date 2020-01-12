@@ -11,9 +11,9 @@ function Header()
 	// Arial bold 15
 	$this->SetFont('Arial','B',10);
 	// Move to the right
-	$this->Cell(80);
+	$this->Cell(20);
 	// Title
-	$this->Cell(0,10,' DR. B. R. AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY, JALANDHAR-144011',0,0,'C');
+	$this->Cell(0,7,' DR. B. R. AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY, JALANDHAR-144011',0,0,'C');
 	// Line break
 	$this->Ln(20);
 }
