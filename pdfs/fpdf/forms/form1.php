@@ -30,5 +30,8 @@ $pdf->SetFont('Arial','B',7);
 $pdf->cell(15);
 $pdf->Cell(0,10,'PROPOSAL FOR ATTENDING NATIONAL CONFERENCE / TRAINING COURSES / OTHERS UNDER',0,1,'C');
 $pdf->Cell(0,3,'TEQIP-III Annexure "A"',0,1,'C');
+
+//start table
+$pdf->cell(10,7,'',1,0);
 $pdf->Output();
 ?>
