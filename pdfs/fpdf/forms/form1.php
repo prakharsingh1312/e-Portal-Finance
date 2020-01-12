@@ -37,7 +37,6 @@ function Footer()
 //	$this->WriteHTML($html);
 }
 }
-	SetY(-35);
 
 	$pdf->WriteHTML($html);
 // Instanciation of inherited class
