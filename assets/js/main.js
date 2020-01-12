@@ -143,12 +143,12 @@ $(document).ready( function()
 		e.preventDefault();
 		return false;
 	});
-	$(document).on('change','#form1_recommended',function(){
-			if($('#form1_recommended').val()=='Not Recommended')
-			{hide_input('#form1_24');$('#form1_signhod').removeAttr('required');}
-			else
-			{show_input('#form1_24');$('#form1_signhod').attr('required','1');}
-		 });
+//	$(document).on('change','#form1_recommended',function(){
+//			if($('#form1_recommended').val()=='Not Recommended')
+//			{hide_input('#form1_24');$('#form1_signhod').removeAttr('required');}
+//			else
+//			{show_input('#form1_24');$('#form1_signhod').attr('required','1');}
+//		 });
 	$(document).on('input','#form1_relevance_text',function(){
 			if($('#form1_relevance_text').val()!='')
 			{hide_input('#form1_relevance');$('#form1_relevance').removeAttr('required');}
