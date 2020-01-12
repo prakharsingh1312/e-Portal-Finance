@@ -218,6 +218,8 @@ $(document).on('click','.form_toggle',function(){ var array = this.id.split(':')
 			formToggle(array[1],array[2]); });
 $(document).on('click','.form_show_edit_button',function(){ var array = this.id.split(':');
 			formShowEdit(array[1]); });
+$(document).on('click','.update_form_control_button',function(){ var array = this.id.split(':');
+			editForm(array[1]); });
 
 
 $(window).load(function()
@@ -514,6 +516,18 @@ function formToggle(state,id){
 function formShowEdit(id){
 	$('#modal-content').loadingView({'state':true});
 	$.post('pages/form_control.php?show_edit',{id:id},function(data){
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+	});
+}
+function editForm(id){
+	var title=$('#form_update_title').val();
+	var subtitle=$('#form_update_subtitle').val();
+	var guidelines=$('#form_update_guidelines').val();
+	var intro=$('#form_update_intro').val();
+	var docs=$('#form_update_docs').val();
+	$('#modal-content').loadingView({'state':true});
+	$.post('pages/form_control.php?edit_form',{id:id,title:title,subtitle:subtitle,guidelines:guidelines,intro:intro,docs:docs},function(data){
 		$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
 	});

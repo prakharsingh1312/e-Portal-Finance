@@ -539,6 +539,10 @@ function form_toggle($state,$id){
 }
 function show_edit_form_control($id){
 	global $dbconfig;
+	if(verify_login()!=1){
+		return verify_login();
+	}
+	else{
 	$sql = $dbconfig->prepare("SELECT * from form_details WHERE form_id=?");
 	$sql->bind_param("i",$id);
 	$sql->execute();
@@ -555,12 +559,12 @@ function show_edit_form_control($id){
         </div>
 		 <div class="form-group">
               <label for="exampleInputEmail1">Form Title</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=""value="'.$result['form_title'].'">
+              <input type="text" class="form-control" id="form_update_title" aria-describedby="emailHelp" placeholder=""value="'.$result['form_title'].'">
              
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Form Subtitle</label>
-              <input type="text" size="1000" class="form-control" id="exampleInputPassword1" placeholder="" value="'.htmlspecialchars($result['form_subtitle']).'">
+              <input type="text" size="1000" class="form-control" id="form_update_subtitle" placeholder="" value="'.htmlspecialchars($result['form_subtitle']).'">
              
             </div>
 
@@ -599,7 +603,7 @@ function show_edit_form_control($id){
         <div class="card-body">
 
   <label for="exampleFormControlTextarea2">Enter Guidelines</label>
-  <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3">'.$result['form_guidelines'].'</textarea>
+  <textarea class="form-control rounded-0" id="form_update_guidelines" rows="3">'.$result['form_guidelines'].'</textarea>
 
 
         </div>
@@ -620,7 +624,7 @@ function show_edit_form_control($id){
         <div class="card-body">
 
   <label for="exampleFormControlTextarea2">Enter Form Info</label>
-  <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3">'.$result['form_intro'].'</textarea>
+  <textarea class="form-control rounded-0" id="form_update_intro" rows="3">'.$result['form_intro'].'</textarea>
 
 
         </div>
@@ -641,7 +645,7 @@ function show_edit_form_control($id){
         <div class="card-body">
 
   <label for="exampleFormControlTextarea2">Enter Required Documents</label>
-  <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3">'.$result['form_docs'].'</textarea>
+  <textarea class="form-control rounded-0" id="form_update_docs" rows="3">'.$result['form_docs'].'</textarea>
 
 
         </div>
@@ -651,12 +655,40 @@ function show_edit_form_control($id){
         <div class="modal-footer">
 
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
-          <button type="button" class="btn btn-primary">Update Form</button>
+          <button type="button" class="btn btn-primary update_form_control_button" id="update:'.$result['form_id'].'">Update Form</button>
           <!-- <button type="button" class="btn btn-primary">Save Department</button> -->
 
         </div>
       </div>';
 	return $return;
-	
+	}
+}
+function edit_form_control($id,$title,$subtitle,$guidelines,$info,$docs){
+	global $dbconfig;
+	if(verify_login()!=1){
+		return verify_login();
+	}
+	else{
+		$sql=$dbconfig->prepare('UPDATE form_details SET form_title=? , form_subtitle=? , form_guidelines=? , form_info=? , form_docs=? WHERE form_id=?');
+		$sql->bind_param("sssssi",$title,$subtitle,$guidelines,$info,$docs,$id);
+		$sql->execute();
+		return '<div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+		
+          <p>Form Details Updated Successfully.</p>
+<span id="error_span"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          
+      
+
+        </div>';
+	}
 }
 ?>

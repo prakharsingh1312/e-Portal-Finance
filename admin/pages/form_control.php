@@ -12,6 +12,16 @@ elseif(isset($_GET['show_edit'])){
 	$id=mysqli_real_escape_string($dbconfig,$_POST['id']);
 	echo show_edit_form_control($id);
 }
+elseif(isset($_GET['show_edit'])){
+	$id=mysqli_real_escape_string($dbconfig,$_POST['id']);
+	$title=mysqli_real_escape_string($dbconfig,$_POST['title']);
+	$subtitle=mysqli_real_escape_string($dbconfig,$_POST['subtitle']);
+	$guidelines=mysqli_real_escape_string($dbconfig,$_POST['guidelines']);
+	$info=mysqli_real_escape_string($dbconfig,$_POST['info']);
+	$docs=mysqli_real_escape_string($dbconfig,$_POST['docs']);
+
+	echo edit_form_control($id,$title,$subtitle,$guidelines,$info,$docs);
+}
  else{
 	 $result=get_department_data();
 	 echo '
