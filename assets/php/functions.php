@@ -560,7 +560,7 @@ function show_edit_form_control($id){
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Form Subtitle</label>
-              <input type="text" size="1000" class="form-control" id="exampleInputPassword1" placeholder="" value="'.$result['form_subtitle'].'">
+              <input type="text" size="1000" class="form-control" id="exampleInputPassword1" placeholder="" value="'.htmlspecialchars($result['form_subtitle']).'">
              
             </div>
 
