@@ -24,7 +24,30 @@ function Header()
 function Footer()
 {
 	// Position at 1.5 cm from bottom
-	$this->SetY(-35);
+//	$this->SetY(-35);
+//	$html='<table border="1">
+//	<tr>
+//	<td width="200" height="30">cell 1</td><td width="200" height="30" bgcolor="#D0D0FF">cell 2</td>
+//	</tr>
+//	<tr>
+//	<td width="200" height="30">cell 3</td><td width="200" height="30">cell 4</td>
+//	</tr>
+//	</table>';
+//
+//	$this->WriteHTML($html);
+}
+}
+	SetY(-35);
+
+	$pdf->WriteHTML($html);
+// Instanciation of inherited class
+$pdf = new PDFS();
+$pdf->AliasNbPages();
+$pdf->AddPage();
+$pdf->SetFont('Times','',12);
+for($i=1;$i<=40;$i++)
+	$pdf->Cell(0,10,'Printing line number '.$i,0,1);
+SetY(-35);
 	$html='<table border="1">
 	<tr>
 	<td width="200" height="30">cell 1</td><td width="200" height="30" bgcolor="#D0D0FF">cell 2</td>
@@ -34,16 +57,6 @@ function Footer()
 	</tr>
 	</table>';
 
-	$this->WriteHTML($html);
-}
-}
-
-// Instanciation of inherited class
-$pdf = new PDFS();
-$pdf->AliasNbPages();
-$pdf->AddPage();
-$pdf->SetFont('Times','',12);
-for($i=1;$i<=40;$i++)
-	$pdf->Cell(0,10,'Printing line number '.$i,0,1);
+	$pdf->WriteHTML($html);
 $pdf->Output();
 ?>
