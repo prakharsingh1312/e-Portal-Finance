@@ -15,7 +15,7 @@ function Header()
 	// Move to the right
 	$this->Cell(10);
 	// Title
-	$this->Cell(0,7,' DR. B. R. AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY, JALANDHAR-144011',0,0,'C');
+	$this->Cell(0,3,' DR. B. R. AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY, JALANDHAR-144011',0,0,'C');
 	// Line break
 	$this->Ln(5);
 }
@@ -28,7 +28,7 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',7);
 $pdf->cell(15);
-$pdf->Cell(0,7,'PROPOSAL FOR ATTENDING NATIONAL CONFERENCE / TRAINING COURSES / OTHERS UNDER',0,1,'C');
-$pdf->Cell(0,7,'TEQIP-II Annexure "A"',0,1,'C');
+$pdf->Cell(0,10,'PROPOSAL FOR ATTENDING NATIONAL CONFERENCE / TRAINING COURSES / OTHERS UNDER',0,1,'C');
+$pdf->Cell(0,3,'TEQIP-III Annexure "A"',0,1,'C');
 $pdf->Output();
 ?>
