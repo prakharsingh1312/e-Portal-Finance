@@ -1,5 +1,7 @@
 <?php
 require('../fpdf.php');
+require('html_table/html_table.php');
+
 
 class PDF extends FPDF
 {
@@ -15,18 +17,24 @@ function Header()
 	// Title
 	$this->Cell(0,7,' DR. B. R. AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY, JALANDHAR-144011',0,0,'C');
 	// Line break
-	$this->Ln(20);
+	$this->Ln(5);
 }
 
 // Page footer
 function Footer()
 {
 	// Position at 1.5 cm from bottom
-	$this->SetY(-15);
-	// Arial italic 8
-	$this->SetFont('Arial','I',8);
-	// Page number
-	$this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+	$this->SetY(-35);
+	$html='<table border="1">
+	<tr>
+	<td width="200" height="30">cell 1</td><td width="200" height="30" bgcolor="#D0D0FF">cell 2</td>
+	</tr>
+	<tr>
+	<td width="200" height="30">cell 3</td><td width="200" height="30">cell 4</td>
+	</tr>
+	</table>';
+
+	$pdf->WriteHTML($html);
 }
 }
 
