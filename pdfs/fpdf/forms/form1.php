@@ -34,7 +34,7 @@ function Footer()
 	</tr>
 	</table>';
 
-	$pdf->WriteHTML($html);
+	$this->WriteHTML($html);
 }
 }
 
