@@ -9,12 +9,10 @@ function Header()
 	// Logo
 	$this->Image('imgs/logo.png',10,6,15,15);
 	// Arial bold 15
-	$this->SetFont('Arial','B',15);
+	$this->SetFont('Arial','B',10);
 	// Move to the right
-	$this->Cell(80);
-	// Title
-	$this->Cell(30,10,'Title',1,0,'C');
-	// Line break
+	$this->Write(15,' DR. B. R. AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY, JALANDHAR-144011')
+	
 	$this->Ln(20);
 }
 
