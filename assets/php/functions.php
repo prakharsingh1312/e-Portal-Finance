@@ -656,7 +656,7 @@ function show_edit_form_control($id){
 
         </div>
       </div>';
-	return $result;
+	return $return;
 	
 }
 ?>
