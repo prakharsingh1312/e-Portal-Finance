@@ -538,7 +538,14 @@ function form_toggle($state,$id){
 	}
 }
 function show_edit_form_control($id){
-	$result='<div class="modal-content">
+	global $dbconfig;
+	$sql = $dbconfig->prepare("SELECT * from form_details WHERE form_id=?");
+	$sql->bind_param("i",$id);
+	$sql->execute();
+	$result=$sql->get_result();
+	$result=$result->fetch_assoc();
+	
+	$return='<div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Edit Form</h5>
           <!-- <h5 class="modal-title" id="exampleModalLabel">Edit an Existing Department</h5> -->
@@ -547,16 +554,14 @@ function show_edit_form_control($id){
           </button>
         </div>
 		 <div class="form-group">
-              <label for="exampleInputEmail1">Form Name</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-              <!-- <label for="exampleInputEmail1">Department Name :</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> -->
+              <label for="exampleInputEmail1">Form Title</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=""value="'.$result['form_title'].'">
+             
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Form Title</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
-              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+              <label for="exampleInputPassword1">Form Subtitle</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="" value="'.$result['form_subtitle'].'">
+             
             </div>
 
                   <div class="control-group" id="fields">
@@ -594,14 +599,14 @@ function show_edit_form_control($id){
         <div class="card-body">
 
   <label for="exampleFormControlTextarea2">Enter Guidelines</label>
-  <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
+  <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3">'.$result['form_guidelines'].'</textarea>
 
 
         </div>
         </div>
         </div>
         </div>
-		<div id="accordion">
+		<div id="accordion1">
         <div class="card">
         <div class="card-header" id="headingTwo">
 
@@ -611,18 +616,18 @@ function show_edit_form_control($id){
 
         </div>
 
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion1">
         <div class="card-body">
 
   <label for="exampleFormControlTextarea2">Enter Form Info</label>
-  <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
+  <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3">'.$result['form_intro'].'</textarea>
 
 
         </div>
         </div>
         </div>
         </div>
-		<div id="accordion">
+		<div id="accordion2">
         <div class="card">
         <div class="card-header" id="headingThree">
 
@@ -632,11 +637,11 @@ function show_edit_form_control($id){
 
         </div>
 
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion2">
         <div class="card-body">
 
   <label for="exampleFormControlTextarea2">Enter Required Documents</label>
-  <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
+  <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3">'.$result['form_docs'].'</textarea>
 
 
         </div>
