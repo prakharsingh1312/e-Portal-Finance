@@ -285,7 +285,7 @@
               <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
             </div>
           </div>
-          <div class="form-row">
+          <!--<div class="form-row">
             <div class="form-group" id="form1_21">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -329,7 +329,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>-->
           <br>
 
 <span id="error_span" style="color:red"></span>
@@ -348,6 +348,7 @@
   <script src="../assets/js/jquery.js"></script>
   <script src="../assets/js/main.js"></script>
 		  <script src="../assets/jquery.datetimepicker.full.min.js"></script>
+		  <script src="../assets/js/loadingView.js" type="text/javascript"></script>
 	 <script>
 		
 	   $("#form1_from_date" ).datetimepicker({

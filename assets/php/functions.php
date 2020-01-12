@@ -68,7 +68,7 @@ function get_forms(){
 		<div id="notification_div"><div id="notification_inner_div"><div id="notification_inner_cell_div"></div></div></div>
 		<h1>Forms Available</h1>';
 	global $dbconfig;
-	$sql="SELECT * FROM form_details ";
+	$sql="SELECT * FROM form_details WHERE form_activation=1";
     $result = $dbconfig->prepare($sql);
     $result->execute();
     $result=$result->get_result();
@@ -112,22 +112,22 @@ function submit_form1($post,$files){
 		$cost_detail_file='Y';
 		$post['cost_details_text']=upload_file($files['cost_details'],'cost_details',$response_code);
 	}
-	if($post['recommended']=="Recommended"){
-		$recommended=upload_file($files['signhod'],'signhod',$response_code);
-	}
+	//if($post['recommended']=="Recommended"){
+		//$recommended=upload_file($files['signhod'],'signhod',$response_code);
+	//}
 	$cv=upload_file($files['cv'],'cv',$response_code);
 	$hod=upload_file($files['hod_certificate'],'hod_certificate',$response_code);
 	if($post['research']=='Yes'){
 	$paper=upload_file($files['accepted_paper'],'accepted_paper',$response_code);}
-	$signstudent=upload_file($files['signstudent'],'signstudent',$response_code);
-	$signsupervisor=upload_file($files['signsupervisor'],'signsupervisor',$response_code);
+	//$signstudent=upload_file($files['signstudent'],'signstudent',$response_code);
+	//$signsupervisor=upload_file($files['signsupervisor'],'signsupervisor',$response_code);
 	$status=1;
 	
 	global $dbconfig;
-	$sql="INSERT INTO `form_type1_responses` ( `form_id`, `response_code`, `name_of_student`, `course`, `roll_no`, `department`, `nature_of event`, `name_of_event`, `place_of_event`, `duration_from`, `duration_to`, `duration_days`, `organizer_of_event`, `relevance_file`, `relevance_of_visit`, `objective_of_visit`, `objective_file`, `attached_cv`, `attached_certificate_hod`, `date_and_time_departure`, `date_and _time_arrival`, `research_paper`, `title_of_paper`, `accepted_paper_acceptance_letter`, `total_cost`, `total_cost_words`, `cost_details_file`, `cost_details`, `registration_fees`, `transportation_allowance`, `other_costs`, `cgpa`, `sci_journal`, `signature_student`, `signature_supervisor`, `recommendation_hod`, `signature_hod`, `STATUS`) VALUES ( ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	$sql="INSERT INTO `form_type1_responses` ( `form_id`, `response_code`, `name_of_student`, `course`, `roll_no`, `department`, `nature_of event`, `name_of_event`, `place_of_event`, `duration_from`, `duration_to`, `duration_days`, `organizer_of_event`, `relevance_file`, `relevance_of_visit`, `objective_of_visit`, `objective_file`, `attached_cv`, `attached_certificate_hod`, `date_and_time_departure`, `date_and _time_arrival`, `research_paper`, `title_of_paper`, `accepted_paper_acceptance_letter`, `total_cost`, `total_cost_words`, `cost_details_file`, `cost_details`, `registration_fees`, `transportation_allowance`, `other_costs`, `cgpa`, `sci_journal`, `STATUS`) VALUES ( ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $dbconfig->prepare($sql);
 	
-        $stmt->bind_param("issssssssssisssssssssssssssssssssssssi",$_SESSION['form_id'],$response_code,$post['name'],$post['course'],$post['roll'],$post['department'],$post['nature_of_event'],$post['name_of_the_event'],$post['place'],$post['from_date'],$post['to_date'],$post['no_of_days'],$post['organizer'],$relevance_file,$post['relevance_text'],$post['objective_text'],$objective_file,$cv,$hod,$post['date_time_d'],$post['date_time_a'],$post['research'],$post['title'],$paper,$post['total_cost'],$post['trs'],$cost_detail_file,$post['cost_details_text'],$post['registration'],$post['ta'],$post['others'],$post['cgpa'],$post['mtech'],$signstudent,$signsupervisor,$post['recommended'],$recommended,$status); //pending
+        $stmt->bind_param("issssssssssisssssssssssssssssssssi",$_SESSION['form_id'],$response_code,$post['name'],$post['course'],$post['roll'],$post['department'],$post['nature_of_event'],$post['name_of_the_event'],$post['place'],$post['from_date'],$post['to_date'],$post['no_of_days'],$post['organizer'],$relevance_file,$post['relevance_text'],$post['objective_text'],$objective_file,$cv,$hod,$post['date_time_d'],$post['date_time_a'],$post['research'],$post['title'],$paper,$post['total_cost'],$post['trs'],$cost_detail_file,$post['cost_details_text'],$post['registration'],$post['ta'],$post['others'],$post['cgpa'],$post['mtech'],$status); //pending
 	
         $stmt->execute();
         $stmt->close();
@@ -492,7 +492,7 @@ function show_forms(){
                         
                   </td>
                   <td class="text-right">
-                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" class="btn btn-primary btn-sm form_show_edit_buttton" data-toggle="modal" id="edit:'.$result1['form_id'].'" data-target="#exampleModal">
                     Edit
                   </button>
                   </td>
@@ -536,5 +536,8 @@ function form_toggle($state,$id){
         </div>';
 				return $return;
 	}
+}
+function show_edit_form($id){
+	
 }
 ?>

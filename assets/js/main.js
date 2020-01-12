@@ -143,12 +143,12 @@ $(document).ready( function()
 		e.preventDefault();
 		return false;
 	});
-	$(document).on('change','#form1_recommended',function(){
-			if($('#form1_recommended').val()=='Not Recommended')
-			{hide_input('#form1_24');$('#form1_signhod').removeAttr('required');}
-			else
-			{show_input('#form1_24');$('#form1_signhod').attr('required','1');}
-		 });
+//	$(document).on('change','#form1_recommended',function(){
+//			if($('#form1_recommended').val()=='Not Recommended')
+//			{hide_input('#form1_24');$('#form1_signhod').removeAttr('required');}
+//			else
+//			{show_input('#form1_24');$('#form1_signhod').attr('required','1');}
+//		 });
 	$(document).on('input','#form1_relevance_text',function(){
 			if($('#form1_relevance_text').val()!='')
 			{hide_input('#form1_relevance');$('#form1_relevance').removeAttr('required');}
@@ -345,7 +345,7 @@ function input_focus(id)
 function form1_submit(){
 	var form=$('#form1')[0];
 	var formdata=new FormData(form);
-	if(validate_name(formdata.get('name'))){
+	
 		if(validate_number(formdata.get('roll'),8)){
 		$("#submitForm").prop("disabled", true);
 			$('#form1').loadingView({'state':true});
@@ -378,11 +378,7 @@ function form1_submit(){
 			form_error('Roll no. format incorrect.','#form1_roll')
 		}
 	}
-	else
-		{
-			form_error('Name cannot contain letters or symbols.','#form1_name');
-		}
-}
+	
 function logout(){
 	$.get('../login.php?logout',function(data){
 		if (data==1)
