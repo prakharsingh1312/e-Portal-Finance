@@ -3,7 +3,7 @@ require('../fpdf.php');
 require('html_table/html_table.php');
 
 
-class PDF extends FPDF
+class PDFS extends FPDF
 {
 // Page header
 function Header()
@@ -39,7 +39,7 @@ function Footer()
 }
 
 // Instanciation of inherited class
-$pdf = new PDF();
+$pdf = new PDFS();
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',12);
