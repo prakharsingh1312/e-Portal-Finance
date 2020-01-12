@@ -48,7 +48,7 @@ $pdf->cell(10,7,'',0,0);
 $pdf->cell(170,7,'5. Name of Event:',1,1);
 
 $pdf->cell(10,7,'',0,0);
-$pdf->MultiCell(170,7,'6. Place (S) of the event (Visit) Conference /  Training Course /  Workshop Seminar / Symposium / Others (Complete Address):   lace (S) of the event (Visit) Conference /  Training Course /  lace (S) of the event (Visit) Conference /  Training Course /  lace (S) of the event (Visit) Conference /  Training Course /  ',1,1);
+$pdf->MultiCell(170,3,'6. Place (S) of the event (Visit) Conference /  Training Course /  Workshop Seminar / Symposium / Others (Complete Address):   lace (S) of the event (Visit) Conference /  Training Course /  lace (S) of the event (Visit) Conference /  Training Course /  lace (S) of the event (Visit) Conference /  Training Course /  ',1,1);
 
 $pdf->cell(10,7,'',0,0);
 $pdf->cell(170,7,'','LRB',1);
