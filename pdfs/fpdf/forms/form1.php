@@ -33,12 +33,26 @@ $pdf->Cell(0,3,'TEQIP-III Annexure "A"',0,1,'C');
 $pdf->ln(15);
 
 //start table
-$pdf->cell(10,7,'',1,0);
-$pdf->cell(90,7,'1. Name of the Student(Full time):',1,0);
-$pdf->cell(80,7,'1.1 Course:',1,1);
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(100,7,'1. Name of the Student(Full time):',1,0);
+$pdf->cell(70,7,'1.1 Course:',1,1);
 
-$pdf->cell(10,7,'',1,0);
-$pdf->cell(40,7,'1.1 Course:',1,0);
-$pdf->cell(40,7,'2 Roll Number:',1,0);
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(85,7,'2. Roll Number:',1,0);
+$pdf->cell(85,7,'3. Department:',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'4. Nature of Event:',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'5. Name of Event:',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'6. Place (S) of the event (Visit) Conference /  Training Course /  Workshop Seminar / Symposium / Others (Complete Address):','TLR',1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'','LRB',1);
+
+
 $pdf->Output();
 ?>
