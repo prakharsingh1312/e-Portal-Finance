@@ -35,8 +35,19 @@
       <h2 class="center" style="text-align:center; padding-top:30px;">'. $result['form_subtitle'].'</h2>
       <div class="signup-content">
         <form method="POST" class="register-form" id="register-form" action=".">
-          <h2 class="display-6" style="color:#dc5a00;">Important Guidelines</h2>
-            <p style="font-size:1.2rem;">'. $result['form_guidelines'].'</p>
+          <h2 class="display-6" style="color:#dc5a00;">REQUIRED DOCUMENTS</h2>
+            <p style="font-size:1.2rem;">'. $result['form_docs'].'</p>
+        </form>
+
+
+
+
+
+      </div>
+	  <div class="signup-content">
+        <form method="POST" class="register-form" id="register-form" action=".">
+          <h2 class="display-6" style="color:#dc5a00;">BASIC INTRODUCTIONS</h2>
+            <p style="font-size:1.2rem;">'. $result['form_intro'].'</p>
         </form>
 
 
