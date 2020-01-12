@@ -30,9 +30,14 @@ $pdf->SetFont('Arial','B',7);
 $pdf->cell(15);
 $pdf->Cell(0,10,'PROPOSAL FOR ATTENDING NATIONAL CONFERENCE / TRAINING COURSES / OTHERS UNDER',0,1,'C');
 $pdf->Cell(0,3,'TEQIP-III Annexure "A"',0,1,'C');
-$pdf->ln(20);
+$pdf->ln(15);
 
 //start table
 $pdf->cell(10,7,'',1,0);
+$pdf->cell(80,7,'1. Name of the Student(Full time):',1,1);
+
+$pdf->cell(10,7,'',1,0);
+$pdf->cell(40,7,'1.1 Course:',1,0);
+$pdf->cell(40,7,'2 Roll Number:',1,0);
 $pdf->Output();
 ?>
