@@ -537,7 +537,121 @@ function form_toggle($state,$id){
 				return $return;
 	}
 }
-function show_edit_form($id){
+function show_edit_form_control($id){
+	$result='<div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Form</h5>
+          <!-- <h5 class="modal-title" id="exampleModalLabel">Edit an Existing Department</h5> -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+		 <div class="form-group">
+              <label for="exampleInputEmail1">Form Name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+              <!-- <label for="exampleInputEmail1">Department Name :</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> -->
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Form Title</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+            </div>
+
+                  <div class="control-group" id="fields">
+                      <label class="control-label" for="field1">Add Path of Form</label>
+                      <div class="controls">
+                          <form role="form" autocomplete="off">
+                              <div class="entry form-group col-xs-3" style="margin-top:10px" >
+                                  <input class="form-control" name="fields[]" type="text" placeholder="Enter department ID" />
+                                <span class="input-group-btn">
+                                      <button class="btn btn-success btn-add" type="button" style="margin-left:90%">
+                                          <span class="glyphicon glyphicon-plus" style="font-size:12px"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                      </button>
+                                  </span>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+
+
+
+
+
+        </div>
+        <div id="accordion">
+        <div class="card">
+        <div class="card-header" id="headingOne">
+
+
+        <button type="button" class="btn btn-outline-info btn-lg btn-block" style="float:left"data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Edit Guidelines</button>
+
+
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+
+  <label for="exampleFormControlTextarea2">Enter Guidelines</label>
+  <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
+
+
+        </div>
+        </div>
+        </div>
+        </div>
+		<div id="accordion">
+        <div class="card">
+        <div class="card-header" id="headingTwo">
+
+
+        <button type="button" class="btn btn-outline-info btn-lg btn-block" style="float:left"data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">Edit From Info</button>
+
+
+        </div>
+
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+
+  <label for="exampleFormControlTextarea2">Enter Form Info</label>
+  <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
+
+
+        </div>
+        </div>
+        </div>
+        </div>
+		<div id="accordion">
+        <div class="card">
+        <div class="card-header" id="headingThree">
+
+
+        <button type="button" class="btn btn-outline-info btn-lg btn-block" style="float:left"data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">Edit Required Documents</button>
+
+
+        </div>
+
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+        <div class="card-body">
+
+  <label for="exampleFormControlTextarea2">Enter Required Documents</label>
+  <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
+
+
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
+          <button type="button" class="btn btn-primary">Update Form</button>
+          <!-- <button type="button" class="btn btn-primary">Save Department</button> -->
+
+        </div>
+      </div>';
+	return $result;
 	
 }
 ?>
