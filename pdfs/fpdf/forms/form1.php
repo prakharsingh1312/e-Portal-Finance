@@ -28,7 +28,7 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',12);
 $pdf->cell(15);
-$pdf->Cell(0,7,'PROPOSAL FOR ATTENDING NATIONAL CONFERENCE / TRAINING COURSES / OTHERS UNDER',0,1,'C');
-$pdf->Cell(0,7,'TEQIP-II Annexure “A”',0,1,'C');
+$pdf->Cell(0,5,'PROPOSAL FOR ATTENDING NATIONAL CONFERENCE / TRAINING COURSES / OTHERS UNDER',0,1,'C');
+$pdf->Cell(0,5,htmlspecialchars('TEQIP-II Annexure “A”'),0,1,'C');
 $pdf->Output();
 ?>
