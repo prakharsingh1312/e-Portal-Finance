@@ -348,6 +348,7 @@
   <script src="../assets/js/jquery.js"></script>
   <script src="../assets/js/main.js"></script>
 		  <script src="../assets/jquery.datetimepicker.full.min.js"></script>
+		  <script src="../assets/js/loadingView.js" type="text/javascript"></script>
 	 <script>
 		
 	   $("#form1_from_date" ).datetimepicker({
