@@ -530,5 +530,6 @@ function editForm(id){
 	$.post('pages/form_control.php?edit_form',{id:id,title:title,subtitle:subtitle,guidelines:guidelines,intro:intro,docs:docs},function(data){
 		$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
+		showFormTable();
 	});
 }
