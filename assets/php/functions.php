@@ -663,14 +663,14 @@ function show_edit_form_control($id){
 	return $return;
 	}
 }
-function edit_form_control($id,$title,$subtitle,$guidelines,$info,$docs){
+function edit_form_control($id,$title,$subtitle,$guidelines,$intro,$docs){
 	global $dbconfig;
 	if(verify_login()!=1){
 		return verify_login();
 	}
 	else{
 		$sql=$dbconfig->prepare('UPDATE form_details SET form_title=? , form_subtitle=? , form_guidelines=? , form_info=? , form_docs=? WHERE form_id=?');
-		$sql->bind_param("sssssi",$title,$subtitle,$guidelines,$info,$docs,$id);
+		$sql->bind_param("sssssi",$title,$subtitle,$guidelines,$intro,$docs,$id);
 		$sql->execute();
 		return '<div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Success</h5>

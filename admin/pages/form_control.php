@@ -17,7 +17,7 @@ elseif(isset($_GET['edit_form'])){
 	$title=mysqli_real_escape_string($dbconfig,$_POST['title']);
 	$subtitle=mysqli_real_escape_string($dbconfig,$_POST['subtitle']);
 	$guidelines=mysqli_real_escape_string($dbconfig,$_POST['guidelines']);
-	$info=mysqli_real_escape_string($dbconfig,$_POST['info']);
+	$intro=mysqli_real_escape_string($dbconfig,$_POST['intro']);
 	$docs=mysqli_real_escape_string($dbconfig,$_POST['docs']);
 
 	echo edit_form_control($id,$title,$subtitle,$guidelines,$info,$docs);
