@@ -68,7 +68,7 @@ function get_forms(){
 		<div id="notification_div"><div id="notification_inner_div"><div id="notification_inner_cell_div"></div></div></div>
 		<h1>Forms Available</h1>';
 	global $dbconfig;
-	$sql="SELECT * FROM form_details ";
+	$sql="SELECT * FROM form_details WHERE from_activation=1";
     $result = $dbconfig->prepare($sql);
     $result->execute();
     $result=$result->get_result();
