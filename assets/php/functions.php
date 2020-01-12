@@ -492,7 +492,7 @@ function show_forms(){
                         
                   </td>
                   <td class="text-right">
-                    <button type="button" class="btn btn-primary btn-sm form_show_edit_buttton" data-toggle="modal" id="edit:'.$result1['form_id'].'" data-target="#exampleModal">
+                    <button type="button" class="btn btn-primary btn-sm form_show_edit_button" data-toggle="modal" id="edit:'.$result1['form_id'].'" data-target="#exampleModal">
                     Edit
                   </button>
                   </td>
