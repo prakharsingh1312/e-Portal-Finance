@@ -48,10 +48,65 @@ $pdf->cell(10,7,'',0,0);
 $pdf->cell(170,7,'5. Name of Event:',1,1);
 
 $pdf->cell(10,7,'',0,0);
-$pdf->MultiCell(170,4,'6. Place (S) of the event (Visit) Conference /  Training Course /  Workshop Seminar / Symposium / Others (Complete Address):   lace (S) of the event (Visit) Conference /  Training Course /  lace (S) of the event (Visit) Conference /  Training Course /  lace (S) of the event (Visit) Conference /  Training Course /  ',1,1);
+$pdf->MultiCell(170,4,'6. Place (S) of the event (Visit) Conference /  Training Course /  Workshop Seminar / Symposium / Others (Complete Address): ',1,1);
 
 $pdf->cell(10,7,'',0,0);
-$pdf->cell(170,7,'','LRB',1);
+$pdf->cell(170,7,'7. Duration required for the event with date (S) : From______________To ______________No. Of days:___',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'8. Organizer of the event:',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'9. Relevance of the visit / training: (Attach Separate Sheet, if required)',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'10. Clear objective and outcome of the visit: (Attach Separate Sheet, if required)',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'11. Attach (i) brief CV / biography ',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'12. Attach certificate from HoD regarding relevance of the event for the applicant and by stating that the event will benefit for the applicant',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'13. Date and time of departure from the Institute:',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'14. Date and time of arrival from the Institute:',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'15.  Whether going to present research paper :',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'16. Title of Paper',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'17. Attach the accepted paper, acceptance letter, NOC from co-authors:',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'18. Total cost involved Rs. ______________________ (Rupees ___________________ Only) \n
+Please give cost details (Attach separate sheet , if necessary)\n
+Registration Fee:_________________\n
+TA: ________________\n
+Others, If any (Special)',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'19. CGPA of the candidate (Only for UG / M.Tech and M.Sc students) : ',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'20. For M.Tech, M.Sc and PhD candidates : Whether one paper has been accepted for publication in SCI Journal in Last two years (State Yes / No and attach the acceptance letter): ',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(50,7,'20. Signature of the student','TLR',0);
+$pdf->cell(50,7,'21. Signature of the Supervisor','TLR',0);
+$pdf->cell(70,7,'22. Recommended/ Not recommended by HoD  \n
+
+Signature (with seal) of the HoD:','TLR',1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(50,10,'','BLR',0);
+$pdf->cell(50,10,'','BLR',0);
+$pdf->cell(70,10,'','BLR',1);
 
 
 $pdf->Output();
