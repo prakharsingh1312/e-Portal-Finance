@@ -96,15 +96,19 @@ $pdf->cell(170,7,'19. CGPA of the candidate (Only for UG / M.Tech and M.Sc stude
 $pdf->cell(10,7,'',0,0);
 $pdf->MultiCell(170,4,'20. For M.Tech, M.Sc and PhD candidates : Whether one paper has been accepted for publication in SCI Journal in Last two years (State Yes / No and attach the acceptance letter): ',1,1);
 
+SetY(-45);
+
 $pdf->cell(10,7,'',0,0);
 $pdf->cell(50,7,'20. Signature of the student','TLR',0);
 $pdf->cell(50,7,'21. Signature of the Supervisor','TLR',0);
 $pdf->MultiCell(70,7,'22. Recommended/ Not recommended by HoD','TLR',1);
 
 $pdf->cell(10,7,'',0,0);
-$pdf->cell(50,10,'','BLR',0);
-$pdf->cell(50,10,'','BLR',0);
-$pdf->cell(70,10,'Signature (with seal) of the HoD:','BLR',1);
+$pdf->cell(50,15,'','BLR',0);
+$pdf->cell(50,15,'','BLR',0);
+$pdf->MultiCell(70,15,'
+
+Signature (with seal) of the HoD:','BLR',1);
 
 
 $pdf->Output();
