@@ -106,7 +106,7 @@ $pdf->MultiCell(70,7,'22. Recommended/ Not recommended by HoD','TLR',1);
 $pdf->cell(10,7,'',0,0);
 $pdf->cell(50,18,'','BLR',0);
 $pdf->cell(50,18,'','BLR',0);
-$pdf->MultiCell(70,7.5,'
+$pdf->MultiCell(70,6,'
 
 Signature (with seal) of the HoD:','BLR',1);
 
