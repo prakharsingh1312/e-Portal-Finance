@@ -3,7 +3,7 @@ require('../fpdf.php');
 
 
 
-class PDF extends PDF
+class PDF extends FPDF
 {
 // Page header
 function Header()
