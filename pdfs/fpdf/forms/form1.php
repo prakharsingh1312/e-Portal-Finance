@@ -96,7 +96,7 @@ $pdf->cell(170,7,'19. CGPA of the candidate (Only for UG / M.Tech and M.Sc stude
 $pdf->cell(10,7,'',0,0);
 $pdf->MultiCell(170,4,'20. For M.Tech, M.Sc and PhD candidates : Whether one paper has been accepted for publication in SCI Journal in Last two years (State Yes / No and attach the acceptance letter): ',1,1);
 
-SetY(-45);
+$pdf->SetY(-45);
 
 $pdf->cell(10,7,'',0,0);
 $pdf->cell(50,7,'20. Signature of the student','TLR',0);
