@@ -1,9 +1,9 @@
 <?php
 require('../fpdf.php');
-require('html_table/html_table.php');
 
 
-class PDFS extends PDF
+
+class PDF extends PDF
 {
 // Page header
 function Header()
@@ -23,7 +23,7 @@ function Header()
 
 
 // Instanciation of inherited class
-$pdf = new PDFS();
+$pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',7);
