@@ -34,12 +34,17 @@ $pdf->ln(15);
 
 //start table
 $pdf->cell(10,7,'',0,0);
-$pdf->cell(100,7,'1. Name of the Student(Full time):',1,0);
-$pdf->cell(70,7,'1.1 Course:',1,1);
+$pdf->cell(170,7,'1. Name of the Student(Full time):',1,0);
 
 $pdf->cell(10,7,'',0,0);
-$pdf->cell(85,7,'2. Roll Number:',1,0);
-$pdf->cell(85,7,'3. Department:',1,1);
+$pdf->cell(170,7,'1.1 Course:',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'2. Roll Number:',1,1);
+//$pdf->cell(5,7,'3. Department:',1,1);
+
+$pdf->cell(10,7,'',0,0);
+$pdf->cell(170,7,'3. Department:',1,1);
 
 $pdf->cell(10,7,'',0,0);
 $pdf->cell(170,7,'4. Nature of Event:',1,1);
