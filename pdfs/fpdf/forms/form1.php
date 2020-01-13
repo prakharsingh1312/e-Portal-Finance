@@ -84,29 +84,27 @@ $pdf->cell(10,7,'',0,0);
 $pdf->cell(170,7,'17. Attach the accepted paper, acceptance letter, NOC from co-authors:',1,1);
 
 $pdf->cell(10,7,'',0,0);
-$pdf->MultiCell(170,7,'18. Total cost involved Rs. ______________________ (Rupees ___________________ Only) \n
-Please give cost details (Attach separate sheet , if necessary)\n
-Registration Fee:_________________\n
-TA: ________________\n
+$pdf->MultiCell(170,4,'18. Total cost involved Rs. ______________________ (Rupees ___________________ Only) 
+Please give cost details (Attach separate sheet , if necessary)
+Registration Fee:_________________
+TA: ________________
 Others, If any (Special)',1,1);
 
 $pdf->cell(10,7,'',0,0);
 $pdf->cell(170,7,'19. CGPA of the candidate (Only for UG / M.Tech and M.Sc students) : ',1,1);
 
 $pdf->cell(10,7,'',0,0);
-$pdf->MultiCell(170,7,'20. For M.Tech, M.Sc and PhD candidates : Whether one paper has been accepted for publication in SCI Journal in Last two years (State Yes / No and attach the acceptance letter): ',1,1);
+$pdf->MultiCell(170,4,'20. For M.Tech, M.Sc and PhD candidates : Whether one paper has been accepted for publication in SCI Journal in Last two years (State Yes / No and attach the acceptance letter): ',1,1);
 
 $pdf->cell(10,7,'',0,0);
 $pdf->cell(50,7,'20. Signature of the student','TLR',0);
 $pdf->cell(50,7,'21. Signature of the Supervisor','TLR',0);
-$pdf->MultiCell(70,7,'22. Recommended/ Not recommended by HoD  \n
-
-Signature (with seal) of the HoD:','TLR',1);
+$pdf->MultiCell(70,7,'22. Recommended/ Not recommended by HoD','TLR',1);
 
 $pdf->cell(10,7,'',0,0);
 $pdf->cell(50,10,'','BLR',0);
 $pdf->cell(50,10,'','BLR',0);
-$pdf->cell(70,10,'','BLR',1);
+$pdf->cell(70,10,'Signature (with seal) of the HoD:','BLR',1);
 
 
 $pdf->Output();
