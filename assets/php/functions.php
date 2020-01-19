@@ -178,7 +178,7 @@ function show_applications($form_id){
                   <td>'.$result['roll_no'].'</td>
                   <td>'.$i.'</td>
                   <td class="text-right">
-                    <a href="#formModal" >View Form</a>
+                    <a href="#formModal" data-toggle="modal" class="button" >View Form</a>
                   </td>
 				  </tr>';
 		}
