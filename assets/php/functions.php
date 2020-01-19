@@ -771,7 +771,7 @@ function show_edit_user($id){
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
-          <button type="button" class="btn btn-primary add_user_button">Update User</button>
+          <button type="button" class="btn btn-primary edit_user_button">Update User</button>
          
         </div>
       </div>';
