@@ -459,22 +459,70 @@ else{
     </div>
   </div> -->
 </div>
-<div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+<div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Modal title</h4>
+          <h5 class="modal-title" id="exampleModalLabel">Admin Priviledges</h5>
+          <!-- <h5 class="modal-title" id="exampleModalLabel">Edit an Existing Department</h5> -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
         <div class="modal-body">
-         Your Modal Content Here
+          <form>
+            <div class="form-group">
+				<div class="form-row">
+              		<h3> Admin 1 </h3>
+					<button type="button" class="btn btn-success">Success</button>
+					<button type="button" class="btn btn-danger">Danger</button>
+					<div class="input-group">
+              			<div class="input-group-prepend">
+                
+              			</div>
+              			<div class="custom-file">
+                			<input type="file" class="custom-file-input" id="form1_objective" name="objective" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required />
+              			</div>
+            		</div>
+				</div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">First Name :</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Last Name :</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Department :</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Role :</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+            </div>
+
+
+          </form>
+
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
+          <button type="button" class="btn btn-primary">Add User</button>
+          <!-- <button type="button" class="btn btn-primary">Save Department</button> -->
+
         </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
+      </div>
+    </div>
   </div>';
 }
 ?>
