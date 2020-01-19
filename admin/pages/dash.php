@@ -496,7 +496,7 @@ else{
             </div>
 			<div class="form-row">
 				<p style="margin:auto; margin-left:2%; margin-right:2%;"> Admin approval : </p>
-            	<div class="form-group">
+            	<div class="form-group float-right">
 				
 					<button type="button" class="btn btn-sm btn-outline-success float-right">Accept</button>
 					<button type="button" class="btn btn-sm btn-outline-danger float-right">Reject</button>
