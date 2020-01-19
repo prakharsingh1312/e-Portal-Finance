@@ -255,7 +255,7 @@ $(document).on('click','.show_add_new_user_button',function(){showAddUser() });
 $(document).on('click','.add_new_user_button',function(){addUser() });
 $(document).on('click','.show_edit_user_button',function(){ var array = this.id.split(':');
 			showEditUser(array[1]); });
-(document).on('click','.edit_user_button',function(){ var array = this.id.split(':');
+$(document).on('click','.edit_user_button',function(){ var array = this.id.split(':');
 			editUser(array[1]); });
 $(document).on('click','.user_show_delete_button',function(){ var array = this.id.split(':');
 			showDeleteUser(array[1],array[2]); });
