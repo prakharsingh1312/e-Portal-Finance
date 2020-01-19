@@ -474,9 +474,10 @@ else{
             <div class="form-group">
 				<div class="form-row">
               		<p style="margin-top:auto; margin-bottom:auto; margin-left:2%;"> Admin 1 : </p>
-					<button type="button" class="btn btn-sm btn-outline-success float-right">Accept</button>
-					<button type="button" class="btn btn-sm btn-outline-danger float-right">Reject</button>
-					
+					<div class="float-right">
+						<button type="button" class="btn btn-sm btn-outline-success float-right">Accept</button>
+						<button type="button" class="btn btn-sm btn-outline-danger float-right">Reject</button>
+					</div>
 				</div>
             </div>
             <div class="form-group">
