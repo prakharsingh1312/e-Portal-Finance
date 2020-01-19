@@ -497,7 +497,7 @@ else{
 			<div class="form-row">
 				<div class="container">
 				<p style="margin:auto; margin-left:2%; margin-right:2%;"> Admin approval : </p>
-				</div>
+				
             	<div class="button-group float-right ">
 				
 					<button type="button" class="btn btn-sm btn-success ">Accept</button>
@@ -515,6 +515,7 @@ else{
 				<div class="custom-file">
 				<input type="file" class="custom-file-input" id="customFile">
 				<label class="custom-file-label" for="customFile">Choose file</label>
+			 </div>
 			 </div>
 
 				
