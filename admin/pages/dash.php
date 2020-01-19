@@ -477,32 +477,11 @@ else{
 					
 						<button type="button" class="btn btn-sm btn-outline-success float-right">Accept</button>
 						<button type="button" class="btn btn-sm btn-outline-danger float-right">Reject</button>
+						<div class="custom-file">
+                			<input type="file" class="custom-file-input" id="form1_cv" name="cv" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required />
+              			</div>
 					
 				</div>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">First Name :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
-              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Last Name :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
-              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Department :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
-              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Role :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
-              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
             </div>
 
 
