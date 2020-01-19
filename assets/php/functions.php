@@ -741,7 +741,7 @@ function show_edit_user($id){
           <form>
             <div class="form-group">
               <label for="exampleInputEmail1">Username :</label>
-              <input type="text" class="form-control" id="username" value="'.$result1['user_username'].'" aria-describedby="emailHelp" placeholder="">
+              <input type="text" class="form-control" id="add_user_username" value="'.$result1['user_username'].'" aria-describedby="emailHelp" placeholder="">
               
             </div>
             <div class="form-group">
