@@ -487,6 +487,10 @@ else{
        					</div>
             		</div>
           		</div>-->
+				<div class="custom-file">
+				<input type="file" class="custom-file-input" id="customFile">
+				<label class="custom-file-label" for="customFile">Choose file</label>
+			 </div>
 
 				
             </div>
@@ -506,6 +510,10 @@ else{
        					</div>
             		</div>
           		</div>-->
+				<div class="custom-file">
+				<input type="file" class="custom-file-input" id="customFile">
+				<label class="custom-file-label" for="customFile">Choose file</label>
+			 </div>
 
 				
             </div>
@@ -526,22 +534,16 @@ else{
        					</div>
             		</div>
           		</div>-->
+				<div class="custom-file">
+				<input type="file" class="custom-file-input" id="customFile">
+				<label class="custom-file-label" for="customFile">Choose file</label>
+			 </div>
 
 				
             </div>
           </form>
-		  <form>
-			<div class="custom-file">
-				<input type="file" class="custom-file-input" id="customFile">
-				<label class="custom-file-label" for="customFile">Choose file</label>
-			 </div>
-			</form>
-			<form>
-  <div class="custom-file">
-    <input type="file" class="custom-file-input" id="customFile">
-    <label class="custom-file-label" for="customFile">Choose file</label>
-  </div>
-</form>
+		
+	
 
         </div>
         <div class="modal-footer">
