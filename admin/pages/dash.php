@@ -472,12 +472,13 @@ else{
         <div class="modal-body">
           <form>
 		  	<div class="form-row">
+				<p style="margin:auto; margin-left:2%; margin-right:2%;"> Admin 1: </p>
             	<div class="form-group">
 				
 					<button type="button" class="btn btn-sm btn-outline-success float-right">Accept</button>
 					<button type="button" class="btn btn-sm btn-outline-danger float-right">Reject</button>
 				</div>
-				<div class="form-group">
+				<!--<div class="form-group">
             		<div class="input-group">
               			<div class="input-group-prepend">
               			</div>
@@ -485,7 +486,45 @@ else{
                 			<input type="file" class="custom-file-input" name="relevance" id="form1_relevance" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required />
        					</div>
             		</div>
-          		</div>
+          		</div>-->
+
+				
+            </div>
+			<div class="form-row">
+				<p style="margin:auto; margin-left:2%; margin-right:2%;"> Admin 1: </p>
+            	<div class="form-group">
+				
+					<button type="button" class="btn btn-sm btn-outline-success float-right">Accept</button>
+					<button type="button" class="btn btn-sm btn-outline-danger float-right">Reject</button>
+				</div>
+				<!--<div class="form-group">
+            		<div class="input-group">
+              			<div class="input-group-prepend">
+              			</div>
+						<div class="custom-file">
+                			<input type="file" class="custom-file-input" name="relevance" id="form1_relevance" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required />
+       					</div>
+            		</div>
+          		</div>-->
+
+				
+            </div>
+			<div class="form-row">
+				<p style="margin:auto; margin-left:2%; margin-right:2%;"> Admin 1: </p>
+            	<div class="form-group">
+				
+					<button type="button" class="btn btn-sm btn-outline-success float-right">Accept</button>
+					<button type="button" class="btn btn-sm btn-outline-danger float-right">Reject</button>
+				</div>
+				<!--<div class="form-group">
+            		<div class="input-group">
+              			<div class="input-group-prepend">
+              			</div>
+						<div class="custom-file">
+                			<input type="file" class="custom-file-input" name="relevance" id="form1_relevance" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required />
+       					</div>
+            		</div>
+          		</div>-->
 
 				
             </div>
