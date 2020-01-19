@@ -477,10 +477,15 @@ else{
 					
 						<button type="button" class="btn btn-sm btn-outline-success float-right">Accept</button>
 						<button type="button" class="btn btn-sm btn-outline-danger float-right">Reject</button>
-						<div class="custom-file">
-                			<input type="file" class="custom-file-input" id="form1_cv" name="cv" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required />
-              			</div>
-					
+						<div class="input-group input-file" name="Fichier1">
+							<span class="input-group-btn">
+        						<button class="btn btn-default btn-choose" type="button">Choose</button>
+    						</span>
+    						<input type="text" class="form-control" placeholder="Choose a file..." />
+    						<span class="input-group-btn">
+       			 				<button class="btn btn-warning btn-reset" type="button">Reset</button>
+    						</span>
+						</div>
 				</div>
             </div>
 
