@@ -473,9 +473,9 @@ else{
           <form>
             <div class="form-group">
 				<div class="form-row">
-              		<h3> Admin 1 </h3>
-					<button type="button" class="btn btn-success">Success</button>
-					<button type="button" class="btn btn-danger">Danger</button>
+              		<p> Admin 1 : </p>
+					<button type="button" class="btn btn-sm btn-outline-success float-right">Accept</button>
+					<button type="button" class="btn btn-sm btn-outline-danger float-right">Reject</button>
 					<div class="input-group">
               			<div class="input-group-prepend">
                 
