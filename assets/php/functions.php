@@ -780,7 +780,7 @@ function add_user($username,$first,$dept,$role){
 	else{
 	global $dbconfig;
 	$pass=random_password();
-	$sql="INSERT INTO user_accounts (`user_username`,`user_name`,`user_department`,`user_role`,`user_password`) VALUES (?,?,?,?,?)";
+	$sql="INSERT INTO user_accounts (`user_username`,`user_name`,`user_dept`,`user_role`,`user_password`) VALUES (?,?,?,?,?)";
 		$result=$dbconfig->prepare($sql);
 	$result->bind_param("ssiis",$username,$first,$dept,$role,$pass['value']);
 	$result->execute();
@@ -809,7 +809,7 @@ function edit_user($id,$username,$first,$dept,$role){
 	}
 	else{
 	global $dbconfig;
-	$sql="UPDATE user_accounts SET user_username=? , user_name=? , user_role=? , user_department=? where user_id=?";
+	$sql="UPDATE user_accounts SET user_username=? , user_name=? , user_role=? , user_dept=? where user_id=?";
 		$result=$dbconfig->prepare($sql);
 	$result->bind_param("ssiii",$username,$first,$role,$dept,$id);
 	$result->execute();
