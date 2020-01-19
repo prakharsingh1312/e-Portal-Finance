@@ -253,7 +253,7 @@ $(document).on('click','.update_form_control_button',function(){ var array = thi
 //Users
 $(document).on('click','.show_add_user_button',function(){showAddUser() });
 $(document).on('click','.add_user_button',function(){addUser() });
-$(document).on('click','.show_edit_user_button',function(){ var array = this.id.split(':');
+$(document).on('click','.user_show_edit_button',function(){ var array = this.id.split(':');
 			showEditUser(array[1]); });
 $(document).on('click','.edit_user_button',function(){ var array = this.id.split(':');
 			editUser(array[1]); });
