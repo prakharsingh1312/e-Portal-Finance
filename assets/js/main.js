@@ -622,7 +622,7 @@ function editUser(id){
 		showUserTable();
 	});
 }
-function deleteUser(id){
+function deleteUser(name,id){
 	$('#modal-content').loadingView({'state':true});
 	$.post('pages/users.php?delete_user',{id:id},function(data){
 		$('#modal-content').html(data);
