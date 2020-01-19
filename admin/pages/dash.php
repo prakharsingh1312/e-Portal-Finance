@@ -458,6 +458,116 @@ else{
       </div>
     </div>
   </div> -->
-</div>';
+</div>
+<div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Admin Priviledges</h5>
+          <!-- <h5 class="modal-title" id="exampleModalLabel">Edit an Existing Department</h5> -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+		  	<div class="form-row">
+				<p style="margin:auto; margin-left:2%; margin-right:2%;">Financial approval: </p>
+            	<div class="button-group float-right">
+				
+					<button type="button" class="btn btn-sm btn-success ">Accept</button>
+					<button type="button" class="btn btn-sm btn-danger ">Reject</button>
+				</div>
+				<!--<div class="form-group">
+            		<div class="input-group">
+              			<div class="input-group-prepend">
+              			</div>
+						<div class="custom-file">
+                			<input type="file" class="custom-file-input" name="relevance" id="form1_relevance" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required />
+       					</div>
+            		</div>
+          		</div>-->
+				<div class="custom-file">
+				<input type="file" class="custom-file-input" id="customFile">
+				<label class="custom-file-label" for="customFile">Choose file</label>
+			 </div>
+
+				
+            </div>
+			<div class="form-row">
+			
+				<p style="margin:auto; margin-left:2%; margin-right:2%;"> Admin approval : </p>
+				
+            	<div class="button-group float-right ">
+				
+					<button type="button" class="btn btn-sm btn-success ">Accept</button>
+					<button type="button" class="btn btn-sm btn-danger ">Reject</button>
+				</div>
+				<!--<div class="form-group">
+            		<div class="input-group">
+              			<div class="input-group-prepend">
+              			</div>
+						<div class="custom-file">
+                			<input type="file" class="custom-file-input" name="relevance" id="form1_relevance" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required />
+       					</div>
+            		</div>
+          		</div>-->
+				<div class="custom-file">
+				<input type="file" class="custom-file-input" id="customFile">
+				<label class="custom-file-label" for="customFile">Choose file</label>
+			 </div>
+			 
+
+				
+            </div>
+			<div class="form-row">
+				<p style="margin:auto; margin-left:2%; margin-right:2%;"> Admin-Financial approval
+				: </p>
+            	<div class="button-group float-right">
+				
+					<button type="button" class="btn btn-sm btn-success ">Accept</button>
+					<button type="button" class="btn btn-sm btn-danger ">Reject</button>
+				</div>
+				<!--<div class="form-group">
+            		<div class="input-group">
+              			<div class="input-group-prepend">
+              			</div>
+						<div class="custom-file">
+                			<input type="file" class="custom-file-input" name="relevance" id="form1_relevance" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required />
+       					</div>
+            		</div>
+          		</div>-->
+				<div class="custom-file">
+				<input type="file" class="custom-file-input" id="customFile">
+				<label class="custom-file-label" for="customFile">Choose file</label>
+			 </div>
+
+				
+            </div>
+          </form>
+		
+	
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+          <!-- <button type="button" class="btn btn-primary">Save Department</button> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" id="modal-content">
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+      </div>
+    </div>
+  </div>';
 }
 ?>
