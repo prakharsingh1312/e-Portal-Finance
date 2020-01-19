@@ -173,7 +173,7 @@ function show_applications($form_id){
 		$stmt->execute();
 		$stmt=$stmt->get_result();
 		while($result=$stmt->fetch_assoc()){
-			$return.='<tr><td>'.$result['response_code'].'</td>
+			$return.='<tr><td><a data-toggle="modal" href="#newModal" class="button">'.$result['response_code'].'</a></td>
                   <td>'.$result['name_of_student'].'</td>
                   <td>'.$result['roll_no'].'</td>
                   <td>'.$i.'</td>
