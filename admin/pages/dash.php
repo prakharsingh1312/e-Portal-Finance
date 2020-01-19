@@ -495,10 +495,10 @@ else{
 				
             </div>
 			<div class="form-row">
-				<div class="col-xs-6">
+				<div class="container">
 				<p style="margin:auto; margin-left:2%; margin-right:2%;"> Admin approval : </p>
 				</div>
-            	<div class="button-group float-right col-xs-6">
+            	<div class="button-group float-right ">
 				
 					<button type="button" class="btn btn-sm btn-success ">Accept</button>
 					<button type="button" class="btn btn-sm btn-danger ">Reject</button>
