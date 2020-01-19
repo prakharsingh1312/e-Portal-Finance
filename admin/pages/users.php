@@ -1,13 +1,34 @@
 <?php
     include('../../assets/php/functions.php');
-    $sql="SELECT * FROM user_accounts ";
-
-    $result = $dbconfig->prepare($sql);
-    $result->execute();
-    $result=$result->get_result();
-
-
- ?>
+   if(isset($_GET['show_users'])){
+	   echo show_users();
+   }
+elseif(isset($_GET['add_user'])){
+	$username=mysqli_real_escape_string($dbconfig,$_POST['username']);
+	$first=mysqli_real_escape_string($dbconfig,$_POST['first']);
+	$dept=mysqli_real_escape_string($dbconfig,$_POST['dept']);
+	$role=mysqli_real_escape_string($dbconfig,$_POST['role']);
+	echo add_user($username,$first,$dept,$role);
+}
+elseif(isset($_GET['edit_user'])){
+	$username=mysqli_real_escape_string($dbconfig,$_POST['username']);
+	$first=mysqli_real_escape_string($dbconfig,$_POST['first']);
+	$dept=mysqli_real_escape_string($dbconfig,$_POST['dept']);
+	$role=mysqli_real_escape_string($dbconfig,$_POST['role']);
+	$id=mysqli_real_escape_string($dbconfig,$_POST['id']);
+	echo edit_user($id,$username,$first,$dept,$role);
+}
+elseif(isset($_GET['show_edit_user'])){
+	$id=mysqli_real_escape_string($dbconfig,$_POST['id']);
+	echo show_edit_user($id);
+}
+elseif(isset($_GET['delete_user'])){
+	$id=mysqli_real_escape_string($dbconfig,$_POST['id']);
+	echo delete_user($id);
+}
+else{
+	 $result=get_department_data();
+	 echo '
 <div class="panel-header panel-header-lg">
   <h2 align="center" class="d-sm-block" style="color:white;">WELCOME TO YOUR DASHBOARD</h2>
   <div class="container">
@@ -20,28 +41,28 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
-        <div class="carousel-item active w-100">
-          <div class="card-counter success">
-            <!-- <i class="fa fa-database"></i> -->
-            <span class="count-numbers">0</span>
-            <span class="count-name">Number of Departments</span>
+          <div class="carousel-item active w-100">
+            <div class="card-counter success">
+              <!-- <i class="fa fa-database"></i> -->
+              <span class="count-numbers">'.$result['dept'].'</span>
+              <span class="count-name">Number of Departments</span>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card-counter info w-100">
+              <!-- <i class="fa fa-users"></i> -->
+              <span class="count-numbers">'.$result['users'].'</span>
+              <span class="count-name">Number of Users</span>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card-counter danger">
+              <!-- <i class="fa fa-ticket"></i> -->
+              <span class="count-numbers">'.$result['forms'].'</span>
+              <span class="count-name">Number of active forms</span>
+            </div>
           </div>
         </div>
-        <div class="carousel-item">
-          <div class="card-counter info w-100">
-            <!-- <i class="fa fa-users"></i> -->
-            <span class="count-numbers">0</span>
-            <span class="count-name">Number of Users</span>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card-counter danger">
-            <!-- <i class="fa fa-ticket"></i> -->
-            <span class="count-numbers">0</span>
-            <span class="count-name">Number of active forms</span>
-          </div>
-        </div>
-      </div>
       <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -54,29 +75,29 @@
 
 
     <div class="col-lg-4 d-none d-lg-block">
-      <div class="card-counter success">
-        <!-- <i class="fa fa-database"></i> -->
-        <span class="count-numbers">0</span>
-        <span class="count-name">Number of Departments</span>
+        <div class="card-counter success">
+          <!-- <i class="fa fa-database"></i> -->
+          <span class="count-numbers">'.$result['dept'].'</span>
+          <span class="count-name">Number of Departments</span>
+        </div>
       </div>
-    </div>
 
-    <div class="col-lg-4 d-none d-lg-block">
-      <div class="card-counter info">
-        <!-- <i class="fa fa-users"></i> -->
-        <span class="count-numbers">0</span>
-        <span class="count-name">Number of Users</span>
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="card-counter info">
+          <!-- <i class="fa fa-users"></i> -->
+          <span class="count-numbers">'.$result['users'].'</span>
+          <span class="count-name">Number of Users</span>
+        </div>
       </div>
-    </div>
-    <div class="col-lg-4 d-none d-lg-block">
-      <div class="card-counter danger">
-        <i class="fa fa-ticket"></i>
-        <span class="count-numbers">0</span>
-        <span class="count-name">Number of active forms</span>
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="card-counter danger">
+          <i class="fa fa-ticket"></i>
+          <span class="count-numbers">'.$result['forms'].'</span>
+          <span class="count-name">Number of active forms</span>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 <div class="content" style="padding:0 30px 30px; min-height:calc(100vh - 123px); margin-top:-30px;">
   <div class="row">
@@ -102,28 +123,13 @@
                   Actions
                 </th>
               </thead>
-              <tbody>
-                <?php while($result1 = $result->fetch_assoc()){ ?>
-                <tr>
-                  <td>
-                    <?php echo htmlspecialchars($result1['user_id']); ?>
-                  </td>
-                  <td>
-                    <?php echo htmlspecialchars($result1['user_username']); ?>
-                  </td>
-                  <td>
-                    <?php echo htmlspecialchars($result1['user_name']); ?>
-                  </td>
-                  <td class="text-right">
-                     <a href="#" >Edit</a> or <a href="#">Delete</a>
-                  </td>
-                </tr>
-                <?php } ?>
+              <tbody id="users_table">
+                '.show_users().'
               </tbody>
             </table>
           </div>
 
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          <button type="button" class="btn btn-primary show_add_user_button" data-toggle="modal" data-target="#exampleModal">
           New User
         </button>
         </div>
@@ -135,58 +141,8 @@
 <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add a New User</h5>
-          <!-- <h5 class="modal-title" id="exampleModalLabel">Edit an Existing Department</h5> -->
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="exampleInputEmail1">username :</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-              <!-- <label for="exampleInputEmail1">Department Name :</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> -->
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">First Name :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
-              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Last Name :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
-              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Department :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
-              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Role :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
-              <!-- <label for="exampleInputPassword1">Department Abbriviation :</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
-            </div>
-
-
-          </form>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
-          <button type="button" class="btn btn-primary">Add User</button>
-          <!-- <button type="button" class="btn btn-primary">Save Department</button> -->
-
-        </div>
-      </div>
+      <div class="modal-content" id="modal-content">
+        <br><br><br><br><br><br><br><br><br><br><br>
     </div>
   </div>
 </div>
@@ -201,7 +157,7 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <small id="emailHelp" class="form-text text-muted">We\'ll never share your email with anyone else.</small>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
@@ -212,4 +168,6 @@
       </div>
     </div>
   </div>
-</div> -->
+</div> -->';
+}
+?>

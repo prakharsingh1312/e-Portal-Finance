@@ -221,7 +221,17 @@ $(document).on('click','.form_show_edit_button',function(){ var array = this.id.
 $(document).on('click','.update_form_control_button',function(){ var array = this.id.split(':');
 			editForm(array[1]); });
 
-
+//Users
+$(document).on('click','.show_add_new_user_button',function(){showAddUser() });
+$(document).on('click','.add_new_user_button',function(){addUser() });
+(document).on('click','.show_edit_user_button',function(){ var array = this.id.split(':');
+			showEditUser(array[1]); });
+(document).on('click','.edit_user_button',function(){ var array = this.id.split(':');
+			editUser(array[1]); });
+$(document).on('click','.user_show_delete_button',function(){ var array = this.id.split(':');
+			showDeleteUser(array[1],array[2]); });
+	$(document).on('click','.user_delete_button',function(){ var array = this.id.split(':');
+			deleteUser(array[1],array[2]); });
 $(window).load(function()
 {
 	// Make sure cookies are enabled
@@ -532,4 +542,56 @@ function editForm(id){
 		$('#modal-content').loadingView({'state':false});
 		showFormTable();
 	});
+}
+function showAddUser(){
+	$('#modal-content').loadingView({'state':true});
+	var data='<div class="modal-header">          <h5 class="modal-title" id="exampleModalLabel">Add a New User</h5>         <button type="button" class="close" data-dismiss="modal" aria-label="Close">            <span aria-hidden="true">&times;</span>          </button>        </div>        <div class="modal-body">          <form>            <div class="form-group">              <label for="exampleInputEmail1">Username :</label>              <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="">            </div>            <div class="form-group">              <label for="exampleInputPassword1">Name :</label>              <input type="text" class="form-control" id="add_user_first_name" placeholder="">                          </div>                        <div class="form-group">              <label for="exampleInputPassword1">Department :</label>             <input type="text" class="form-control" id="add_user_department" placeholder="">           </div>            <div class="form-group">              <label for="exampleInputPassword1">Role :</label>              <input type="text" class="form-control" id="add_user_role" placeholder="">                  </div>  </form> </div>        <div class="modal-footer">          <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>          <button type="button" class="btn btn-primary add_user_button">Add User</button> </div>      </div>';
+	$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+	
+}
+function showEditUser(id){
+	$('#modal-content').loadingView({'state':true});
+	$.post('pages/users.php?show_edit_user',{id:id},function(data){
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+	});
+}
+function addUser(){
+	$('#modal-content').loadingView({'state':true});
+	var username=$('#add_user_username');
+	var first=$('#add_user_first_name');
+	var last=$('#add_user_last_name');
+	var department=$('#add_user_department');
+	var role=$('#add_user_role');
+	$.post('pages/users.php?add_user',{username:username,first:first,dept:department,role:role},function(data){
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+	});
+}
+function editUser(id){
+	$('#modal-content').loadingView({'state':true});
+	var username=$('#add_user_username');
+	var first=$('#add_user_first_name');
+	var last=$('#add_user_last_name');
+	var department=$('#add_user_department');
+	var role=$('#add_user_role');
+	$.post('pages/users.php?edit_user',{username:username,first:first,dept:department,role:role,id:id},function(data){
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+	});
+}
+function deleteUser(id){
+	$('#modal-content').loadingView({'state':true});
+	$.post('pages/users.php?delete_user',{id:id},function(data){
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+	});
+}
+function showDeleteUser(name,id){
+	$('#modal-content').loadingView({'state':true});
+	var data='<div class="modal-header">          <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>          <button type="button" class="close" data-dismiss="modal" aria-label="Close">            <span aria-hidden="true">&times;</span>          </button>        </div>        <div class="modal-body">          <p>Are you sure you want to delete user "'+name+'".</p><span id="error_span"></span>        </div>        <div class="modal-footer">          <button type="button" class="btn btn-primary user_delete_button" id="delete:'+name+':'+id+'" >Delete</button>                        </div>';
+		$('#modal-content').html(data);
+		$('#modal-content').loadingView({'state':false});
+
 }

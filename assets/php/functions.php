@@ -691,4 +691,180 @@ function edit_form_control($id,$title,$subtitle,$guidelines,$intro,$docs){
         </div>';
 	}
 }
+function show_users(){
+	global $dbconfig;
+	 $sql="SELECT * FROM user_accounts ";
+	$return='';
+    $result = $dbconfig->prepare($sql);
+    $result->execute();
+    $result=$result->get_result();
+  while($result1 = $result->fetch_assoc()){ 
+                $return.='<tr>
+                  <td>'.
+                    $result1['user_id'].'
+                  </td>
+                  <td>'.
+                     $result1['user_username'].'
+                  </td>
+                  <td>'.
+                     $result1['user_name'] .'
+                  </td>
+                  <td class="text-right">
+                     <a href="" class="user_show_edit_button" data-toggle="modal" data-target="#exampleModal" id="edit:'.$result1['user_id'].'">Edit</a> or <a href="" class="user_show_delete_button" id="delete:'.$result1['user_name'].':'.$result1['user_id'].'" data-toggle="modal" data-target="#exampleModal">Delete</a>
+                  </td>
+                </tr>';
+                 }
+	return $return;
+}
+function show_edit_user($id){
+	global $dbconfig;
+	if(verify_login()!=1){
+		return verify_login();
+	}
+	else{
+	global $dbconfig;
+	$sql="SELECT * from user_accounts where user_id=?";
+		$result=$dbconfig->prepare($sql);
+		$return='';
+		$result->bind_param("i",$id);
+		$result->execute();
+    $result=$result->get_result();
+		$result1=$result->fetch_assoc();
+		$return.='<div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit an Existing User</h5>
+          
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Username :</label>
+              <input type="text" class="form-control" id="username" value="'.$result1['user_username'].'" aria-describedby="emailHelp" placeholder="">
+              
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Name :</label>
+              <input type="text" class="form-control" id="add_user_first_name" value="'.$result1['user_name'].'" placeholder="">
+              
+            
+            <div class="form-group">
+              <label for="exampleInputPassword1">Department :</label>
+              <input type="text" class="form-control" id="add_user_department" value="'.$result1['user_department'].'" placeholder="">
+              
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Role :</label>
+              <input type="text" class="form-control" id="add_user_role" value="'.$result1['user_role'].'" placeholder="">
+             
+            </div>
+
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
+          <button type="button" class="btn btn-primary add_user_button">Update User</button>
+         
+        </div>
+      </div>';
+		return $return;
+}
+}
+function add_user($username,$first,$dept,$role){
+	if(verify_login()!=1){
+		return verify_login();
+	}
+	else{
+	global $dbconfig;
+	$pass=random_password();
+	$sql="INSERT INTO user_accounts (`user_username`,`user_name`,`user_department`,`user_role`,`user_password`) VALUES (?,?,?,?,?)";
+		$result=$dbconfig->prepare($sql);
+	$result->bind_param("ssiis",$username,$first,$dept,$role,$pass['value']);
+	$result->execute();
+	return '<div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+		
+          <p>User Added Successfully. <br><br> Please use the following details to Log-In. <br>Username: '.$username.'<br>Password: '.$pass['key'].'</p>
+<span id="error_span"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          
+      
+
+        </div>';
+}
+}
+function edit_user($id,$username,$first,$dept,$role){
+	if(verify_login()!=1){
+		return verify_login();
+	}
+	else{
+	global $dbconfig;
+	$sql="UPDATE user_accounts SET user_username=? , user_name=? , user_role=? , user_department=? where user_id=?";
+		$result=$dbconfig->prepare($sql);
+	$result->bind_param("ssiii",$username,$first,$role,$dept,$id);
+	$result->execute();
+	return '<div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+		
+          <p>User Updated Successfully.</p>
+<span id="error_span"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          
+      
+
+        </div>';
+}
+}
+function delete_user($id){
+	if(verify_login()!=1){
+		return verify_login();
+	}
+	else{
+		global $dbconfig;
+	$sql="DELETE from user_accounts where user_id=?";
+		$result=$dbconfig->prepare($sql);
+	$result->bind_param("i",$id);
+	$result->execute();
+	return '<div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+		
+          <p>User Deleted Successfully.</p>
+<span id="error_span"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          
+      
+
+        </div>';
+	}
+	
+}
+function random_password(){
+	$pass['key']=rand(1000,9999);
+	$pass['value']=encrypt_password($pass['key']);
+	return $pass;
+}
 ?>
