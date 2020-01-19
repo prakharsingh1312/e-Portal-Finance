@@ -471,23 +471,23 @@ else{
         </div>
         <div class="modal-body">
           <form>
-		  <div class="form-row">
-            <div class="form-group">
+		  	<div class="form-row">
+            	<div class="form-group">
 				
-				<button type="button" class="btn btn-sm btn-outline-success float-right">Accept</button>
-				<button type="button" class="btn btn-sm btn-outline-danger float-right">Reject</button>
-			</div>
-			<div class="form-group">
-            	<div class="input-group">
-              		<div class="input-group-prepend">
-              		</div>
-					<div class="custom-file">
-                		<input type="file" class="custom-file-input" name="relevance" id="form1_relevance" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required />
-       				</div>
-            	</div>
-          	</div>
-
+					<button type="button" class="btn btn-sm btn-outline-success float-right">Accept</button>
+					<button type="button" class="btn btn-sm btn-outline-danger float-right">Reject</button>
 				</div>
+				<div class="form-group">
+            		<div class="input-group">
+              			<div class="input-group-prepend">
+              			</div>
+						<div class="custom-file">
+                			<input type="file" class="custom-file-input" name="relevance" id="form1_relevance" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required />
+       					</div>
+            		</div>
+          		</div>
+
+				
             </div>
 
 
