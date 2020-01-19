@@ -473,17 +473,10 @@ else{
           <form>
             <div class="form-group">
 				<div class="form-row">
-              		<p> Admin 1 : </p>
+              		<p style="margin-top:auto; margin-bottom:auto; margin-left:2%;"> Admin 1 : </p>
 					<button type="button" class="btn btn-sm btn-outline-success float-right">Accept</button>
 					<button type="button" class="btn btn-sm btn-outline-danger float-right">Reject</button>
-					<div class="input-group">
-              			<div class="input-group-prepend">
-                
-              			</div>
-              			<div class="custom-file">
-                			<input type="file" class="custom-file-input" id="form1_objective" name="objective" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required />
-              			</div>
-            		</div>
+					
 				</div>
             </div>
             <div class="form-group">
