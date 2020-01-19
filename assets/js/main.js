@@ -251,8 +251,8 @@ $(document).on('click','.update_form_control_button',function(){ var array = thi
 			editForm(array[1]); });
 
 //Users
-$(document).on('click','.show_add_new_user_button',function(){showAddUser() });
-$(document).on('click','.add_new_user_button',function(){addUser() });
+$(document).on('click','.show_add_user_button',function(){showAddUser() });
+$(document).on('click','.add_user_button',function(){addUser() });
 $(document).on('click','.show_edit_user_button',function(){ var array = this.id.split(':');
 			showEditUser(array[1]); });
 $(document).on('click','.edit_user_button',function(){ var array = this.id.split(':');
@@ -497,6 +497,13 @@ function showFormTable(){
 		$('#forms_table').loadingView({'state':false});
 	});
 }
+function showUserTable(){
+	$('#users_table').loadingView({'state':true});
+	$.get('pages/users.php?show_users',function(data){
+		$('#users_table').html(data);
+		$('#users_table').loadingView({'state':false});
+	});
+}
 function addDept(){
 	var name=$('#department_name').val();
 	var abbr=$('#department_abbr').val();
@@ -583,6 +590,7 @@ function showEditUser(id){
 	$('#modal-content').loadingView({'state':true});
 	$.post('pages/users.php?show_edit_user',{id:id},function(data){
 		$('#modal-content').html(data);
+		
 		$('#modal-content').loadingView({'state':false});
 	});
 }
@@ -595,7 +603,9 @@ function addUser(){
 	var role=$('#add_user_role');
 	$.post('pages/users.php?add_user',{username:username,first:first,dept:department,role:role},function(data){
 		$('#modal-content').html(data);
+		
 		$('#modal-content').loadingView({'state':false});
+		showUserTable();
 	});
 }
 function editUser(id){
@@ -607,7 +617,9 @@ function editUser(id){
 	var role=$('#add_user_role');
 	$.post('pages/users.php?edit_user',{username:username,first:first,dept:department,role:role,id:id},function(data){
 		$('#modal-content').html(data);
+		
 		$('#modal-content').loadingView({'state':false});
+		showUserTable();
 	});
 }
 function deleteUser(id){
@@ -615,6 +627,7 @@ function deleteUser(id){
 	$.post('pages/users.php?delete_user',{id:id},function(data){
 		$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
+		showUserTable();
 	});
 }
 function showDeleteUser(name,id){
