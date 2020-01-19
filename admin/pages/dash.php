@@ -491,7 +491,7 @@ else{
 				
             </div>
 			<div class="form-row">
-				<p style="margin:auto; margin-left:2%; margin-right:2%;"> Admin 1: </p>
+				<p style="margin:auto; margin-left:2%; margin-right:2%;"> Admin 2: </p>
             	<div class="form-group">
 				
 					<button type="button" class="btn btn-sm btn-outline-success float-right">Accept</button>
@@ -510,7 +510,7 @@ else{
 				
             </div>
 			<div class="form-row">
-				<p style="margin:auto; margin-left:2%; margin-right:2%;"> Admin 1: </p>
+				<p style="margin:auto; margin-left:2%; margin-right:2%;"> Admin 3: </p>
             	<div class="form-group">
 				
 					<button type="button" class="btn btn-sm btn-outline-success float-right">Accept</button>
@@ -535,7 +535,7 @@ else{
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
-          <button type="button" class="btn btn-primary">Add User</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
           <!-- <button type="button" class="btn btn-primary">Save Department</button> -->
 
         </div>
