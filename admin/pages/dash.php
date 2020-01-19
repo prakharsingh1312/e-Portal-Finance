@@ -475,8 +475,8 @@ else{
 				<p style="margin:auto; margin-left:2%; margin-right:2%;">Financial approval: </p>
             	<div class="button-group float-right">
 				
-					<button type="button" class="btn btn-sm btn-outline-success ">Accept</button>
-					<button type="button" class="btn btn-sm btn-outline-danger ">Reject</button>
+					<button type="button" class="btn btn-sm btn-success ">Accept</button>
+					<button type="button" class="btn btn-sm btn-danger ">Reject</button>
 				</div>
 				<!--<div class="form-group">
             		<div class="input-group">
@@ -496,10 +496,10 @@ else{
             </div>
 			<div class="form-row">
 				<p style="margin:auto; margin-left:2%; margin-right:2%;"> Admin approval : </p>
-            	<div class="form-group float-right">
+            	<div class="button-group float-right">
 				
-					<button type="button" class="btn btn-sm btn-outline-success float-right">Accept</button>
-					<button type="button" class="btn btn-sm btn-outline-danger float-right">Reject</button>
+					<button type="button" class="btn btn-sm btn-success ">Accept</button>
+					<button type="button" class="btn btn-sm btn-danger ">Reject</button>
 				</div>
 				<!--<div class="form-group">
             		<div class="input-group">
@@ -520,10 +520,10 @@ else{
 			<div class="form-row">
 				<p style="margin:auto; margin-left:2%; margin-right:2%;"> Admin-Financial approval
 				: </p>
-            	<div class="form-group">
+            	<div class="button-group float-right">
 				
-					<button type="button" class="btn btn-sm btn-outline-success float-right">Accept</button>
-					<button type="button" class="btn btn-sm btn-outline-danger float-right">Reject</button>
+					<button type="button" class="btn btn-sm btn-success ">Accept</button>
+					<button type="button" class="btn btn-sm btn-danger ">Reject</button>
 				</div>
 				<!--<div class="form-group">
             		<div class="input-group">
