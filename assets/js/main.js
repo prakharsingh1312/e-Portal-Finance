@@ -581,7 +581,7 @@ function editForm(id){
 }
 function showAddUser(){
 	$('#modal-content').loadingView({'state':true});
-	var data='<div class="modal-header">          <h5 class="modal-title" id="exampleModalLabel">Add a New User</h5>         <button type="button" class="close" data-dismiss="modal" aria-label="Close">            <span aria-hidden="true">&times;</span>          </button>        </div>        <div class="modal-body">          <form>            <div class="form-group">              <label for="exampleInputEmail1">Username :</label>              <input type="text" class="form-control" id="add_user_username" aria-describedby="emailHelp" placeholder="">            </div>            <div class="form-group">              <label for="exampleInputPassword1">Name :</label>              <input type="text" class="form-control" id="add_user_first_name" placeholder="">                          </div>                        <div class="form-group">              <label for="exampleInputPassword1">Department :</label>             <input type="text" class="form-control" id="add_user_department" placeholder="">           </div>            <div class="form-group">              <label for="exampleInputPassword1">Role :</label>              <input type="text" class="form-control" id="add_user_role" placeholder="">                  </div>  </form> </div>        <div class="modal-footer">          <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>          <button type="button" class="btn btn-primary add_user_button">Add User</button> </div>      </div>';
+	var data='<div class="modal-header">          <h5 class="modal-title" id="exampleModalLabel">Add a New User</h5>         <button type="button" class="close" data-dismiss="modal" aria-label="Close">            <span aria-hidden="true">&times;</span>          </button>        </div>        <div class="modal-body">          <form>            <div class="form-group">              <label for="exampleInputEmail1">Username :</label>              <input type="text" class="form-control" id="add_user_username" aria-describedby="emailHelp" placeholder="">            </div>            <div class="form-group">              <label for="exampleInputPassword1">Name :</label>              <input type="text" class="form-control" id="add_user_first_name" placeholder="">                          </div>       <div class="form-group">              <label for="exampleInputPassword1">Email :</label>              <input type="text" class="form-control" id="add_user_email" placeholder="">            </div>                 <div class="form-group">              <label for="exampleInputPassword1">Department :</label>             <input type="text" class="form-control" id="add_user_department" placeholder="">           </div>            <div class="form-group">              <label for="exampleInputPassword1">Role :</label>              <input type="text" class="form-control" id="add_user_role" placeholder="">                  </div>  </form> </div>        <div class="modal-footer">          <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>          <button type="button" class="btn btn-primary add_user_button">Add User</button> </div>      </div>';
 	$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
 	
@@ -598,10 +598,10 @@ function addUser(){
 	$('#modal-content').loadingView({'state':true});
 	var username=$('#add_user_username').val();
 	var first=$('#add_user_first_name').val();
-	var last=$('#add_user_last_name').val();
+	var email=$('#add_user_email').val();
 	var department=$('#add_user_department').val();
 	var role=$('#add_user_role').val();
-	$.post('pages/users.php?add_user',{username:username,first:first,dept:department,role:role},function(data){
+	$.post('pages/users.php?add_user',{username:username,first:first,dept:department,role:role,email:email},function(data){
 		$('#modal-content').html(data);
 		
 		$('#modal-content').loadingView({'state':false});
@@ -612,10 +612,10 @@ function editUser(id){
 	$('#modal-content').loadingView({'state':true});
 	var username=$('#add_user_username').val();	
 	var first=$('#add_user_first_name').val();
-	var last=$('#add_user_last_name').val();
+	var email=$('#add_user_email').val();
 	var department=$('#add_user_department').val();
 	var role=$('#add_user_role').val();
-	$.post('pages/users.php?edit_user',{username:username,first:first,dept:department,role:role,id:id},function(data){
+	$.post('pages/users.php?edit_user',{username:username,first:first,dept:department,role:role,id:id,email:email},function(data){
 		$('#modal-content').html(data);
 		
 		$('#modal-content').loadingView({'state':false});

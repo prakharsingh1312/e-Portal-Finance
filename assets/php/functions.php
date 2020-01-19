@@ -748,10 +748,15 @@ function show_edit_user($id){
               <label for="exampleInputPassword1">Name :</label>
               <input type="text" class="form-control" id="add_user_first_name" value="'.$result1['user_name'].'" placeholder="">
               
-            
+             </div>
             <div class="form-group">
+              <label for="exampleInputPassword1">Email :</label>
+              <input type="text" class="form-control" id="add_user_email" value="'.$result1['user_email'].'" placeholder="">
+              
+            </div>
+			<div class="form-group">
               <label for="exampleInputPassword1">Department :</label>
-              <input type="text" class="form-control" id="add_user_department" value="'.$result1['user_department'].'" placeholder="">
+              <input type="text" class="form-control" id="add_user_department" value="'.$result1['user_dept'].'" placeholder="">
               
             </div>
             <div class="form-group">
@@ -773,16 +778,16 @@ function show_edit_user($id){
 		return $return;
 }
 }
-function add_user($username,$first,$dept,$role){
+function add_user($username,$first,$email,$dept,$role){
 	if(verify_login()!=1){
 		return verify_login();
 	}
 	else{
 	global $dbconfig;
 	$pass=random_password();
-	$sql="INSERT INTO user_accounts (`user_username`,`user_name`,`user_dept`,`user_role`,`user_password`) VALUES (?,?,?,?,?)";
+	$sql="INSERT INTO user_accounts (`user_username`,`user_name`,`user_dept`,`user_email`,`user_role`,`user_password`) VALUES (?,?,?,?,?,?)";
 		$result=$dbconfig->prepare($sql);
-	$result->bind_param("ssiis",$username,$first,$dept,$role,$pass['value']);
+	$result->bind_param("ssisis",$username,$first,$dept,$email,$role,$pass['value']);
 	$result->execute();
 	return '<div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Success</h5>
@@ -803,15 +808,15 @@ function add_user($username,$first,$dept,$role){
         </div>';
 }
 }
-function edit_user($id,$username,$first,$dept,$role){
+function edit_user($id,$username,$first,$email,$dept,$role){
 	if(verify_login()!=1){
 		return verify_login();
 	}
 	else{
 	global $dbconfig;
-	$sql="UPDATE user_accounts SET user_username=? , user_name=? , user_role=? , user_dept=? where user_id=?";
+	$sql="UPDATE user_accounts SET user_username=? , user_name=? , user_role=? , user_dept=? , user_email=? where user_id=?";
 		$result=$dbconfig->prepare($sql);
-	$result->bind_param("ssiii",$username,$first,$role,$dept,$id);
+	$result->bind_param("ssiisi",$username,$first,$role,$dept,$email,$id);
 	$result->execute();
 	return '<div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Success</h5>

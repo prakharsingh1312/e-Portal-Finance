@@ -6,17 +6,19 @@
 elseif(isset($_GET['add_user'])){
 	$username=mysqli_real_escape_string($dbconfig,$_POST['username']);
 	$first=mysqli_real_escape_string($dbconfig,$_POST['first']);
+	$email=mysqli_real_escape_string($dbconfig,$_POST['email']);
 	$dept=mysqli_real_escape_string($dbconfig,$_POST['dept']);
 	$role=mysqli_real_escape_string($dbconfig,$_POST['role']);
-	echo add_user($username,$first,$dept,$role);
+	echo add_user($username,$first,$email,$dept,$role);
 }
 elseif(isset($_GET['edit_user'])){
 	$username=mysqli_real_escape_string($dbconfig,$_POST['username']);
 	$first=mysqli_real_escape_string($dbconfig,$_POST['first']);
+	$email=mysqli_real_escape_string($dbconfig,$_POST['email']);
 	$dept=mysqli_real_escape_string($dbconfig,$_POST['dept']);
 	$role=mysqli_real_escape_string($dbconfig,$_POST['role']);
 	$id=mysqli_real_escape_string($dbconfig,$_POST['id']);
-	echo edit_user($id,$username,$first,$dept,$role);
+	echo edit_user($id,$username,$first,$email,$dept,$role);
 }
 elseif(isset($_GET['show_edit_user'])){
 	$id=mysqli_real_escape_string($dbconfig,$_POST['id']);
