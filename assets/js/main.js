@@ -596,11 +596,11 @@ function showEditUser(id){
 }
 function addUser(){
 	$('#modal-content').loadingView({'state':true});
-	var username=$('#add_user_username');
-	var first=$('#add_user_first_name');
-	var last=$('#add_user_last_name');
-	var department=$('#add_user_department');
-	var role=$('#add_user_role');
+	var username=$('#add_user_username').val();
+	var first=$('#add_user_first_name').val();
+	var last=$('#add_user_last_name').val();
+	var department=$('#add_user_department').val();
+	var role=$('#add_user_role').val();
 	$.post('pages/users.php?add_user',{username:username,first:first,dept:department,role:role},function(data){
 		$('#modal-content').html(data);
 		
@@ -610,11 +610,11 @@ function addUser(){
 }
 function editUser(id){
 	$('#modal-content').loadingView({'state':true});
-	var username=$('#add_user_username');
-	var first=$('#add_user_first_name');
-	var last=$('#add_user_last_name');
-	var department=$('#add_user_department');
-	var role=$('#add_user_role');
+	var username=$('#add_user_username').val();
+	var first=$('#add_user_first_name').val();
+	var last=$('#add_user_last_name').val();
+	var department=$('#add_user_department').val();
+	var role=$('#add_user_role').val();
 	$.post('pages/users.php?edit_user',{username:username,first:first,dept:department,role:role,id:id},function(data){
 		$('#modal-content').html(data);
 		
