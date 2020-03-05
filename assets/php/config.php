@@ -3,7 +3,7 @@ session_start();
 //mysqli connection details
 define('global_mysqli_server', 'localhost');
 define('global_mysqli_user', 'root');
-define('global_mysqli_password', 'Popat#Panda@1234$');
+define('global_mysqli_password', 'password');
 define('global_mysqli_database', 'nit');
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $dbconfig = new mysqli(global_mysqli_server,global_mysqli_user,global_mysqli_password,global_mysqli_database);
