@@ -61,6 +61,15 @@ function showDept(){
 		$('#wrapper').loadingView({'state':false});
 	});
 }
+function showFormB(){
+	$('#wrapper').loadingView({'state':true});
+	$.get('./pages/form_builder.php',function(data){
+
+		$('#wrapper').html(data);
+		linkChange('#form_builder');
+		$('#wrapper').loadingView({'state':false});
+	});
+}
 function showFormC(){
 	$('#wrapper').loadingView({'state':true});
 	$.get('./pages/form_control.php',function(data){
@@ -302,6 +311,8 @@ function hash()
 				showDash();
 			else if(hash == 'dept')
 				showDept();
+			else if(hash == 'formB')
+				showFormB();
 			else if(hash == 'formC')
 				showFormC();
 			else if(hash == 'users')
@@ -433,7 +444,7 @@ function logout(){
 	})
 }
 function linkChange(id){
-	var ids=['#users_dash','#user_profile','#departments','#manage_users','#form_control'];
+	var ids=['#users_dash','#user_profile','#departments','#manage_users','#form_control','#form_builder'];
 	$.each(ids,function(index,value){
 		if(id==value){
 			$(value).addClass('active');

@@ -28,6 +28,12 @@
             <p>Form Contol</p>
           </a>
         </li>
+        <li id='form_control'>
+          <a href="#formB">
+            <i class="now-ui-icons location_map-big"></i>
+            <p>Form Builder</p>
+          </a>
+        </li>
         <li id='manage_users'>
           <a href="#users">
             <i class="fa fa-users" aria-hidden="true"></i>
