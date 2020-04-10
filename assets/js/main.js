@@ -25,6 +25,14 @@ function showAdmin(){
 		});
 
 	}
+function showStudent(){
+	window.location.href="./student";
+	$(window).bind('hashchange', function ()
+		{
+			hash();
+		});
+
+	}
 
 function showformlist(){
 	$('.wrapper').loadingView({'state':true});
@@ -330,6 +338,10 @@ function dologin(){
 		if(data==1){
 			notify('Logging In',4,'success');
 			showAdmin()
+		}
+		else if(data==2){
+			notify('Logging In',4,'success');
+			showStudent()
 		}
 		else if (data==0)
 			notify('Incorrect Username/Password',4,'danger');

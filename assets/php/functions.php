@@ -26,9 +26,11 @@ include('config.php');
 				$_SESSION['user_dept']=$result['user_dept'];
 				$_SESSION['user_name']=$result['user_name'];
         $_SESSION['user_email']=$result['user_email']; //try
-
+				if($result['user_role']==1)
                 return 1;
-
+				else{
+					return 2;
+				}
             }
             else{
                 return 0;
