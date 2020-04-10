@@ -30,7 +30,7 @@
         </li>
         <li id='form_control'>
           <a href="#formB">
-            <i class="now-ui-icons location_map-big"></i>
+            <i class="now-ui-icons education_paper"></i>
             <p>Form Builder</p>
           </a>
         </li>
