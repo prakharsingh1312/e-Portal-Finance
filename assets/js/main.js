@@ -26,7 +26,7 @@ function showAdmin(){
 
 	}
 function showStudent(){
-	window.location.href="./student/examples";
+	window.location.href="./user";
 	$(window).bind('hashchange', function ()
 		{
 			hash();
