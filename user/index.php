@@ -60,13 +60,13 @@ if (!logged_in()){
           <li class="nav-item ">
             <a class="nav-link" href="./typography.html">
               <i class="material-icons">library_books</i>
-              <p>Typography</p>
+              <p>Submit a Form</p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="./icons.html">
               <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
+              <p>Track a Form</p>
             </a>
           </li>
           <li class="nav-item ">
