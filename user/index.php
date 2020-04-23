@@ -58,7 +58,7 @@ if (!logged_in()){
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./examples/submitAForm.php">
+            <a class="nav-link" href="examples/submitAForm.php">
               <i class="material-icons">library_books</i>
               <p>Submit a Form</p>
             </a>
