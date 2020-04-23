@@ -65,9 +65,9 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
+            <a class="nav-link" href="submitAForm.php">
               <i class="material-icons">library_books</i>
-              <p>Typography</p>
+              <p>Submit a form</p>
             </a>
           </li>
           <li class="nav-item ">
