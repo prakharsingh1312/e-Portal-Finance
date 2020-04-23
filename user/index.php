@@ -58,18 +58,18 @@ if (!logged_in()){
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="examples/submitAForm.php">
-              <i class="material-icons">library_books</i>
+            <a class="nav-link" href="../#new">
+              <i class="far fa-plus-square"></i>
               <p>Submit a Form</p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="../#track">
-              <i class="material-icons">bubble_chart</i>
+              <i class="fas fa-question-circle"></i>
               <p>Track a Form</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <!-- <li class="nav-item ">
             <a class="nav-link" href="./map.html">
               <i class="material-icons">location_ons</i>
               <p>Maps</p>
@@ -80,7 +80,7 @@ if (!logged_in()){
               <i class="material-icons">notifications</i>
               <p>Notifications</p>
             </a>
-          </li>
+          </li> -->
           <!-- <li class="nav-item active-pro ">
                 <a class="nav-link" href="./upgrade.html">
                     <i class="material-icons">unarchive</i>
