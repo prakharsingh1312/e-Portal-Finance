@@ -64,7 +64,7 @@ if (!logged_in()){
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./examples/trackForm.php">
+            <a class="nav-link" href="../track.php">
               <i class="material-icons">bubble_chart</i>
               <p>Track a Form</p>
             </a>
