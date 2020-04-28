@@ -254,7 +254,7 @@ body {
   padding: 90px 0; }
 
 .container {
-  width: 1400px;
+  /*width: 1400px;*/
   position: relative;
   margin: 0 auto;
   background: #fff; }
@@ -271,12 +271,16 @@ body {
 .form-row {
   margin: 0 -15px; }
   .form-row .form-group {
-    width: 50%;
+    width: 100%;
     padding: 0 15px; }
 
 .form-group {
   margin-bottom: 23px;
   position: relative; }
+
+form{
+  width: 100%;
+}
 
 input, select {
   display: block;
