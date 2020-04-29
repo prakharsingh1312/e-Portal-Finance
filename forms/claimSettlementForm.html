@@ -8,8 +8,8 @@
 	else{
     $result = get_form_details($_SESSION['form_id']);
 		echo'
-   
- 
+
+
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="UTF-8">
@@ -23,7 +23,7 @@
   <!-- Main css -->
   <link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="../assets/jquery.datetimepicker.min.css">
-	
+
 
 </head>
 
@@ -34,7 +34,7 @@
     <div class="container" id="container">
       <h2 class="center" style="text-align:center; padding-top:30px;">Claim Settlement Form for Any Event<br>
       <div style="font-size: 15px">(STC/ FDP/ Seminar/ Workshop/ National or International Conference/ Motivational Lecture/ Student Event)</div></h2>
-     
+
       <div class="signup-content"  >
         <form  class="register-form" onsubmit="return false" id="form1" enctype="multipart/form-data">
           <h2 class="display-6" style="color:#dc5a00;">FORM </h2>
@@ -56,7 +56,7 @@
               <label for="form1_name_of_item">3. Coordinator(s)/Convenor Name and Department</label>
               <input type="text" name="name_of_item" id="form1_name_of_item" required />
             </div>
-            
+
           </div>
           <div class="form-group" id="form1_4">
             <label for="form1_cost">4. Duration and Dates of conduct of Event (Proramme Schedule to be attached)</label>
@@ -80,6 +80,7 @@
           <div class="form-group" id="form1_5">
             <label for="form1_5">5. Nature of the Programme</label>
             <select name="nature_of_programme" id="form1_nature_of_programme">
+                <option value ="" disabled selected></option>
             <option value="Awareness">Awareness</option>
             <option value="Motivational Programs">Motivational Programs</option>
             <option value="Workshops">Workshops</option>
@@ -101,6 +102,7 @@
           <div class="form-group" id="form1_6">
             <label for="form1_manufacturer">6. Whether Advance taken</label>
             <select name="advance" id="form1_advance">
+                <option value ="" disabled selected></option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
@@ -109,6 +111,7 @@
            <div class="form-group" id="form1_7">
             <label for="form1_manufacturer">7. Advance Funding Agency (if any)</label>
             <select name="advance" id="form1_advance">
+                <option value ="" disabled selected></option>
               <option value="TEQIP-III">TEQIP-III</option>
               <option value="Institute Main Account">Institute Main Account</option>
             </select>
@@ -280,21 +283,21 @@
 		  <script src="../assets/jquery.datetimepicker.full.min.js"></script>
 		  <script src="../assets/js/loadingView.js" type="text/javascript"></script>
 	 <!-- <script>
-		
+
 	   $("#form1_from_date" ).datetimepicker({
         format: \'Y-m-d\',
         timepicker: false,});
-		 
+
 		 $("#form1_to_date" ).datetimepicker({
         format: \'Y-m-d\',
         timepicker: false,});
-		 
+
 		 $("#form1_date_time_a" ).datetimepicker({
         dateFormat: \'YY-mm-dd\',
         timeFormat: \'HH:mm:ss\',
 		format: \'Y-m-d H:i:s\',});
-		
-		 
+
+
 		 $("#form1_date_time_d" ).datetimepicker({
         dateFormat: \'YY-mm-dd\',
         timeFormat: \'HH:mm:ss\',
