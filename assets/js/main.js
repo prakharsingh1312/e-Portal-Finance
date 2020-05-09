@@ -345,6 +345,8 @@ function dologin(){
 		}
 		else if (data==0)
 			notify('Incorrect Username/Password',4,'danger');
+		else if (data==13)
+			notify('Please check your email to proceed further.',4,'warning');
 		else
 			notify(data,4,'danger')
 	})}
