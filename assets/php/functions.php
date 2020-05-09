@@ -1,6 +1,46 @@
 <?php
 include('config.php');
+function verify_login($user_email,$user_id){
+		$user_hash=md5(rand(0,100000)."apples");
+		$token=md5($user_email);
+		$query=mysqli_query($dbconfig,"update user_accounts SET user_hash='$hash' WHERE user_id=$user_id")or die('<span class="error_span"><u>mysqli error:</u> ' . htmlspecialchars(mysqli_error($dbconfig)) . '</span>');
+		if($query)
+		{
+                     
+$headers = 'From:noreply@nit.in' . "\r\n"; // Set from headers
+require_once "Mail.php";
 
+$from = 'prakharsingh13@gmail.com';
+$to = $user_email;
+$subject = 'Login | Verification'; // Give the email a subject
+$body = '
+ 
+You can login after you have verified your email address.
+ 
+Please click this link to verify you email address:
+http://34.87.136.236/NIT/verify.php?token='.$token.'&hash='.$user_hash.'&verify'; // Our message above including the link
+
+$headers = array(
+    'From' => $from,
+    'To' => $to,
+    'Subject' => $subject
+);
+
+$smtp = Mail::factory('smtp', array(
+        'host' => 'ssl://smtp.gmail.com',
+        'port' => '465',
+        'auth' => true,
+        'username' => 'helpcl@thapar.edu',
+        'password' => 'lib@2014'
+    ));
+
+$mail = $smtp->send($to, $headers, $body);
+if (PEAR::isError($mail)) {
+     return $mail->getMessage() ;
+		}
+			else 
+				return 13;
+}
 
 	
 	function encrypt_password($password)
@@ -20,18 +60,19 @@ include('config.php');
             if($result->num_rows == 1){
 
                 $result=$result->fetch_assoc();
-                $_SESSION['user_id']=$result['user_id'];
+                
+        $_SESSION['user_email']=$result['user_email']; //try
+				if($result['user_verified']==0)
+					return verify_user($_result['user_email'],$result['user_id']);
+					   
+					else{
+					   $_SESSION['user_id']=$result['user_id'];
                 $_SESSION['username']=$result['user_username'];
 				$_SESSION['user_role']=$result['user_role'];
 				$_SESSION['user_dept']=$result['user_dept'];
 				$_SESSION['user_name']=$result['user_name'];
-        $_SESSION['user_email']=$result['user_email']; //try
-				if($result['user_role']==1)
-                return 1;
-				else{
-					return 2;
-				}
-            }
+               return $result['user_role'];
+            }}
             else{
                 return 0;
             }
