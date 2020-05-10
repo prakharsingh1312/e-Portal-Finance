@@ -3,7 +3,7 @@ include('config.php');
 function first_login($user_email,$user_id){
 		$user_hash=md5(rand(0,100000)."apples");
 		$token=md5($user_email);
-		$query=mysqli_query($dbconfig,"update user_accounts SET user_hash='$hash' WHERE user_id=$user_id")or die('<span class="error_span"><u>mysqli error:</u> ' . htmlspecialchars(mysqli_error($dbconfig)) . '</span>');
+		$query=mysqli_query($dbconfig,"update user_accounts SET user_hash='$user_hash' WHERE user_id=$user_id")or die('<span class="error_span"><u>mysqli error:</u> ' . htmlspecialchars(mysqli_error($dbconfig)) . '</span>');
 		if($query)
 		{
                      
