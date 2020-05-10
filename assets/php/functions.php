@@ -24,7 +24,7 @@ http://34.87.136.236/NIT/verify.php?token='.$token.'&hash='.$user_hash.'&verify'
 $headers = array(
     'From' => $from,
     'To' => $to,
-    'Subject' => $subject
+    'Subject' => $subject,
 );
 
 $smtp = Mail::factory('smtp', array(
@@ -32,7 +32,7 @@ $smtp = Mail::factory('smtp', array(
         'port' => '465',
         'auth' => true,
         'username' => 'utkarshchauhan2022@gmail.com',
-        'password' => 'Uc@219900'
+        'password' => 'Uc@219900',
     ));
 
 $mail = $smtp->send($to, $headers, $body);
@@ -65,7 +65,7 @@ if (PEAR::isError($mail)) {
                 
         $_SESSION['user_email']=$result['user_email']; //try
 				if($result['user_verified']==0)
-					return first_login($_result['user_email'],$result['user_id']);
+					return first_login($result['user_email'],$result['user_id']);
 					   
 					else{
 					   $_SESSION['user_id']=$result['user_id'];
