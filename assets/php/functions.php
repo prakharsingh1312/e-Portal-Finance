@@ -1,6 +1,6 @@
 <?php
 include('config.php');
-function verify_login($user_email,$user_id){
+function first_login($user_email,$user_id){
 		$user_hash=md5(rand(0,100000)."apples");
 		$token=md5($user_email);
 		$query=mysqli_query($dbconfig,"update user_accounts SET user_hash='$hash' WHERE user_id=$user_id")or die('<span class="error_span"><u>mysqli error:</u> ' . htmlspecialchars(mysqli_error($dbconfig)) . '</span>');
@@ -64,7 +64,7 @@ if (PEAR::isError($mail)) {
                 
         $_SESSION['user_email']=$result['user_email']; //try
 				if($result['user_verified']==0)
-					return verify_user($_result['user_email'],$result['user_id']);
+					return first_login($_result['user_email'],$result['user_id']);
 					   
 					else{
 					   $_SESSION['user_id']=$result['user_id'];
