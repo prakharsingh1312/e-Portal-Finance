@@ -368,6 +368,11 @@ function notify(text, time,type)
 			{
 				text =  '<div class="alert alert-danger" role="alert"><div class="container"><div class="alert-icon"><i class="now-ui-icons objects_support-17"></i></div><strong>'+text+'</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="now-ui-icons ui-1_simple-remove"></i></span>            </button>          </div>        </div>';
 			}
+		else if(type== 'warning')
+			{
+				
+				text =  '<div class="alert alert-warning" role="alert"><div class="container"><div class="alert-icon"><i class="now-ui-icons ui-1_bell-53"></i></div>            <strong>'+text+'</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="now-ui-icons ui-1_simple-remove"></i></span></button></div></div>';
+			}
 
 		$('#notification_inner_cell_div').css('opacity', '1');
 
