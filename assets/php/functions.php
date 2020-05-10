@@ -41,6 +41,7 @@ if (PEAR::isError($mail)) {
 			else 
 				return 13;
 }
+}
 
 	
 	function encrypt_password($password)
