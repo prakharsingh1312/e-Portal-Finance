@@ -108,21 +108,21 @@ function get_form_details($formid){
 function get_forms(){
 	$return='
 <div class="container">
-		<div class="content-center brand">';
+		<div class="content brand">';
 	global $dbconfig;
 	$sql="SELECT * FROM form_details WHERE form_activation=1";
     $result = $dbconfig->prepare($sql);
     $result->execute();
     $result=$result->get_result();
 	while($form=$result->fetch_assoc()){
-		$return.= '<div class="col-md-6 ml-auto mr-auto">
+		$return.= '<div class="col-md-6">
 	          <div class="card card-login card-plain">
 							<div class="card" style="width: 18rem; background-color:#212529;">
 	  						<img src="'.$form['form_image'].'" class="card-img-top" alt="form-1" style="display:inline-block;">
 	  						<div class="card-body">
-	    						<h5 class="card-title" style="textcolor:black;">'.$form['form_title'].'</h5>
-	    						<p class="card-text">'.$form['form_subtitle'].'</p>
-	    						<form method="POST" action="./forms/form'.$form['form_format'].'.php">
+	    						<h5 class="card-title  d-flex justify-content-center" style="textcolor:black;">'.$form['form_title'].'</h5>
+	    						<p class="card-text text-center">'.$form['form_subtitle'].'</p>
+	    						<form method="POST" class = " d-flex justify-content-center" action="./forms/form'.$form['form_format'].'.php">
 								<input type="hidden" value="'.$form['form_id'].'" name="form_id">
 								<input type="submit" class="btn btn-primary" value="Fill Up the Form"></form>
 	  						</div>
