@@ -108,7 +108,8 @@ function get_form_details($formid){
 function get_forms(){
 	$return='
 <div class="container">
-		<div class="content brand">';
+		<div class="content brand">
+    <h1>"Forms Available"</h1>';
 	global $dbconfig;
 	$sql="SELECT * FROM form_details WHERE form_activation=1";
     $result = $dbconfig->prepare($sql);
