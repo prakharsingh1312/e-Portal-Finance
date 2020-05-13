@@ -11,7 +11,10 @@
 =========================================================
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
+--><?php
+include('../../assets/php/functions.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -162,7 +165,7 @@
         <div class="container-fluid">
           <div class="row">
             <?php
-            include('../../assets/php/functions.php');
+            
             echo get_forms();
             ?>
             <div class="col-md-12">
