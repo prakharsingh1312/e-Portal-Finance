@@ -109,14 +109,16 @@ function get_forms(){
 	$return='
 <div class="container">
 		<div class="content brand">
-    <h1 class="text-center">Forms Available</h1>';
+    <h1 class="text-center">Forms Available</h1>
+    <div class="row">';
 	global $dbconfig;
 	$sql="SELECT * FROM form_details WHERE form_activation=1";
     $result = $dbconfig->prepare($sql);
     $result->execute();
     $result=$result->get_result();
 	while($form=$result->fetch_assoc()){
-		$return.= '<div class="col-md-6">
+		$return.= '
+                <div class="col-md-6">
 	          <div class="card card-login card-plain">
 							<div class="card" style="width: 18rem; background-color:#22529;">
 	  						<img src="'.$form['form_image'].'" class="card-img-top" alt="form-1" style="display:inline-block;">
@@ -134,7 +136,8 @@ function get_forms(){
 		
 	}
 	$return.='</div>
-      </div>';
+      </div>
+    </div>';
 	return $return;
 }
 function submit_form1($post,$files){
