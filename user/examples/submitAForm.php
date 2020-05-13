@@ -157,12 +157,13 @@ include('../../assets/php/functions.php');
       <div class="content">
         <div class="container-fluid">
           <div class="row">
+            <div class="col-md-6">
             <?php
 
             echo get_forms();
             ?>
 
-
+          </div>
           </div>
         </div>
       </div>
