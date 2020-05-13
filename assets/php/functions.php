@@ -133,7 +133,8 @@ function get_forms(){
           </div>';
 		
 	}
-	
+	$return.='</div>
+      </div>';
 	return $return;
 }
 function submit_form1($post,$files){
