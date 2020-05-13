@@ -109,7 +109,7 @@ function get_forms(){
 	$return='
 <div class="container">
 		<div class="content brand">
-    <h1>"Forms Available"</h1>';
+    <h1 class="text-center">Forms Available</h1>';
 	global $dbconfig;
 	$sql="SELECT * FROM form_details WHERE form_activation=1";
     $result = $dbconfig->prepare($sql);
@@ -118,7 +118,7 @@ function get_forms(){
 	while($form=$result->fetch_assoc()){
 		$return.= '<div class="col-md-6">
 	          <div class="card card-login card-plain">
-							<div class="card" style="width: 18rem; background-color:#212529;">
+							<div class="card" style="width: 18rem; background-color:#22529;">
 	  						<img src="'.$form['form_image'].'" class="card-img-top" alt="form-1" style="display:inline-block;">
 	  						<div class="card-body">
 	    						<h5 class="card-title  d-flex justify-content-center" style="textcolor:black;">'.$form['form_title'].'</h5>
