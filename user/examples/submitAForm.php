@@ -50,7 +50,7 @@ include('../../assets/php/functions.php');
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item   ">
-            <a class="nav-link" href="../forms/requisitionForm.php">
+            <a class="nav-link" href="index.php">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
@@ -69,7 +69,7 @@ include('../../assets/php/functions.php');
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="../#track">
+            <a class="nav-link" href="examples/track.php">
               <i class="fas fa-question-circle"></i>
               <p>Status of Applications</p>
             </a>
