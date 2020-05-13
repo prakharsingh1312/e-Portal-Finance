@@ -116,7 +116,7 @@ function get_forms(){
     $result->execute();
     $result=$result->get_result();
 	while($form=$result->fetch_assoc()){
-		$return.= '
+		$return.= '<div class="col-md-6">
 	          <div class="card card-login card-plain">
 							<div class="card" style="width: 18rem; background-color:#22529;">
 	  						<img src="'.$form['form_image'].'" class="card-img-top" alt="form-1" style="display:inline-block;">
@@ -130,11 +130,10 @@ function get_forms(){
 	  						</div>
 							</div>
             </div>
-          ';
+          </div>';
 		
 	}
-	$return.='</div>
-      </div>';
+	
 	return $return;
 }
 function submit_form1($post,$files){
