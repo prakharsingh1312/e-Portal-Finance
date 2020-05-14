@@ -4,7 +4,7 @@ require('../fpdf_merge.php');
 
 
 
-class PDF extends FPDF,FPDF_Merge
+class PDF extends FPDF
 {
 // Page header
 function Header()
@@ -116,7 +116,6 @@ $pdf->MultiCell(70,6,'
 
 Signature (with seal) of the HoD:','BLR',1);
 
-$pdf->add('ex.pdf');
 
 $pdf->Output();
 ?>
