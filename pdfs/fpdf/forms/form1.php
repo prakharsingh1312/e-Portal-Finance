@@ -1,9 +1,10 @@
 <?php
 require('../fpdf.php');
+require('../fpdf_merge.php')
 
 
 
-class PDF extends FPDF
+class PDF extends FPDF,FPDF_Merge
 {
 // Page header
 function Header()
@@ -89,7 +90,7 @@ $pdf->cell(10,7,'',0,0);
 $pdf->cell(170,7,'17. Attach the accepted paper, acceptance letter, NOC from co-authors:',1,1);
 
 $pdf->cell(10,7,'',0,0);
-$pdf->MultiCell(170,4,'18. Total cost involved Rs. ______________________ (Rupees ___________________ Only) 
+$pdf->MultiCell(170,4,'18. Total cost involved Rs. ______________________ (Rupees ___________________ Only)
 Please give cost details (Attach separate sheet , if necessary)
 Registration Fee:_________________
 TA: ________________
@@ -115,6 +116,7 @@ $pdf->MultiCell(70,6,'
 
 Signature (with seal) of the HoD:','BLR',1);
 
+$pdf->add('ex.pdf');
 
 $pdf->Output();
 ?>
