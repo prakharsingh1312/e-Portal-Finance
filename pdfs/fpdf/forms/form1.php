@@ -4,7 +4,7 @@ require('../fpdf_merge.php');
 require('../../../assets/php/functions.php');
 if(isset($_GET['id'])){
 	$result=render_form1_pdf($_GET['id']);
-
+	echo $result;
 
 
 class PDF extends FPDF
