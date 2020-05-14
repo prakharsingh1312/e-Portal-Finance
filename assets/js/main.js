@@ -10,10 +10,15 @@ function showlogin(){
 	$('.wrapper').loadingView({'state':true});
 	$.get('login.php',function(data){
 
-		if(data!=1)
+		if(data!=1 || data!=2)
 		$('.wrapper').html(data);
-		else
-			showAdmin();
+		else{
+			if(data==1)
+				showAdmin();
+			else if(data==2)
+				showStudent();
+		}
+			
 		$('.wrapper').loadingView({'state':false});
 	});
 }
