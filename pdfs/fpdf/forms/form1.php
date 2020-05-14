@@ -53,7 +53,7 @@ $pdf->cell(10,7,'',0,0);
 $pdf->cell(170,7,'3. Department: '.$result['department'],1,1);
 
 $pdf->cell(10,7,'',0,0);
-$pdf->cell(170,7,'4. Nature of Event: '.$result['nature_of_event'],1,1);
+$pdf->cell(170,7,'4. Nature of Event: '/*.$result['nature_of_event']*/,1,1);
 
 $pdf->cell(10,7,'',0,0);
 $pdf->cell(170,7,'5. Name of Event: '.$result['name_of_event'],1,1);
@@ -68,10 +68,10 @@ $pdf->cell(10,7,'',0,0);
 $pdf->cell(170,7,'8. Organizer of the event: '.$result['organizer_of_event'],1,1);
 
 $pdf->cell(10,7,'',0,0);
-$pdf->cell(170,7,'9. Relevance of the visit / training: (Attach Separate Sheet, if required) '.($result['relevance_file']=="Y"?url($result['relevance_of_visit']):$result['relevance_of visit']),1,1);
+$pdf->cell(170,7,'9. Relevance of the visit / training: (Attach Separate Sheet, if required) ',1,1);
 
 $pdf->cell(10,7,'',0,0);
-$pdf->cell(170,7,'10. Clear objective and outcome of the visit: (Attach Separate Sheet, if required)'.($result['objective_file']=="Y"?url($result['objective_of_visit']):$result['objective_of visit']),1,1);
+$pdf->cell(170,7,'10. Clear objective and outcome of the visit: (Attach Separate Sheet, if required)',1,1);
 
 $pdf->cell(10,7,'',0,0);
 $pdf->cell(170,7,'11. Attach (i) brief CV / biography : '.url($result['attached_cv']),1,1);
@@ -83,7 +83,7 @@ $pdf->cell(10,7,'',0,0);
 $pdf->cell(170,7,'13. Date and time of departure from the Institute: '.$result['date_and_time_departure'],1,1);
 
 $pdf->cell(10,7,'',0,0);
-$pdf->cell(170,7,'14. Date and time of arrival from the Institute: '.$result['date_and_time_arrival'],1,1);
+$pdf->cell(170,7,'14. Date and time of arrival from the Institute: ',1,1);
 
 $pdf->cell(10,7,'',0,0);
 $pdf->cell(170,7,'15.  Whether going to present research paper : '.$result['research_paper'],1,1);
@@ -92,7 +92,7 @@ $pdf->cell(10,7,'',0,0);
 $pdf->cell(170,7,'16. Title of Paper:  '.$result['title_of_paper'],1,1);
 
 $pdf->cell(10,7,'',0,0);
-$pdf->cell(170,7,'17. Attach the accepted paper, acceptance letter, NOC from co-authors: '.($result['research_paper']=="Yes"?url($result['attach_paper_acceptance_letter']):$result['attach_paper_acceptance_letter']),1,1);
+$pdf->cell(170,7,'17. Attach the accepted paper, acceptance letter, NOC from co-authors: ',1,1);
 
 $pdf->cell(10,7,'',0,0);
 $pdf->MultiCell(170,4,'18. Total cost involved Rs. '.$result['total_cost'].' (Rupees '.$result['total_cost_words'].' Only)
