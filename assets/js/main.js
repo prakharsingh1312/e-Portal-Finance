@@ -10,7 +10,7 @@ function showlogin(){
 	$('.wrapper').loadingView({'state':true});
 	$.get('login.php',function(data){
 
-		if(data!=1 || data!=2)
+		if(data!=1 && data!=2)
 		$('.wrapper').html(data);
 		else{
 			if(data==1)
