@@ -932,7 +932,7 @@ function render_form1_pdf($id){
 		$result->execute();
 		$result=$result->get_result();
 		$result1=$result->fetch_assoc();
-		return $result;
+		return $result1;
 	}
 }
 ?>
