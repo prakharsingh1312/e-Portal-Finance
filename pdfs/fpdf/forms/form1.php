@@ -1,10 +1,10 @@
 <?php
 require('../fpdf.php');
-require('../fpdf_merge.php')
+require('../fpdf_merge.php');
 
 
 
-class PDF extends FPDF,FPDF_Merge;
+class PDF extends FPDF,FPDF_Merge
 {
 // Page header
 function Header()
