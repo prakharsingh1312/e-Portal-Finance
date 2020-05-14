@@ -14,7 +14,7 @@ else if(isset($_GET['logout'])){
 
 }
 else if(logged_in())
-{echo 1;}
+{echo $_SESSION['user_role'];}
 else
 {
 	echo '<div class="page-header-image" data-parallax="true" style="background-image:url(\'./assets/img/header.jpg\');">
