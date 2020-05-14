@@ -2,6 +2,7 @@
 require('../fpdf.php');
 require('../fpdf_merge.php');
 require('../../../assets/php/functions.php');
+$result;
 if(isset($_GET['id'])){
 	$result=render_form1_pdf($_GET['id']);
 }
