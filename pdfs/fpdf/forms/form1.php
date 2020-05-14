@@ -1,6 +1,6 @@
 <?php
 require('../fpdf.php');
-require('../fpdf_merge.php')
+require('../fpdf_merge.php');
 
 
 
