@@ -118,6 +118,8 @@ $pdf->cell(50,18,'','BLR',0);
 $pdf->MultiCell(70,6,'
 
 Signature (with seal) of the HoD:','BLR',1);
+// $pdf->Cell(0,10,'www.google.com',0,1,'C');
+
 
 
 $pdf->Output();
