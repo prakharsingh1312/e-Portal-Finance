@@ -1,7 +1,10 @@
 <?php
 require('../fpdf.php');
 require('../fpdf_merge.php');
-
+require('../../../assets/php/functions.php');
+if(isset($_GET['id'])){
+	$result=render_form1_pdf($_GET['id']);
+}
 
 
 class PDF extends FPDF
@@ -35,7 +38,7 @@ $pdf->ln(15);
 
 //start table
 $pdf->cell(10,7,'',0,0);
-$pdf->cell(170,7,'1. Name of the Student(Full time):',1,1);
+$pdf->cell(170,7,'1. Name of the Student(Full time):'.$result['name_of_student'],1,1);
 
 $pdf->cell(10,7,'',0,0);
 $pdf->cell(170,7,'1.1 Course:',1,1);

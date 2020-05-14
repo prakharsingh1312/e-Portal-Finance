@@ -919,4 +919,20 @@ function random_password(){
 	$pass['value']=encrypt_password($pass['key']);
 	return $pass;
 }
+function render_form1_pdf($id){
+	if(verify_login()!=1){
+		return verify_login();
+	}
+	else{
+		global $dbconfig;
+		$sql="SELECT * from form_type1_responses where response_id=?";
+		$result=$dbconfig->prepare($sql);
+		$return='';
+		$result->bind_param("i",$id);
+		$result->execute();
+		$result=$result->get_result();
+		$result1=$result->fetch_assoc();
+		return $result;
+	}
+}
 ?>
