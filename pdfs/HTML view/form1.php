@@ -133,7 +133,7 @@
   <!-- <label for="organizer">8. Organizer of the event :</label> -->
   <input type="text" name="relevance_text" id="form1_relevance_text" value="File Attached" disabled />
 </div>
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="input-group">
               <div class="input-group-prepend">
               </div>
@@ -141,7 +141,7 @@
                 <input type="file" class="custom-file-input" name="relevance" id="form1_relevance" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required />
               </div>
             </div>
-          </div>
+          </div> -->
 
 </div>
 
