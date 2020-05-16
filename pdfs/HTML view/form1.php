@@ -65,7 +65,8 @@
             </div>
             <div class="form-group" id="form1_1.1">
               <label for="form1_course">1.1 Course</label>
-              <div class="form-select">
+              <input type="text" name="course" id="form1_course" required />
+              <!-- <div class="form-select">
                 <select name="course" id="form1_course" required>
                   <option value ="" disabled selected></option>
                   <option value="Under Graduate">Under Graduate</option>
@@ -73,7 +74,7 @@
                   <option value="PhD">PhD</option>
                 </select>
                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="form-row">
@@ -200,14 +201,15 @@
 
           <div class="form-group" id="form1_15">
             <label for="form1_research">15. Whether going to present research paper :</label>
-            <div class="form-select">
+            <input type="text" name="research_paper" id="form1_research_paper" required />
+            <!-- <div class="form-select">
               <select name="research" id="form1_research" required >
                 <option value="" disabled selected></option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
               </select>
               <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
-            </div>
+            </div> -->
           </div>
           <div class="form-group" id="form1_16">
             <label for="form1_title">16. Title of Paper :</label>
@@ -276,14 +278,15 @@
 
           <div class="form-group" id="form1_20">
             <label for="form1_mtech">20. For M.Tech, M.Sc and PhD candidates : Whether one paper has been accepted for publication in SCI Journal in Last two years : </label>
-            <div class="form-select">
+            <input type="text" name="candidates" id="form1_candidates" required />
+            <!-- <div class="form-select">
               <select name="mtech" id="form1_mtech" required>
                 <option value="" disabled selected></option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
               </select>
               <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
-            </div>
+            </div> -->
           </div>
           <!--<div class="form-row">
             <div class="form-group" id="form1_21">
