@@ -338,8 +338,9 @@
           <br>
 
 <span id="error_span" style="color:red"></span>
+                      <div class="form-submit">
               <input type="button" value="Print"
-                      onclick="window.print()" /> 
+                      onclick="window.print()" /></div>
         </form>
       </div>
 
