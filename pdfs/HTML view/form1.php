@@ -223,7 +223,7 @@
                 <label class="custom-file-label" for="form1_accepted_paper">17. Attach the accepted paper, acceptance letter, NOC from co-authors:</label>
               </div>
               <div class="custom-file">
-                <input type="file" class="custom-file-input" name="accepted_paper" id="form1_accepted_paper" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required>
+                <input type="text" class="custom-file-input" name="accepted_paper" id="form1_accepted_paper" value="File Attached" disabled>
               </div>
             </div>
           </div>
@@ -245,9 +245,9 @@
             <div class="form-row">
 <div class="form-group">
   <!-- <label for="organizer">8. Organizer of the event :</label> -->
-  <input type="text" name="cost_details_text" name="cost_details" id="form1_cost_details_text" placeholder="Leave blank if file attached" required />
+  <input type="text" name="cost_details_text" name="cost_details" id="form1_cost_details_text" value="File Attached" disabled />
 </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <div class="input-group">
                 <div class="input-group-prepend">
                   
@@ -257,7 +257,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 </div>
           <div class="form-row">
             <div class="form-group">
