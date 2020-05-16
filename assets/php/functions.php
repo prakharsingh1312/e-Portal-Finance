@@ -935,4 +935,19 @@ function render_form1_pdf($id){
 		return $result1;
 	}
 }
+function verify_account($token,$hash)
+{
+	global $dbconfig;
+	$query=mysqli_query($dbconfig,"SELECT * FROM user_acounts WHERE user_hash='$hash'")or die('<span class="error_span"><u>mysqli error:</u> ' . htmlspecialchars(mysqli_error($dbconfig)) . '</span>');
+	while($result=mysqli_fetch_array($query))
+	{
+		if(md5($result['user_email'])==$token)
+		{
+			$query=mysqli_query($dbconfig,"UPDATE user_accounts SET user_hash=
+			'' , user_activated=1 WHERE user_id='{$result['user_id']}'");
+			return 1;
+		}
+	}
+	return 0;
+}
 ?>
