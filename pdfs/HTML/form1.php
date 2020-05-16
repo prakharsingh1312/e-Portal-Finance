@@ -338,10 +338,7 @@
           <br>
 
 <span id="error_span" style="color:red"></span>
-          <div class="form-submit">
-            <input type="button" value="Reset All" class="submit" name="reset" id="reset" />
-            <input type="submit" value="Submit Form" class="submit" name="submit" id="submitForm" />
-          </div>
+          
         </form>
       </div>
 
