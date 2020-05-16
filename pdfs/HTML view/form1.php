@@ -179,9 +179,10 @@
                 <div class="input-group-prepend">
                   <label class="custom-file-label" for="form1_certificate">12. Attach certificate from HoD regarding relevance of the event for the applicant and by stating that the event will benefit for the applicant.</label>
                 </div>
-                <div class="custom-file">
+                <input type="text" name="objective_text" id="form1_objective_text" value="File Attached" disabled />
+                <!-- <div class="custom-file">
                   <input type="file" class="custom-file-input" name="hod_certificate" id="form1_certificate" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required>
-                </div>
+                </div> -->
 <br>
                 <div class="form-row">
                   <div class="form-group" id="form1_13">
