@@ -150,9 +150,9 @@
           <div class="form-row">
             <div class="form-group">
               <!-- <label for="organizer">8. Organizer of the event :</label> -->
-              <input type="text" name="objective_text" id="form1_objective_text" placeholder="Leave blank if file attached" required />
+              <input type="text" name="objective_text" id="form1_objective_text" value="File Attached" disabled />
             </div>
-<div class="form-group">
+<!-- <div class="form-group">
             <div class="input-group">
               <div class="input-group-prepend">
                 
@@ -161,16 +161,17 @@
                 <input type="file" class="custom-file-input" id="form1_objective" name="objective" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required />
               </div>
             </div>
-</div>
+</div> -->
           </div>
           <div class="form-group" id="form1_11">
             <div class="input-group">
               <div class="input-group-prepend">
                 <label class="custom-file-label" for="form1_cv">11. Attach (i) brief CV / biography. </label>
               </div>
-              <div class="custom-file">
+              <input type="text" name="CV" id="form1_CV" value="File Attached" disabled />
+              <!-- <div class="custom-file">
                 <input type="file" class="custom-file-input" id="form1_cv" name="cv" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required />
-              </div>
+              </div> -->
             </div>
 <br>
             <div class="form-group" id="form1_12">
