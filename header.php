@@ -12,18 +12,7 @@
 		  </div>
       <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#new">
-              <i class="far fa-plus-square"></i>
-              <p> Submit a new Form</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#track" >
-              <i class="fas fa-question-circle"></i>
-              <p>Track submitted Form</p>
-            </a>
-          </li>
+          
 			<li class="nav-item">
             <a class="nav-link btn btn-neutral" href="#login" target="">
               <i class="now-ui-icons arrows-1_share-66"></i>
