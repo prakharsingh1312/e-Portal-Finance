@@ -1,12 +1,13 @@
 <?php
     include('../../assets/php/functions.php');
-    if(isset($_POST['form_id']))
+    if(isset($_GET['form_id']))
 		$_SESSION['form_id']=mysqli_real_escape_string($dbconfig,$_POST['form_id']);
-	if(isset($_GET['submit_form']) && isset($_POST['name'])){
-		echo submit_form1($_POST,$_FILES);
-	}
-	else{
+	
+	elseif(isset($_GET['id'])){
+	$res=render_form1_pdf($_GET['id']);
+
     $result = get_form_details($_SESSION['form_id']);
+		
 		echo'
    
  
@@ -61,11 +62,11 @@
           <div class="form-row" >
             <div class="form-group" id="form1_1">
               <label for="form1_form1_name">1. Name of the student :</label>
-              <input type="text" name="name" id="form1_name" required />
+              <input type="text" name="name" value="'.$res['name_of_student'].'" id="form1_name" required disabled/>
             </div>
             <div class="form-group" id="form1_1.1">
               <label for="form1_course">1.1 Course</label>
-              <input type="text" name="course" id="form1_course" required />
+              <input type="text" name="course"  value="'.$res['course'].'"  id="form1_course" required />
               <!-- <div class="form-select">
                 <select name="course" id="form1_course" required>
                   <option value ="" disabled selected></option>
@@ -80,27 +81,27 @@
           <div class="form-row">
             <div class="form-group" id="form1_2">
               <label for="form1_roll">2. Roll No.</label>
-              <input type="number" name="roll" id="form1_roll" required />
+              <input type="number" name="roll"  value="'.$res['roll_no'].'"  id="form1_roll" required />
             </div>
             <div class="form-group"id="form1_3">
               <label for="form1_department">3. Department</label>
-              <input type="text" name="department" id="form1_department" required />
+              <input type="text" name="department" value="'.$res['department'].'"  id="form1_department" required />
             </div>
 
           </div>
           <div class="form-row">
             <div class="form-group" id="form1_4">
               <label for="form1_nature_of_event">4. Nature of Event</label>
-              <input type="text" name="nature_of_event" id="form1_nature_of_event" required />
+              <input type="text" name="nature_of_event" value="'.$res['nature_of_event'].'"  id="form1_nature_of_event" required />
             </div>
             <div class="form-group" id="form1_5">
               <label for="form1_name_of_the_event">5. Name of the Event</label>
-              <input type="text" name="name_of_the_event" id="form1_name_of_event" required />
+              <input type="text" name="name_of_the_event"  value="'.$res['name_of_event'].'"  id="form1_name_of_event" required />
             </div>
           </div>
           <div class="form-group" id="form1_6">
             <label for="form1_place">6. Place(S) of the event (Visit) Conference / Training Course / Workshop Seminar / Symposium / Others (Complete Address):</label>
-            <input type="text" name="place" id="form1_place" required>
+            <input type="text" name="place"  value="'.$res['place_of_event'].'"  id="form1_place" required>
           </div>
           <div class="form-group" id="form1_7">
             <label for="form1_">7. Duration required for the event with date(S) :</label>
@@ -109,21 +110,21 @@
               <div class="form-group">
                 <label for="form1_from_date">From (YYYY-MM-DD) :</label>
 
-                <input type="text" name="from_date" id="form1_from_date" required />
+                <input type="text" name="from_date" id="form1_from_date" value="'.$res['duration_from'].'" required />
               </div>
               <div class="form-group">
                 <label for="form1_to_date">To (YYYY-MM-DD) :</label>
-                <input type="text" name="to_date" id="form1_to_date" required />
+                <input type="text" name="to_date"  value="'.$res['duration_to'].'"  id="form1_to_date" required />
               </div>
               <div class="form-group">
                 <label for="form1_no_of_days">No. of days :</label>
-                <input type="number" name="no_of_days" id="form1_no_of_days" required />
+                <input type="number" name="no_of_days" value="'.$res['duration_days'].'"  id="form1_no_of_days" required />
               </div>
             </div>
           </div>
           <div class="form-group" id="form1_8">
             <label for="form1_organizer">8. Organizer of the event :</label>
-            <input type="text" name="organizer" id="form1_organizer" required />
+            <input type="text" name="organizer"  value="'.$res['organizer_of_event'].'"  id="form1_organizer" required />
           </div>
           <div class="form-group" id="form1_9">
                 <label class="custom-file-label" for="form1_relevance">9. Relevance of the visit / training: (Attach Separate Sheet, if required)</label>
@@ -131,7 +132,12 @@
 <div class="form-row">
 <div class="form-group" >
   <!-- <label for="organizer">8. Organizer of the event :</label> -->
-  <input type="text" name="relevance_text" id="form1_relevance_text" value="File Attached" disabled />
+  <input type="text" name="relevance_text" id="form1_relevance_text" ';
+		if($res['relevance_file']=="Y"){
+			echo'value="File Attached"';}
+		else
+			echo  'value="'.$res['relevance_of_visit'].'"'; 
+			echo' disabled />
 </div>
           <!-- <div class="form-group">
             <div class="input-group">
@@ -150,7 +156,12 @@
           <div class="form-row">
             <div class="form-group">
               <!-- <label for="organizer">8. Organizer of the event :</label> -->
-              <input type="text" name="objective_text" id="form1_objective_text" value="File Attached" disabled />
+              <input type="text" name="objective_text" id="form1_objective_text" ';
+		if($res['objective_file']=="Y"){
+			echo'value="File Attached"';}
+		else
+			echo  'value="'.$res['objective_of_visit'].'"'; 
+			echo' disabled />
             </div>
 <!-- <div class="form-group">
             <div class="input-group">
@@ -187,11 +198,11 @@
                 <div class="form-row">
                   <div class="form-group" id="form1_13">
                     <label for="form1_date_time_d">13. Date and time of departure from the Institute:</label>
-                    <input type="text" name="date_time_d" id="form1_date_time_d" required />
+                    <input type="text" name="date_time_d" value="'.$res['date_and_time_departure'].'" id="form1_date_time_d" required />
                   </div>
                   <div class="form-group" id="form1_14">
                     <label for="form1_date_time_a">14. Date and time of arrival to the Institute:</label>
-                    <input type="text" name="date_time_a" id="form1_date_time_a" required />
+                    <input type="text" name="date_time_a" value="'.$res['date_and_time_arrival'].'" id="form1_date_time_a" required />
                   </div>
                 </div>
 
@@ -203,7 +214,7 @@
 
           <div class="form-group" id="form1_15">
             <label for="form1_research">15. Whether going to present research paper :</label>
-            <input type="text" name="research_paper" id="form1_research_paper" required />
+            <input type="text" name="research_paper" value="'.$res['research_paper'].'" id="form1_research_paper" required />
             <!-- <div class="form-select">
               <select name="research" id="form1_research" required >
                 <option value="" disabled selected></option>
@@ -215,7 +226,7 @@
           </div>
           <div class="form-group" id="form1_16">
             <label for="form1_title">16. Title of Paper :</label>
-            <input type="text" name="title" id="form1_title" required />
+            <input type="text" name="title" value="'.$res['title_of_paper'].'" id="form1_title" required />
           </div>
           <div class="form-group" id="form1_17">
             <div class="input-group">
@@ -223,7 +234,12 @@
                 <label class="custom-file-label" for="form1_accepted_paper">17. Attach the accepted paper, acceptance letter, NOC from co-authors:</label>
               </div>
               <div class="custom-file">
-                <input type="text" class="custom-file-input" name="accepted_paper" id="form1_accepted_paper" value="File Attached" disabled>
+                <input type="text" class="custom-file-input" name="accepted_paper" id="form1_accepted_paper" ';
+		if($res['research_paper']=="Yes"){
+			echo'value="File Attached"';}
+		else
+			echo  'value="N.A."'; 
+			echo' disabled>
               </div>
             </div>
           </div>
@@ -232,11 +248,11 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="form1_rs">Rupees (Rs.):</label>
-                <input type="text" name="total_cost" id="form1_rs" required>
+                <input type="text" name="total_cost" value="'.$res['total_cost'].'" id="form1_rs" required>
               </div>
               <div class="form-group">
                 <label for="form1_trs">Rupees (In Words) :</label>
-                <input type="text" name="trs" id="form1_trs" required>
+                <input type="text" name="trs" value="'.$res['total_cost_words'].'" id="form1_trs" required>
               </div>
             </div>
             <div class="form-group">
@@ -245,7 +261,12 @@
             <div class="form-row">
 <div class="form-group">
   <!-- <label for="organizer">8. Organizer of the event :</label> -->
-  <input type="text" name="cost_details_text" name="cost_details" id="form1_cost_details_text" value="File Attached" disabled />
+  <input type="text" name="cost_details_text" name="cost_details" id="form1_cost_details_text" ';
+		if($res['cost_details_file']=="Y"){
+			echo'value="File Attached"';}
+		else
+			echo  'value="'.$res['cost_details'].'"'; 
+			echo' disabled />
 </div>
             <!-- <div class="form-group">
               <div class="input-group">
@@ -262,25 +283,25 @@
           <div class="form-row">
             <div class="form-group">
               <label for="form1_registration">Registration fee:</label>
-              <input type="text" name="registration" id="form1_registration" required />
+              <input type="text" name="registration" value="'.$res['registration_fees'].'"  id="form1_registration" required />
             </div>
             <div class="form-group">
               <label for="form1_ta">TA :</label>
-              <input type="text" name="ta" id="form1_ta" required />
+              <input type="text" name="ta" value="'.$res['transportation_allowance'].'"  id="form1_ta" required />
             </div>
             <div class="form-group">
               <label for="form1_others">Others, if any :</label>
-              <input type="text" name="others" id="form1_others" required />
+              <input type="text" name="others" value="'.$res['other_costs'].'"  id="form1_others" required />
             </div>
           </div>
           <div class="form-group" id="form1_19">
             <label for="form1_cgpa">19. CGPA of the candidate (Only for UG / M.Tech and M.Sc students) : </label>
-            <input type="number" name="cgpa" id="form1_cgpa" step="0.01" min="0" max="10" required />
+            <input type="number" name="cgpa" id="form1_cgpa"  value="'.$res['cgpa'].'"  step="0.01" min="0" max="10" required />
           </div>
 
           <div class="form-group" id="form1_20">
             <label for="form1_mtech">20. For M.Tech, M.Sc and PhD candidates : Whether one paper has been accepted for publication in SCI Journal in Last two years : </label>
-            <input type="text" name="candidates" id="form1_candidates" required />
+            <input type="text" name="candidates" value="'.$res['sci_journal'].'"  id="form1_candidates" required />
             <!-- <div class="form-select">
               <select name="mtech" id="form1_mtech" required>
                 <option value="" disabled selected></option>

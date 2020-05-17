@@ -225,7 +225,7 @@ function show_applications($form_id){
                   <td>'.$result['roll_no'].'</td>
                   <td>'.$i.'</td>
                   <td class="text-right">
-                    <a href="#formModal" data-toggle="modal" class="button" >View Form</a>
+                    <a href="../../pdfs/HTML/form'.$i.'.php?form_id='.$i.'&id='.$result['response_id'].'" target="_blank" class="button" >View Form</a>
                   </td>
 				  </tr>';
 		}
