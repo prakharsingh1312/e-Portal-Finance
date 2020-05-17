@@ -358,7 +358,7 @@
 
 <span id="error_span" style="color:red"></span>
                       <div class="form-submit">
-              <input type="button" value="Print" class="submit"
+              <input type="button" value="Print" class="submit button"
                       onclick="window.print()" /></div>
         </form>
       </div>
