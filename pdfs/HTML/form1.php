@@ -131,7 +131,7 @@
 <div class="form-group" >
   <!-- <label for="organizer">8. Organizer of the event :</label> -->';
   if($res['relevance_file']=="Y"){
-	  echo'<a href="../../uploads/'.$res['relevance_of_visit'].'"><input type="text" name="relevance_text" id="form1_relevance_text" value="File Attached" disabled /></a>';
+	  echo'<a href="../../uploads/'.$res['relevance_of_visit'].' target="_blank""><input type="text" name="relevance_text" id="form1_relevance_text" value="File Attached" disabled /></a>';
   }
 		else
 			echo  '<input type="text" name="relevance_text" id="form1_relevance_text" value="'.$res['relevance_of_visit'].'"disabled />'; 
@@ -155,7 +155,7 @@
             <div class="form-group">
               <!-- <label for="organizer">8. Organizer of the event :</label> -->';
               if($res['objective_file']=="Y"){
-	  echo'<a href="../../uploads/'.$res['objective_of_visit'].'"><input type="text" name="objective_text" id="form1_objective_text" value="File Attached" disabled /></a>';
+	  echo'<a href="../../uploads/'.$res['objective_of_visit'].' target="_blank""><input type="text" name="objective_text" id="form1_objective_text" value="File Attached" disabled /></a>';
 			  }
 		else
 			echo  '<input type="text" name="objective_text" id="form1_objective_text" value="'.$res['objective_of_visit'].'" disabled /></a>'; 
@@ -177,7 +177,7 @@
               <div class="input-group-prepend">
                 <label class="custom-file-label" for="form1_cv">11. Attach (i) brief CV / biography. </label>
               </div>
-              <a href="../../uploads/'.$res['attached_cv'].'"><input type="text" name="CV" id="form1_CV" value="File Attached" disabled /></a>
+              <a href="../../uploads/'.$res['attached_cv'].'" target="_blank"><input type="text" name="CV" id="form1_CV" value="File Attached" disabled /></a>
               <!-- <div class="custom-file">
                 <input type="file" class="custom-file-input" id="form1_cv" name="cv" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required disabled/>
               </div> -->
@@ -188,7 +188,7 @@
                 <div class="input-group-prepend">
                   <label class="custom-file-label" for="form1_certificate">12. Attach certificate from HoD regarding relevance of the event for the applicant and by stating that the event will benefit for the applicant.</label>
                 </div>
-                 <a href="../../uploads/'.$res['attached_certificate_hod'].'"><input type="text" name="objective_text" id="form1_objective_text" value="File Attached" disabled disabled/></a>
+                 <a href="../../uploads/'.$res['attached_certificate_hod'].'" target="_blank"><input type="text" name="objective_text" id="form1_objective_text" value="File Attached" disabled disabled/></a>
                 <!-- <div class="custom-file">
                   <input type="file" class="custom-file-input" name="hod_certificate" id="form1_certificate" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required>
                 </div> -->
