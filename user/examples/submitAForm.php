@@ -75,7 +75,7 @@ include('../../assets/php/functions.php');
             </a>
           </li>
           <li class="nav-item ">
-           <a class="nav-link" href="examples/user.html">
+           <a class="nav-link" href="examples/user_profile.php">
              <i class="material-icons">person</i>
              <p>User Profile</p>
            </a>
