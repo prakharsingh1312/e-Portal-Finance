@@ -130,12 +130,10 @@
 <div class="form-row">
 <div class="form-group" >
   <!-- <label for="organizer">8. Organizer of the event :</label> -->';
-  if($res['relevance_file']=="Y"){echo'<input type="text" name="relevance_text" id="form1_relevance_text" 
-		
-			value="File Attached"';}
+  if($res['relevance_file']=="Y"){echo'<a href="../uploads/'.$res['relevance_of_visit'].'"<input type="text" name="relevance_text" id="form1_relevance_text" value="File Attached" disabled />';}
 		else
 			echo  'value="'.$res['relevance_of_visit'].'"'; 
-			echo' disabled />
+			echo'
 </div>
           <!-- <div class="form-group">
             <div class="input-group">
@@ -358,7 +356,7 @@
 
 <span id="error_span" style="color:red"></span>
                       <div class="form-submit">
-              <input type="button" value="Print" class="submit btn-primary"
+              <input type="button" style="background-color:#DC5A00;" value="Print" class="submit"
                       onclick="window.print()" /></div>
         </form>
       </div>
