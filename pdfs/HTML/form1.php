@@ -31,7 +31,7 @@
     <h2 class="center" style="text-align:center;  padding-top:0px;">DR. B. R. AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY, JALANDHAR-144011</h2>
 
     <div class="container" id="container">
-      <!-- <h2 class="center" style="text-align:center; padding-top:30px;">'. $result['form_subtitle'].'</h2>
+      <h2 class="center" style="text-align:center; padding-top:30px;">'. $result['form_subtitle'].'</h2>
       <div class="signup-content">
         <form method="POST" class="register-form" id="register-form" action=".">
           <h2 class="display-6" style="color:#dc5a00;">REQUIRED DOCUMENTs</h2>
@@ -53,7 +53,7 @@
 
 
 
-      </div> -->
+      </div> 
       <div class="signup-content"  >
         <form  class="register-form" onsubmit="return false" id="form1" enctype="multipart/form-data">
           <h2 class="display-6" style="color:#dc5a00;">FORM </h2>
