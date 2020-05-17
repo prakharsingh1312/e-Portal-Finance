@@ -1,12 +1,10 @@
 <?php
     include('../../assets/php/functions.php');
-    if(isset($_GET['form_id']))
-		$_SESSION['form_id']=mysqli_real_escape_string($dbconfig,$_POST['form_id']);
-	
-	elseif(isset($_GET['id'])){
+    
+	if(isset($_GET['id'])&& isset($_GET['form_id'])){
 	$res=render_form1_pdf($_GET['id']);
 
-    $result = get_form_details($_SESSION['form_id']);
+    $result = get_form_details($_GET['form_id']);
 		
 		echo'
    
