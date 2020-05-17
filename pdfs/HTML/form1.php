@@ -90,7 +90,7 @@
           <div class="form-row">
             <div class="form-group" id="form1_4">
               <label for="form1_nature_of_event">4. Nature of Event</label>
-              <input type="text" name="nature_of_event" value="'.$res['nature_of_event'].'"  id="form1_nature_of_event" required />
+              <input type="text" name="nature_of_event" value="'.$res['nature_of event'].'"  id="form1_nature_of_event" required />
             </div>
             <div class="form-group" id="form1_5">
               <label for="form1_name_of_the_event">5. Name of the Event</label>
@@ -200,7 +200,7 @@
                   </div>
                   <div class="form-group" id="form1_14">
                     <label for="form1_date_time_a">14. Date and time of arrival to the Institute:</label>
-                    <input type="text" name="date_time_a" value="'.$res['date_and_time_arrival'].'" id="form1_date_time_a" required />
+                    <input type="text" name="date_time_a" value="'.$res['date_and _time_arrival'].'" id="form1_date_time_a" required />
                   </div>
                 </div>
 
