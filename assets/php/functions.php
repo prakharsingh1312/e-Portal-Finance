@@ -229,8 +229,8 @@ function show_applications($form_id){
                       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Dropdown button
                       </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                         <a href="../pdfs/HTML/form'.$i.'.php?form_id='.$i.'&id='.$result['response_id'].'" target="_blank" class="button" >View Form</a>
+                      <div class="dropdown-menu" aria-labelledby="View Forms and attachments">
+                         <a href="../pdfs/HTML/form'.$i.'.php?form_id='.$i.'&id='.$result['response_id'].'" target="_blank" class="dropdown-item" >View Form</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <a class="dropdown-item" href="#">Something else here</a>
                       </div>
