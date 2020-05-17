@@ -177,7 +177,7 @@
               <div class="input-group-prepend">
                 <label class="custom-file-label" for="form1_cv">11. Attach (i) brief CV / biography. </label>
               </div>
-              <input type="text" name="CV" id="form1_CV" value="File Attached" disabled />
+              <a href="../../uploads/'.$res['attached_cv'].'"><input type="text" name="CV" id="form1_CV" value="File Attached" disabled /></a>
               <!-- <div class="custom-file">
                 <input type="file" class="custom-file-input" id="form1_cv" name="cv" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required disabled/>
               </div> -->
@@ -188,7 +188,7 @@
                 <div class="input-group-prepend">
                   <label class="custom-file-label" for="form1_certificate">12. Attach certificate from HoD regarding relevance of the event for the applicant and by stating that the event will benefit for the applicant.</label>
                 </div>
-                <input type="text" name="objective_text" id="form1_objective_text" value="File Attached" disabled disabled/>
+                 <a href="../../uploads/'.$res['attached_certificate_hod'].'"><input type="text" name="objective_text" id="form1_objective_text" value="File Attached" disabled disabled/></a>
                 <!-- <div class="custom-file">
                   <input type="file" class="custom-file-input" name="hod_certificate" id="form1_certificate" aria-describedby="inputGroupFileAddon01" accept="application/pdf" required>
                 </div> -->
