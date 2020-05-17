@@ -28,12 +28,12 @@
 
 <body style="padding:0px 0px;">
   <div class="main">
-    <h2 class="center" style="text-align:center;  padding-top:0px;">DR. B. R. AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY, JALANDHAR-144011</h2>
+    <h1 class="center" style="text-align:center;  padding-top:0px;">DR. B. R. AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY, JALANDHAR-144011</h1>
 
     <div class="container" id="container">
-      <h2 class="center" style="text-align:center; padding-top:30px;">'. $result['form_subtitle'].'</h2>
+      <h3 class="center" style="text-align:center; padding-top:30px;">'. $result['form_subtitle'].'</h2>
       <div class="signup-content">
-        <form method="POST" class="register-form" id="register-form" action=".">
+        <!--<form method="POST" class="register-form" id="register-form" action=".">
           <h2 class="display-6" style="color:#dc5a00;">REQUIRED DOCUMENTs</h2>
             <p style="font-size:1.2rem;">'. $result['form_docs'].'</p>
         </form>
@@ -42,12 +42,12 @@
 
 
 
-      </div>
+      </div> 
 	  <div class="signup-content">
         <form method="POST" class="register-form" id="register-form" action=".">
           <h2 class="display-6" style="color:#dc5a00;">BASIC INTRODUCTION</h2>
             <p style="font-size:1.2rem;">'. $result['form_intro'].'</p>
-        </form>
+        </form>-->
 
 
 
@@ -129,10 +129,10 @@
           </div>
 <div class="form-row">
 <div class="form-group" >
-  <!-- <label for="organizer">8. Organizer of the event :</label> -->
-  <input type="text" name="relevance_text" id="form1_relevance_text" ';
-		if($res['relevance_file']=="Y"){
-			echo'value="File Attached"';}
+  <!-- <label for="organizer">8. Organizer of the event :</label> -->';
+  if($res['relevance_file']=="Y"){echo'<input type="text" name="relevance_text" id="form1_relevance_text" 
+		
+			value="File Attached"';}
 		else
 			echo  'value="'.$res['relevance_of_visit'].'"'; 
 			echo' disabled />
