@@ -230,12 +230,11 @@ function show_applications($form_id){
                         Dropdown button
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                         <a href="#formModal" data-toggle="modal" class="button" >View Form</a>
+                         <a href="../pdfs/HTML/form'.$i.'.php?form_id='.$i.'&id='.$result['response_id'].'" target="_blank" class="button" >View Form</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <a class="dropdown-item" href="#">Something else here</a>
                       </div>
                     </div>
-                   
                   </td>
 				  </tr>';
 		}
@@ -944,5 +943,20 @@ function render_form1_pdf($id){
 		$result1=$result->fetch_assoc();
 		return $result1;
 	}
+}
+function verify_account($token,$hash)
+{
+	global $dbconfig;
+	$query=mysqli_query($dbconfig,"SELECT * FROM user_acounts WHERE user_hash='$hash'")or die('<span class="error_span"><u>mysqli error:</u> ' . htmlspecialchars(mysqli_error($dbconfig)) . '</span>');
+	while($result=mysqli_fetch_array($query))
+	{
+		if(md5($result['user_email'])==$token)
+		{
+			$query=mysqli_query($dbconfig,"UPDATE user_accounts SET user_hash=
+			'' , user_activated=1 WHERE user_id='{$result['user_id']}'");
+			return 1;
+		}
+	}
+	return 0;
 }
 ?>
