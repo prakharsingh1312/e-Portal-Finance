@@ -130,9 +130,11 @@
 <div class="form-row">
 <div class="form-group" >
   <!-- <label for="organizer">8. Organizer of the event :</label> -->';
-  if($res['relevance_file']=="Y"){echo'<a href="../uploads/'.$res['relevance_of_visit'].'"<input type="text" name="relevance_text" id="form1_relevance_text" value="File Attached" disabled />';}
+  if($res['relevance_file']=="Y"){
+	  echo'<a href="../uploads/'.$res['relevance_of_visit'].'"><input type="text" name="relevance_text" id="form1_relevance_text" value="File Attached" disabled /></a>';
+  }
 		else
-			echo  'value="'.$res['relevance_of_visit'].'"'; 
+			echo  '<input type="text" name="relevance_text" id="form1_relevance_text" value="'.$res['relevance_of_visit'].'"disabled />'; 
 			echo'
 </div>
           <!-- <div class="form-group">
@@ -151,12 +153,12 @@
             <label class="custom-file-label" for="form1_objective">10. Clear objective and outcome of the visit: (Attach Separate Sheet, if required)</label>
           <div class="form-row">
             <div class="form-group">
-              <!-- <label for="organizer">8. Organizer of the event :</label> -->
-              <input type="text" name="objective_text" id="form1_objective_text" ';
-		if($res['objective_file']=="Y"){
-			echo'value="File Attached"';}
+              <!-- <label for="organizer">8. Organizer of the event :</label> -->';
+              if($res['objective_file']=="Y"){
+	  echo'<a href="../uploads/'.$res['objective_of_visit'].'"><input type="text" name="objective_text" id="form1_objective_text" value="File Attached" disabled /></a>';
+			  }
 		else
-			echo  'value="'.$res['objective_of_visit'].'"'; 
+			echo  '<input type="text" name="objective_text" id="form1_objective_text" value="'.$res['objective_of_visit'].'" disabled /></a>'; 
 			echo' disabled />
             </div>
 <!-- <div class="form-group">
@@ -356,7 +358,7 @@
 
 <span id="error_span" style="color:red"></span>
                       <div class="form-submit">
-              <input type="button" style="background-color:#DC5A00;" value="Print" class="submit"
+              <input type="button" style="background-color:#9A9492;" value="Print" class="submit"
                       onclick="window.print()" /></div>
         </form>
       </div>
