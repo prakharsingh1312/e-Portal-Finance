@@ -225,7 +225,17 @@ function show_applications($form_id){
                   <td>'.$result['roll_no'].'</td>
                   <td>'.$i.'</td>
                   <td class="text-right">
-                    <a href="#formModal" data-toggle="modal" class="button" >View Form</a>
+                    <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown button
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                         <a href="#formModal" data-toggle="modal" class="button" >View Form</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                    </div>
+                   
                   </td>
 				  </tr>';
 		}
