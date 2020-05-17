@@ -131,7 +131,7 @@
 <div class="form-group" >
   <!-- <label for="organizer">8. Organizer of the event :</label> -->';
   if($res['relevance_file']=="Y"){
-	  echo'<a href="../uploads/'.$res['relevance_of_visit'].'"><input type="text" name="relevance_text" id="form1_relevance_text" value="File Attached" disabled /></a>';
+	  echo'<a href="../../uploads/'.$res['relevance_of_visit'].'"><input type="text" name="relevance_text" id="form1_relevance_text" value="File Attached" disabled /></a>';
   }
 		else
 			echo  '<input type="text" name="relevance_text" id="form1_relevance_text" value="'.$res['relevance_of_visit'].'"disabled />'; 
@@ -155,11 +155,11 @@
             <div class="form-group">
               <!-- <label for="organizer">8. Organizer of the event :</label> -->';
               if($res['objective_file']=="Y"){
-	  echo'<a href="../uploads/'.$res['objective_of_visit'].'"><input type="text" name="objective_text" id="form1_objective_text" value="File Attached" disabled /></a>';
+	  echo'<a href="../../uploads/'.$res['objective_of_visit'].'"><input type="text" name="objective_text" id="form1_objective_text" value="File Attached" disabled /></a>';
 			  }
 		else
 			echo  '<input type="text" name="objective_text" id="form1_objective_text" value="'.$res['objective_of_visit'].'" disabled /></a>'; 
-			echo' disabled />
+			echo'
             </div>
 <!-- <div class="form-group">
             <div class="input-group">
@@ -231,14 +231,13 @@
               <div class="input-group-prepend">
                 <label class="custom-file-label" for="form1_accepted_paper">17. Attach the accepted paper, acceptance letter, NOC from co-authors:</label>
               </div>
-              <div class="custom-file">
-                <input type="text" class="custom-file-input" name="accepted_paper" id="form1_accepted_paper" ';
-		if($res['research_paper']=="Yes"){
-			echo'value="File Attached"';}
+              <div class="custom-file">';
+ if($res['research_paper']=="Yes"){
+	  echo'<a href="../../uploads/'.$res['relevance_of_visit'].'">
+                <input type="text" class="custom-file-input" name="accepted_paper" id="form1_accepted_paper" value="File Attached" disabled></a>';}
 		else
-			echo  'value="N.A."'; 
-			echo' disabled>
-              </div>
+			echo  '<input type="text" class="custom-file-input" name="accepted_paper" id="form1_accepted_paper" value="N.A. " disabled> '; 
+			echo'</div>
             </div>
           </div>
           <div class="form-group" id="form1_18">
@@ -258,13 +257,13 @@
             </div>
             <div class="form-row">
 <div class="form-group">
-  <!-- <label for="organizer">8. Organizer of the event :</label> -->
-  <input type="text" name="cost_details_text" name="cost_details" id="form1_cost_details_text" ';
-		if($res['cost_details_file']=="Y"){
-			echo'value="File Attached"';}
+  <!-- <label for="organizer">8. Organizer of the event :</label> -->';
+		 if($res['cost_details_file']=="Y"){
+	  echo'<a href="../../uploads/'.$res['relevance_of_visit'].'">
+  <input type="text" name="cost_details_text" name="cost_details" id="form1_cost_details_text" value="File Attached" disabled /></a>';}
 		else
-			echo  'value="'.$res['cost_details'].'"'; 
-			echo' disabled />
+			echo  ' <input type="text" name="cost_details_text" name="cost_details" id="form1_cost_details_text" value="'.$res['cost_details'].'"disabled />'; 
+			echo' 
 </div>
             <!-- <div class="form-group">
               <div class="input-group">
