@@ -19,7 +19,7 @@ $body = '
 You can login after you have verified your email address.
  
 Please click this link to verify you email address:
-http://34.87.136.236/NIT/verify.php?token='.$token.'&hash='.$user_hash.'&verify'; // Our message above including the link
+http://35.187.229.175//NIT/verify.php?token='.$token.'&hash='.$user_hash.'&verify'; // Our message above including the link
 
 $headers = array(
     'From' => $from,
