@@ -1,6 +1,6 @@
 <?php
 include('../assets/php/functions.php');
-if (!logged_in()|| !$_SESSION['user_role']!=1){
+if (!logged_in()){
 	header("location:../#login");
 }
  ?>
