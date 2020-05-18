@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 	}
 	else{
 		echo'<script type="text/javascript">alert("Invalid Token.");</script>';
-		header('location:index.php#login');
+		header('location:index.php#login?verify');
 	}
 }?><!DOCTYPE html>
 <html lang="en" >

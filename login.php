@@ -20,7 +20,11 @@ else
 	echo '<div class="page-header-image" data-parallax="true" style="background-image:url(\'./assets/img/header.jpg\');">
       </div><div class="container">
 		<div class="content-center brand">
-		<div id="notification_div"><div id="notification_inner_div"><div id="notification_inner_cell_div"></div></div></div>
+		<div id="notification_div"><div id="notification_inner_div"><div id="notification_inner_cell_div">';
+	if(isset($_GET['verify'])){
+		echo'<div class="alert alert-success" role="alert"><div class="container"><div class="alert-icon"><i class="now-ui-icons ui-2_like"></i></div><strong>Email Verified.Please Log-In to continue.</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="now-ui-icons ui-1_simple-remove"></i></span>            </button>          </div>        </div>';
+	}
+	echo'</div></div></div>
         <div class="col-md-4 ml-auto mr-auto">
           <div class="card card-login card-plain">
             <form class="form" action="javascript:void(0)" id="login_form">
