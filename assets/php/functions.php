@@ -986,7 +986,7 @@ function verify_account_password($token,$hash,$password)
 		{
 			
 			$query=mysqli_query($dbconfig,"UPDATE user_accounts SET user_hash=
-			'' , user_verify=1 , user_password='".encrypt_password($password)."' WHERE user_id='{$result['user_id']}'");
+			'' , user_verified=1 , user_password='".encrypt_password($password)."' WHERE user_id='{$result['user_id']}'");
 			return 1;
 		}
 	}
