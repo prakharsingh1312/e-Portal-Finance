@@ -29,7 +29,6 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
       
       <div class="tab-content">
         <?php
-require('assets/php/functions.php');
 if(isset($_GET['verify'])&&isset($_GET['token'])&&isset($_GET['hash']))
 {
 	$token=mysqli_real_escape_string($dbconfig,$_GET['token']);
