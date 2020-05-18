@@ -915,7 +915,7 @@ function delete_user($id){
 	
 }
 function random_password(){
-	$pass['key']=rand(1000,9999);
+	$pass['key']=12345;
 	$pass['value']=encrypt_password($pass['key']);
 	return $pass;
 }
@@ -943,8 +943,50 @@ function verify_account($token,$hash)
 	{
 		if(md5($result['user_email'])==$token)
 		{
+			
+			return '<div id="signup">   
+          <h1>Confirm Password</h1>
+          
+          <form action="" method="post">
+          
+          <div class="top-row">
+            
+        
+            
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Enter New Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+             Confirm Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <button type="submit" class="button button-block"/>Confirm</button>
+          
+          </form>';
+		}
+	}
+	return "Invalid Token.";
+}
+function verify_account_password($token,$hash,$password)
+{
+	global $dbconfig;
+	$query=mysqli_query($dbconfig,"SELECT * FROM user_acounts WHERE user_hash='$hash'")or die('<span class="error_span"><u>mysqli error:</u> ' . htmlspecialchars(mysqli_error($dbconfig)) . '</span>');
+	while($result=mysqli_fetch_array($query))
+	{
+		if(md5($result['user_email'])==$token)
+		{
+			
 			$query=mysqli_query($dbconfig,"UPDATE user_accounts SET user_hash=
-			'' , user_activated=1 WHERE user_id='{$result['user_id']}'");
+			'' , user_activated=1 , user_password='".encrypt_password($password)."' WHERE user_id='{$result['user_id']}'");
 			return 1;
 		}
 	}
