@@ -979,7 +979,7 @@ function verify_account($token,$hash)
 function verify_account_password($token,$hash,$password)
 {
 	global $dbconfig;
-	$query=mysqli_query($dbconfig,"SELECT * FROM user_acounts WHERE user_hash='$hash'")or die('<span class="error_span"><u>mysqli error:</u> ' . htmlspecialchars(mysqli_error($dbconfig)) . '</span>');
+	$query=mysqli_query($dbconfig,"SELECT * FROM user_accounts WHERE user_hash='$hash'")or die('<span class="error_span"><u>mysqli error:</u> ' . htmlspecialchars(mysqli_error($dbconfig)) . '</span>');
 	while($result=mysqli_fetch_array($query))
 	{
 		if(md5($result['user_email'])==$token)
