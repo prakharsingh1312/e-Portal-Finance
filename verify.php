@@ -4,7 +4,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 		$token=mysqli_real_escape_string($dbconfig,$_GET['token']);
 	$hash=mysqli_real_escape_string($dbconfig,$_GET['hash']);
 	$password=mysqli_real_escape_string($dbconfig,$_POST['password']);
-	if(verify_account_password()){
+	if(verify_account_password($token,$hash,$password)){
 		echo'<script type="text/javascript">alert("Your email address has been verified you can now login.");</script>';
 		header('location:index.php#login');
 	}
