@@ -45,31 +45,31 @@ if (!logged_in()){
               <p>Dashboard</p>
             </a>
           </li>
-         
-          <li class="nav-item  ">
+
+          <!-- <li class="nav-item  ">
             <a class="nav-link" href="examples/tables.html" disabled >
               <i class="material-icons">content_paste</i>
               <p>Table List</p>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item ">
             <a class="nav-link" href="examples/submitAForm.php" >
               <i class="far fa-plus-square"></i>
               <p>Submit a Form</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <!-- <li class="nav-item ">
             <a class="nav-link" href="../#track" disabled >
               <i class="fas fa-question-circle"></i>
               <p>Status of Applications</p>
             </a>
-          </li>
-<li class="nav-item ">
-           <a class="nav-link" href="examples/user_profile.php" disabled >
+          </li> -->
+<!-- <li class="nav-item ">
+            <a class="nav-link" href="examples/user_profile.php">
              <i class="material-icons">person</i>
              <p>User Profile</p>
            </a>
-         </li>
+         </li> -->
           <!-- <li class="nav-item ">
             <a class="nav-link" href="./map.html">
               <i class="material-icons">location_ons</i>
