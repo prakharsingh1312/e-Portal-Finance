@@ -1,6 +1,6 @@
 <?php 
 require('assets/php/functions.php');
-if($_SERVER['REQUEST_METHOD'=="POST"]){
+if($_SERVER['REQUEST_METHOD']=="POST"){
 		$token=mysqli_real_escape_string($dbconfig,$_GET['token']);
 	$hash=mysqli_real_escape_string($dbconfig,$_GET['hash']);
 	$password=mysqli_real_escape_string($dbconfig,$_POST['password']);
