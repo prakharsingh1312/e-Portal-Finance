@@ -966,7 +966,7 @@ function verify_account($token,$hash)
             <label>
              Confirm Password<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off"/>
+            <input type="password" name="password" required autocomplete="off"/>
           </div>
           
           <button type="submit" class="button button-block"/>Confirm</button>
