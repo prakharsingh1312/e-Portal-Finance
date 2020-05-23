@@ -211,7 +211,7 @@ function upload_file($file,$subpath,$response_code){
 function show_applications($form_id){
 	global $dbconfig;
 	$return='';
-	$n=3;
+	$n=1;
 	if($form_id==0){
 	for($i=1;$i<=$n;$i++){
 
