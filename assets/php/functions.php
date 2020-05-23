@@ -211,11 +211,11 @@ function upload_file($file,$subpath,$response_code){
 function show_applications($form_id){
 	global $dbconfig;
 	$return='';
-	$n=1;
+	$n=3;
 	if($form_id==0){
 	for($i=1;$i<=$n;$i++){
 
-		$sql="SELECT * FROM form_type".$i."_responses";
+		$sql="SELECT * FROM form_type".$i."_responses,form_paths where form_type".$i."_responses.form_id=form_paths.form_id and form_type=$i and current_user_id={$_SESSION['user_id']} and form_approval=0";
 		$stmt=$dbconfig->prepare($sql);
 		$stmt->execute();
 		$stmt=$stmt->get_result();
@@ -259,7 +259,7 @@ function get_application_data(){
 	$return['accepted']=0;
 	$return['rejected']=0;
 	$return['pending']=0;
-	$n=1;
+	$n=3;
 	for($i=1;$i<=$n;$i++){
 		//Rejected
 		$sql="SELECT count(*) FROM form_type".$i."_responses WHERE STATUS=0";
