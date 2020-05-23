@@ -216,7 +216,7 @@ function show_applications($form_id){
 	if($form_id==0){
 	for($i=1;$i<=$n;$i++){
 	
-		$sql="SELECT * FROM form_type".$i."_responses,form_paths where form_type".$i."_responses.form_id=form_paths.form_id and form_type=$i and current_user_id={$_SESSION['user_id']} and form_approval=0";
+		$sql="SELECT * FROM form_type".$i."_responses,form_paths where form_type".$i."_responses.response_id=form_paths.form_id and form_type=$i and current_user_id={$_SESSION['user_id']} and form_approval=0";
 		$stmt=$dbconfig->prepare($sql);
 		$stmt->execute();
 		$stmt=$stmt->get_result();
