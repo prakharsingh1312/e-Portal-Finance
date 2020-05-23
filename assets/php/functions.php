@@ -7,7 +7,7 @@ function first_login($user_email,$user_id){
 		$query=mysqli_query($dbconfig,"update user_accounts SET user_hash='$user_hash' WHERE user_id=$user_id")or die('<span class="error_span"><u>mysqli error:</u> ' . htmlspecialchars(mysqli_error($dbconfig)) . '</span>');
 		if($query)
 		{
-                     
+
 $headers = 'From:noreply@nit.in' . "\r\n"; // Set from headers
 require_once "Mail.php";
 
@@ -15,9 +15,9 @@ $from = 'utkarshchauhan2022@gmail.com';
 $to = $user_email;
 $subject = 'Login | Verification'; // Give the email a subject
 $body = '
- 
+
 You can login after you have verified your email address.
- 
+
 Please click this link to verify you email address:
 http://35.187.229.175//NIT/verify.php?token='.$token.'&hash='.$user_hash.'&verify'; // Our message above including the link
 
@@ -39,12 +39,12 @@ $mail = $smtp->send($to, $headers, $body);
 if (PEAR::isError($mail)) {
      return $mail->getMessage() ;
 		}
-			else 
+			else
 				return 13;
 }
 }
 
-	
+
 	function encrypt_password($password)
 	{
 		$password = crypt($password, '$1$' . global_salt);
@@ -62,11 +62,11 @@ if (PEAR::isError($mail)) {
             if($result->num_rows == 1){
 
                 $result=$result->fetch_assoc();
-                
+
         $_SESSION['user_email']=$result['user_email']; //try
 				if($result['user_verified']==0)
 					return first_login($result['user_email'],$result['user_id']);
-					   
+
 					else{
 					   $_SESSION['user_id']=$result['user_id'];
                 $_SESSION['username']=$result['user_username'];
@@ -81,7 +81,7 @@ if (PEAR::isError($mail)) {
             $stmt->free_result();
             $stmt->close();
         }
-   
+
 
 	function logged_in(){
 		if(isset($_SESSION['user_id']))
@@ -96,14 +96,14 @@ function logout(){
 function get_form_details($formid){
 	global $dbconfig;
 	$sql="SELECT * FROM form_details WHERE form_id = ?";
-    
+
     $result = $dbconfig->prepare($sql);
 	$result->bind_param("i",$formid);
     $result->execute();
     $result=$result->get_result();
 	$result=$result->fetch_assoc();
 	return $result;
-	
+
 }
 function get_forms(){
 	$return='
@@ -127,13 +127,13 @@ function get_forms(){
 	    						<p class="card-text text-center">'.$form['form_subtitle'].'</p>
 	    						<form method="POST" class = " d-flex justify-content-center" action="../../forms/form'.$form['form_format'].'.php">
 								<input type="hidden" value="'.$form['form_id'].'" name="form_id">
-                            
+
 								<input type="submit" class="btn btn-primary" value="Fill Up the Form"></form>
 	  						</div>
 							</div>
             </div>
           </div>';
-		
+
 	}
 	$return.='</div>
       </div>
@@ -149,7 +149,7 @@ function submit_form1($post,$files){
 	if($post['relevance_text']==''){
 		$relevance_file='Y';
 		$post['relevance_text']=upload_file($files['relevance'],'relevance',$response_code);
-		
+
 	}
 	if($post['objective_text']==''){
 		$objective_file='Y';
@@ -169,16 +169,15 @@ function submit_form1($post,$files){
 	//$signstudent=upload_file($files['signstudent'],'signstudent',$response_code);
 	//$signsupervisor=upload_file($files['signsupervisor'],'signsupervisor',$response_code);
 	$status=1;
-	
+
 	global $dbconfig;
 	$sql="INSERT INTO `form_type1_responses` ( `form_id`, `response_code`, `name_of_student`, `course`, `roll_no`, `department`, `nature_of event`, `name_of_event`, `place_of_event`, `duration_from`, `duration_to`, `duration_days`, `organizer_of_event`, `relevance_file`, `relevance_of_visit`, `objective_of_visit`, `objective_file`, `attached_cv`, `attached_certificate_hod`, `date_and_time_departure`, `date_and _time_arrival`, `research_paper`, `title_of_paper`, `accepted_paper_acceptance_letter`, `total_cost`, `total_cost_words`, `cost_details_file`, `cost_details`, `registration_fees`, `transportation_allowance`, `other_costs`, `cgpa`, `sci_journal`, `STATUS`) VALUES ( ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $dbconfig->prepare($sql);
-	
+
         $stmt->bind_param("issssssssssisssssssssssssssssssssi",$_SESSION['form_id'],$response_code,$post['name'],$post['course'],$post['roll'],$post['department'],$post['nature_of_event'],$post['name_of_the_event'],$post['place'],$post['from_date'],$post['to_date'],$post['no_of_days'],$post['organizer'],$relevance_file,$post['relevance_text'],$post['objective_text'],$objective_file,$cv,$hod,$post['date_time_d'],$post['date_time_a'],$post['research'],$post['title'],$paper,$post['total_cost'],$post['trs'],$cost_detail_file,$post['cost_details_text'],$post['registration'],$post['ta'],$post['others'],$post['cgpa'],$post['mtech'],$status); //pending
-	
+
         $stmt->execute();
         $stmt->close();
-	$sql=
 	$return= '<h2 class="center" style="text-align:center; padding-top:30px;">Form Submitted Successfully.</h2>
 				<div class="signup-content">
         <form method="POST" class="register-form" id="register-form" action=".">
@@ -217,6 +216,9 @@ function show_applications($form_id){
 	for($i=1;$i<=$n;$i++){
 	
 		$sql="SELECT * FROM form_type".$i."_responses,form_paths where form_type".$i."_responses.response_id=form_paths.form_id and form_type=$i and current_user_id={$_SESSION['user_id']} and form_approval=0";
+
+
+
 		$stmt=$dbconfig->prepare($sql);
 		$stmt->execute();
 		$stmt=$stmt->get_result();
@@ -225,12 +227,15 @@ function show_applications($form_id){
                   <td>'.$result['name_of_student'].'</td>
                   <td>'.$result['roll_no'].'</td>
                   <td>'.$i.'</td>
+									<td> <button type="button" class="btn btn-primary btn-sm form_show_edit_button" data-toggle="modal" id="status:'.$result1['form_id'].'" data-target="#actions">
+									Options
+								</button></td>
                   <td class="text-right">
                     <a href="../pdfs/HTML/form'.$i.'.php?form_id='.$i.'&id='.$result['response_id'].'" target="_blank" class="button" >View Form</a>
                   </td>
 				  </tr>';
 		}
-		
+
 	}
 }
 	else{
@@ -247,7 +252,7 @@ function show_applications($form_id){
                     <a href="#">View Form</a>
                   </td>
 				  </tr>';
-		
+
 	}
 }
 	return($return);
@@ -260,31 +265,40 @@ function get_application_data(){
 	$n=3;
 	for($i=1;$i<=$n;$i++){
 		//Rejected
-		$sql="SELECT count(*) FROM form_paths WHERE current_user_id={$_SESSION['user_id']} and form_type=$i and form_approval=-1";
+		$sql="SELECT count(*) FROM form_type".$i."_responses WHERE STATUS=0";
 		$stmt=$dbconfig->prepare($sql);
 		$stmt->execute();
 		$stmt=$stmt->get_result();
 		$result=$stmt->fetch_assoc();
 		$return['rejected']+=$result['count(*)'];
 		//Accepted
-		$sql="SELECT count(*) FROM form_paths WHERE current_user_id={$_SESSION['user_id']} and form_type=$i and form_approval=1";
+		$sql="SELECT form_details.form_id,MAX(path_level) FROM form_details,form_paths WHERE form_format=? and form_details.form_id=form_paths.form_id group by form_paths.form_id";
 		$stmt=$dbconfig->prepare($sql);
+		$stmt->bind_param("i",$i);
 		$stmt->execute();
 		$stmt=$stmt->get_result();
-		$result=$stmt->fetch_assoc();
-		$return['accepted']+=$result['count(*)'];
+		while($result=$stmt->fetch_assoc()){
+
+		$sql="SELECT count(*) FROM form_type".$i."_responses WHERE STATUS=? and form_id=?";
+		$stmt2=$dbconfig->prepare($sql);
+			$stmt2->bind_param("ii",$lev=$result['MAX(path_level)']+1,$result['form_id']);
+		$stmt2->execute();
+		$stmt2=$stmt2->get_result();
+		$result2=$stmt2->fetch_assoc();
+		$return['accepted']+=$result2['count(*)'];
+		}
 		//Pending
-		$sql="SELECT count(*) FROM form_paths WHERE current_user_id={$_SESSION['user_id']} and form_type=$i and form_approval=0";
-		$stmt=$dbconfig->prepare($sql);
-		$stmt->execute();
-		$stmt=$stmt->get_result();
-		$result=$stmt->fetch_assoc();
-		$return['pending']+=$result['count(*)'];
-		
+		$sql="SELECT count(*) FROM form_type".$i."_responses";
+		$stmt2=$dbconfig->prepare($sql);
+		$stmt2->execute();
+		$stmt2=$stmt2->get_result();
+		$result2=$stmt2->fetch_assoc();
+		$return['pending']+=$result2['count(*)']-$return['accepted']-$return['rejected'];
+
 	}
 	return $return;
 }
-	
+
 
 function show_departments(){
 	global $dbconfig;
@@ -293,7 +307,7 @@ function show_departments(){
     $result = $dbconfig->prepare($sql);
     $result->execute();
     $result=$result->get_result();
-	  while($result1 = $result->fetch_assoc()){ 
+	  while($result1 = $result->fetch_assoc()){
                 $return.='<tr>
                   <td>'.$result1['department_id'].'</td>
                   <td>'.$result1['department_abbreviation'].'</td>
@@ -302,7 +316,7 @@ function show_departments(){
                      <a href="" class="dept_show_edit_button" data-toggle="modal" data-target="#exampleModal" id="edit:'.$result1['department_id'].'">Edit</a> or <a href="" class="dept_show_delete_button" id="delete:'.$result1['department_name'].':'.$result1['department_id'].'" data-toggle="modal" data-target="#exampleModal">Delete</a>
                   </td>
                 </tr>';
-                 } 
+                 }
 	return $return;
 }
 function show_edit_dept($dept_id){
@@ -338,7 +352,7 @@ function show_edit_dept($dept_id){
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
           <button type="button" class="btn btn-primary dept_edit_button" id="editF:'.$result['department_id'].'">Save Department</button>
-      
+
 
         </div>';
 	return $return;
@@ -365,19 +379,19 @@ function add_dept($name,$abbr){
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          
-      
+
+
 
         </div>';
 				return $return;
 			}
-		
-		
-	
+
+
+
 }
 function edit_dept($name,$abbr,$id){
 	global $dbconfig;
-	
+
 		if(verify_login()!=1){
 			return verify_login();
 		}
@@ -386,9 +400,9 @@ function edit_dept($name,$abbr,$id){
 				$sql="UPDATE departments SET department_name=? , department_abbreviation=? WHERE department_id=? ";
     $result = $dbconfig->prepare($sql);
 	$result->bind_param("ssi",$name,$abbr,$id);
-			
+
     $result->execute();
-				
+
     $return='<div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Success</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -401,15 +415,15 @@ function edit_dept($name,$abbr,$id){
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          
-      
+
+
 
         </div>';
 				return $return;
 			}
-		
-		
-	
+
+
+
 
 }
 function verify_login(){
@@ -430,15 +444,15 @@ function verify_login(){
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          
-      
+
+
 
         </div>';}
 		else{
 		return 1;
 	}
 	}
-	
+
 }
 function delete_dept($name,$id){
 	global $dbconfig;
@@ -463,8 +477,8 @@ function delete_dept($name,$id){
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          
-      
+
+
 
         </div>';
 				return $return;
@@ -502,7 +516,7 @@ function show_forms(){
     $result = $dbconfig->prepare($sql);
     $result->execute();
     $result=$result->get_result();
-	 while($result1 = $result->fetch_assoc()){ 
+	 while($result1 = $result->fetch_assoc()){
                 $return.='<tr>
                   <td>'.
                     $result1['form_id'].'
@@ -511,7 +525,7 @@ function show_forms(){
                     $result1['form_title'].'
                   </td>
                   <td class="text-right">
-                    
+
                        <button type="button" class="btn btn-';
 		 if($result1['form_activation']==1)
 			 $return.='primary';
@@ -528,7 +542,7 @@ function show_forms(){
 		 else
 			 $return.='Deactivated';
 		 $return.='</button>
-                        
+
                   </td>
                   <td class="text-right">
                     <button type="button" class="btn btn-primary btn-sm form_show_edit_button" data-toggle="modal" id="edit:'.$result1['form_id'].'" data-target="#exampleModal">
@@ -536,7 +550,7 @@ function show_forms(){
                   </button>
                   </td>
                 </tr>';
-		 
+
                  }
 	return $return;
 }
@@ -558,7 +572,7 @@ function form_toggle($state,$id){
           </button>
         </div>
         <div class="modal-body">
-		
+
           <p>';
 		if($state==1)
 			$return.='Form has been ACTIVATED.';
@@ -569,8 +583,8 @@ function form_toggle($state,$id){
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          
-      
+
+
 
         </div>';
 				return $return;
@@ -587,7 +601,7 @@ function show_edit_form_control($id){
 	$sql->execute();
 	$result=$sql->get_result();
 	$result=$result->fetch_assoc();
-	
+
 	$return='<div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Edit Form</h5>
@@ -599,12 +613,12 @@ function show_edit_form_control($id){
 		 <div class="form-group">
               <label for="exampleInputEmail1">Form Title</label>
               <input type="text" class="form-control" id="form_update_title" aria-describedby="emailHelp" placeholder=""value="'.$result['form_title'].'">
-             
+
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Form Subtitle</label>
               <input type="text" size="1000" class="form-control" id="form_update_subtitle" placeholder="" value="'.htmlspecialchars($result['form_subtitle']).'">
-             
+
             </div>
 
                   <div class="control-group" id="fields">
@@ -718,14 +732,14 @@ function edit_form_control($id,$title,$subtitle,$guidelines,$intro,$docs){
           </button>
         </div>
         <div class="modal-body">
-		
+
           <p>Form Details Updated Successfully.</p>
 <span id="error_span"></span>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          
-      
+
+
 
         </div>';
 	}
@@ -737,7 +751,7 @@ function show_users(){
     $result = $dbconfig->prepare($sql);
     $result->execute();
     $result=$result->get_result();
-  while($result1 = $result->fetch_assoc()){ 
+  while($result1 = $result->fetch_assoc()){
                 $return.='<tr>
                   <td>'.
                     $result1['user_id'].'
@@ -771,7 +785,7 @@ function show_edit_user($id){
 		$result1=$result->fetch_assoc();
 		$return.='<div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Edit an Existing User</h5>
-          
+
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -781,27 +795,27 @@ function show_edit_user($id){
             <div class="form-group">
               <label for="exampleInputEmail1">Username :</label>
               <input type="text" class="form-control" id="add_user_username" value="'.$result1['user_username'].'" aria-describedby="emailHelp" placeholder="">
-              
+
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Name :</label>
               <input type="text" class="form-control" id="add_user_first_name" value="'.$result1['user_name'].'" placeholder="">
-              
+
              </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Email :</label>
               <input type="text" class="form-control" id="add_user_email" value="'.$result1['user_email'].'" placeholder="">
-              
+
             </div>
 			<div class="form-group">
               <label for="exampleInputPassword1">Department :</label>
               <input type="text" class="form-control" id="add_user_department" value="'.$result1['user_dept'].'" placeholder="">
-              
+
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Role :</label>
               <input type="text" class="form-control" id="add_user_role" value="'.$result1['user_role'].'" placeholder="">
-             
+
             </div>
 
 
@@ -811,7 +825,7 @@ function show_edit_user($id){
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
           <button type="button" class="btn btn-primary edit_user_button" id="editUser:'.$result1['user_id'].'">Update User</button>
-         
+
         </div>
       </div>';
 		return $return;
@@ -835,14 +849,14 @@ function add_user($username,$first,$email,$dept,$role){
           </button>
         </div>
         <div class="modal-body">
-		
+
           <p>User Added Successfully. <br><br> Please use the following details to Log-In. <br>Username: '.$username.'<br>Password: '.$pass['key'].'</p>
 <span id="error_span"></span>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          
-      
+
+
 
         </div>';
 }
@@ -864,14 +878,14 @@ function edit_user($id,$username,$first,$email,$dept,$role){
           </button>
         </div>
         <div class="modal-body">
-		
+
           <p>User Updated Successfully.</p>
 <span id="error_span"></span>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          
-      
+
+
 
         </div>';
 }
@@ -893,18 +907,18 @@ function delete_user($id){
           </button>
         </div>
         <div class="modal-body">
-		
+
           <p>User Deleted Successfully.</p>
 <span id="error_span"></span>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          
-      
+
+
 
         </div>';
 	}
-	
+
 }
 function random_password(){
 	$pass['key']=12345;
@@ -935,16 +949,16 @@ function verify_account($token,$hash)
 	{
 		if(md5($result['user_email'])==$token)
 		{
-			
-			return '<div id="signup">   
+
+			return '<div id="signup">
           <h1>Confirm Password</h1>
-          
+
           <form action="" method="post">
-          
+
           <div class="top-row">
-            
-        
-            
+
+
+
           </div>
 
           <div class="field-wrap">
@@ -953,16 +967,16 @@ function verify_account($token,$hash)
             </label>
             <input type="password"required autocomplete="off"/>
           </div>
-          
+
           <div class="field-wrap">
             <label>
              Confirm Password<span class="req">*</span>
             </label>
             <input type="password" name="password" required autocomplete="off"/>
           </div>
-          
+
           <button type="submit" class="button button-block"/>Confirm</button>
-          
+
           </form>';
 		}
 	}
@@ -976,7 +990,7 @@ function verify_account_password($token,$hash,$password)
 	{
 		if(md5($result['user_email'])==$token)
 		{
-			
+
 			$query=mysqli_query($dbconfig,"UPDATE user_accounts SET user_hash=
 			'' , user_verified=1 , user_password='".encrypt_password($password)."' WHERE user_id='{$result['user_id']}'");
 			return 1;
