@@ -214,7 +214,7 @@ function show_applications($form_id){
 	$n=1;
 	if($form_id==0){
 	for($i=1;$i<=$n;$i++){
-	
+
 		$sql="SELECT * FROM form_type".$i."_responses,form_paths where form_type".$i."_responses.response_id=form_paths.form_id and form_type=$i and current_user_id={$_SESSION['user_id']} and form_approval=0";
 
 
@@ -227,7 +227,7 @@ function show_applications($form_id){
                   <td>'.$result['name_of_student'].'</td>
                   <td>'.$result['roll_no'].'</td>
                   <td>'.$i.'</td>
-									<td> <button type="button" class="btn btn-primary btn-sm form_show_edit_button" data-toggle="modal" id="status:'.$result1['form_id'].'" data-target="#actions">
+									<td> <button type="button" class="btn btn-primary btn-sm form_show_edit_button" data-toggle="modal" id="'.$result['form_id'].':'.$result['response_id']'" data-target="#actions">
 									Options
 								</button></td>
                   <td class="text-right">
