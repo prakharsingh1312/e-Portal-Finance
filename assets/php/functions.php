@@ -178,6 +178,7 @@ function submit_form1($post,$files){
 	
         $stmt->execute();
         $stmt->close();
+	$sql=
 	$return= '<h2 class="center" style="text-align:center; padding-top:30px;">Form Submitted Successfully.</h2>
 				<div class="signup-content">
         <form method="POST" class="register-form" id="register-form" action=".">
@@ -259,35 +260,26 @@ function get_application_data(){
 	$n=1;
 	for($i=1;$i<=$n;$i++){
 		//Rejected
-		$sql="SELECT count(*) FROM form_type".$i."_responses WHERE STATUS=0";
+		$sql="SELECT count(*) FROM form_paths WHERE current_user_id={$_SESSION['user_id']} and form_type=$i and form_approval=-1";
 		$stmt=$dbconfig->prepare($sql);
 		$stmt->execute();
 		$stmt=$stmt->get_result();
 		$result=$stmt->fetch_assoc();
 		$return['rejected']+=$result['count(*)'];
 		//Accepted
-		$sql="SELECT form_details.form_id,MAX(path_level) FROM form_details,form_paths WHERE form_format=? and form_details.form_id=form_paths.form_id group by form_paths.form_id";
+		$sql="SELECT count(*) FROM form_paths WHERE current_user_id={$_SESSION['user_id']} and form_type=$i and form_approval=1";
 		$stmt=$dbconfig->prepare($sql);
-		$stmt->bind_param("i",$i);
 		$stmt->execute();
 		$stmt=$stmt->get_result();
-		while($result=$stmt->fetch_assoc()){
-		
-		$sql="SELECT count(*) FROM form_type".$i."_responses WHERE STATUS=? and form_id=?";
-		$stmt2=$dbconfig->prepare($sql);
-			$stmt2->bind_param("ii",$lev=$result['MAX(path_level)']+1,$result['form_id']);
-		$stmt2->execute();
-		$stmt2=$stmt2->get_result();
-		$result2=$stmt2->fetch_assoc();
-		$return['accepted']+=$result2['count(*)'];
-		}
+		$result=$stmt->fetch_assoc();
+		$return['accepted']+=$result['count(*)'];
 		//Pending
-		$sql="SELECT count(*) FROM form_type".$i."_responses";
-		$stmt2=$dbconfig->prepare($sql);
-		$stmt2->execute();
-		$stmt2=$stmt2->get_result();
-		$result2=$stmt2->fetch_assoc();
-		$return['pending']+=$result2['count(*)']-$return['accepted']-$return['rejected'];
+		$sql="SELECT count(*) FROM form_paths WHERE current_user_id={$_SESSION['user_id']} and form_type=$i and form_approval=0";
+		$stmt=$dbconfig->prepare($sql);
+		$stmt->execute();
+		$stmt=$stmt->get_result();
+		$result=$stmt->fetch_assoc();
+		$return['pending']+=$result['count(*)'];
 		
 	}
 	return $return;
