@@ -227,7 +227,7 @@ function show_applications($form_id){
                   <td>'.$result['name_of_student'].'</td>
                   <td>'.$result['roll_no'].'</td>
                   <td>'.$i.'</td>
-									<td> <button type="button" class="btn btn-primary btn-sm form_show_edit_button" data-toggle="modal" id="'.$result['form_id'].':'.$result['response_id']'" data-target="#actions">
+									<td> <button type="button" class="btn btn-primary btn-sm form_show_edit_button" data-toggle="modal" id="'.$result['form_id'].':'.$result['response_id'].'" data-target="#actions">
 									Options
 								</button></td>
                   <td class="text-right">
