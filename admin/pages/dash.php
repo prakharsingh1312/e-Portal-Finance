@@ -1,7 +1,7 @@
 <?php
 include('../../assets/php/functions.php');
 if(isset($_GET['application_filter'])){
-	
+
 }
 else{
 	$result=get_application_data();
@@ -184,13 +184,16 @@ else{
                 <th>
                   Form Category
                 </th>
+								<th>
+                  Actions
+                </th>
                 <th class="text-right">
                   Options
                 </th>
               </thead>
               <tbody id="forms_table">
                 '. show_applications(0).'
-                
+
               </tbody>
             </table>
           </div>
@@ -474,7 +477,7 @@ else{
 		  	<div class="form-row">
 				<p style="margin:auto; margin-left:2%; margin-right:2%;">Financial approval: </p>
             	<div class="button-group float-right">
-				
+
 					<button type="button" class="btn btn-sm btn-success ">Accept</button>
 					<button type="button" class="btn btn-sm btn-danger ">Reject</button>
 				</div>
@@ -492,14 +495,14 @@ else{
 				<label class="custom-file-label" for="customFile">Choose file</label>
 			 </div>
 
-				
+
             </div>
 			<div class="form-row">
-			
+
 				<p style="margin:auto; margin-left:2%; margin-right:2%;"> Admin approval : </p>
-				
+
             	<div class="button-group float-right ">
-				
+
 					<button type="button" class="btn btn-sm btn-success ">Accept</button>
 					<button type="button" class="btn btn-sm btn-danger ">Reject</button>
 				</div>
@@ -516,15 +519,15 @@ else{
 				<input type="file" class="custom-file-input" id="customFile">
 				<label class="custom-file-label" for="customFile">Choose file</label>
 			 </div>
-			 
 
-				
+
+
             </div>
 			<div class="form-row">
 				<p style="margin:auto; margin-left:2%; margin-right:2%;"> Admin-Financial approval
 				: </p>
             	<div class="button-group float-right">
-				
+
 					<button type="button" class="btn btn-sm btn-success ">Accept</button>
 					<button type="button" class="btn btn-sm btn-danger ">Reject</button>
 				</div>
@@ -542,11 +545,11 @@ else{
 				<label class="custom-file-label" for="customFile">Choose file</label>
 			 </div>
 
-				
+
             </div>
           </form>
-		
-	
+
+
 
         </div>
         <div class="modal-footer">
@@ -558,16 +561,33 @@ else{
       </div>
     </div>
   </div>
-  
-  
-  
-  
+
+
+
+
   <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content" id="modal-content">
         <br><br><br><br><br><br><br><br><br><br><br><br>
       </div>
     </div>
-  </div>';
+  </div>
+
+
+
+	<!-- Modal -->
+	  <div class="modal fade" id="actions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	    <div class="modal-dialog" role="document">
+
+
+	        <div class="modal-body">
+
+
+
+	      <div class="modal-content" id="modal-content">
+	    </div>
+	  </div>
+	</div>
+';
 }
 ?>
