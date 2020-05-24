@@ -597,7 +597,7 @@ else{
 						Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
 					</div>
 				</div>
-				<div class="panel">
+				<div class="panel" id = "accordion">
 			<p>
 				<a class="btn btn-success"  style="width:49%" data-toggle="collapse" href="#accept" aria-expanded="false" aria-controls="collapseExample">
 				Accept
