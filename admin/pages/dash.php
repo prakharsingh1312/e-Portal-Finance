@@ -587,7 +587,7 @@ else{
 	      </div>
 	      <div class="modal-body">
 				<p>
-				<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+				<a class="btn btn-primary" style="width:100%" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 				Form timeline
 				</a>
 
@@ -598,10 +598,10 @@ else{
 					</div>
 				</div>
 			<p>
-				<a class="btn btn-success" data-toggle="collapse" href="#accept" aria-expanded="false" aria-controls="collapseExample">
+				<a class="btn btn-success"  style="width:50%" data-toggle="collapse" href="#accept" aria-expanded="false" aria-controls="collapseExample">
 				Accept
 				</a>
-				<a class="btn btn-danger" data-toggle="collapse" href="#reject" aria-expanded="false" aria-controls="collapseExample">
+				<a class="btn btn-danger" style="width:50%" data-toggle="collapse" href="#reject" aria-expanded="false" aria-controls="collapseExample">
 				Reject
 				</a>
 				</p>
@@ -636,7 +636,7 @@ else{
 					  <button type="submit" class="btn btn-danger">Reject</button>
 					</form>
 					</div>
-				
+
 				</div>
 	      </div>
 	      <div class="modal-footer">
