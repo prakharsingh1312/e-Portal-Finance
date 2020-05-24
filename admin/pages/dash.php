@@ -606,7 +606,7 @@ else{
 				Reject
 				</a>
 				</p>
-				<div class="collapse" id="accept">
+				<div class="collapse" id="accept" data-parent="#accordion">
 					<div class="card card-body">
 					<form>
 					  <div class="form-group">
@@ -624,7 +624,7 @@ else{
 				</div>
 
 
-				<div class="collapse" id="reject">
+				<div class="collapse" id="reject" data-parent="#accordion">
 					<div class="card card-body">
 
 					<form>
