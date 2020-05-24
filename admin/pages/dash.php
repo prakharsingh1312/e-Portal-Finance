@@ -618,6 +618,7 @@ else{
 					</form>
 
 
+					</div>
 				</div>
 				<a class="btn btn-danger" data-toggle="collapse" href="#reject" aria-expanded="false" aria-controls="collapseExample">
 				Reject
@@ -635,7 +636,6 @@ else{
 					  <button type="submit" class="btn btn-danger">Reject</button>
 					</form>
 
-</div>
 				</div>
 				</div>
 	      </div>
