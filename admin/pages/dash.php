@@ -580,13 +580,64 @@ else{
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+	        <h5 class="modal-title" id="exampleModalLabel">Actions On This Form</h5>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	        ...
+				<p>
+				<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+				Form timeline
+				</a>
+
+				</p>
+				<div class="collapse" id="collapseExample">
+					<div class="card card-body">
+						Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+					</div>
+				</div>
+				<div class="row">
+				<a class="btn btn-success" data-toggle="collapse" href="#accept" aria-expanded="false" aria-controls="collapseExample">
+				Accept
+				</a>
+				<div class="collapse" id="accept">
+					<div class="card card-body">
+
+					<form>
+					  <div class="form-group">
+					    <label for="comments">Comments if any.</label>
+					    <input type="text" class="form-control" id="comments" placeholder="Type your text here...">
+					    <small id="emailHelp" class="form-text text-muted">Any other info if required</small>
+					  </div>
+					  <div class="form-group">
+					    <label for="exampleInputPassword1">Forward it to :</label>
+					    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="User ID">
+					  </div>
+					  <button type="submit" class="btn btn-success">Approve</button>
+					</form>
+
+
+				</div>
+				<a class="btn btn-danger" data-toggle="collapse" href="#reject" aria-expanded="false" aria-controls="collapseExample">
+				Reject
+				</a>
+				<div class="collapse" id="reject">
+					<div class="card card-body">
+
+					<form>
+					  <div class="form-group">
+					    <label for="comments">Comments if any.</label>
+					    <input type="text" class="form-control" id="comments" placeholder="Type your text here...">
+					    <small id="emailHelp" class="form-text text-muted">Any other info if required</small>
+					  </div>
+
+					  <button type="submit" class="btn btn-danger">Reject</button>
+					</form>
+
+
+				</div>
+				</div>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
