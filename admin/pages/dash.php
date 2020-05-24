@@ -602,7 +602,7 @@ else{
 				<a class="btn btn-success" data-toggle="collapse" href="#accept" aria-expanded="false" aria-controls="collapseExample">
 				Accept
 				</a>
-				</p>
+			
 				<div class="collapse" id="accept">
 					<div class="card card-body">
 					<form>
@@ -619,7 +619,7 @@ else{
 					</form>
 					</div>
 				</div>
-				<p>
+
 				<a class="btn btn-danger" data-toggle="collapse" href="#reject" aria-expanded="false" aria-controls="collapseExample">
 				Reject
 				</a>
