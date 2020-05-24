@@ -111,6 +111,13 @@ function showUserP(){
 		$('#wrapper').loadingView({'state':false});
 	});
 }
+function showUserPStu(){
+	$.get('./pages/user_profile.php',function(data){
+		$('#wrapper').html(data);
+		linkChange('#user_profile');
+		$('#wrapper').loadingView({'state':false});
+	});
+}
 function bs_input_file() {
 	$(".input-file").before(
 		function() {
@@ -345,7 +352,7 @@ function hash()
 			else if(hash == 'userP')
 				showUserPStu();
 			else if(hash == 'submit')
-				showUserPStu();
+				showformlist();
 			
 		}
 }
