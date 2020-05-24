@@ -37,7 +37,7 @@ function showStudent(){
 
 function showformlist(){
 	$('#content').loadingView({'state':true});
-	$.get('forms.php?list',function(data){
+	$.get('../forms.php?list',function(data){
 
 		$('#content').html(data);
 		$('#content').loadingView({'state':false});
