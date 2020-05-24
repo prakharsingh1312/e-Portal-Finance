@@ -597,10 +597,12 @@ else{
 						Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
 					</div>
 				</div>
-				<div class="row">
-				<p>
+			<p>
 				<a class="btn btn-success" data-toggle="collapse" href="#accept" aria-expanded="false" aria-controls="collapseExample">
 				Accept
+				</a>
+				<a class="btn btn-danger" data-toggle="collapse" href="#reject" aria-expanded="false" aria-controls="collapseExample">
+				Reject
 				</a>
 				</p>
 				<div class="collapse" id="accept">
@@ -619,11 +621,8 @@ else{
 					</form>
 					</div>
 				</div>
-				<p>
-				<a class="btn btn-danger" data-toggle="collapse" href="#reject" aria-expanded="false" aria-controls="collapseExample">
-				Reject
-				</a>
-				</p>
+
+
 				<div class="collapse" id="reject">
 					<div class="card card-body">
 
@@ -636,21 +635,8 @@ else{
 
 					  <button type="submit" class="btn btn-danger">Reject</button>
 					</form>
-</div>
-<p>
-  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Link with href
-  </a>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Button with data-target
-  </button>
-</p>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-  </div>
-</div>
 					</div>
+				
 				</div>
 	      </div>
 	      <div class="modal-footer">
