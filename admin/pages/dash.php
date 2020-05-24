@@ -597,12 +597,12 @@ else{
 						Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
 					</div>
 				</div>
-
+				<div class="row">
 				<p>
 				<a class="btn btn-success" data-toggle="collapse" href="#accept" aria-expanded="false" aria-controls="collapseExample">
 				Accept
 				</a>
-			
+				</p>
 				<div class="collapse" id="accept">
 					<div class="card card-body">
 					<form>
@@ -619,7 +619,7 @@ else{
 					</form>
 					</div>
 				</div>
-
+				<p>
 				<a class="btn btn-danger" data-toggle="collapse" href="#reject" aria-expanded="false" aria-controls="collapseExample">
 				Reject
 				</a>
@@ -636,7 +636,7 @@ else{
 
 					  <button type="submit" class="btn btn-danger">Reject</button>
 					</form>
-
+</div>
 					</div>
 				</div>
 	      </div>
