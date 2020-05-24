@@ -1,7 +1,3 @@
-
-
-
-
 //Loading view
 var global_cookie_prefix = 'NIT';
 //pageload functions
@@ -40,11 +36,11 @@ function showStudent(){
 	}
 
 function showformlist(){
-	$('.wrapper').loadingView({'state':true});
+	$('#content').loadingView({'state':true});
 	$.get('forms.php?list',function(data){
 
-		$('.wrapper').html(data);
-		$('.wrapper').loadingView({'state':false});
+		$('#content').html(data);
+		$('#content').loadingView({'state':false});
 	});
 }
 function showtrack(){
@@ -57,6 +53,15 @@ function showtrack(){
 	});
 }
 function showDash(){
+	$('#wrapper').loadingView({'state':true});
+	$.get('./pages/dash.php',function(data){
+
+		$('#wrapper').html(data);
+		linkChange('#users_dash');
+		$('#wrapper').loadingView({'state':false});
+	});
+}
+function showDashStu(){
 	$('#wrapper').loadingView({'state':true});
 	$.get('./pages/dash.php',function(data){
 
@@ -332,6 +337,16 @@ function hash()
 				showUsers();
 			else if(hash == 'userP')
 				showUserP();
+		}
+	else if(window.location.href.indexOf('/user')>0)
+		{
+			if(hash == '')
+				showDashStu();
+			else if(hash == 'userP')
+				showUserPStu();
+			else if(hash == 'submit')
+				showUserPStu();
+			
 		}
 }
 
