@@ -602,7 +602,7 @@ else{
 				<a class="btn btn-success"  style="width:49%" data-toggle="collapse" href="#accept" aria-expanded="false" aria-controls="collapseExample" onclick="$(\'#reject\').collapse(\'hide\')">
 				Accept
 				</a>
-				<a class="btn btn-danger" style="width:49%" data-toggle="collapse" href="#reject" aria-expanded="false" aria-controls="collapseExample onclick="$(\'#accept\').collapse(\'hide\')">
+				<a class="btn btn-danger" style="width:49%" data-toggle="collapse" href="#reject" aria-expanded="false" aria-controls="collapseExample" onclick="$(\'#accept\').collapse(\'hide\')">
 				Reject
 				</a>
 				</p>
