@@ -62,12 +62,12 @@ function showDash(){
 	});
 }
 function showDashStu(){
-	$('#wrapper').loadingView({'state':true});
+	$('#content').loadingView({'state':true});
 	$.get('./pages/dash.php',function(data){
 
-		$('#wrapper').html(data);
+		$('#content').html(data);
 		linkChange('#users_dash');
-		$('#wrapper').loadingView({'state':false});
+		$('#content').loadingView({'state':false});
 	});
 }
 function showDept(){
