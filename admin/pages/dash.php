@@ -597,13 +597,14 @@ else{
 						Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
 					</div>
 				</div>
-				<div class="row">
+
+				<p>
 				<a class="btn btn-success" data-toggle="collapse" href="#accept" aria-expanded="false" aria-controls="collapseExample">
 				Accept
 				</a>
+				</p>
 				<div class="collapse" id="accept">
 					<div class="card card-body">
-
 					<form>
 					  <div class="form-group">
 					    <label for="comments">Comments if any.</label>
@@ -616,13 +617,13 @@ else{
 					  </div>
 					  <button type="submit" class="btn btn-success">Approve</button>
 					</form>
-
-
 					</div>
 				</div>
+				<p>
 				<a class="btn btn-danger" data-toggle="collapse" href="#reject" aria-expanded="false" aria-controls="collapseExample">
 				Reject
 				</a>
+				</p>
 				<div class="collapse" id="reject">
 					<div class="card card-body">
 
@@ -636,12 +637,11 @@ else{
 					  <button type="submit" class="btn btn-danger">Reject</button>
 					</form>
 
-				</div>
+					</div>
 				</div>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Save changes</button>
 	      </div>
 	    </div>
 	  </div>
