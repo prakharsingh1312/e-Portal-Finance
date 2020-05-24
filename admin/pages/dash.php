@@ -635,7 +635,7 @@ else{
 					  <button type="submit" class="btn btn-danger">Reject</button>
 					</form>
 
-
+</div>
 				</div>
 				</div>
 	      </div>
