@@ -598,10 +598,10 @@ else{
 					</div>
 				</div>
 			<p>
-				<a class="btn btn-success"  style="width:30%" data-toggle="collapse" href="#accept" aria-expanded="false" aria-controls="collapseExample">
+				<a class="btn btn-success"  style="width:49%" data-toggle="collapse" href="#accept" aria-expanded="false" aria-controls="collapseExample">
 				Accept
 				</a>
-				<a class="btn btn-danger" style="width:30%" data-toggle="collapse" href="#reject" aria-expanded="false" aria-controls="collapseExample">
+				<a class="btn btn-danger" style="width:49%" data-toggle="collapse" href="#reject" aria-expanded="false" aria-controls="collapseExample">
 				Reject
 				</a>
 				</p>
