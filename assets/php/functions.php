@@ -193,10 +193,16 @@ function get_forms_temp(){
     $result->execute();
     $result=$result->get_result();
 		//$curdepart = 'none';
+		$count = 0;
 	while($form=$result->fetch_assoc()){
 		// if($curdepart!=$form['form_department'] || $curdepart!='none'){
 		//
 		// }
+		$count++;
+		if($count ==4){
+			$count=1;
+			$return.='<div class="carousel-item active">';
+		}
 		$return.= '
 		<div class="col-md-4" style="float:left">
 		 <div class="card mb-2">
@@ -212,8 +218,15 @@ function get_forms_temp(){
 			</div>
 		</div>
                 ';
+	f($count ==3){
+
+		$return.='</div>';
+	}
+
+
 
 	}
+
 	$return.='
 
 	    <!--First slide-->
