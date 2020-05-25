@@ -145,6 +145,16 @@ function get_forms(){
     </div>';
 	return $return;
 }
+function past_applictaions(){
+		global $dbconfig;
+		$return='
+			<div class="container">
+				<div class="content brand">
+	    		<h1 class="text-center">Forms Available</h1>';
+		$return.='
+				</div>
+			</div>';
+}
 function get_forms_temp(){
 	$return='
 <div class="container">
@@ -1130,7 +1140,7 @@ function find_user($part_user){
 	$sql="SELECT * FROM user_accounts where user_username like '$like' and user_id!=? order by user_name";
 	$result=$dbconfig->prepare($sql);
 	$user=$_SESSION['user_id'];
-	
+
 	$result->bind_param("i",$user);
 	$result->execute();
 	$result=$result->get_result();
