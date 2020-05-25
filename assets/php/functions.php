@@ -209,7 +209,7 @@ function get_forms_temp(){
 				<img class="card-img-top"  src="'.$form['form_image'].'" alt="Card image cap">
 				<div class="card-body">
 					<h4 class="card-title">'.$form['form_title'].'</h4>
-					<p class="card-text">' $count'</p>
+					<p class="card-text">'.$count.'</p>
 					<form method="POST" class = " d-flex justify-content-center" action="../forms/form'.$form['form_format'].'.php">
 				<input type="hidden" value="'.$form['form_id'].'" name="form_id">
 
