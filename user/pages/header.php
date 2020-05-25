@@ -24,13 +24,13 @@
           </li> -->
           <li class="nav-item ">
             <a class="nav-link" href="#submit" >
-              <i class="far fa-plus-square"></i>
+              <i class="material-icons">create</i>
               <p>Submit a Form</p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="#previous"  >
-              <i class="fas fa-question-circle"></i>
+              <i class="material-icons">dynamic_feed</i>
               <p>Status of Applications</p>
             </a>
           </li>
@@ -102,10 +102,6 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="javascript:void(0)">Mike John responded to your email</a>
-                  <a class="dropdown-item" href="javascript:void(0)">You have 5 new tasks</a>
-                  <a class="dropdown-item" href="javascript:void(0)">You're now friend with Andrew</a>
-                  <a class="dropdown-item" href="javascript:void(0)">Another Notification</a>
                   <a class="dropdown-item" href="javascript:void(0)">Another One</a>
                 </div>
               </li>
@@ -128,9 +124,9 @@
       <footer class="footer">
         <div class="container-fluid">
           <nav class="float-left">
-            <
+
           </nav>
-          
+
         </div>
       </footer>
       <script>
