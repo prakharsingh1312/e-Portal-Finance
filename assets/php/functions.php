@@ -1151,7 +1151,7 @@ function find_user($part_user){
 	$result=$result->get_result();
 	$return='';
 	while($result1=$result->fetch_assoc()){
-		$return.='<a class="dropdown-item user_select_dropdown" id="user:'.$result1['user_username'].':'.$result['user_name'].'">'.$result1["user_username"].' ('.$result1["user_name"].')</a>';
+		$return.='<a class="dropdown-item user_select_dropdown" id="user:'.$result1['user_username'].':'.$result1['user_name'].'">'.$result1["user_username"].' ('.$result1["user_name"].')</a>';
 
 	}
 	return $return;
