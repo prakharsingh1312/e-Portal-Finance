@@ -145,8 +145,10 @@ function get_forms(){
     </div>';
 	return $return;
 }
+
+
 function past_applications(){
-		global $dbconfig;
+	
 		$return='
 			<div class="container">
 				<div class="content brand">
@@ -154,7 +156,6 @@ function past_applications(){
 				</div>
 			</div>';
 }
-
 
 
 
