@@ -145,7 +145,6 @@ function get_forms(){
     </div>';
 	return $return;
 }
-<<<<<<< HEAD
 function past_applictaions(){
 		global $dbconfig;
 		$return='
@@ -156,11 +155,9 @@ function past_applictaions(){
 				</div>
 			</div>';
 }
-function get_forms_temp(){
-=======
+
 
 function get_forms_temp($dept_id){
->>>>>>> 307d13c97bd28eb1a389d3c7ca8fe0b56f23313b
 	$return='
 <div class="container">
 		<div class="content brand">
