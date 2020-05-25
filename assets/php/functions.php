@@ -175,6 +175,7 @@ function get_forms_temp(){
 			$countit=ceil($countit/3);
 			while($countit!=1){
 				$return.='<li data-target="#multi-item-example" data-slide-to="1"></li>';
+				$countit--;
 			}
 
 			$return.='
