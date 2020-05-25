@@ -1117,7 +1117,7 @@ function form_timeline($form_id,$form_type){
 		if($result1["form_approval"]==0)
 		$return.="Currently with: ".$result1['user_name']." since ".$result1['form_path_timestamp'];
 		
-	}while($result1->fetch_assoc());
+	}while($result1=$result->fetch_assoc());
 	return $return;
 }
 function find_user($part_user){
