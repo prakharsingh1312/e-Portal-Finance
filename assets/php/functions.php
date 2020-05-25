@@ -227,7 +227,7 @@ function show_applications($form_id){
                   <td>'.$result['name_of_student'].'</td>
                   <td>'.$result['roll_no'].'</td>
                   <td>'.$i.'</td>
-									<td> <button type="button" class="btn btn-primary btn-sm form_show_edit_button" data-toggle="modal" data-target="#actions">
+									<td> <button type="button" class="btn btn-primary btn-sm application_show_options_button" id="'.$result['$i'].':'.$result['$form_id'].'" data-toggle="modal" data-target="#actions">
 									Options
 								</button></td>
                   <td class="text-right">
@@ -988,5 +988,34 @@ function verify_account_password($token,$hash,$password)
 		}
 	}
 	return 0;
+}
+function form_timeline($form_id,$form_type){
+	global $dbconfig;
+	$sql="SELECT * from form_type{$form_type_}_responses,form_paths,user_accounts where $response_id=form_paths.form_id and form_paths.form_type=? and current_user_id=user_accounts.user_id order by form_path_timestamp";
+	$result=$dbconfig->prepare($sql);
+	$result->bind_param("i",$form_type);
+	$result->execute();
+	$result=$result->get_result();
+	$result1=$result->fetch_assoc();
+	$return="Submitted On: ".$result['time_of_submission'].".<br>";
+	do{
+		if($result["form_approval"]==1)
+		$return.="Approved by: ".$result['user_name']." on ".$result['form_path_timestamp'];
+		if($result["form_approval"]==0)
+		$return.="Currently with: ".$result['user_name']." since ".$result['form_path_timestamp'];
+		
+	}while($result->fetch_assoc());
+	return $return;
+}
+function find_user($part_user){
+	global $dbconfig;
+	$sql="SELECT * FROM user_accounts where user_name like ? and user_id!=? order by user_name";
+	$result=$dbconfig->prepare($sql);
+	$result->bind_param("si","%".$part_user."%",$_SESSION['user_id']);
+	$result->execute();
+	$result=$result->get_result();
+	while($result1=$result->fetch_assoc()){
+		
+	}
 }
 ?>

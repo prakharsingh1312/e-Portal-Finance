@@ -3,6 +3,15 @@ include('../../assets/php/functions.php');
 if(isset($_GET['application_filter'])){
 
 }
+elseif(isset($_GET['find_user'])){
+	$part_user=mysqli_real_escape_string($dbconfig,$_POST['part_user']);
+	echo find_user($part_user);
+}
+elseif(isset($_GET['form_timeline'])){
+	$form_id=mysqli_real_escape_string($dbconfig,$_POST['form_id']);
+	$form_type=mysqli_real_escape_string($dbconfig,$_POST['form_type']);
+	echo form_timeline($form_id,$form_type);
+}
 else{
 	$result=get_application_data();
 	echo '
@@ -593,7 +602,7 @@ else{
 
 				</p>
 				<div class="collapse" id="collapseExample">
-					<div class="card card-body">
+					<div class="card card-body" id="form_timeline">
 						Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
 					</div>
 				</div>
