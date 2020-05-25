@@ -755,6 +755,7 @@ function acceptApplication(formType,formID){
 		if(data==1){
 		$('#modal_content').loadingView({'state':false});
 			$('.modal').modal('hide');
+			$('.modal-backdrop').removeAttr('class','show');
 			showDash();
 			alert("Form has been accepted.");
 			
@@ -768,6 +769,7 @@ function acceptApplication(formType,formID){
 		if(data==1){
 		$('#modal_content').loadingView({'state':false});
 			$('.modal').modal('hide');
+			$('.modal-backdrop').removeAttr('class','show');
 			showDash();
 			alert("Form has been rejected.");
 			
