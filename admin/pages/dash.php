@@ -621,10 +621,10 @@ else{
 				</div>
 				<div class="panel" id = "accordion">
 			<p>
-				<a class="btn btn-success application_accept_button"  style="width:49%" data-toggle="collapse" href="#accept" aria-expanded="false" aria-controls="collapseExample" onclick="$(\'#reject\').collapse(\'hide\')">
+				<a class="btn btn-success "  style="width:49%" data-toggle="collapse" href="#accept" aria-expanded="false" aria-controls="collapseExample" onclick="$(\'#reject\').collapse(\'hide\')">
 				Accept
 				</a>
-				<a class="btn btn-danger application_reject_button" style="width:49%" data-toggle="collapse" href="#reject" aria-expanded="false" aria-controls="collapseExample" onclick="$(\'#accept\').collapse(\'hide\')">
+				<a class="btn btn-danger " style="width:49%" data-toggle="collapse" href="#reject" aria-expanded="false" aria-controls="collapseExample" onclick="$(\'#accept\').collapse(\'hide\')">
 				Reject
 				</a>
 				</p>
@@ -643,7 +643,7 @@ else{
     
   </div>
 </div>
-					  <button type="submit" class="btn btn-success">Approve</button>
+					  <button type="submit" class="btn btn-success application_accept_button">Approve</button>
 					</form>
 					</div>
 				</div>
@@ -660,7 +660,7 @@ else{
 					    <small id="emailHelp" class="form-text text-muted">Any other info if required</small>
 					  </div>
 
-					  <button type="submit" class="btn btn-danger">Reject</button>
+					  <button type="submit" class="btn btn-danger application_reject_button">Reject</button>
 					</form>
 					</div>
 </div>
