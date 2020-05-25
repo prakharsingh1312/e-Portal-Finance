@@ -111,30 +111,7 @@ function get_forms(){
 <div class="container">
 		<div class="content brand">
     <h1 class="text-center">Forms Available</h1>
-    <div class="row">
-		<div id="carousel-example-multi" class="carousel slide carousel-multi-item v-2" data-ride="carousel">
-
-	   <!--Controls-->
-	   <div class="controls-top">
-	     <a class="btn-floating" href="#carousel-example-multi" data-slide="prev"><i
-	         class="fas fa-chevron-left"></i></a>
-	     <a class="btn-floating" href="#carousel-example-multi" data-slide="next"><i
-	         class="fas fa-chevron-right"></i></a>
-	   </div>
-	   <!--/.Controls-->
-
-	   <!-- Indicators -->
-	   <ol class="carousel-indicators">
-	     <li data-target="#carousel-example-multi" data-slide-to="0" class="active"></li>
-	     <li data-target="#carousel-example-multi" data-slide-to="1"></li>
-	     <li data-target="#carousel-example-multi" data-slide-to="2"></li>
-	     <li data-target="#carousel-example-multi" data-slide-to="3"></li>
-	     <li data-target="#carousel-example-multi" data-slide-to="4"></li>
-	     <li data-target="#carousel-example-multi" data-slide-to="5"></li>
-	   </ol>
-	   <!--/.Indicators-->
-
-	   <div class="carousel-inner v-2" role="listbox">';
+    <div class="row">';
 	global $dbconfig;
 	$sql="SELECT * FROM form_details WHERE form_activation=1";
     $result = $dbconfig->prepare($sql);
@@ -146,25 +123,194 @@ function get_forms(){
 		//
 		// }
 		$return.= '
-		<div class="card mb-2">
-		<div class="card card-login card-plain" style="margin-left:6em;">
-			<div class="card" style="width: 18rem; background-color:#22529;">
-				<img src="'.$form['form_image'].'" class="card-img-top" alt="form-1" style="display:inline-block;">
-				<div class="card-body">
-					<h5 class="card-title  d-flex justify-content-center" style="textcolor:black;">'.$form['form_title'].'</h5>
-					<p class="card-text text-center">'.$form['form_subtitle'].'</p>
-					<form method="POST" class = " d-flex justify-content-center" action="../forms/form'.$form['form_format'].'.php">
-				<input type="hidden" value="'.$form['form_id'].'" name="form_id">
+                <div class="col-md-6">
+	          <div class="card card-login card-plain" style="margin-left:6em;">
+							<div class="card" style="width: 18rem; background-color:#22529;">
+	  						<img src="'.$form['form_image'].'" class="card-img-top" alt="form-1" style="display:inline-block;">
+	  						<div class="card-body">
+	    						<h5 class="card-title  d-flex justify-content-center" style="textcolor:black;">'.$form['form_title'].'</h5>
+	    						<p class="card-text text-center">'.$form['form_subtitle'].'</p>
+	    						<form method="POST" class = " d-flex justify-content-center" action="../forms/form'.$form['form_format'].'.php">
+								<input type="hidden" value="'.$form['form_id'].'" name="form_id">
 
-				<input type="submit" class="btn btn-primary" value="Fill Up the Form"></form>
-				</div>
-			</div>
-		</div>
-		</div>';
+								<input type="submit" class="btn btn-primary" value="Fill Up the Form"></form>
+	  						</div>
+							</div>
+            </div>
+          </div>';
 
 	}
+	$return.='</div>
+      </div>
+    </div>';
+	return $return;
+}
+function get_forms_temp(){
+	$return='
+<div class="container">
+		<div class="content brand">
+    <h1 class="text-center">Forms Available</h1>
+		<!--Carousel Wrapper-->
+		<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+		  <!--Controls-->
+		  <div class="controls-top">
+		    <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+		    <a class="btn-floating" href="#multi-item-example" data-slide="next"><i
+		        class="fas fa-chevron-right"></i></a>
+		  </div>
+		  <!--/.Controls-->
+
+		  <!--Indicators-->
+		  <ol class="carousel-indicators">
+		    <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+		    <li data-target="#multi-item-example" data-slide-to="1"></li>
+
+		  </ol>
+		  <!--/.Indicators-->
+
+		  <!--Slides-->
+		  <div class="carousel-inner" role="listbox">
+    ';
+	global $dbconfig;
+	$sql="SELECT * FROM form_details WHERE form_activation=1";
+    $result = $dbconfig->prepare($sql);
+    $result->execute();
+    $result=$result->get_result();
+		//$curdepart = 'none';
+	// while($form=$result->fetch_assoc()){
+	// 	// if($curdepart!=$form['form_department'] || $curdepart!='none'){
+	// 	//
+	// 	// }
+	// 	$return.= '
+  //               ';
+	//
+	// }
 	$return.='
-				</div></div></div>
+
+	    <!--First slide-->
+	    <div class="carousel-item active">
+
+	      <div class="col-md-3" style="float:left">
+	       <div class="card mb-2">
+	          <img class="card-img-top"
+	            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
+	          <div class="card-body">
+	            <h4 class="card-title">Card title</h4>
+	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+	              card's content.</p>
+	            <a class="btn btn-primary">Button</a>
+	          </div>
+	        </div>
+	      </div>
+
+	      <div class="col-md-3" style="float:left">
+	        <div class="card mb-2">
+	          <img class="card-img-top"
+	            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
+	          <div class="card-body">
+	            <h4 class="card-title">Card title</h4>
+	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+	              card's content.</p>
+	            <a class="btn btn-primary">Button</a>
+	          </div>
+	        </div>
+	      </div>
+
+	      <div class="col-md-3" style="float:left">
+	        <div class="card mb-2">
+	          <img class="card-img-top"
+	            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
+	          <div class="card-body">
+	            <h4 class="card-title">Card title</h4>
+	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+	              card's content.</p>
+	            <a class="btn btn-primary">Button</a>
+	          </div>
+	        </div>
+	      </div>
+
+	       <div class="col-md-3" style="float:left">
+	       <div class="card mb-2">
+	          <img class="card-img-top"
+	            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
+	          <div class="card-body">
+	            <h4 class="card-title">Card title</h4>
+	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+	              card's content.</p>
+	            <a class="btn btn-primary">Button</a>
+	          </div>
+	        </div>
+	      </div>
+
+	    </div>
+	    <!--/.First slide-->
+
+	    <!--Second slide-->
+	    <div class="carousel-item">
+
+	      <div class="col-md-3" style="float:left">
+	        <div class="card mb-2">
+	          <img class="card-img-top"
+	            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
+	          <div class="card-body">
+	            <h4 class="card-title">Card title</h4>
+	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+	              card's content.</p>
+	            <a class="btn btn-primary">Button</a>
+	          </div>
+	        </div>
+	      </div>
+
+	      <div class="col-md-3" style="float:left">
+	        <div class="card mb-2">
+	          <img class="card-img-top"
+	            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+	          <div class="card-body">
+	            <h4 class="card-title">Card title</h4>
+	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+	              card's content.</p>
+	            <a class="btn btn-primary">Button</a>
+	          </div>
+	        </div>
+	      </div>
+
+	      <div class="col-md-3" style="float:left">
+	        <div class="card mb-2">
+	          <img class="card-img-top"
+	            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
+	          <div class="card-body">
+	            <h4 class="card-title">Card title</h4>
+	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+	              card's content.</p>
+	            <a class="btn btn-primary">Button</a>
+	          </div>
+	        </div>
+	      </div>
+
+	      <div class="col-md-3" style="float:left">
+	        <div class="card mb-2">
+	          <img class="card-img-top"
+	            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+	          <div class="card-body">
+	            <h4 class="card-title">Card title</h4>
+	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+	              card's content.</p>
+	            <a class="btn btn-primary">Button</a>
+	          </div>
+	        </div>
+	      </div>
+
+	    </div>
+	    <!--/.Second slide-->
+
+
+
+</div>
+	  <!--/.Slides-->
+
+				</div>
+	<!--/.Carousel Wrapper-->
       </div>
     </div>';
 	return $return;
