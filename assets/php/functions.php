@@ -1104,7 +1104,7 @@ function verify_account_password($token,$hash,$password)
 }
 function form_timeline($form_id,$form_type){
 	global $dbconfig;
-	$sql="SELECT * from form_type{$form_type}_responses,form_paths,user_accounts where response_id=form_paths.form_id and form_paths.form_type=? and current_user_id=user_accounts.user_id order by form_path_timestamp";
+	$sql="SELECT * from form_type{$form_type}_responses,form_paths,user_accounts where response_id=form_paths.form_id and form_paths.form_type=? and current_user_id=user_accounts.user_id and form_type{$form_type}_responses.form_id=$form_id order by form_path_timestamp";
 	$result=$dbconfig->prepare($sql);
 	$result->bind_param("i",$form_type);
 	$result->execute();
