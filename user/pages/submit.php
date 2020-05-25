@@ -5,5 +5,5 @@ if(isset($_GET['dept'])){
 	get_forms_temp($dept_id);
 }
 else
-  echo get_forms_temp();
+  echo get_forms_temp(0);
  ?>
