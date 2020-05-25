@@ -145,7 +145,7 @@ function get_forms(){
     </div>';
 	return $return;
 }
-function past_applictaions(){
+function past_applications(){
 		global $dbconfig;
 		$return='
 			<div class="container">
