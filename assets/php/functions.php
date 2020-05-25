@@ -1113,22 +1113,24 @@ function form_timeline($form_id,$form_type){
 	$return="Submitted On: ".$result1['time_of_submission'].".<br>";
 	do{
 		if($result1["form_approval"]==1)
-		$return.="Approved by: ".$result1['user_name']." on ".$result1['form_path_timestamp'];
+		$return.="Approved by: ".$result1['user_name']." on ".$result1['form_path_timestamp'].'<br>';
 		if($result1["form_approval"]==0)
-		$return.="Currently with: ".$result1['user_name']." since ".$result1['form_path_timestamp'];
+		$return.="Currently with: ".$result1['user_name']." since ".$result1['form_path_timestamp'].'<br>';
 		
 	}while($result1=$result->fetch_assoc());
 	return $return;
 }
 function find_user($part_user){
 	global $dbconfig;
-	$sql="SELECT * FROM user_accounts where user_name like ? and user_id!=? order by user_name";
+	$sql="SELECT * FROM user_accounts where user_username like ? and user_id!=? order by user_name";
 	$result=$dbconfig->prepare($sql);
 	$result->bind_param("si","%".$part_user."%",$_SESSION['user_id']);
 	$result->execute();
 	$result=$result->get_result();
+	$return='';
 	while($result1=$result->fetch_assoc()){
-		
+		$return.='<a class="dropdown-item" href="#">'.$result1["user_username"].' ('.$result1["user_name"].')</a>';
+ 
 	}
 }
 ?>
