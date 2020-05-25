@@ -625,7 +625,7 @@ else{
 					  </div>
 					  <div class="form-group">
 					    <label for="exampleInputPassword1">Forward it to :</label>
-					    <div class="btn-group" style="width: 100%;"><input type="text" class="form-control dropdown-toggle" id="exampleInputPassword1" placeholder="Username" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    <div class="btn-group" style="width: 100%;"><input type="text" class="form-control dropdown-toggle find_user_input" id="exampleInputPassword1" placeholder="Username" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <div class="dropdown-menu find_user" style="">
     
   </div>

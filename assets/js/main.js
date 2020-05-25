@@ -270,6 +270,8 @@ $(document).ready( function()
 	//Admin panel buttons
 	$(document).on('click','.application_show_options_button',function(){ var array = this.id.split(':');
 			showTimeline(array[1],array[2]); });
+	$(document).on('change','.find_user_input',function(){ var partUser = this.val();
+			findUser(partUser); });
 	//Department
 		$(document).on('click','#show_add_dept_button',function(){ showAddDept(); });
 		$(document).on('click','.add_dept_button',function(){ addDept(); });
@@ -711,6 +713,13 @@ function showTimeline(formType,formID){
 	$.post('pages/dash.php?form_timeline',{form_id:formID,form_type:formType},function(data){
 		$('#form_timeline').html(data);
 		$('#form_timeline').loadingView({'state':false});
+	});
+}
+function findUser(partUser){
+	$('.find_user').loadingView({'state':true});
+	$.post('pages/dash.php?find_user',{part_user:partUser},function(data){
+		$('.find_user').html(data);
+		$('.find_user').loadingView({'state':false});
 	});
 }
 
