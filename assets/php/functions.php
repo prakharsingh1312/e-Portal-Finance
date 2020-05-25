@@ -201,7 +201,7 @@ function get_forms_temp(){
 			<div class="carousel-item active">
     ';
 
-	$sql="SELECT * FROM form_details WHERE form_activation=1 && form_department='D1'";
+	$sql="SELECT * FROM form_details WHERE form_activation=1 && form_department=?";
     $result = $dbconfig->prepare($sql);
     $result->execute();
     $result=$result->get_result();
