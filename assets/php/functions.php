@@ -218,7 +218,7 @@ function get_forms_temp(){
 			</div>
 		</div>
                 ';
-	f($count ==3){
+	if($count ==3){
 
 		$return.='</div>';
 	}
