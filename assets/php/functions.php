@@ -11,7 +11,7 @@ function first_login($user_email,$user_id){
 $headers = 'From:noreply@nit.in' . "\r\n"; // Set from headers
 require_once "Mail.php";
 
-$from = 'utkarshchauhan2022@gmail.com';
+$from = 'nit.jalandhar.test@gmail.com';
 $to = $user_email;
 $subject = 'Login | Verification'; // Give the email a subject
 $body = '
@@ -31,8 +31,8 @@ $smtp = Mail::factory('smtp', array(
         'host' => 'ssl://smtp.gmail.com',
         'port' => '465',
         'auth' => true,
-        'username' => 'utkarshchauhan2022@gmail.com',
-        'password' => 'Uc@219900',
+        'username' => 'nit.jalandhar.test@gmail.com',
+        'password' => 'Nit@12345',
     ));
 
 $mail = $smtp->send($to, $headers, $body);
