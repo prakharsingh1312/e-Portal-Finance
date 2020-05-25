@@ -157,9 +157,27 @@ function get_forms_temp(){
 
 		  <!--Indicators-->
 		  <ol class="carousel-indicators" style="bottom:-25px">
-		    <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-		    <li data-target="#multi-item-example" data-slide-to="1"></li>
+			<li data-target="#multi-item-example" data-slide-to="0" class="active"></li>';
 
+			global $dbconfig;
+			$sql="SELECT * FROM form_details WHERE form_activation=1";
+				$result = $dbconfig->prepare($sql);
+				$result->execute();
+				$result=$result->get_result();
+				//$curdepart = 'none';
+				$countit = 0;
+			while($form=$result->fetch_assoc()){
+				// if($curdepart!=$form['form_department'] || $curdepart!='none'){
+				//
+				// }
+				$countit++;
+			}
+			$countit=ceil($countit/3);
+			while($countit!=1){
+				$return.='<li data-target="#multi-item-example" data-slide-to="1"></li>';
+			}
+
+			$return.='
 		  </ol>
 		  <!--/.Indicators-->
 
@@ -168,7 +186,7 @@ function get_forms_temp(){
 			<div class="carousel-item active">
 
     ';
-	global $dbconfig;
+
 	$sql="SELECT * FROM form_details WHERE form_activation=1";
     $result = $dbconfig->prepare($sql);
     $result->execute();
