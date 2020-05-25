@@ -748,7 +748,7 @@ function formDeptFilter(deptID){
 }
 function acceptApplication(formType,formID){
 	var comments=$('#accept_comments').val()
-	var array=$('.find_user_input').id.split(':');
+	var array=$('.find_user_input').attr('id').split(':');
 	var next_user=array[1];
 	$('#modal_content').loadingView({'state':true});
 	$.post('pages/dash.php?application_accept',{form_id:formID,form_type:formType,next_user_id:next_user,comments:comments},function(data){
