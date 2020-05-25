@@ -150,8 +150,7 @@ function past_applications(){
 		$return='
 			<div class="container">
 				<div class="content brand">
-	    		<h1 class="text-center">Forms Available</h1>';
-		$return.='
+	    		<h1 class="text-center">Forms Available</h1>
 				</div>
 			</div>';
 }
