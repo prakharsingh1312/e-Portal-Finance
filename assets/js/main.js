@@ -271,6 +271,8 @@ $(document).ready( function()
 	//Admin panel buttons
 	$(document).on('click','.application_show_options_button',function(){ var array = this.id.split(':');
 			showTimeline(array[1],array[2]); });
+	$(document).on('click','.user_select_dropdown',function(){ var array = this.id.split(':');
+			$('.find_user_input').val()=array[1]+'('+array[2]+')'; });
 	$(document).on('keyup','.find_user_input',function(){ var partUser = $('.find_user_input').val();
 			findUser(partUser); });
 	//Department
@@ -723,7 +725,7 @@ function findUser(partUser){
 	
 	$.post('pages/dash.php?find_user',{part_user:partUser},function(data){
 		$('.find_user').html(data);
-		console.log(data);
+		
 		
 	});
 }
