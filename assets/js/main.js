@@ -270,7 +270,7 @@ $(document).ready( function()
 	//Admin panel buttons
 	$(document).on('click','.application_show_options_button',function(){ var array = this.id.split(':');
 			showTimeline(array[1],array[2]); });
-	$(document).on('change','.find_user_input',function(){ var partUser = $('.find_user_input').val();
+	$(document).on('keyup','.find_user_input',function(){ var partUser = $('.find_user_input').val();
 			findUser(partUser); });
 	//Department
 		$(document).on('click','#show_add_dept_button',function(){ showAddDept(); });
@@ -716,10 +716,11 @@ function showTimeline(formType,formID){
 	});
 }
 function findUser(partUser){
-	$('.find_user').loadingView({'state':true});
+	
 	$.post('pages/dash.php?find_user',{part_user:partUser},function(data){
 		$('.find_user').html(data);
-		$('.find_user').loadingView({'state':false});
+		console.log(data);
+		
 	});
 }
 
