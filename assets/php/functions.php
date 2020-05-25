@@ -186,10 +186,15 @@ function get_forms_temp($dept_id){
 			<li data-target="#multi-item-example" data-slide-to="0" class="active"></li>';
 
 			global $dbconfig;
-			$sql="SELECT * FROM form_details WHERE form_activation=1";
-				$result = $dbconfig->prepare($sql);
-				$result->execute();
-				$result=$result->get_result();
+			if($dept_id!=0)
+	$sql="SELECT * FROM form_details WHERE form_activation=1 && form_department=?";
+	else
+		$sql="SELECT * FROM form_details WHERE form_activation=1";
+    $result = $dbconfig->prepare($sql);
+	if($dept_id!=0)
+	$result->bind_param("i",$dept_id);
+    $result->execute();
+    $result=$result->get_result();
 				//$curdepart = 'none';
 				$countit = 0;
 			while($form=$result->fetch_assoc()){
