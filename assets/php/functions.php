@@ -1110,14 +1110,14 @@ function form_timeline($form_id,$form_type){
 	$result->execute();
 	$result=$result->get_result();
 	$result1=$result->fetch_assoc();
-	$return="Submitted On: ".$result['time_of_submission'].".<br>";
+	$return="Submitted On: ".$result1['time_of_submission'].".<br>";
 	do{
-		if($result["form_approval"]==1)
-		$return.="Approved by: ".$result['user_name']." on ".$result['form_path_timestamp'];
-		if($result["form_approval"]==0)
-		$return.="Currently with: ".$result['user_name']." since ".$result['form_path_timestamp'];
+		if($result1["form_approval"]==1)
+		$return.="Approved by: ".$result1['user_name']." on ".$result1['form_path_timestamp'];
+		if($result1["form_approval"]==0)
+		$return.="Currently with: ".$result1['user_name']." since ".$result1['form_path_timestamp'];
 		
-	}while($result->fetch_assoc());
+	}while($result1->fetch_assoc());
 	return $return;
 }
 function find_user($part_user){
