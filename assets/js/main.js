@@ -758,7 +758,7 @@ function acceptApplication(formType,formID){
 		}
 	});
 }
-		   function acceptApplication(formType,formID){
+		   function rejectApplication(formType,formID){
 	var comments=$('#reject_comments').val()
 	$('#modal_content').loadingView({'state':true});
 	$.post('pages/dash.php?application_reject',{form_id:formID,form_type:formType,comments:comments},function(data){
