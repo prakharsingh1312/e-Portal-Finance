@@ -145,17 +145,17 @@ function get_forms(){
     </div>';
 	return $return;
 }
-function past_applictaions(){
-		global $dbconfig;
+
+
+function past_applications(){
+	
 		$return='
 			<div class="container">
 				<div class="content brand">
-	    		<h1 class="text-center">Forms Available</h1>';
-		$return.='
+	    		<h1 class="text-center">Forms Available</h1>
 				</div>
 			</div>';
 }
-
 
 
 
