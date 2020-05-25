@@ -1171,7 +1171,7 @@ function accept_application($form_id,$form_type,$comments,$next_user_id){
 	$result=$result->get_result();
 	return 1;
 }
-function accept_application($form_id,$form_type,$comments){
+function reject_application($form_id,$form_type,$comments){
 	global $dbconfig;
 	$sql="UPDATE form_paths set form_comments=? , form_approval=-1 where form_type=? and form_id=? and current_user_id=?";
 	$user=$_SESSION['user_id'];
