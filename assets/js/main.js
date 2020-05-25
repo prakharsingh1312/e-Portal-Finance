@@ -755,6 +755,7 @@ function acceptApplication(formType,formID){
 		if(data==1){
 		$('#modal_content').loadingView({'state':false});
 			alert("Form has been accepted.");
+			showDash();
 		}
 	});
 }
@@ -765,6 +766,7 @@ function acceptApplication(formType,formID){
 		if(data==1){
 		$('#modal_content').loadingView({'state':false});
 			alert("Form has been rejected.");
+			showDash();
 		}
 	});
 }
