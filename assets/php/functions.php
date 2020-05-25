@@ -1139,5 +1139,6 @@ function find_user($part_user){
 		$return.='<a class="dropdown-item" href="#">'.$result1["user_username"].' ('.$result1["user_name"].')</a>';
 
 	}
+	return $return;
 }
 ?>
