@@ -155,11 +155,17 @@ function get_forms_temp(){
   	Select Department
   	</button>
   	<div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">Separated link</a>
+		';
+		global $dbconfig;
+		$sql="SELECT * FROM departments";
+			$result = $dbconfig->prepare($sql);
+			$result->execute();
+			$result=$result->get_result();
+		while($form=$result->fetch_assoc()){
+			$return.='<a class="dropdown-item" href="#">'.$form['department_name'].'</a>';
+		}
+
+		'
   	</div>
 		</div>
 		<!--Carousel Wrapper-->
