@@ -165,8 +165,7 @@ function get_forms_temp(){
 			$return.='<a class="dropdown-item" href="#">'.$form['department_name'].'</a>';
 		}
 
-		'
-  	</div>
+		$return.='</div>
 		</div>
 		<!--Carousel Wrapper-->
 		<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
@@ -1121,7 +1120,7 @@ function form_timeline($form_id,$form_type){
 		$return.="Approved by: ".$result1['user_name']." on ".$result1['form_path_timestamp'].'<br>';
 		if($result1["form_approval"]==0)
 		$return.="Currently with: ".$result1['user_name']." since ".$result1['form_path_timestamp'].'<br>';
-		
+
 	}while($result1=$result->fetch_assoc());
 	return $return;
 }
@@ -1137,7 +1136,7 @@ function find_user($part_user){
 	$return='';
 	while($result1=$result->fetch_assoc()){
 		$return.='<a class="dropdown-item" href="#">'.$result1["user_username"].' ('.$result1["user_name"].')</a>';
- 
+
 	}
 }
 ?>
