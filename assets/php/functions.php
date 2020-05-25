@@ -105,6 +105,7 @@ function get_form_details($formid){
 	return $result;
 
 }
+
 function get_forms(){
 	$return='
 <div class="container">
@@ -116,7 +117,11 @@ function get_forms(){
     $result = $dbconfig->prepare($sql);
     $result->execute();
     $result=$result->get_result();
+		//$curdepart = 'none';
 	while($form=$result->fetch_assoc()){
+		// if($curdepart!=$form['form_department'] || $curdepart!='none'){
+		//
+		// }
 		$return.= '
                 <div class="col-md-6">
 	          <div class="card card-login card-plain" style="margin-left:6em;">
@@ -136,6 +141,114 @@ function get_forms(){
 
 	}
 	$return.='</div>
+      </div>
+    </div>';
+	return $return;
+}
+function get_forms_temp(){
+	$return='
+<div class="container">
+		<div class="content brand">
+    <h1 class="text-center">Forms Available</h1>
+		<div class="btn-group float-right">
+  	<button type="button" class="btn btn-danger  dropdown-toggle" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">
+    Action
+  	</button>
+  	<div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  	</div>
+		</div>
+		<!--Carousel Wrapper-->
+		<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+		  <!--Indicators-->
+		  <ol class="carousel-indicators" style="bottom:-25px">
+			<li data-target="#multi-item-example" data-slide-to="0" class="active"></li>';
+
+			global $dbconfig;
+			$sql="SELECT * FROM form_details WHERE form_activation=1";
+				$result = $dbconfig->prepare($sql);
+				$result->execute();
+				$result=$result->get_result();
+				//$curdepart = 'none';
+				$countit = 0;
+			while($form=$result->fetch_assoc()){
+				// if($curdepart!=$form['form_department'] || $curdepart!='none'){
+				//
+				// }
+				$countit++;
+			}
+			$countit=ceil($countit/3);
+			while($countit!=1){
+				$return.='<li data-target="#multi-item-example" data-slide-to="1"></li>';
+				$countit--;
+			}
+
+			$return.='
+		  </ol>
+		  <!--/.Indicators-->
+
+		  <!--Slides-->
+		  <div class="carousel-inner" role="listbox">
+			<div class="carousel-item active">
+
+    ';
+
+	$sql="SELECT * FROM form_details WHERE form_activation=1 && form_department='D1'";
+    $result = $dbconfig->prepare($sql);
+    $result->execute();
+    $result=$result->get_result();
+		//$curdepart = 'none';
+		$count = 0;
+	while($form=$result->fetch_assoc()){
+		// if($curdepart!=$form['form_department'] || $curdepart!='none'){
+		//
+		// }
+		$count++;
+		if($count ==4){
+			$count=1;
+			$return.='<div class="carousel-item">';
+		}
+		$return.= '
+		<div class="col-md-4" style="float:left">
+		 <div class="card mb-2">
+				<img class="card-img-top"  src="'.$form['form_image'].'" alt="Card image cap">
+				<div class="card-body">
+					<h4 class="card-title">'.$form['form_title'].'</h4>
+					<p class="card-text">'.$form['form_subtitle'].'</p>
+					<form method="POST" class = " d-flex justify-content-center" action="../forms/form'.$form['form_format'].'.php">
+				<input type="hidden" value="'.$form['form_id'].'" name="form_id">
+
+				<input type="submit" class="btn btn-primary" value="Fill Up the Form"></form>
+				</div>
+			</div>
+		</div>
+                ';
+	if($count ==3){
+
+		$return.='</div>';
+	}
+
+
+
+	}
+	if($count!=3){
+		$return.='</div>';
+	}
+	$return.='
+
+
+
+
+
+</div>
+	  <!--/.Slides-->
+
+				</div>
+	<!--/.Carousel Wrapper-->
       </div>
     </div>';
 	return $return;
