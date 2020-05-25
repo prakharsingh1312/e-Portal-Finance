@@ -1130,7 +1130,8 @@ function find_user($part_user){
 	$sql="SELECT * FROM user_accounts where user_username like ? and user_id!=? order by user_name";
 	$result=$dbconfig->prepare($sql);
 	$user=$_SESSION['user_id'];
-	$result->bind_param("si","%".$part_user."%",$user);
+	$like="%".$part_user."%";
+	$result->bind_param("si",$like,$user);
 	$result->execute();
 	$result=$result->get_result();
 	$return='';
