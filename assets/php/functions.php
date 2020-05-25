@@ -179,7 +179,7 @@ function get_forms_temp(){
 		//
 		// }
 		$return.= '
-		<div class="col-md-3" style="float:left">
+		<div class="col-md-4" style="float:left">
 		 <div class="card mb-2">
 				<img class="card-img-top"  src="'.$form['form_image'].'" alt="Card image cap">
 				<div class="card-body">
