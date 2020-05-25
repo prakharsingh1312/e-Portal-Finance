@@ -201,7 +201,7 @@ function get_forms_temp(){
 		$count++;
 		if($count ==4){
 			$count=1;
-			$return.='<div class="carousel-item active">';
+			$return.='<div class="carousel-item">';
 		}
 		$return.= '
 		<div class="col-md-4" style="float:left">
@@ -226,17 +226,12 @@ function get_forms_temp(){
 
 
 	}
-
+	if($count!=3){
+		$return.='</div>';
+	}
 	$return.='
 
-	    <!--First slide-->
 
-
-
-
-
-
-	    </div>
 
 
 
