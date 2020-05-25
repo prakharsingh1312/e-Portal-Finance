@@ -9,7 +9,7 @@
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
+          <li class="nav-item active  " id="users_dash">
             <a class="nav-link" href="#">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
@@ -22,13 +22,13 @@
               <p>Table List</p>
             </a>
           </li> -->
-          <li class="nav-item ">
+          <li class="nav-item " id="submit">
             <a class="nav-link" href="#submit" >
               <i class="material-icons">create</i>
               <p>Submit a Form</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item " id="status">
             <a class="nav-link" href="#previous"  >
               <i class="material-icons">dynamic_feed</i>
               <p>Status of Applications</p>
