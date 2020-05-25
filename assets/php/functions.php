@@ -145,7 +145,8 @@ function get_forms(){
     </div>';
 	return $return;
 }
-function get_forms_temp(){
+
+function get_forms_temp($dept_id){
 	$return='
 <div class="container">
 		<div class="content brand">
@@ -162,7 +163,7 @@ function get_forms_temp(){
 			$result->execute();
 			$result=$result->get_result();
 		while($form=$result->fetch_assoc()){
-			$return.='<a class="dropdown-item" href="#">'.$form['department_name'].'</a>';
+			$return.='<a class="dropdown-item form_dept_filter" id="dept:'.$form['department_id'].'" >'.$form['department_name'].'</a>';
 		}
 
 		$return.='</div>
@@ -200,9 +201,13 @@ function get_forms_temp(){
 		  <div class="carousel-inner" role="listbox">
 			<div class="carousel-item active">
     ';
-
+	if($dept_id!=0)
 	$sql="SELECT * FROM form_details WHERE form_activation=1 && form_department=?";
+	else
+		$sql="SELECT * FROM form_details WHERE form_activation=1";
     $result = $dbconfig->prepare($sql);
+	if($dept_id!=0)
+	$result->bind_param("i",$dept_id);
     $result->execute();
     $result=$result->get_result();
 		//$curdepart = 'none';
