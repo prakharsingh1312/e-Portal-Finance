@@ -754,8 +754,10 @@ function acceptApplication(formType,formID){
 	$.post('pages/dash.php?application_accept',{form_id:formID,form_type:formType,next_user_id:next_user,comments:comments},function(data){
 		if(data==1){
 		$('#modal_content').loadingView({'state':false});
-			alert("Form has been accepted.");
+			$('.modal').modal('hide');
 			showDash();
+			alert("Form has been accepted.");
+			
 		}
 	});
 }
@@ -765,8 +767,10 @@ function acceptApplication(formType,formID){
 	$.post('pages/dash.php?application_reject',{form_id:formID,form_type:formType,comments:comments},function(data){
 		if(data==1){
 		$('#modal_content').loadingView({'state':false});
-			alert("Form has been rejected.");
+			$('.modal').modal('hide');
 			showDash();
+			alert("Form has been rejected.");
+			
 		}
 	});
 }
