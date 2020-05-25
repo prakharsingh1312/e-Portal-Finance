@@ -1142,7 +1142,7 @@ function form_timeline($form_id,$form_type){
 function find_user($part_user){
 	global $dbconfig;
 	$like="%".$part_user."%";
-	$sql="SELECT * FROM user_accounts where user_username like '$like' and user_id!=? order by user_name";
+	$sql="SELECT * FROM user_accounts where user_username like '$like' and user_id!=? and user_role!=2 order by user_name";
 	$result=$dbconfig->prepare($sql);
 	$user=$_SESSION['user_id'];
 
