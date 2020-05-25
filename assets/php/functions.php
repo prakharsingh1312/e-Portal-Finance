@@ -153,16 +153,10 @@ function get_forms_temp(){
 		<!--Carousel Wrapper-->
 		<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
-		  <!--Controls-->
-		  <div class="controls-top">
-		    <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
-		    <a class="btn-floating" href="#multi-item-example" data-slide="next"><i
-		        class="fas fa-chevron-right"></i></a>
-		  </div>
-		  <!--/.Controls-->
+
 
 		  <!--Indicators-->
-		  <ol class="carousel-indicators">
+		  <ol class="carousel-indicators" style="bottom:-25px">
 		    <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
 		    <li data-target="#multi-item-example" data-slide-to="1"></li>
 
@@ -171,6 +165,8 @@ function get_forms_temp(){
 
 		  <!--Slides-->
 		  <div class="carousel-inner" role="listbox">
+			<div class="carousel-item active">
+
     ';
 	global $dbconfig;
 	$sql="SELECT * FROM form_details WHERE form_activation=1";
@@ -178,31 +174,34 @@ function get_forms_temp(){
     $result->execute();
     $result=$result->get_result();
 		//$curdepart = 'none';
-	// while($form=$result->fetch_assoc()){
-	// 	// if($curdepart!=$form['form_department'] || $curdepart!='none'){
-	// 	//
-	// 	// }
-	// 	$return.= '
-  //               ';
-	//
-	// }
+	while($form=$result->fetch_assoc()){
+		// if($curdepart!=$form['form_department'] || $curdepart!='none'){
+		//
+		// }
+		$return.= '
+		<div class="col-md-3" style="float:left">
+		 <div class="card mb-2">
+				<img class="card-img-top"  src="'.$form['form_image'].'" alt="Card image cap">
+				<div class="card-body">
+					<h4 class="card-title">'.$form['form_title'].'</h4>
+					<p class="card-text">' .$form['form_subtitle'].'</p>
+					<form method="POST" class = " d-flex justify-content-center" action="../forms/form'.$form['form_format'].'.php">
+				<input type="hidden" value="'.$form['form_id'].'" name="form_id">
+
+				<input type="submit" class="btn btn-primary" value="Fill Up the Form"></form>
+				</div>
+			</div>
+		</div>
+                ';
+
+	}
 	$return.='
 
 	    <!--First slide-->
-	    <div class="carousel-item active">
 
-	      <div class="col-md-3" style="float:left">
-	       <div class="card mb-2">
-	          <img class="card-img-top"
-	            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-	          <div class="card-body">
-	            <h4 class="card-title">Card title</h4>
-	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-	              cards content.</p>
-	            <a class="btn btn-primary">Button</a>
-	          </div>
-	        </div>
-	      </div>
+
+
+
 
 	      <div class="col-md-3" style="float:left">
 	        <div class="card mb-2">
@@ -244,65 +243,6 @@ function get_forms_temp(){
 	      </div>
 
 	    </div>
-	    <!--/.First slide-->
-
-	    <!--Second slide-->
-	    <div class="carousel-item">
-
-	      <div class="col-md-3" style="float:left">
-	        <div class="card mb-2">
-	          <img class="card-img-top"
-	            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-	          <div class="card-body">
-	            <h4 class="card-title">Card title</h4>
-	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-	              cards content.</p>
-	            <a class="btn btn-primary">Button</a>
-	          </div>
-	        </div>
-	      </div>
-
-	      <div class="col-md-3" style="float:left">
-	        <div class="card mb-2">
-	          <img class="card-img-top"
-	            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
-	          <div class="card-body">
-	            <h4 class="card-title">Card title</h4>
-	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-	              cards content.</p>
-	            <a class="btn btn-primary">Button</a>
-	          </div>
-	        </div>
-	      </div>
-
-	      <div class="col-md-3" style="float:left">
-	        <div class="card mb-2">
-	          <img class="card-img-top"
-	            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
-	          <div class="card-body">
-	            <h4 class="card-title">Card title</h4>
-	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-	              cards content.</p>
-	            <a class="btn btn-primary">Button</a>
-	          </div>
-	        </div>
-	      </div>
-
-	      <div class="col-md-3" style="float:left">
-	        <div class="card mb-2">
-	          <img class="card-img-top"
-	            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
-	          <div class="card-body">
-	            <h4 class="card-title">Card title</h4>
-	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-	              cards content.</p>
-	            <a class="btn btn-primary">Button</a>
-	          </div>
-	        </div>
-	      </div>
-
-	    </div>
-	    <!--/.Second slide-->
 
 
 
