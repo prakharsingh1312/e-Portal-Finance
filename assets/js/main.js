@@ -716,11 +716,11 @@ function showTimeline(formType,formID){
 	});
 }
 function findUser(partUser){
-	$('.find_user').loadingView({'state':true});
+	
 	$.post('pages/dash.php?find_user',{part_user:partUser},function(data){
 		$('.find_user').html(data);
 		console.log(data);
-		$('.find_user').loadingView({'state':false});
+		
 	});
 }
 
