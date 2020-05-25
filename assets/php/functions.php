@@ -340,7 +340,7 @@ function show_applications($form_id){
                   <td>'.$result['name_of_student'].'</td>
                   <td>'.$result['roll_no'].'</td>
                   <td>'.$i.'</td>
-									<td> <button type="button" class="btn btn-primary btn-sm application_show_options_button" id="'.$i.':'.$result['form_id'].'" data-toggle="modal" data-target="#actions">
+									<td> <button type="button" class="btn btn-primary btn-sm application_show_options_button" id="application:'.$i.':'.$result['form_id'].'" data-toggle="modal" data-target="#actions">
 									Options
 								</button></td>
                   <td class="text-right">
