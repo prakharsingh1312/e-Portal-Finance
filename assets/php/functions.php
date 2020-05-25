@@ -150,7 +150,7 @@ function get_forms_temp(){
 <div class="container">
 		<div class="content brand">
     <h1 class="text-center">Forms Available</h1>
-		<div class="btn-group ">
+		<div class="btn-group float-right">
   	<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">
   	Select Department
   	</button>
