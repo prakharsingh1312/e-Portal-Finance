@@ -90,7 +90,7 @@
                 </div>
               </li>
               <li class="nav-item logout_button">
-                <a class="nav-link" >
+                <a class="nav-link" href="#pablo" >
                   <i class="material-icons">logout</i>
                   <p class="d-lg-none d-md-block">
                     Logout
