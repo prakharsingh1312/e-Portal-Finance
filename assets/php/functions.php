@@ -150,7 +150,7 @@ function get_forms_temp(){
 <div class="container">
 		<div class="content brand">
     <h1 class="text-center">Forms Available</h1>
-
+		<div class="btn-group pull-right">
   	<button type="button" class="btn btn-danger float-right dropdown-toggle" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">
     Action
   	</button>
@@ -161,7 +161,7 @@ function get_forms_temp(){
     <div class="dropdown-divider"></div>
     <a class="dropdown-item" href="#">Separated link</a>
   	</div>
-	
+		</div>
 		<!--Carousel Wrapper-->
 		<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 		  <!--Indicators-->
