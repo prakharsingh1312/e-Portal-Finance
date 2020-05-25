@@ -40,6 +40,7 @@ function showformlist(){
 	$.get('./pages/submit.php',function(data){
 
 		$('#content').html(data);
+		linkChange('#submit');
 		$('#content').loadingView({'state':false});
 	});
 }
@@ -66,7 +67,7 @@ function showPreviousForms(){
 	$.get('./pages/prev.php',function(data){
 
 		$('#content').html(data);
-		linkChange('#users_dash');
+		linkChange('#status');
 		$('#content').loadingView({'state':false});
 	});
 }
@@ -506,7 +507,7 @@ function logout(){
 	})
 }
 function linkChange(id){
-	var ids=['#users_dash','#user_profile','#departments','#manage_users','#form_control','#form_builder'];
+	var ids=['#users_dash','#user_profile','#departments','#manage_users','#form_control','#form_builder','#submit','#status'];
 	$.each(ids,function(index,value){
 		if(id==value){
 			$(value).addClass('active');
