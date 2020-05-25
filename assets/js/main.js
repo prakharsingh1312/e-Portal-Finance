@@ -270,9 +270,19 @@ $(document).ready( function()
 		$(document).on('submit','#form1',function(){ form1_submit(); });
 	//Admin panel buttons
 	$(document).on('click','.application_show_options_button',function(){ var array = this.id.split(':');
-			showTimeline(array[1],array[2]); });
+			showTimeline(array[1],array[2]);
+			$('.application_accept_button').attr('id','accept:'+array[1]+':'+array[2]);
+			$('.application_reject_button').attr('id','reject:'+array[1]+':'+array[2]);
+			});
 	$(document).on('click','.user_select_dropdown',function(){ var array = this.id.split(':');
-			$('.find_user_input').val(array[1]+'('+array[2]+')'); });
+			$('.find_user_input').val(array[1]+'('+array[2]+')');
+			$('.find_user_input').attr('id','next_user_id:'+array[3]);
+															 });
+	$(document).on('click','.application_accept_button',function(){ var array = this.id.split(':');
+			acceptApplication(array[1],array[2]); });
+	$(document).on('click','.application_reject_button',function(){ var array = this.id.split(':');
+			rejectApplication(array[1],array[2]); });
+	
 	$(document).on('keyup','.find_user_input',function(){ var partUser = $('.find_user_input').val();
 			findUser(partUser); });
 	//Department
@@ -734,5 +744,27 @@ function formDeptFilter(deptID){
 	$.post('pages/submit.php?dept',{dept_id:deptID},function(data){
 		$('#content').html(data);
 		$('#content').loadingView({'state':false});
+	});
+}
+function acceptApplication(formType,formID){
+	var comments=$('#accept_comments').val()
+	var array=$('.find_user_input').id.split(':');
+	var next_user=array[1];
+	$('#modal_content').loadingView({'state':true});
+	$.post('pages/dash.php?application_accept',{form_id:formID,form_type:formType,next_user_id:next_user,comments:comments},function(data){
+		if(data==1){
+		$('#modal_content').loadingView({'state':false});
+			alert("Form has been accepted.");
+		}
+	});
+}
+		   function acceptApplication(formType,formID){
+	var comments=$('#reject_comments').val()
+	$('#modal_content').loadingView({'state':true});
+	$.post('pages/dash.php?application_reject',{form_id:formID,form_type:formType,comments:comments},function(data){
+		if(data==1){
+		$('#modal_content').loadingView({'state':false});
+			alert("Form has been rejected.");
+		}
 	});
 }

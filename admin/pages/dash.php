@@ -12,6 +12,19 @@ elseif(isset($_GET['form_timeline'])){
 	$form_type=mysqli_real_escape_string($dbconfig,$_POST['form_type']);
 	echo form_timeline($form_id,$form_type);
 }
+elseif(isset($_GET['application_accept'])){
+	$form_id=mysqli_real_escape_string($dbconfig,$_POST['form_id']);
+	$form_type=mysqli_real_escape_string($dbconfig,$_POST['form_type']);
+	$comments=mysqli_real_escape_string($dbconfig,$_POST['comments']);
+	$next_user_id=mysqli_real_escape_string($dbconfig,$_POST['next_user_id']);
+	echo accept_application($form_id,$form_type,$comments,$next_user_id);
+}
+elseif(isset($_GET['application_reject'])){
+	$form_id=mysqli_real_escape_string($dbconfig,$_POST['form_id']);
+	$form_type=mysqli_real_escape_string($dbconfig,$_POST['form_type']);
+	$comments=mysqli_real_escape_string($dbconfig,$_POST['comments']);
+	echo reject_application($form_id,$form_type,$comments);
+}
 else{
 	$result=get_application_data();
 	echo '
@@ -608,10 +621,10 @@ else{
 				</div>
 				<div class="panel" id = "accordion">
 			<p>
-				<a class="btn btn-success"  style="width:49%" data-toggle="collapse" href="#accept" aria-expanded="false" aria-controls="collapseExample" onclick="$(\'#reject\').collapse(\'hide\')">
+				<a class="btn btn-success application_accept_button"  style="width:49%" data-toggle="collapse" href="#accept" aria-expanded="false" aria-controls="collapseExample" onclick="$(\'#reject\').collapse(\'hide\')">
 				Accept
 				</a>
-				<a class="btn btn-danger" style="width:49%" data-toggle="collapse" href="#reject" aria-expanded="false" aria-controls="collapseExample" onclick="$(\'#accept\').collapse(\'hide\')">
+				<a class="btn btn-danger application_reject_button" style="width:49%" data-toggle="collapse" href="#reject" aria-expanded="false" aria-controls="collapseExample" onclick="$(\'#accept\').collapse(\'hide\')">
 				Reject
 				</a>
 				</p>
@@ -620,12 +633,12 @@ else{
 					<form>
 					  <div class="form-group">
 					    <label for="comments">Comments if any.</label>
-					    <input type="text" class="form-control" id="comments" placeholder="Type your text here...">
+					    <input type="text" class="form-control" id="accept_comments" placeholder="Type your text here...">
 					    <small id="emailHelp" class="form-text text-muted">Any other info if required</small>
 					  </div>
 					  <div class="form-group">
 					    <label for="exampleInputPassword1">Forward it to :</label>
-					    <div class="btn-group" style="width: 100%;"><input type="text" class="form-control dropdown-toggle find_user_input" id="exampleInputPassword1" placeholder="Username" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    <div class="btn-group" style="width: 100%;"><input type="text" class="form-control dropdown-toggle find_user_input" id="next_user_id" placeholder="Username" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <div class="dropdown-menu find_user" style="">
     
   </div>
@@ -643,7 +656,7 @@ else{
 					<form>
 					  <div class="form-group">
 					    <label for="comments">Comments if any.</label>
-					    <input type="text" class="form-control" id="comments" placeholder="Type your text here...">
+					    <input type="text" class="form-control" id="reject_comments" placeholder="Type your text here...">
 					    <small id="emailHelp" class="form-text text-muted">Any other info if required</small>
 					  </div>
 
