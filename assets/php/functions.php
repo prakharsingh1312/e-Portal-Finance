@@ -105,37 +105,66 @@ function get_form_details($formid){
 	return $result;
 
 }
+
 function get_forms(){
 	$return='
 <div class="container">
 		<div class="content brand">
     <h1 class="text-center">Forms Available</h1>
-    <div class="row">';
+    <div class="row">
+		<div id="carousel-example-multi" class="carousel slide carousel-multi-item v-2" data-ride="carousel">
+
+	   <!--Controls-->
+	   <div class="controls-top">
+	     <a class="btn-floating" href="#carousel-example-multi" data-slide="prev"><i
+	         class="fas fa-chevron-left"></i></a>
+	     <a class="btn-floating" href="#carousel-example-multi" data-slide="next"><i
+	         class="fas fa-chevron-right"></i></a>
+	   </div>
+	   <!--/.Controls-->
+
+	   <!-- Indicators -->
+	   <ol class="carousel-indicators">
+	     <li data-target="#carousel-example-multi" data-slide-to="0" class="active"></li>
+	     <li data-target="#carousel-example-multi" data-slide-to="1"></li>
+	     <li data-target="#carousel-example-multi" data-slide-to="2"></li>
+	     <li data-target="#carousel-example-multi" data-slide-to="3"></li>
+	     <li data-target="#carousel-example-multi" data-slide-to="4"></li>
+	     <li data-target="#carousel-example-multi" data-slide-to="5"></li>
+	   </ol>
+	   <!--/.Indicators-->
+
+	   <div class="carousel-inner v-2" role="listbox">';
 	global $dbconfig;
 	$sql="SELECT * FROM form_details WHERE form_activation=1";
     $result = $dbconfig->prepare($sql);
     $result->execute();
     $result=$result->get_result();
+		//$curdepart = 'none';
 	while($form=$result->fetch_assoc()){
+		// if($curdepart!=$form['form_department'] || $curdepart!='none'){
+		//
+		// }
 		$return.= '
-                <div class="col-md-6">
-	          <div class="card card-login card-plain" style="margin-left:6em;">
-							<div class="card" style="width: 18rem; background-color:#22529;">
-	  						<img src="'.$form['form_image'].'" class="card-img-top" alt="form-1" style="display:inline-block;">
-	  						<div class="card-body">
-	    						<h5 class="card-title  d-flex justify-content-center" style="textcolor:black;">'.$form['form_title'].'</h5>
-	    						<p class="card-text text-center">'.$form['form_subtitle'].'</p>
-	    						<form method="POST" class = " d-flex justify-content-center" action="../forms/form'.$form['form_format'].'.php">
-								<input type="hidden" value="'.$form['form_id'].'" name="form_id">
+		<div class="card mb-2">
+		<div class="card card-login card-plain" style="margin-left:6em;">
+			<div class="card" style="width: 18rem; background-color:#22529;">
+				<img src="'.$form['form_image'].'" class="card-img-top" alt="form-1" style="display:inline-block;">
+				<div class="card-body">
+					<h5 class="card-title  d-flex justify-content-center" style="textcolor:black;">'.$form['form_title'].'</h5>
+					<p class="card-text text-center">'.$form['form_subtitle'].'</p>
+					<form method="POST" class = " d-flex justify-content-center" action="../forms/form'.$form['form_format'].'.php">
+				<input type="hidden" value="'.$form['form_id'].'" name="form_id">
 
-								<input type="submit" class="btn btn-primary" value="Fill Up the Form"></form>
-	  						</div>
-							</div>
-            </div>
-          </div>';
+				<input type="submit" class="btn btn-primary" value="Fill Up the Form"></form>
+				</div>
+			</div>
+		</div>
+		</div>';
 
 	}
-	$return.='</div>
+	$return.='
+				</div></div></div>
       </div>
     </div>';
 	return $return;
