@@ -634,6 +634,7 @@ else{
 					</form>
 					</div>
 				</div>
+				</div>
 
 
 				<div class="collapse" id="reject" data-parent="#accordion">
