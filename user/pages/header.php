@@ -89,8 +89,8 @@
                   <a class="dropdown-item" href="javascript:void(0)">Another One</a>
                 </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0)">
+              <li class="nav-item logout_button">
+                <a class="nav-link" >
                   <i class="material-icons">logout</i>
                   <p class="d-lg-none d-md-block">
                     Logout
