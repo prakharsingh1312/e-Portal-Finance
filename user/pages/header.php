@@ -28,12 +28,12 @@
               <p>Submit a Form</p>
             </a>
           </li>
-          <!-- <li class="nav-item ">
-            <a class="nav-link" href="../#track" disabled >
+          <li class="nav-item ">
+            <a class="nav-link" href="#previous"  >
               <i class="fas fa-question-circle"></i>
               <p>Status of Applications</p>
             </a>
-          </li> -->
+          </li>
 <!-- <li class="nav-item ">
             <a class="nav-link" href="examples/user_profile.php">
              <i class="material-icons">person</i>
@@ -123,7 +123,7 @@
       </nav>
       <!-- End Navbar -->
       <div class="content" id="content">
-      
+
       </div>
       <footer class="footer">
         <div class="container-fluid">
@@ -163,4 +163,3 @@
         date.innerHTML = '&copy; ' + x + date.innerHTML;
       </script>
     </div>
-  

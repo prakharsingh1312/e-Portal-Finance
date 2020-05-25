@@ -14,7 +14,7 @@ function showlogin(){
 			else if(data==2)
 				showStudent();
 		}
-			
+
 		$('.wrapper').loadingView({'state':false});
 	});
 }
@@ -37,7 +37,7 @@ function showStudent(){
 
 function showformlist(){
 	$('#content').loadingView({'state':true});
-	$.get('../forms.php?list',function(data){
+	$.get('./pages/submit.php',function(data){
 
 		$('#content').html(data);
 		$('#content').loadingView({'state':false});
@@ -55,6 +55,15 @@ function showtrack(){
 function showDash(){
 	$('#wrapper').loadingView({'state':true});
 	$.get('./pages/dash.php',function(data){
+
+		$('#wrapper').html(data);
+		linkChange('#users_dash');
+		$('#wrapper').loadingView({'state':false});
+	});
+}
+function showPreviousForms(){
+	$('#wrapper').loadingView({'state':true});
+	$.get('./pages/prev.php',function(data){
 
 		$('#wrapper').html(data);
 		linkChange('#users_dash');
@@ -353,7 +362,9 @@ function hash()
 				showUserPStu();
 			else if(hash == 'submit')
 				showformlist();
-			
+			else if(hash == 'previous')
+				showPreviousForms();
+
 		}
 }
 
@@ -397,7 +408,7 @@ function notify(text, time,type)
 			}
 		else if(type== 'warning')
 			{
-				
+
 				text =  '<div class="alert alert-warning" role="alert"><div class="container"><div class="alert-icon"><i class="now-ui-icons ui-1_bell-53"></i></div>            <strong>'+text+'</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="now-ui-icons ui-1_simple-remove"></i></span></button></div></div>';
 			}
 
@@ -445,7 +456,7 @@ function input_focus(id)
 function form1_submit(){
 	var form=$('#form1')[0];
 	var formdata=new FormData(form);
-	
+
 		if(validate_number(formdata.get('roll'),8)){
 		$("#submitForm").prop("disabled", true);
 			$('#form1').loadingView({'state':true});
@@ -478,7 +489,7 @@ function form1_submit(){
 			form_error('Roll no. format incorrect.','#form1_roll')
 		}
 	}
-	
+
 function logout(){
 	$.get('../login.php?logout',function(data){
 		if (data==1)
@@ -641,13 +652,13 @@ function showAddUser(){
 	var data='<div class="modal-header">          <h5 class="modal-title" id="exampleModalLabel">Add a New User</h5>         <button type="button" class="close" data-dismiss="modal" aria-label="Close">            <span aria-hidden="true">&times;</span>          </button>        </div>        <div class="modal-body">          <form>            <div class="form-group">              <label for="exampleInputEmail1">Username :</label>              <input type="text" class="form-control" id="add_user_username" aria-describedby="emailHelp" placeholder="">            </div>            <div class="form-group">              <label for="exampleInputPassword1">Name :</label>              <input type="text" class="form-control" id="add_user_first_name" placeholder="">                          </div>       <div class="form-group">              <label for="exampleInputPassword1">Email :</label>              <input type="text" class="form-control" id="add_user_email" placeholder="">            </div>                 <div class="form-group">              <label for="exampleInputPassword1">Department :</label>             <input type="text" class="form-control" id="add_user_department" placeholder="">           </div>            <div class="form-group">              <label for="exampleInputPassword1">Role :</label>              <input type="text" class="form-control" id="add_user_role" placeholder="">                  </div>  </form> </div>        <div class="modal-footer">          <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>          <button type="button" class="btn btn-primary add_user_button">Add User</button> </div>      </div>';
 	$('#modal-content').html(data);
 		$('#modal-content').loadingView({'state':false});
-	
+
 }
 function showEditUser(id){
 	$('#modal-content').loadingView({'state':true});
 	$.post('pages/users.php?show_edit_user',{id:id},function(data){
 		$('#modal-content').html(data);
-		
+
 		$('#modal-content').loadingView({'state':false});
 	});
 }
@@ -660,21 +671,21 @@ function addUser(){
 	var role=$('#add_user_role').val();
 	$.post('pages/users.php?add_user',{username:username,first:first,dept:department,role:role,email:email},function(data){
 		$('#modal-content').html(data);
-		
+
 		$('#modal-content').loadingView({'state':false});
 		showUserTable();
 	});
 }
 function editUser(id){
 	$('#modal-content').loadingView({'state':true});
-	var username=$('#add_user_username').val();	
+	var username=$('#add_user_username').val();
 	var first=$('#add_user_first_name').val();
 	var email=$('#add_user_email').val();
 	var department=$('#add_user_department').val();
 	var role=$('#add_user_role').val();
 	$.post('pages/users.php?edit_user',{username:username,first:first,dept:department,role:role,id:id,email:email},function(data){
 		$('#modal-content').html(data);
-		
+
 		$('#modal-content').loadingView({'state':false});
 		showUserTable();
 	});
