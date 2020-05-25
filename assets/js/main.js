@@ -306,6 +306,9 @@ $(document).on('click','.user_show_delete_button',function(){ var array = this.i
 			showDeleteUser(array[1],array[2]); });
 	$(document).on('click','.user_delete_button',function(){ var array = this.id.split(':');
 			deleteUser(array[1],array[2]); });
+//Student Form
+$(document).on('click','.form_dept_filter',function(){ var array = this.id.split(':');
+			formDeptFilter(array[1]); });
 $(window).load(function()
 {
 	// Make sure cookies are enabled
@@ -723,4 +726,10 @@ function findUser(partUser){
 		
 	});
 }
-
+function formDeptFilter(deptID){
+	$('#content').loadingView({'state':true});
+	$.post('pages/submit.php?dept',{dept_id:deptID},function(data){
+		$('#content').html(data);
+		$('#content').loadingView({'state':false});
+	});
+}
