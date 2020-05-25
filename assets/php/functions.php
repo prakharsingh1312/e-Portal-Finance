@@ -151,8 +151,8 @@ function get_forms_temp(){
 		<div class="content brand">
     <h1 class="text-center">Forms Available</h1>
 		<div class="btn-group float-right">
-  	<button type="button" class="btn btn-danger  dropdown-toggle" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">
-    Action
+  	<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">
+  	Select Department
   	</button>
   	<div class="dropdown-menu">
     <a class="dropdown-item" href="#">Action</a>
@@ -194,7 +194,6 @@ function get_forms_temp(){
 		  <!--Slides-->
 		  <div class="carousel-inner" role="listbox">
 			<div class="carousel-item active">
-
     ';
 
 	$sql="SELECT * FROM form_details WHERE form_activation=1 && form_department='D1'";
@@ -340,7 +339,7 @@ function show_applications($form_id){
                   <td>'.$result['name_of_student'].'</td>
                   <td>'.$result['roll_no'].'</td>
                   <td>'.$i.'</td>
-									<td> <button type="button" class="btn btn-primary btn-sm application_show_options_button" id="application:'.$i.':'.$result['form_id'].'" data-toggle="modal" data-target="#actions">
+									<td> <button type="button" class="btn btn-primary btn-sm form_show_edit_button" data-toggle="modal" data-target="#actions">
 									Options
 								</button></td>
                   <td class="text-right">
@@ -1101,36 +1100,5 @@ function verify_account_password($token,$hash,$password)
 		}
 	}
 	return 0;
-}
-function form_timeline($form_id,$form_type){
-	global $dbconfig;
-	$sql="SELECT * from form_type{$form_type}_responses,form_paths,user_accounts where response_id=form_paths.form_id and form_paths.form_type=? and current_user_id=user_accounts.user_id and response_id=$form_id order by form_path_timestamp";
-	$result=$dbconfig->prepare($sql);
-	$result->bind_param("i",$form_type);
-	$result->execute();
-	$result=$result->get_result();
-	$result1=$result->fetch_assoc();
-	$return="Submitted On: ".$result1['time_of_submission'].".<br>";
-	do{
-		if($result1["form_approval"]==1)
-		$return.="Approved by: ".$result1['user_name']." on ".$result1['form_path_timestamp'].'<br>';
-		if($result1["form_approval"]==0)
-		$return.="Currently with: ".$result1['user_name']." since ".$result1['form_path_timestamp'].'<br>';
-		
-	}while($result1=$result->fetch_assoc());
-	return $return;
-}
-function find_user($part_user){
-	global $dbconfig;
-	$sql="SELECT * FROM user_accounts where user_username like ? and user_id!=? order by user_name";
-	$result=$dbconfig->prepare($sql);
-	$result->bind_param("si","%".$part_user."%",$_SESSION['user_id']);
-	$result->execute();
-	$result=$result->get_result();
-	$return='';
-	while($result1=$result->fetch_assoc()){
-		$return.='<a class="dropdown-item" href="#">'.$result1["user_username"].' ('.$result1["user_name"].')</a>';
- 
-	}
 }
 ?>
