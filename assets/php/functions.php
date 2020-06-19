@@ -151,7 +151,7 @@ function past_applications(){
 		$return='
 			<div class="container">
 				<div class="content brand">
-	    		<h1 class="text-center">Forms Available</h1>
+	    		<h1 class="text-center">Forms Filled Previously</h1>
 				</div>
 			</div>';
 		return $return;
